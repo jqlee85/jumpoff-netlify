@@ -9,7 +9,7 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & yarn run start:lambda",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
