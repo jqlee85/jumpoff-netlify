@@ -3,13 +3,14 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
+    "gravatar": "^1.6.0",
     "netlify-lambda": "^0.4.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & yarn run start:lambda",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda build src/lambda",
