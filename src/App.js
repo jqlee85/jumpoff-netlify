@@ -11,19 +11,16 @@ class LambdaDemo extends Component {
   handleClick = (e) => {
     e.preventDefault();
     this.setState({loading: true});
-    fetch('/.netlify/functions/hello?email=' + document.location.pathname.replace('/',''))
+    fetch('/.netlify/functions/hello')
       .then(response => response.json())
-      .then(json => this.setState({loading: false, msg: json.msg, avatar: json.avatar}));
+      .then(json => this.setState({loading: false, msg: json.msg}));
   }
 
   render() {
-    const {loading, msg, avatar} = this.state;
+    const {loading, msg} = this.state;
     return <div>
       <button onClick={this.handleClick}>{loading ? 'Loading...' : 'Call Lambda'}</button><br/>
       <span>{msg}</span>
-      <div>
-      {avatar ? <img src={avatar} alt="An avatar" /> : ''}
-      </div>
     </div>
   }
 }
