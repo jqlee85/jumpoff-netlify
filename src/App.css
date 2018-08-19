@@ -142,27 +142,17 @@ button:active {
 .jo-right-align {
   text-align: right;
 }
-
 .icon-17 {
   color: #cd5fa1;
   fill: #cd5fa1;
-}
-.icon-17:hover {
-  /* background: #cd5fa1; */
 }
 .icon-13 {
   color: #f0ba45;
   fill: #f0ba45;
 }
-.icon-13:hover {
-  /* background: #f0ba45; */
-}
 .icon-15 {
   color: #f89c44;
   fill: #f89c44;
-}
-.icon-15:hover {
-  /* background: #f89c44; */
 }
 .icon-26 {
   color: #ef6085;
