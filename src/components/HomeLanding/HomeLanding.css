@@ -181,8 +181,8 @@ h1.jo-home-title {
 }
 @media screen and (max-width: 600px) {
   .jo-home-shapes-wrapper {
-    width: 150vw;
-    height: 150vw;
+    width: 180vw;
+    height: 180vw;
     bottom: 130px;
     right: 10px;
   }
