@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Post.css';
 import {Link} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 class Post extends Component {
@@ -19,6 +20,13 @@ class Post extends Component {
         <Link to={postLink}><h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
       }
       { this.props.single && <h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/> }
+      <Helmet>
+        <title>JumpOff - {title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
+        <meta name="url" content={postLink} />
+        <meta name="image" content="/static/images/jumpoff-preview.jpg" />
+      </Helmet>
       <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
     </article>
   }
