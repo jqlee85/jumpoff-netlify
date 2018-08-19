@@ -1,0 +1,59 @@
+/* Header */
+#header {
+  display: block;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 72px;
+  padding: 14px 10px;
+  z-index: 75;
+  background-color: rgba(25,25,25,0);
+  -webkit-transition: background-color .3s ease;
+  transition: background-color .3s ease;
+}
+.app-scrolled #header {
+  background-color: rgba(25,25,25,1);
+  box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+}
+.app-menu-toggled #header {
+  /* background:none; */
+}
+#header a.site-title {
+  display: inline;
+  position: relative;
+  float: left;
+  opacity: 1; 
+  color: #fff;
+  height: auto;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+#header a.site-title h1 {
+  position: absolute;
+  left: 30px;
+  display: inline;
+  margin-left: 6px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition: color .3s ease; /* Safari */
+  transition: color .3s ease;
+}
+#header .site-title:hover .jo-logo-wrapper {
+  transform: rotate(375deg);
+  padding-bottom: 44px;
+  width: 44px;
+  top: -7px;
+  left: -2px;
+}
+.site-title .jo-logo-wrapper {
+  left: 0;
+  top: -4px;
+  padding-bottom: 36px;
+  width: 34px;
+  display: inline;
+  -webkit-transition: top .2s ease-in-out, left .2s ease-in-out, padding-bottom .2s ease-in-out, .2s width ease-in-out, -webkit-transform .2s ease-in-out;
+  transition: top .2s ease-in-out, left .2s ease-in-out, padding-bottom .2s ease-in-out, width .2s ease-in-out, transform .2s ease-in-out;
+}

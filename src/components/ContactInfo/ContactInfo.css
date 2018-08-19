@@ -1,0 +1,15 @@
+.jo-contact-wrapper {
+  display: inline-block;
+  text-transform: uppercase;
+  
+}
+.jo-contact-wrapper h3 {
+  font-weight: bold;
+}
+.jo-contact-info address, .jo-contact-info a, .jo-contact-info p {
+  line-height: 160%;
+  font-weight: 500;
+  font-size: .8em;
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,68 @@
+.home-section {
+  width: 100%;
+  height: 100vh;
+  height: 100%;
+  background-color: #ffffff;
+}
+.home-section-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  height: 100vh;
+  padding: 25px 25px 25px;
+  box-sizing: border-box;
+  color: #191919;
+  overflow: hidden;
+}
+.home-section-content h2 {
+  text-align: left;
+  font-size: 3.2em;
+  margin-bottom: .7em;
+  background-image: -webkit-linear-gradient(left, #cd5fa1, #ef6085, #f89c44 ); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(left, #cd5fa1, #ef6085, #f89c44 ); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(left, #cd5fa1, #ef6085, #f89c44 ); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(left, #cd5fa1, #ef6085, #f89c44 ); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to right, #cd5fa1, #ef6085, #f89c44 ); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.home-section-content p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  font-weight: 300;
+  text-align: left;
+}
+.home-section-content a {
+  font-size: 1em;
+  margin-top: 1.8em;
+  color: #191919;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: color .5s ease-in-out, border-bottom .5s ease-in-out;
+  transition: color .5s ease-in-out, border-bottom .5s ease-in-out;
+  border-bottom: 2px solid rgba(0,0,0,0);
+}
+.home-section-content a:hover {
+  
+}
+.home-section-graphics {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  height: 100vh;
+  padding: 25px 25px 25px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+  .home-section-content {
+      width: 100%;
+  }    
+}

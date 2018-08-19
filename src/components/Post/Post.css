@@ -1,0 +1,121 @@
+article.jo-post {
+  display: block;
+  position: relative;
+  margin: 100px auto 200px;
+  text-align: left;
+}
+article.jo-post img {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 4px;
+}
+.jo-post h1.jo-post-title {
+  display: inline;
+  font-size: 4.5em;
+  line-height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  text-transform: uppercase;
+  text-indent: 200px;
+  color: #fff;
+  background: black;
+  box-shadow: 20px 0 0 black, -20px 0 0 black;
+  box-decoration-break: clone;
+
+}
+.jo-post h1, .jo-post h2, .jo-post h3, .jo-post h4, .jo-post h5, .jo-post h6, .jo-post p {
+  text-align: left;
+}
+.jo-post a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
+.jo-post h1 {
+  font-size: 3.8em;
+  margin-top: .9em;
+  margin-bottom: .5em;
+}
+.jo-post h2 {
+  font-size: 3.2em;
+  margin-top: .7em;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+}
+.jo-post h3 {
+  font-size: 2.2em;
+  margin-top: .6em;
+  margin-bottom: .2em;
+  text-transform: uppercase;
+}
+.jo-post h4 {
+  font-size: 2em;
+  margin-top: .5em;
+  margin-bottom: .1em;
+  text-transform: uppercase;
+}
+.jo-post-content-wrapper {
+  margin-top: 40px;
+}
+.jo-post-content-wrapper p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  line-height: 140%;
+}
+.jo-post-content-wrapper img.aligncenter {
+  margin: 2em center;
+  padding:20px;
+  box-sizing: border-box;
+}
+.jo-post-content-wrapper .snippetcpt-wrap {
+  display: block;
+  margin: 2em auto;
+  padding: 25px;
+  overflow-x: scroll;
+  text-align: left;
+  border: 1px solid rgb(8, 8, 8);
+  border-radius: 4px;
+  background: rgb(34, 34, 34);
+  font-family: "Courier New", Courier, monospace;
+  line-height: 130%;
+  color: rgba(255,255,255,.9);
+}
+.jo-post a:hover, .jo-post a:active, .jo-post a:focus {
+  -webkit-animation: white-rainbow 6s infinite;
+  -ms-animation: white-rainbow 6s infinite;
+  -o-animation: white-rainbow 6s infinite;
+  animation: white-rainbow 6s infinite;
+}
+
+/* Media Queries */
+@media screen and ( min-width: 1201px ) { 
+}
+@media screen and ( max-width: 1200px ) {
+  
+}
+@media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
+  .jo-post h1.jo-post-title {
+    margin-left: -40px;
+  }
+}
+@media screen and ( max-width: 800px ) {
+}
+@media screen and ( min-width: 601px ) and ( max-width: 800px ) {
+  .jo-post h1.jo-post-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    margin-left: -20px;
+  }
+  .jo-post-content-wrapper p {
+    font-size: 1.2em;
+  }
+}
+@media screen and ( max-width: 600px ) {
+  .jo-post h1.jo-post-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .jo-post-content-wrapper p {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,35 @@
+.jo-scroll-down{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.jo-scroll-down p {
+  margin-top: 4px;
+  font-size: 10px;
+}
+.jo-scroll-down-center {
+  
+}
+#scrolljo-scroll-down {
+  animation: animateHeight 1.4s linear .3s 4;
+}
+#jo-scroll-down-circle-shape {
+  animation: animateShape 1.6s ease-in-out 4;
+}
+@keyframes animateShape {
+  50% {
+    cy: 100;
+    opacity: .1;
+  }
+}
+@keyframes animateHeight {
+  70% {height:105px;}
+  from {margin-top:0px;}
+  to {margin-top:20px;}
+}
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+  

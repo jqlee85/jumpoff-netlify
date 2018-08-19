@@ -1,28 +1,268 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End CSS Reset */
+html {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  min-height: 100%;
+  min-height: 100vh;
+  font-family: 'Cerebri', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  background: #fff; /* Old browsers */
+}
+body p {
+  font-weight: 300;
+}
+h1,h2,h3,h4,h5,h6,a {
+  font-family: 'Cerebri', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+p,h1,h2,h3,h4,h5,h6 {
+  color: #191919;
+}
+textarea, input, button { outline: none; }
+button {
+	background: none;
+  border: none;
+  border: 1px solid #191919;
+  padding: 14px 18px;
+  font-family: 'Cerebri', Helvetica, Arial, sans-serif;
+  font-size: .8em;
+  text-transform: uppercase;
+}
+button.blue {
+  background: #353A93;
+  color: #fff;
+}
+button:hover {
+  -webkit-transition: color .3s ease, background-color .3s ease; /* Safari */
+  transition: color .3s ease, background-color .3s ease;
+}
+button:active {
+	position:relative;
+}
+/* App */
 .App {
+  position: relative;
+  width: 100%;
+  height: auto;
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#App {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
+.main {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.jo-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  height: auto;
+  min-height: 100vh;
+}
+.jo-row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  clear: both;
+}
+.jo-content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
-  color: white;
+}
+.jo-section-half {
+  width: 50%;
+  height: auto;
+  max-height: 100%; 
+}
+.jo-left-align {
+  text-align: left;
+}
+.jo-right-align {
+  text-align: right;
 }
 
-.App-title {
-  font-size: 1.5em;
+.icon-17 {
+  color: #cd5fa1;
+  fill: #cd5fa1;
+}
+.icon-17:hover {
+  /* background: #cd5fa1; */
+}
+.icon-13 {
+  color: #f0ba45;
+  fill: #f0ba45;
+}
+.icon-13:hover {
+  /* background: #f0ba45; */
+}
+.icon-15 {
+  color: #f89c44;
+  fill: #f89c44;
+}
+.icon-15:hover {
+  /* background: #f89c44; */
+}
+.icon-26 {
+  color: #ef6085;
+  fill: #ef6085;
 }
 
-.App-intro {
-  font-size: large;
+/* Rainbow Hover */
+@-webkit-keyframes white-rainbow {
+  0% {color: #cd5fa1;stroke:#cd5fa1;}
+  23% {color: #f89c44;stroke:#f89c44;}
+  56% {color: #ef6085;stroke:#ef6085;}
+  89% {color: #f0ba45;stroke:#f0ba45;}
+  100% {color: #cd5fa1;stroke:#cd5fa1;}
+}
+@-ms-keyframes white-rainbow {
+  0% {color: #cd5fa1;stroke:#cd5fa1;}
+  23% {color: #f89c44;stroke:#f89c44;}
+  56% {color: #ef6085;stroke:#ef6085;}
+  89% {color: #f0ba45;stroke:#f0ba45;}
+  100% {color: #cd5fa1;stroke:#cd5fa1;}
+}
+@-o-keyframes white-rainbow {
+  0% {color: #cd5fa1;stroke:#cd5fa1;}
+  23% {color: #f89c44;stroke:#f89c44;}
+  56% {color: #ef6085;stroke:#ef6085;}
+  89% {color: #f0ba45;stroke:#f0ba45;}
+  100% {color: #cd5fa1;stroke:#cd5fa1;}
+}
+@keyframes white-rainbow {
+  0% {color: #cd5fa1;stroke:#cd5fa1;}
+  23% {color: #f89c44;stroke:#f89c44;}
+  56% {color: #ef6085;stroke:#ef6085;}
+  89% {color: #f0ba45;stroke:#f0ba45;}
+  100% {color: #cd5fa1;stroke:#cd5fa1;}
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Media Queries */
+@media screen and ( min-width: 1201px ) {
+  .jo-content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  
+}
+@media screen and ( max-width: 1200px ) {
+
+}
+@media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
+  .jo-content {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media screen and ( min-width: 801px ) {
+  
+}
+@media screen and ( max-width: 800px ) {
+  .jo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    height: auto;
+  }
+  
+
+}
+@media screen and ( min-width: 601px ) and ( max-width: 800px ) {
+  .jo-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media screen and ( max-width: 600px ) {
+  
+}
+
+/* Custom Fonts */
+/* Cerebri */
+@font-face {
+  font-family: 'Cerebri';
+  src: url('public/fonts/Cerebri/CerebriSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('public/fonts/Cerebri/CerebriSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('public/fonts/Cerebri/CerebriSans-Light.woff2') format('woff2');
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('public/fonts/Cerebri/CerebriSans-SemiBold.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
 }

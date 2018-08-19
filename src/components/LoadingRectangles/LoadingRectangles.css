@@ -1,0 +1,45 @@
+.jo-loading-rectangles {
+  width: 100%;
+  height: auto;  
+  margin: 100px auto;
+}
+.jo-loading-rectangles .jo-rectangle {
+  background: #fff;
+  width: 100%;
+  margin: 30px 0;
+  -webkit-animation: flashing-rectangle 2s infinite;
+  -ms-animation: flashing-rectangle 2s infinite;
+  -o-animation: flashing-rectangle 2s infinite;
+  animation: flashing-rectangle 2s infinite;
+  animation-timing-function: ease-in-out; 
+}
+.jo-rectangle-h1 {
+  height: 120px;
+}
+.jo-rectangle-img {
+  height: 600px;
+}
+.jo-rectangle-p {
+  height: 300px;
+}
+/* Rainbow Hover */
+@-webkit-keyframes flashing-rectangle {
+  0% {background-color: #fafafa;}
+  50% {background-color: #eee;}
+  100% {background-color: #fafafa;}
+}
+@-ms-keyframes flashing-rectangle {
+  0% {background-color: #fafafa;}
+  50% {background-color: #eee;}
+  100% {background-color: #fafafa;}
+}
+@-o-keyframes flashing-rectangle {
+  0% {background-color: #fafafa;}
+  50% {background-color: #eee;}
+  100% {background-color: #fafafa;}
+}
+@keyframes flashing-rectangle {
+  0% {background-color: #fafafa;}
+  50% {background-color: #eee;}
+  100% {background-color: #fafafa;}
+}

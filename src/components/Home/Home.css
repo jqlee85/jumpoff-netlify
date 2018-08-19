@@ -1,0 +1,10 @@
+.home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+}
+
