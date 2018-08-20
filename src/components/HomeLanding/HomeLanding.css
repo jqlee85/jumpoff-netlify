@@ -7,7 +7,6 @@
   box-sizing: border-box;
   height: auto;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   z-index: 10;
 }
 .jo-home-shapes-wrapper {
@@ -181,6 +180,9 @@ h1.jo-home-title {
   
 }
 @media screen and (max-width: 600px) {
+  .jo-home-title-wrapper {
+    padding-bottom: 80px;
+  }
   .jo-home-shapes-wrapper {
     width: 165vw;
     height: 165vw;
@@ -213,7 +215,7 @@ h1.jo-home-title {
     font-size: 20px;
   }
   .jo-home-shapes-wrapper {
-    bottom: 130px;
+    bottom: 180px;
   }
 }
 
@@ -226,7 +228,7 @@ h1.jo-home-title {
   }
   .jo-home-shapes-wrapper {
     
-    bottom: 120px;
+    bottom: 150px;
     
   }
 }
