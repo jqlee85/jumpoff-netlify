@@ -4,7 +4,6 @@ import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
 import Post from '../Post/Post';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
-import client from '../../graphql/apolloClient'
 
 const SINGLE_POST_QUERY = gql`
   query detailView($slug: String!){

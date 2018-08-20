@@ -8,6 +8,20 @@ class HomeLanding extends Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.viewportHeight();
+    window.addEventListener('resize', this.viewportHeight, true);
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.viewportHeight, true);
+  }
+
+  viewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
   render(){
     
     let onClick = this.props.onClick;
