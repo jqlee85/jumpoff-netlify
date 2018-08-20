@@ -7,4 +7,10 @@
     height: auto;
     width: 100%;
 }
-
+.home-section {
+    width: 100%;
+    height: auto;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: #ffffff;
+}
