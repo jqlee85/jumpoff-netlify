@@ -4,7 +4,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
-// import { persistCache } from 'apollo-cache-persist';
+import { persistCache } from 'apollo-cache-persist';
 
 // Set up cache.
 const cache = new InMemoryCache({
@@ -29,10 +29,10 @@ const cache = new InMemoryCache({
 });
 
 // Persist Cache
-// persistCache({
-//   cache,
-//   storage: window.localStorage,
-// });
+persistCache({
+  cache,
+  storage: window.localStorage,
+});
 
 // Set API Host
 const API_HOST =
@@ -57,7 +57,7 @@ const client = new ApolloClient({
       credentials: 'same-origin'
     })
   ]),
-  ssrMode: true,
+  ssrMode: false,
   cache
 });
 
