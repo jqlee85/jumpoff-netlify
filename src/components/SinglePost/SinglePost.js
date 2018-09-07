@@ -13,6 +13,9 @@ const SINGLE_POST_QUERY = gql`
       slug
       date
       content
+      featuredImage {
+        sourceUrl
+      }
     }
   }
 `;
@@ -38,7 +41,7 @@ class SinglePost extends Component {
               if (loading) return (<LoadingRectangles/>);
               if (error) return (<p>Error Loading Post</p>);
               return (
-                  <Post post={data.postBy}/>
+                <Post post={data.postBy}/>
               );
             }}  
           </Query>

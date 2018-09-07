@@ -12,10 +12,13 @@ class Post extends Component {
     let slug = this.props.post.slug;
     let postID = 'jo-post-id_' + id;
     let title = this.props.post.title;
-    let content = this.props.post.content
+    let content = this.props.post.content;
+    let featuredImage = this.props.post.featuredImage;
+    console.log(featuredImage);
     let postLink = '/blog/' + slug;
     
     return <article id={postID} data-post-id={id} className="jo-post">
+      <img className="jo-featured-image" src={featuredImage.sourceUrl} />
       { !this.props.single && 
         <Link to={postLink}><h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
       }
@@ -25,7 +28,7 @@ class Post extends Component {
         <meta name="title" content={title} />
         <meta name="description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
         <meta name="url" content={postLink} />
-        <meta name="image" content="/static/images/jumpoff-preview.jpg" />
+        <meta name="image" content={featuredImage.sourceUrl} />
       </Helmet>
       <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
     </article>

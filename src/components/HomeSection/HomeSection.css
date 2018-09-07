@@ -41,9 +41,6 @@
   transition: color .5s ease-in-out, border-bottom .5s ease-in-out;
   border-bottom: 2px solid rgba(0,0,0,0);
 }
-.home-section-content a:hover {
-  
-}
 .home-section-graphics {
   position: relative;
   display: flex;

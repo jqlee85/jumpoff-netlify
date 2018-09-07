@@ -15,6 +15,9 @@ const LATEST_POSTS_QUERY = gql`
           slug
           date
           content
+          featuredImage {
+            sourceUrl
+          }
         }
       }
     }

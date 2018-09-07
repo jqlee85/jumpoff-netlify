@@ -1,3 +1,17 @@
+.blog.jo-section .jo-featured-image {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  margin: 2em auto -4em;
+  padding: 0;
+}
+
+.blog.jo-section .jo-post {
+  padding-bottom: 4em;
+  border-bottom: 1px solid #ccc;
+}
+
 .jo-blog-loading {
   font-size: 5em;
   -webkit-animation: white-rainbow 6s infinite;

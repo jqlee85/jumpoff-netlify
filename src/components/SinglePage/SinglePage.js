@@ -12,6 +12,9 @@ const SINGLE_PAGE_QUERY = gql`
       title
       uri
       content
+      featuredImage {
+        sourceUrl
+      }
     }
   }
 `;
