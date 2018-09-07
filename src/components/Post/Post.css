@@ -4,11 +4,6 @@ article.jo-post {
   margin: 100px auto 200px;
   text-align: left;
 }
-article.jo-post img {
-  box-sizing: border-box;
-  max-width: 100%;
-  padding: 4px;
-}
 .jo-post h1.jo-post-title {
   display: inline;
   font-size: 4.5rem;
@@ -33,6 +28,11 @@ article.jo-post img {
 }
 .jo-post-content-wrapper {
   padding-top: 60px;
+}
+.jo-post-content-wrapper img {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 4px;
 }
 .jo-post-content-wrapper p {
   line-height: 160%;
@@ -80,36 +80,33 @@ article.jo-post img {
   }
   .jo-post-content-wrapper h1 {
     font-size: 3rem;
-    /* 2.5x body copy size = 40px */
     line-height: 1.05;
     margin: 2rem auto 1.5rem;
   }
   .jo-post-content-wrapper h2 {
     font-size: 2.5rem;
-    /* 2x body copy size = 32px */
     line-height: 1.25;
     margin: 1.6rem auto 1.2rem;
   }
   .jo-post-content-wrapper h3 {
     font-size: 1.75rem;
-    /* 1.5x body copy size = 24px */
     line-height: 1.25;
     margin: 1rem auto .75rem;
   }
   .jo-post-content-wrapper h4 {
     line-height: 1.22222222;
-    /* (22px / 18px */
     margin: .75rem auto .63rem;
   }
   .jo-post-content-wrapper p {
     font-size: 1.4rem;
+    line-height: 160%;
     margin: .9rem auto .7rem;
   }
   .jo-post-content-wrapper .snippetcpt-wrap {
-    padding: 10px;
+    padding: 20px;
   }
   .jo-post-content-wrapper .snippetcpt-wrap pre {
-    font-size: .8rem;
+    font-size: 1.1rem;
   }
 }
 @media screen and ( min-width: 601px ) and ( max-width: 800px ) {
@@ -150,10 +147,10 @@ article.jo-post img {
     line-height: 155%;
   }
   .jo-post-content-wrapper .snippetcpt-wrap {
-    padding: 10px;
+    padding: 15px;
   }
   .jo-post-content-wrapper .snippetcpt-wrap pre {
-    font-size: .8rem;
+    font-size: .95rem;
   }
 }
 @media screen and ( max-width: 600px ) {
