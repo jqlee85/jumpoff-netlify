@@ -14,7 +14,6 @@ class Post extends Component {
     let title = this.props.post.title;
     let content = this.props.post.content;
     let featuredImage = this.props.post.featuredImage;
-    console.log(featuredImage);
     let postLink = '/blog/' + slug;
     
     return <article id={postID} data-post-id={id} className="jo-post">
