@@ -38,8 +38,7 @@ article.jo-post {
   line-height: 160%;
 }
 .jo-post-content-wrapper img.aligncenter {
-  margin: 2rem center;
-  padding:20px;
+  margin: .5rem 0px;
   box-sizing: border-box;
 }
 .jo-post-content-wrapper .snippetcpt-wrap {

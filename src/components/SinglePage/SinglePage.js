@@ -34,6 +34,8 @@ const SinglePage = ({ match }) => {
               {({ loading, error, data }) => {
                 if (loading) return (<LoadingRectangles/>);
                 if (error) return (<p>Error Loading Post</p>);
+                console.log('data is');
+                console.log(data.pageBy);
                 return (
                     <Post post={data.pageBy}/>
                 );
