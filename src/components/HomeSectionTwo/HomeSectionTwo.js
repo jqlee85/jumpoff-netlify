@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import styles from './HomeSectionTwo.css';
 import TechLogo from '../TechLogo/TechLogo';
+import AccordionSection from '../AccordionSection/AccordionSection';
+
 
 class HomeSectionTwo extends Component {
   
@@ -11,8 +13,9 @@ class HomeSectionTwo extends Component {
   render(){
     return <section className="jo-section home-section" id="home-section-two">
       <div className="home-section-content">
-          <h2>React + Redux</h2>
-          <p>Users today expect fast, app-like experiences when using the web. Full page refreshes can be slow and choppy, so we build universal web applications that leverage client-side apps and server-side rendering to create the fast, modern experience that users expect without sacrificing SEO.</p>
+          <h2>What We Do</h2>
+          <AccordionSection/>
+          <p></p>
           <a><button className="blue">Learn More</button></a>
       </div>
       <div className="home-section-graphics">
