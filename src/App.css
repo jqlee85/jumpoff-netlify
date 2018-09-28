@@ -77,7 +77,11 @@ button {
   text-transform: uppercase;
 }
 button.blue {
-  background: #353A93;
+  background: rgb(162, 166, 226);
+  color: #fff;
+}
+button.black {
+  background: #191919;
   color: #fff;
 }
 button:hover {

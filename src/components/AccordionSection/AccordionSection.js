@@ -24,32 +24,35 @@ function AccordionSection(props) {
     <div className={classes.root}>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>HTML/CSS/JS</Typography>
+          <Typography className={classes.heading}>01. HTML/CSS/JS Development</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
             Lorem Ipsum sit dolor
           </Typography>
+          <a><button className="black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>WordPress Development</Typography>
+          <Typography className={classes.heading}>02. WordPress Development</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
           Whether you need a simple blog or an E-Commerce site, a customized WordPress site may be the perfect solution. As the most popular CMS in the world, WordPress has been battle-tested and has an un-paralleled ecosystem of plugins and themes. We have more than seven years of experience building WordPress sites, premium themes and custom plugins to help businesses achieve their goals.
           </Typography>
+          <a><button className="black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography className={classes.heading}>React/Redux</Typography>
+          <Typography className={classes.heading}>03. React.js Development</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
           Users today expect fast, app-like experiences when using the web. Full page refreshes can be slow and choppy, so we build universal web applications that leverage client-side apps and server-side rendering to create the fast, modern experience that users expect without sacrificing SEO.
           </Typography>
+          <a><button className="black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </div>

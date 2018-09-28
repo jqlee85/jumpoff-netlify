@@ -15,8 +15,6 @@ class HomeSectionTwo extends Component {
       <div className="home-section-content">
           <h2>What We Do</h2>
           <AccordionSection/>
-          <p></p>
-          <a><button className="blue">Learn More</button></a>
       </div>
       <div className="home-section-graphics">
         <TechLogo logo="react" rotating={true} color="#191919"/>
