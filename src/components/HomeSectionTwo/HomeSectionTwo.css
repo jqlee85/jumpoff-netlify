@@ -1,0 +1,20 @@
+.what-we-do {
+  box-sizing: border-box;
+  padding: 0px;
+}
+@media screen and ( min-width: 1201px ) {
+  .what-we-do {
+    max-width: 700px;
+    padding: 60px;
+    box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13);
+  }
+  
+
+}
+@media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
+  .what-we-do {
+    max-width: 80%;
+    padding: 40px;
+    box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13);
+  }
+}

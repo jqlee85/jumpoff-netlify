@@ -25,7 +25,7 @@ const SinglePage = ({ match }) => {
     var page_slug = /[^/]*$/.exec(match.path)[0];
     let uri = { uri: page_slug }
 
-    return <div className="blog jo-section">
+    return <section className="blog">
       <div className="jo-row">
         <div className="jo-content">
           <div className="single-post">
@@ -42,7 +42,7 @@ const SinglePage = ({ match }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   
 }
 

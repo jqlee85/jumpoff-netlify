@@ -32,7 +32,7 @@ class SinglePost extends Component {
     console.log('slug:');
     console.log(slug);
 
-    return <div className="blog jo-section">
+    return <section className="blog">
     <div className="jo-row">
       <div className="jo-content">
         <div className="single-post">
@@ -48,7 +48,7 @@ class SinglePost extends Component {
         </div>
       </div>
     </div>
-  </div>
+  </section>
   }
   
 }

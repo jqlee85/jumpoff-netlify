@@ -8,7 +8,7 @@ class Resume extends Component {
   }
   
   render(){
-    return <div className="resume jo-section">
+    return <section className="resume">
       <div className="jo-row">
         <div className="jo-content">
           <h2 class="resume-name">Jesse Lee</h2>
@@ -129,7 +129,7 @@ class Resume extends Component {
 
         </div>
       </div>
-    </div>
+    </section>
   }
 
 }

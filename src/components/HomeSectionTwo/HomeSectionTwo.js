@@ -11,16 +11,12 @@ class HomeSectionTwo extends Component {
   }
 
   render(){
-    return <section className="jo-section home-section" id="home-section-two">
+    return <section className="full-height-section" id="home-section-two">
       <div className="home-section-content">
+        <div class="what-we-do">
           <h2>What We Do</h2>
           <AccordionSection/>
-      </div>
-      <div className="home-section-graphics">
-        <TechLogo logo="react" rotating={true} color="#191919"/>
-        <TechLogo logo="graphql" rotating={true} color="#191919"/>
-        <TechLogo logo="wordpress" rotating={true} color="#191919"/>
-        <TechLogo logo="redux" rotating={true} color="#191919"/>
+        </div>
       </div>
     </section>
   }

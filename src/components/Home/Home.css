@@ -12,3 +12,18 @@
     height: auto;
     background-color: #ffffff;
 }
+.home-section-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+}
+@media screen and ( min-width: 1201px ) {
+    .home-section-content {
+      padding: 80px;
+    }
+  }
+@media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
+    .home-section-content {
+      padding: 40px;
+    }
+}

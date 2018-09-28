@@ -111,12 +111,16 @@ button:active {
   min-height: 100vh;
   flex-direction: column;
 }
-.jo-section {
+section {
   position: relative;
+}
+.flex-section {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
+}
+.full-height-section {
   height: auto;
   min-height: 100vh;
 }
@@ -214,7 +218,7 @@ button:active {
   
 }
 @media screen and ( max-width: 800px ) {
-  .jo-section {
+  section {
     display: flex;
     flex-direction: column;
     justify-content: center;

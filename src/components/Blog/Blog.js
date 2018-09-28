@@ -29,7 +29,7 @@ class Blog extends Component {
   render(){
     
     return (
-    <div className="blog jo-section">
+    <section className="blog">
       <div className="jo-row">
         <div className="jo-content">
         <Query query={LATEST_POSTS_QUERY}>
@@ -45,7 +45,7 @@ class Blog extends Component {
         </Query>
         </div>
       </div>
-    </div>);
+    </section>);
   }
 }
 

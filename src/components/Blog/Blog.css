@@ -1,4 +1,4 @@
-.blog.jo-section .jo-featured-image {
+section.blog .jo-featured-image {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-.blog.jo-section .jo-post {
+section.blog .jo-post {
   padding-bottom: 4em;
   border-bottom: 1px solid #ccc;
 }
