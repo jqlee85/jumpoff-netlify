@@ -13,6 +13,7 @@
     background-color: #ffffff;
 }
 .home-section-content {
+    display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 30px;

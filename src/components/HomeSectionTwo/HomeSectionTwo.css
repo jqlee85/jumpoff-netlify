@@ -1,6 +1,24 @@
+#home-section-two {
+  
+}
+#home-section-two .home-section-content {
+  padding-top: 10%;
+}
 .what-we-do {
+  position:relative;
   box-sizing: border-box;
   padding: 0px;
+  background: #fff;
+}
+.home-section-two-bg {
+  position: absolute;
+  width: 60%;
+  background-size: cover;
+  background-position: right center;
+  height: 80%;
+  right: 0px;
+  bottom: 0px;
+  background: #ccc;
 }
 @media screen and ( min-width: 1201px ) {
   .what-we-do {
@@ -8,13 +26,16 @@
     padding: 60px;
     box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13);
   }
-  
-
 }
 @media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
   .what-we-do {
-    max-width: 80%;
+    max-width: 660px;
     padding: 40px;
     box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13);
+  }
+}
+@media screen and (max-width: 800px ) {
+  .home-section-two-bg {
+    display: none;
   }
 }

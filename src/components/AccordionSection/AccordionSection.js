@@ -24,7 +24,7 @@ function AccordionSection(props) {
     <div className={classes.root}>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <span class="accordion-title">01. HTML/CSS/JS Development</span>
+          <span className="accordion-title">01. HTML/CSS/JS Development</span>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <p>
@@ -35,7 +35,7 @@ function AccordionSection(props) {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <span class="accordion-title">02. WordPress Development</span>
+        <span className="accordion-title">02. WordPress Development</span>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <p>
@@ -46,7 +46,7 @@ function AccordionSection(props) {
       </ExpansionPanel>
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <span class="accordion-title">03. React.js Development</span>
+        <span className="accordion-title">03. React.js Development</span>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <p>

@@ -117,23 +117,7 @@ button:active {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-section {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  height: auto;
-  min-height: 100vh;
-}
+
 .jo-row {
   position: relative;
   display: -webkit-box;
