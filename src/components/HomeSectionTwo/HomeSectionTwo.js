@@ -17,7 +17,7 @@ class HomeSectionTwo extends Component {
   render(){
 
     return <section className="full-height-section" id="home-section-two">
-      <div className="home-section-two-bg" style={{backgroundImage: "url(" + theBackgroundImage + ")"}}></div>
+      <div className="home-section-two-bg" style={{backgroundImage: "url(" + theBackgroundImage + ")",backgroundPosition: 'left bottom',backgroundSize: 'cover'}}></div>
       <div className="home-section-content">
         <div className="what-we-do">
           <h2>What We Do</h2>

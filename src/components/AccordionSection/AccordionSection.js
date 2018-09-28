@@ -1,28 +1,30 @@
 import React, {Component} from 'react';
-// import styles from './AccordionSection.css';
+import styles from './AccordionSection.css';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+// import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-});
+// const styles = theme => ({
+//   root: {
+//     width: '100%',
+//     boxShadow: 'none'
+//   },
+// });
+
+const expansionPanelStyles = {
+  boxShadow: 'none',
+  borderBottom: 'none'
+}
 
 function AccordionSection(props) {
-  const { classes } = props;
+  
   return (
-    <div className={classes.root}>
-      <ExpansionPanel>
+    <div>
+      <ExpansionPanel style={expansionPanelStyles}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
           <span className="accordion-title">01. HTML/CSS/JS Development</span>
         </ExpansionPanelSummary>
@@ -33,7 +35,7 @@ function AccordionSection(props) {
           <a><button className="black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel>
+      <ExpansionPanel style={expansionPanelStyles}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
         <span className="accordion-title">02. WordPress Development</span>
         </ExpansionPanelSummary>
@@ -44,7 +46,7 @@ function AccordionSection(props) {
           <a><button className="black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel>
+      <ExpansionPanel style={expansionPanelStyles}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
         <span className="accordion-title">03. React.js Development</span>
         </ExpansionPanelSummary>
@@ -59,8 +61,8 @@ function AccordionSection(props) {
   );
 }
 
-AccordionSection.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// AccordionSection.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
-export default withStyles(styles)(AccordionSection);
+export default AccordionSection;

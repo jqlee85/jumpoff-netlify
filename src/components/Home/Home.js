@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import HomeLanding from '../HomeLanding/HomeLanding';
-import HomeSection from '../HomeSection/HomeSection';
 import HomeSectionTwo from '../HomeSectionTwo/HomeSectionTwo';
 import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
 import styles from './Home.css';

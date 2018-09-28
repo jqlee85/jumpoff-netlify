@@ -28,3 +28,34 @@
       padding: 40px;
     }
 }
+
+
+
+/* from home section */
+.home-section-content h2 {
+text-align: left;
+font-size: 3.2em;
+margin-bottom: .7em;
+}
+.home-section-content p {
+font-size: 1.2em;
+line-height: 1.6em;
+font-weight: 300;
+text-align: left;
+}
+.home-section-content a {
+font-size: 1em;
+margin-top: 1.8em;
+color: #191919;
+text-transform: uppercase;
+text-decoration: none;
+-webkit-transition: color .5s ease-in-out, border-bottom .5s ease-in-out;
+transition: color .5s ease-in-out, border-bottom .5s ease-in-out;
+border-bottom: 2px solid rgba(0,0,0,0);
+}
+  
+/* @media screen and (max-width: 800px) {
+    .home-section-content {
+        width: 100%;
+    }    
+} */

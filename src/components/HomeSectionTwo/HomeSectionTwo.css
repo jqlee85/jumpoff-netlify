@@ -21,17 +21,20 @@
   background: #ccc;
 }
 @media screen and ( min-width: 1201px ) {
+  #home-section-two .home-section-content {
+    padding-top: 7%;
+  }
   .what-we-do {
     max-width: 700px;
     padding: 60px;
-    box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13);
+    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
   }
 }
 @media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
   .what-we-do {
     max-width: 660px;
     padding: 40px;
-    box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13);
+    /* box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13); */
   }
 }
 @media screen and (max-width: 800px ) {
