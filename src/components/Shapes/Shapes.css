@@ -1,0 +1,8 @@
+.jo-down-arrow circle, .jo-down-arrow path {
+  stroke: black;
+  -webkit-transition: stroke .5s ease-in-out;
+  transition: stroke .5s ease-in-out;
+}
+.jo-down-arrow:hover circle {
+  stroke: white;
+}

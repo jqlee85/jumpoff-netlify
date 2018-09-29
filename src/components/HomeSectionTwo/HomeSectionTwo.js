@@ -2,17 +2,13 @@ import React, {Component} from 'react';
 import styles from './HomeSectionTwo.css';
 import TechLogo from '../TechLogo/TechLogo';
 import AccordionSection from '../AccordionSection/AccordionSection';
-import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg.jpg';
-
-
+import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
 
 class HomeSectionTwo extends Component {
   
   constructor(props){
     super(props);
   }
-
-  
 
   render(){
 
