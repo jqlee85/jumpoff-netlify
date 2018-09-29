@@ -20,7 +20,7 @@ class HomeSectionTwo extends Component {
       <div className="home-section-two-bg" style={{backgroundImage: "url(" + theBackgroundImage + ")",backgroundPosition: 'left bottom',backgroundSize: 'cover'}}></div>
       <div className="home-section-content">
         <div className="what-we-do">
-          <h3>JumpOff is is dedicated to turning your idea into a beautiful, functional website.</h3>
+          <h3>We turn your idea or design into a beautiful, functional website.</h3>
           <AccordionSection/>
         </div>
       </div>

@@ -1,4 +1,4 @@
-#home-section-two h3{
+#home-section-two h3 {
   text-align: left;
   font-weight:500;
   font-size: 1.8em;
@@ -22,24 +22,48 @@
   height: 70%;
   height: 70vh;
   right: 0px;
-  top: 25%;
+  top: 30%;
+  top: 30vh;
   background: #ccc;
+}
+@media screen and (min-width: 1601px) {
+  .what-we-do {
+    width: 60%;
+    max-width: 1200px;
+    padding:  102px 100px;
+    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
+  }
+  #home-section-two h3 {
+    font-size: 2.4em;
+    margin-bottom: 1.8em;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1600px) {
+  .what-we-do {
+    max-width: 700px;
+    padding:  82px 80px;
+    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
+  }
+  #home-section-two h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
 }
 @media screen and ( min-width: 1201px ) {
   #home-section-two .home-section-content {
     padding-top: 7%;
   }
-  .what-we-do {
-    max-width: 700px;
-    padding:  66px 60px;
-    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
-  }
 }
 @media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
   .what-we-do {
     max-width: 660px;
-    padding: 46px 40px;
+    padding:  66px 60px;
+    
     /* box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13); */
+  }
+  #home-section-two h3 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
   }
 }
 @media screen and (max-width: 800px ) {
@@ -48,5 +72,20 @@
   }
   .home-section-two-bg {
     display: none;
+  }
+  
+}
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  #home-section-two h3 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 600px ) {
+  #home-section-two h3 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    margin-left: 0;
   }
 }
