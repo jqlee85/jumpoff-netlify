@@ -1,5 +1,10 @@
-#home-section-two {
-  
+#home-section-two h3{
+  text-align: left;
+  font-weight:500;
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  margin-left: 24px;
+  max-width: 80%
 }
 #home-section-two .home-section-content {
   padding-top: 10%;
@@ -7,7 +12,6 @@
 .what-we-do {
   position:relative;
   box-sizing: border-box;
-  padding: 0px;
   background: #fff;
 }
 .home-section-two-bg {
@@ -15,9 +19,10 @@
   width: 60%;
   background-size: cover;
   background-position: right center;
-  height: 80%;
+  height: 70%;
+  height: 70vh;
   right: 0px;
-  bottom: 0px;
+  top: 25%;
   background: #ccc;
 }
 @media screen and ( min-width: 1201px ) {
@@ -26,18 +31,21 @@
   }
   .what-we-do {
     max-width: 700px;
-    padding: 60px;
+    padding:  66px 60px;
     /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
   }
 }
 @media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
   .what-we-do {
     max-width: 660px;
-    padding: 40px;
+    padding: 46px 40px;
     /* box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.13); */
   }
 }
 @media screen and (max-width: 800px ) {
+  .what-we-do {
+    padding: 0px;
+  }
   .home-section-two-bg {
     display: none;
   }

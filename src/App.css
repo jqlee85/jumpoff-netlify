@@ -225,6 +225,10 @@ section {
     min-height: 100vh;
     height: auto;
   }
+  .full-height-section {
+    height: auto;
+    min-height: auto;
+  }
   
 
 }

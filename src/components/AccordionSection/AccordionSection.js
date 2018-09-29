@@ -7,6 +7,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Fade from '@material-ui/core/Fade';
 
 // const styles = theme => ({
 //   root: {
@@ -17,46 +18,51 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const expansionPanelStyles = {
   boxShadow: 'none',
-  borderBottom: 'none'
+  borderBottom: 'none',
+  backgroundColor: 'none'
 }
 
 function AccordionSection(props) {
   
   return (
     <div>
-      <ExpansionPanel style={expansionPanelStyles}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <span className="accordion-title">01. HTML/CSS/JS Development</span>
+      <div className="panel-divider"></div>
+      <ExpansionPanel className="accordion-panel" style={expansionPanelStyles}>
+        <ExpansionPanelSummary className="accordion-summary" expandIcon={<ExpandMoreIcon />}>
+          <span className="accordion-title"><span className="accordion-title-number">01.</span> HTML/CSS/JS Development</span>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        <ExpansionPanelDetails className="accordion-content">
           <p>
             Lorem Ipsum sit dolor
           </p>
-          <a><button className="black">Learn More</button></a>
+          <a><button className="accordion-button black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={expansionPanelStyles}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <span className="accordion-title">02. WordPress Development</span>
+      <div className="panel-divider"></div>
+      <ExpansionPanel className="accordion-panel" style={expansionPanelStyles}>
+        <ExpansionPanelSummary className="accordion-summary" expandIcon={<ExpandMoreIcon />}>
+        <span className="accordion-title"><span className="accordion-title-number">02.</span> WordPress Development</span>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        <ExpansionPanelDetails className="accordion-content">
           <p>
             Whether you need a simple blog or an E-Commerce site, a customized WordPress site may be the perfect solution. As the most popular CMS in the world, WordPress has been battle-tested and has an un-paralleled ecosystem of plugins and themes. We have more than seven years of experience building WordPress sites, premium themes and custom plugins to help businesses achieve their goals.
           </p>
-          <a><button className="black">Learn More</button></a>
+          <a><button className="accordion-button black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
-      <ExpansionPanel style={expansionPanelStyles}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-        <span className="accordion-title">03. React.js Development</span>
+      <div className="panel-divider"></div>
+      <ExpansionPanel className="accordion-panel" style={expansionPanelStyles}>
+        <ExpansionPanelSummary className="accordion-summary" expandIcon={<ExpandMoreIcon />}>
+        <span className="accordion-title"><span className="accordion-title-number">03.</span> React.js Development</span>
         </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+        <ExpansionPanelDetails className="accordion-content">
           <p>
             Users today expect fast, app-like experiences when using the web. Full page refreshes can be slow and choppy, so we build universal web applications that leverage client-side apps and server-side rendering to create the fast, modern experience that users expect without sacrificing SEO.
           </p>
-          <a><button className="black">Learn More</button></a>
+          <a><button className="accordion-button black">Learn More</button></a>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      <div className="panel-divider"></div>
     </div>
   );
 }
