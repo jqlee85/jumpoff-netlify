@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import styles from './HomeSectionTwo.css';
-import TechLogo from '../TechLogo/TechLogo';
 import AccordionSection from '../AccordionSection/AccordionSection';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
+import {ShapeThree} from '../Shapes/Shapes';
 
 class HomeSectionTwo extends Component {
   
@@ -16,7 +16,10 @@ class HomeSectionTwo extends Component {
       <div className="home-section-two-bg" style={{backgroundImage: "url(" + theBackgroundImage + ")",backgroundPosition: 'left bottom',backgroundSize: 'cover'}}></div>
       <div className="home-section-content">
         <div className="what-we-do">
-          <h3>We turn your idea or design into a beautiful, functional website.</h3>
+          <div className="what-we-do-heading">
+            <h3>We turn your ideas into beautiful, functional websites.</h3>
+            <ShapeThree classNames={'jo-wwd-shape jo-wwd-shape-3'}/>      
+          </div>
           <AccordionSection/>
         </div>
       </div>
