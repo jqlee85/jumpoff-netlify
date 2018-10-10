@@ -5,6 +5,7 @@
   width: auto;
   position: relative;
   perspective: 40px;
+  background: none;
 }
 .jo-transform-box-inner {
   display: inline-block;
@@ -16,4 +17,5 @@
   padding: 0px;
   background: #ccc;
   transition: transform 0.5s;
+  box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
 }

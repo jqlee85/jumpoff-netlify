@@ -34,8 +34,6 @@ export class TransformBox extends Component {
 
   constructor(props) {
     super(props);
-    
-    // this.mouse.setOrigin(this.container);
     this.state = { x: 0, y: 0 };
   }
 
@@ -45,7 +43,8 @@ export class TransformBox extends Component {
   }
 
   mouseEnter(e) {
-    this.transformUpdate(e);
+    this.setState({ x: e.screenX, y: e.screenY });
+    this.transformUpdate(e, this.mouse.x,this.mouse.y);
   }
   mouseLeave(e) {
     this.inner.current.style = "";
@@ -53,22 +52,22 @@ export class TransformBox extends Component {
   mouseMove(e) {
     this.setState({ x: e.screenX, y: e.screenY });
     if (this.isTimeToUpdate()) {
-      this.transformUpdate(e);
+      this.transformUpdate(e, this.mouse.x,this.mouse.y);
     }
   }
 
   transformUpdate(event) {
     this.mouse.updatePosition(event,this.state.x,this.state.y);
     
-    var halfHeight = this.inner.current.offsetHeight/10;
-    var halfWidth = this.inner.current.offsetWidth/10;
-    var rotateX = (this.mouse.y / halfHeight).toFixed(2);
-    var rotateY = (this.mouse.x / halfWidth).toFixed(2);
+    var offsetHeight = this.inner.current.offsetHeight;
+    var offsetWidth = this.inner.current.offsetWidth;
+    var rotateX = ( this.mouse.y / offsetHeight * 40 ).toFixed(2);
+    var rotateY = ( this.mouse.x / offsetWidth * 40 ).toFixed(2);
     
     console.log('this.mouse.x: '+this.mouse.x);
     console.log('this.mouse.y: '+this.mouse.y);
-    console.log('halfHeight: '+halfHeight)
-    console.log('halfWidth: '+halfWidth)
+    console.log('halfHeight: '+offsetHeight)
+    console.log('halfWidth: '+offsetWidth)
     console.log('rotateX: '+rotateX);
     console.log('rotateY: '+rotateY);
 
