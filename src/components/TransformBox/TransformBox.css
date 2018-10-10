@@ -1,0 +1,19 @@
+.jo-transform-box-container {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: auto;
+  position: relative;
+  perspective: 40px;
+}
+.jo-transform-box-inner {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: 300px;
+  height: 300px;
+  margin: 0px;
+  padding: 0px;
+  background: #ccc;
+  transition: transform 0.5s;
+}

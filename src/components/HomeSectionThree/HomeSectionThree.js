@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './HomeSectionThree.css';
-import TechLogo from '../TechLogo/TechLogo';
+import PortfolioItem from '../PortfolioItem/PortfolioItem';
 
 class HomeSectionThree extends Component {
   
@@ -11,9 +11,8 @@ class HomeSectionThree extends Component {
   render(){
     return <section className="home-section flex-section full-height-section" id="home-section-three">
       <div className="home-section-content">
-          <h2>WordPress Development</h2>
-          <p>Whether you need a simple blog or an E-Commerce site, a customized WordPress site may be the perfect solution. As the most popular CMS in the world, WordPress has been battle-tested and has an un-paralleled ecosystem of plugins and themes. We have more than seven years of experience building WordPress sites, premium themes and custom plugins to help businesses achieve their goals.</p>
-          <a>Learn More</a>
+          <h2>Portfolio</h2>
+          <PortfolioItem/>
       </div>
     </section>
   }

@@ -1,0 +1,8 @@
+.jo-portfolio-item {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
+}

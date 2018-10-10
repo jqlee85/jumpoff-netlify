@@ -53,7 +53,9 @@
 }
 .jo-home-shape path, .jo-home-shape polygon, .jo-home-shape rect {
   fill: #191919;
-  
+}
+.jo-home-shape-2 path {
+  /* fill: url('#jo-home-landing-shape-gradient') #191919;  */
 }
 .jo-home-title-wrapper {
   height: auto;

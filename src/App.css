@@ -91,6 +91,12 @@ button:hover {
 button:active {
 	position:relative;
 }
+::selection {
+  background: #f0ba45; /*WebKit/Blink Browsers*/
+}
+::-moz-selection {
+  background: #f0ba45; /* Gecko Browsers */
+}
 /* App */
 .App {
   position: relative;
