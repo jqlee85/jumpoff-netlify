@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './TransformBox.css';
-
-
+import {Link} from 'react-router-dom';
+import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
 
 export class TransformBox extends Component {
 
@@ -83,7 +83,7 @@ export class TransformBox extends Component {
 
   // Update CSS to transform item
   updateTransformStyle(x, y) {
-    var transformStyle = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+    var transformStyle = "perspective(1500px) rotateX(" + x + "deg) rotateY(" + y + "deg) scale3d(1,1,1)";
     // console.log(transformStyle);
     this.inner.current.style.transform = transformStyle;
     this.inner.current.style.webkitTransform = transformStyle;
@@ -101,9 +101,24 @@ export class TransformBox extends Component {
 
     let classNames = this.props.classNames ? this.props.classNames : '';
     classNames += ' jo-transform-box';
+    let title = 'Project Title';
+    let description = 'This is the description';
 
     return <div className={classNames} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onMouseMove={this.mouseMove.bind(this)} ref={this.container}>
-      <div className="jo-transform-box-inner" ref={this.inner}></div>
+      <div className="jo-transform-box-inner" ref={this.inner} >
+        <div className="jo-transform-box-bg-image" style={{backgroundImage: "url(" + theBackgroundImage + ")"}}></div>
+        <div className="jo-transform-box-black-bg"></div>
+        <div className="jo-gradient-border-wrapper">
+          <div className="jo-gradient-border"></div>
+        </div>
+        <div className="jo-transform-box-content-wrapper">
+          <div className="jo-transform-box-content">
+            <Link to='/'><h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
+            <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
+            <Link to='/'><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
+          </div>
+        </div>
+      </div>
     </div>;
   }
 }

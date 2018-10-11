@@ -8,14 +8,110 @@
   background: none;
 }
 .jo-transform-box-inner {
+  position: relative;
   display: inline-block;
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  width: 300px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   margin: 0px;
   padding: 0px;
   background: #ccc;
-  transition: transform 0.5s;
+  transition: transform 0.5s, border .5s;
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
+}
+.jo-transform-box-inner:hover {
+  
+}
+.jo-transform-box-inner:hover .jo-transform-box-black-bg {
+  opacity: 1;
+}
+.jo-transform-box-bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  z-index: 5;
+}
+.jo-transform-box-black-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  /* background-color: rgba(0,0,0,.7); */
+  transition: opacity .5s;
+  z-index: 10;
+}
+.jo-transform-box-content-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 30;
+}
+.jo-transform-box-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .5, background-color .25s;
+  background-color: none;
+  z-index: 40;
+}
+.jo-transform-box-content h3, .jo-transform-box-content p, .jo-transform-box-content a {
+  color: #fff;
+}
+.jo-transform-box-inner:hover .jo-transform-box-content {
+  opacity: 1;
+}
+
+.jo-gradient-border-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+.jo-gradient-border {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.jo-transform-box-inner:hover .jo-gradient-border {
+  --borderWidth: 15px;
+  background: rgba(0,0,0,.7);
+}
+.jo-transform-box-inner:hover .jo-gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * 15px);
+  left: calc(-1 * 15px);
+  height: calc(100% + 15px * 2);
+  width: calc(100% + 15px * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

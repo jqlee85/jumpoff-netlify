@@ -13,7 +13,6 @@ class HomeSectionThree extends Component {
       <div className="home-section-content">
           <h2>Portfolio</h2>
           <PortfolioItem/>
-          <PortfolioItem/>
       </div>
     </section>
   }
