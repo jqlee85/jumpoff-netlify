@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './TransformBox.css';
 import {Link} from 'react-router-dom';
-import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
+import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-color-vibrant.jpg';
 
 export class TransformBox extends Component {
 
@@ -68,6 +68,12 @@ export class TransformBox extends Component {
     var rotateX = ( this.mouse.y / offsetHeight * 40 ).toFixed(2);
     var rotateY = ( this.mouse.x / offsetWidth * 40 ).toFixed(2);
     
+    if (rotateX > 20) rotateX = 20;
+    if (rotateX < -20) rotateX = -20;
+    if (rotateY > 20) rotateY = 20;
+    if (rotateY < -20) rotateY = -20;
+    //TODO add maximum rotate values
+
     // console.log('this.mouse.x: '+this.mouse.x);
     // console.log('this.mouse.y: '+this.mouse.y);
     // console.log('halfHeight: '+offsetHeight)
@@ -106,16 +112,14 @@ export class TransformBox extends Component {
 
     return <div className={classNames} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onMouseMove={this.mouseMove.bind(this)} ref={this.container}>
       <div className="jo-transform-box-inner" ref={this.inner} >
-        <div className="jo-transform-box-bg-image" style={{backgroundImage: "url(" + theBackgroundImage + ")"}}></div>
-        <div className="jo-transform-box-black-bg"></div>
-        <div className="jo-gradient-border-wrapper">
-          <div className="jo-gradient-border"></div>
-        </div>
-        <div className="jo-transform-box-content-wrapper">
-          <div className="jo-transform-box-content">
-            <Link to='/'><h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
-            <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
-            <Link to='/'><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
+        <div className="jo-transform-box-inner-container">
+          <div className="jo-transform-box-bg-image" style={{backgroundImage: "url(" + theBackgroundImage + ")"}}></div>
+          <div className="jo-transform-box-content-wrapper">
+            <div className="jo-transform-box-content">
+              <Link to='/'><h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
+              <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
+              <Link to='/'><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
+            </div>
           </div>
         </div>
       </div>
