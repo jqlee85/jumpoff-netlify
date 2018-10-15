@@ -1,4 +1,5 @@
 import Blog from "./components/Blog/Blog";
+import Portfolio from "./components/Portfolio/Portfolio";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
@@ -31,6 +32,12 @@ const routes = [
     exact: true,
     props: {},
     component: Blog
+  },
+  {
+    path: "/portfolio",
+    exact: true,
+    props: {},
+    component: Portfolio
   },
   {
     path: "/work",
