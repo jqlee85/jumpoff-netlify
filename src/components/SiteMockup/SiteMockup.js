@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
 import styles from './SiteMockup.css';
 
-
-//Temp
-import theBackgroundImage from '../../public/images/reservation-wordpress-theme-1.jpg';
-
 export class SiteMockup extends Component {
   
   constructor(props) {
@@ -24,7 +20,7 @@ export class SiteMockup extends Component {
           </svg>
         }
         <div className="jo-site-mockup-container">
-          <img src={theBackgroundImage}/>
+          <img src={this.props.image}/>
         </div>
       </div>
     );

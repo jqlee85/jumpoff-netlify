@@ -4,9 +4,8 @@
   height: auto;
   box-shadow: 1.4rem 2.4rem 4.8rem 0.6rem rgba(0,0,0,.12);
   font-size: 0px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  overflow:hidden;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .jo-mockup-mobile {
   max-width: 400px;
@@ -22,8 +21,6 @@
   width: 100%;
   height: auto;
   background: #fff;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   overflow:hidden;
 }
 .jo-mockup-mobile .jo-site-mockup-container {

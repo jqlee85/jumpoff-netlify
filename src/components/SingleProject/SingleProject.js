@@ -6,6 +6,9 @@ import SiteMockup from '../SiteMockup/SiteMockup';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
+//Temp
+import theBackgroundImage from '../../public/images/reservation-wordpress-theme-1.jpg';
+
 const SINGLE_PROJECT_QUERY = gql`
   query detailView($slug: String!){
     projectBy(slug: $slug) {
@@ -44,7 +47,7 @@ class SingleProject extends Component {
               return (
                 <div>
                 <Post post={data.projectBy}/>
-                <SiteMockup device=""/>
+                <SiteMockup device="" image={data.projectBy.featuredImage.sourceUrl}/>
                 </div>
                 
               );
