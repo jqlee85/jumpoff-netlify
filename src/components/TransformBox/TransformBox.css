@@ -12,7 +12,13 @@
   transition: all .8s cubic-bezier(.42,0,0,1);
   will-change: transform;
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
+  color: #fff;
+  cursor: pointer;
 }
+.jo-transform-box-inner h1, .jo-transform-box-inner h2, .jo-transform-box-inner h3, .jo-transform-box-inner p, .jo-transform-box-inner a {
+  color: #fff;
+} 
+
 .jo-transform-box-inner-container {
   position: relative;
   width: 100%;

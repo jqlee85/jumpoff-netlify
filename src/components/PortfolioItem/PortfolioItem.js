@@ -10,11 +10,12 @@ export class PortfolioItem extends Component {
 
   render(){
     
+
     let classNames = this.props.classNames ? this.props.classNames : '';
-    classNames += ' jo-portfolio-item';
+    classNames += ' jo-home-portfolio-item';
 
     return <div className={classNames}>
-      <TransformBox/>
+      <TransformBox project={this.props.post}/>
     </div>;
   }
 }

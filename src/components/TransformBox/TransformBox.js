@@ -105,22 +105,30 @@ export class TransformBox extends Component {
 
   render(){
 
+    let id = this.props.project.id;
+    let slug = this.props.project.slug;
+    let postID = 'jo-project-id_' + id;
+    let title = this.props.project.title;
+    let featuredImage = this.props.project.featuredImage.sourceUrl;
+    let projectLink = '/portfolio/' + slug;
+
     let classNames = this.props.classNames ? this.props.classNames : '';
     classNames += ' jo-transform-box';
-    let title = 'Project Title';
     let description = 'This is the description';
 
     return <div className={classNames} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onMouseMove={this.mouseMove.bind(this)} ref={this.container}>
       <div className="jo-transform-box-inner" ref={this.inner} >
         <div className="jo-transform-box-inner-container">
-          <div className="jo-transform-box-bg-image" style={{backgroundImage: "url(" + theBackgroundImage + ")"}}></div>
-          <div className="jo-transform-box-content-wrapper">
-            <div className="jo-transform-box-content">
-              <Link to='/'><h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
-              <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
-              <Link to='/'><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
+          <div className="jo-transform-box-bg-image" style={{backgroundImage: "url(" + featuredImage + ")"}}></div>
+          <Link to={projectLink}>
+            <div className="jo-transform-box-content-wrapper">
+              <div className="jo-transform-box-content">
+                <h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/>
+                <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
+                <p className="jo-portfolio-item-see-more">See More</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>;
