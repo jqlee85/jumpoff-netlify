@@ -8,6 +8,9 @@ class Post extends Component {
 
   render(){
     
+    console.log(this.props);
+    console.log(this.props.project);
+
     let id = this.props.post.id;
     let slug = this.props.post.slug;
     let postID = 'jo-post-id_' + id;

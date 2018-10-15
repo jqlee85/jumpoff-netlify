@@ -2,6 +2,7 @@ import Blog from "./components/Blog/Blog";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
+import SingleProject from "./components/SingleProject/SingleProject";
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: "/blog/:post_slug",
     props: {},
     component: SinglePost
+  },
+  {
+    path: "/portfolio/:post_slug",
+    props: {},
+    component: SingleProject
   },
   {
     path: "/blog",
