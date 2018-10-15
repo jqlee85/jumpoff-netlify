@@ -1,0 +1,38 @@
+.jo-site-mockup{
+  width: 800px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 1.4rem 2.4rem 4.8rem 0.6rem rgba(0,0,0,.12);
+  font-size: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow:hidden;
+}
+.jo-mockup-mobile {
+  max-width: 400px;
+  background: #f1f1f1;
+  border-radius: 10px;
+  padding: 25px 15px;
+}
+.jo-site-mockup-header {
+  width: 100%;
+  height: auto;
+}
+.jo-site-mockup-container {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow:hidden;
+}
+.jo-mockup-mobile .jo-site-mockup-container {
+  background: #999;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.jo-site-mockup-container img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}

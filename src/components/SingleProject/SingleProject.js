@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './SingleProject.css';
 import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
 import Post from '../Post/Post';
+import SiteMockup from '../SiteMockup/SiteMockup';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -41,7 +42,11 @@ class SingleProject extends Component {
               if (loading) return (<LoadingRectangles/>);
               if (error) return (<p>Error Loading Project</p>);
               return (
+                <div>
                 <Post post={data.projectBy}/>
+                <SiteMockup device=""/>
+                </div>
+                
               );
             }}  
           </Query>
