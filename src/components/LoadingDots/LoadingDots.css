@@ -12,11 +12,11 @@
   display: inline-block;
   position: absolute;
   top: 0;
-  background-color: #000;
-  -webkit-animation: jo-chasingDotsBounce 2s, bg-rainbow 6s infinite;
-  -ms-animation: jo-chasingDotsBounce 2s, bg-rainbow 6s infinite;
-  -o-animation: jo-chasingDotsBounce 2s, bg-rainbow 6s infinite;
-  animation: jo-chasingDotsBounce 2s, bg-rainbow 6s infinite;
+  background-color: #191919;
+  -webkit-animation: jo-chasingDotsBounce 2s;
+  -ms-animation: jo-chasingDotsBounce 2s;
+  -o-animation: jo-chasingDotsBounce 2s;
+  animation: jo-chasingDotsBounce 2s;
   border-radius: 100%;
 }
 .jo-chasing-dots .jo-dot-2 {
