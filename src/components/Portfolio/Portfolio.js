@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Portfolio.css';
-import Post from '../Post/Post';
+import ProjectContent from '../ProjectContent/ProjectContent';
 import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -17,6 +17,14 @@ const PORTFOLIO_PROJECTS_QUERY = gql`
           content
           featuredImage {
             sourceUrl
+          }
+          categoryProjects {
+            edges {
+              node {
+                id
+                name
+              }
+            }
           }
         }
       }
@@ -38,7 +46,7 @@ class Portfolio extends Component {
             if (error) return (<p>Error Loading Post</p>);
             return (
               data.projects.edges.map(({ node }) => (
-                <Post post={node} key={`${node.id}`} path={this.props.path}/>
+                <ProjectContent post={node} key={`${node.id}`} path={this.props.path}/>
               ))
             );
           }}  

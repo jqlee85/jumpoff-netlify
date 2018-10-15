@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import styles from './Post.css';
+import styles from './ProjectContent.css';
 import {Link} from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import SiteMockup from '../SiteMockup/SiteMockup';
 
 
-class Post extends Component {
+class ProjectContent extends Component {
 
   render(){
 
@@ -14,7 +15,7 @@ class Post extends Component {
     let title = this.props.post.title;
     let content = this.props.post.content;
     let featuredImage = this.props.post.featuredImage;
-    let postLink = '/blog/' + slug;
+    let postLink = '/portfolio/' + slug;
     
     return <article id={postID} data-post-id={id} className="jo-post">
       { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
@@ -29,10 +30,12 @@ class Post extends Component {
         <meta name="url" content={postLink} />
         { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
       </Helmet>
+      <SiteMockup device="" image={featuredImage.sourceUrl}/>
       <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
+      
     </article>
   }
 }
 
-export default Post;
+export default ProjectContent;
 

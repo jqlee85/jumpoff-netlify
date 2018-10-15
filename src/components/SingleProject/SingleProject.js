@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import styles from './SingleProject.css';
 import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
-import Post from '../Post/Post';
-import SiteMockup from '../SiteMockup/SiteMockup';
+import ProjectContent from '../ProjectContent/ProjectContent';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-//Temp
-import theBackgroundImage from '../../public/images/reservation-wordpress-theme-1.jpg';
 
 const SINGLE_PROJECT_QUERY = gql`
   query detailView($slug: String!){
@@ -19,6 +16,14 @@ const SINGLE_PROJECT_QUERY = gql`
       content
       featuredImage {
         sourceUrl
+      }
+      categoryProjects {
+        edges {
+          node {
+            id
+            name
+          }
+        }
       }
     }
   }
@@ -45,11 +50,7 @@ class SingleProject extends Component {
               if (loading) return (<LoadingRectangles/>);
               if (error) return (<p>Error Loading Project</p>);
               return (
-                <div>
-                <Post post={data.projectBy}/>
-                <SiteMockup device="" image={data.projectBy.featuredImage.sourceUrl}/>
-                </div>
-                
+                <ProjectContent post={data.projectBy}/>
               );
             }}  
           </Query>
