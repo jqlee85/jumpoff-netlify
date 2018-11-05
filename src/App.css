@@ -278,10 +278,15 @@ section {
 /* React Transitions */
 .fade-enter {
   opacity: 0;
-  z-index: 1;
 }
-
-.fade-enter.fade-enter-active {
+.fade-enter-active {
   opacity: 1;
-  transition: opacity 250ms ease-in;
+  transition: opacity 600ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 400ms ease-in;
 }

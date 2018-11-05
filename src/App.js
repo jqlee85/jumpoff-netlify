@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import routes from "./routes";
 import {PropsRoute} from 'react-router-with-props';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { withRouter } from "react-router";
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -98,47 +99,49 @@ class App extends Component {
     if (this.state.navToggled) appClasses += ' app-menu-toggled';
     if (this.state.navFadeToggled) appClasses += ' nav-fade';
     if (this.state.appScrolled) appClasses += ' ' + this.state.appScrolledClass;
-    return (<Router>
-      <Route render={({ location }) => (
-        <div id="App" className={appClasses}>
-          <Nav 
-            menuToggled={this.state.navToggled} 
-            userLogin={this.props.requestUserLogin} 
-            userData={this.props.user} 
-            userLogout={this.props.userLogout}
-            toggleNav={this.toggleAppNav}
-            navFront={this.state.navFrontToggled}
-          />
-          <Header 
-            menuToggled={this.state.navToggled} 
-            userLogin={this.props.requestUserLogin} 
-            userData={this.props.user}
-            toggleNav={this.toggleAppNav}
-          />
-          <div className="main">
-            <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                classNames="fade"
-                timeout={300}
-              >
-                <Switch location={location}>
-                  {routes.map((route, i) => <PropsRoute 
-                    key={i}
-                    exact={route.exact} 
-                    path={route.path} 
-                    component={route.component} 
-                  />)}
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
+    return (
+        <Route render={({ location }) => (
+          
+          <div id="App" className={appClasses}>
+            <Nav 
+              menuToggled={this.state.navToggled} 
+              userLogin={this.props.requestUserLogin} 
+              userData={this.props.user} 
+              userLogout={this.props.userLogout}
+              toggleNav={this.toggleAppNav}
+              navFront={this.state.navFrontToggled}
+            />
+            <Header 
+              menuToggled={this.state.navToggled} 
+              userLogin={this.props.requestUserLogin} 
+              userData={this.props.user}
+              toggleNav={this.toggleAppNav}
+            />
+            <div className="main">
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="fade"
+                  timeout={600}
+                >
+                  <Switch location={location}>
+                    {routes.map((route, i) => <PropsRoute 
+                      key={i}
+                      exact={route.exact} 
+                      path={route.path} 
+                      component={route.component} 
+                    />)}
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      )}/>
-      </Router>
+          
+        )}/>
+      
     );
   }
 }
 
-export default App;
+export default withRouter(App);
