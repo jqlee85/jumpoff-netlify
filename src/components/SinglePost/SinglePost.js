@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import styles from './SinglePost.css';
-import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
+import LoadingShape from '../LoadingShape/LoadingShape';
 import Post from '../Post/Post';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+
 
 const SINGLE_POST_QUERY = gql`
   query detailView($slug: String!){
@@ -37,8 +38,10 @@ class SinglePost extends Component {
       <div className="jo-content">
         <div className="single-post">
           <Query query={SINGLE_POST_QUERY} variables={slug}>
-            {({ loading, error, data }) => {
-              if (loading) return (<LoadingRectangles/>);
+            {({ loading, error, data }) => {          
+              if (loading) return (
+                <LoadingShape/>
+              );
               if (error) return (<p>Error Loading Post</p>);
               return (
                 <Post post={data.postBy}/>

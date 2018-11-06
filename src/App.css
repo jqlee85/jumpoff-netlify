@@ -285,3 +285,17 @@ section {
   opacity: 0;
   transition: opacity 600ms ease-in;
 }
+.loading-enter {
+  opacity: 0;
+}
+.loading-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in;
+}
+.loading-exit {
+  opacity: 1;
+}
+.loading-exit-active {
+  opacity: 0;
+  transition: opacity 5000ms ease-in;
+}
