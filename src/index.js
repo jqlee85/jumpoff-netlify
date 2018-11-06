@@ -5,7 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { ApolloProvider } from 'react-apollo';
 import client from './graphql/apolloClient';
-import ScrollToTop from 'react-router-scroll-top';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(

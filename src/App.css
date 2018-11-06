@@ -12,7 +12,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
+  margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -25,7 +25,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -43,13 +43,8 @@ table {
 	border-spacing: 0;
 }
 /* End CSS Reset */
-html {
-  overflow: hidden;
-  height: 100%;
-}
 body {
-  height: 100%;
-  overflow: auto;
+  overflow: visible;
   min-height: 100%;
   min-height: 100vh;
   font-family: 'Cerebri', Helvetica, Arial, sans-serif;
@@ -288,5 +283,5 @@ section {
 }
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 400ms ease-in;
+  transition: opacity 600ms ease-in;
 }
