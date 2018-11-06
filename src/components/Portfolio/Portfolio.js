@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import styles from './Portfolio.css';
 import ProjectContent from '../ProjectContent/ProjectContent';
-import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
+import LoadingShape from '../LoadingShape/LoadingShape';
+import NotFound from '../NotFound/NotFound';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -42,8 +43,8 @@ class Portfolio extends Component {
         <div className="jo-content">
         <Query query={PORTFOLIO_PROJECTS_QUERY}>
           {({ loading, error, data }) => {
-            if (loading) return (<LoadingRectangles/>);
-            if (error) return (<p>Error Loading Post</p>);
+            if (loading) return (<LoadingShape/>);
+            if (error) return (<NotFound/>);
             return (
               data.projects.edges.map(({ node }) => (
                 <ProjectContent post={node} key={`${node.id}`} path={this.props.path}/>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './SinglePage.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
+import NotFound from '../NotFound/NotFound';
 import Post from '../Post/Post';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -33,7 +34,7 @@ const SinglePage = ({ match }) => {
             <Query query={SINGLE_PAGE_QUERY} variables={uri}>
               {({ loading, error, data }) => {
                 if (loading) return (<LoadingShape/>);
-                if (error) return (<p>Error Loading Post</p>);
+                if (error) return (<NotFound/>);
                 return (
                     <Post post={data.pageBy}/>
                 );
