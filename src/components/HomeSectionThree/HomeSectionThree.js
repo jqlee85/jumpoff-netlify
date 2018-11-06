@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './HomeSectionThree.css';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
-import LoadingDots from '../LoadingDots/LoadingDots';
+import LoadingShape from '../LoadingShape/LoadingShape';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -35,7 +35,7 @@ class HomeSectionThree extends Component {
           <h2>Portfolio</h2>
           <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
           {({ loading, error, data }) => {
-            if (loading) return (<LoadingDots/>);
+            if (loading) return (<LoadingShape/>);
             if (error) return (<p>Error Loading Post</p>);
             return (
               data.projects.edges.map(({ node }) => (

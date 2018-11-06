@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './SingleProject.css';
-import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
+import LoadingShape from '../LoadingShape/LoadingShape';
 import ProjectContent from '../ProjectContent/ProjectContent';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -47,7 +47,7 @@ class SingleProject extends Component {
         <div className="single-project">
           <Query query={SINGLE_PROJECT_QUERY} variables={slug}>
             {({ loading, error, data }) => {
-              if (loading) return (<LoadingRectangles/>);
+              if (loading) return (<LoadingShape/>);
               if (error) return (<p>Error Loading Project</p>);
               return (
                 <ProjectContent post={data.projectBy}/>

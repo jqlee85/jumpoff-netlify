@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Blog.css';
 import Post from '../Post/Post';
-import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
+import LoadingShape from '../LoadingShape/LoadingShape';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -34,7 +34,7 @@ class Blog extends Component {
         <div className="jo-content">
         <Query query={LATEST_POSTS_QUERY}>
           {({ loading, error, data }) => {
-            if (loading) return (<LoadingRectangles/>);
+            if (loading) return (<LoadingShape/>);
             if (error) return (<p>Error Loading Post</p>);
             return (
               data.posts.edges.map(({ node }) => (

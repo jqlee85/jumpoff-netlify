@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './SinglePage.css';
-import LoadingRectangles from '../LoadingRectangles/LoadingRectangles';
+import LoadingShape from '../LoadingShape/LoadingShape';
 import Post from '../Post/Post';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -32,7 +32,7 @@ const SinglePage = ({ match }) => {
             {/* Check to see if post exists in cache first, if so*/}
             <Query query={SINGLE_PAGE_QUERY} variables={uri}>
               {({ loading, error, data }) => {
-                if (loading) return (<LoadingRectangles/>);
+                if (loading) return (<LoadingShape/>);
                 if (error) return (<p>Error Loading Post</p>);
                 return (
                     <Post post={data.pageBy}/>
