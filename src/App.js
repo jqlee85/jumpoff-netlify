@@ -48,7 +48,7 @@ class App extends Component {
   handleScroll = (e) => {
     let appScrolled = this.state.appScrolled;
     let target = typeof(e.srcElement) !== 'undefined' ? e.srcElement : e.target;
-    let yPos = target.scrollTop;
+    let yPos = target.scrollingElement.scrollTop;
     if ( yPos >= 60 && !appScrolled ) {
       this.toggleHeaderSolid();
     } else if ( yPos < 60 && appScrolled ) {
@@ -57,6 +57,7 @@ class App extends Component {
   }
 
   toggleHeaderSolid = () => {
+    console.log('toggleHeaderSolid');
     this.setState(prevState => ({
       appScrolled: !prevState.appScrolled
     }));

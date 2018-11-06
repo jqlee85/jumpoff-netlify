@@ -17,8 +17,17 @@ class ProjectContent extends Component {
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/portfolio/' + slug;
     
+    let headerStyles = {
+      backgroundImage: 'url('+featuredImage.sourceUrl+')'
+    }
+
     return <article id={postID} data-post-id={id} className="jo-post">
-      { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
+      { featuredImage && 
+        <div className="jo-project-header" style={headerStyles}>
+          <div className="jo-project-header-overlay"></div>
+          <h1>{title}</h1>
+        </div> 
+      }
       { !this.props.single && 
         <Link to={postLink}><h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
       }

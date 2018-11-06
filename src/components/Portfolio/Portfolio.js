@@ -38,9 +38,7 @@ class Portfolio extends Component {
   render(){
     
     return (
-    <section className="portfolio">
-      <div className="jo-row">
-        <div className="jo-content">
+    <section className="jo-portfolio">
         <Query query={PORTFOLIO_PROJECTS_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return (<LoadingShape/>);
@@ -52,8 +50,6 @@ class Portfolio extends Component {
             );
           }}  
         </Query>
-        </div>
-      </div>
     </section>);
   }
 }

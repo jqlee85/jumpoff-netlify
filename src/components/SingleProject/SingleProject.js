@@ -43,20 +43,18 @@ class SingleProject extends Component {
     console.log(slug);
 
     return <section className="projects">
-    <div className="jo-row">
-      <div className="jo-content">
-        <div className="single-project">
-          <Query query={SINGLE_PROJECT_QUERY} variables={slug}>
-            {({ loading, error, data }) => {
-              if (loading) return (<LoadingShape/>);
-              if (error) return (<NotFound/>);
-              return (
-                <ProjectContent post={data.projectBy}/>
-              );
-            }}  
-          </Query>
-        </div>
-      </div>
+    <div className="jo-row">      
+      <div className="single-project">
+        <Query query={SINGLE_PROJECT_QUERY} variables={slug}>
+          {({ loading, error, data }) => {
+            if (loading) return (<LoadingShape/>);
+            if (error) return (<NotFound/>);
+            return (
+              <ProjectContent post={data.projectBy}/>
+            );
+          }}  
+        </Query>
+      </div>      
     </div>
   </section>
   }
