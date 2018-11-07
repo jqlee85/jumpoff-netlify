@@ -16,6 +16,7 @@ class WorkHeader extends Component {
     
     let bgImage = this.props.bgImage ? this.props.bgImage : theBackgroundImage;
     let title = this.props.title ? this.props.title : 'Work Title';
+    let number = this.props.number ? this.props.number : false;
     let overlayColor = this.props.overlayColor ? this.props.overlayColor : 'rgba(20, 20, 20,.5)';
 
     let headerStyles = {
@@ -29,7 +30,7 @@ class WorkHeader extends Component {
     return <div className="jo-work-header" style={headerStyles}>
       <div className="jo-work-header-overlay" style={overlayStyles}></div>
       <div className="jo-work-header-content">
-        <h3>.01</h3><h1 className="jo-work-header-title">{this.props.title}</h1>
+        {number && <h3>{number}</h3>}<h1 className="jo-work-header-title">{this.props.title}</h1>
       </div>
     </div>;
   } 

@@ -12,10 +12,10 @@
   
 }
 #scrolljo-scroll-down {
-  animation: animateHeight 1.4s linear .3s 4;
+  animation: animateHeight 1.4s linear .3s infinite;
 }
 #jo-scroll-down-circle-shape {
-  animation: animateShape 1.6s ease-in-out 4;
+  animation: animateShape 1.6s ease-in-out infinite;
 }
 @keyframes animateShape {
   50% {

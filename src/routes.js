@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
 import SingleProject from "./components/SingleProject/SingleProject";
 import WorkHTMLCSSJS from "./components/WorkHTMLCSSJS/WorkHTMLCSSJS";
+import WorkReactJS from "./components/WorkReactJS/WorkReactJS";
+import WorkWordPress from "./components/WorkWordPress/WorkWordPress";
 
 const routes = [
   {
@@ -54,12 +56,12 @@ const routes = [
   {
     path: "/work/wordpress",
     props: {},
-    component: SingleProject
+    component: WorkWordPress
   },
   {
     path: "/work/react-js",
     props: {},
-    component: SingleProject
+    component: WorkReactJS
   },
   {
     path: "/resume",
