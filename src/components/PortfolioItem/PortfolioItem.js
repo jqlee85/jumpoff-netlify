@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styles from './PortfolioItem.css';
 import TransformBox from '../TransformBox/TransformBox';
 
-export class PortfolioItem extends Component {
+class PortfolioItem extends Component {
 
   constructor(props) {
     super(props);

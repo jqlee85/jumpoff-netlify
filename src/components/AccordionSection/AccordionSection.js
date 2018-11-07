@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './AccordionSection.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 // import { withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -35,7 +36,7 @@ function AccordionSection(props) {
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <a><button className="accordion-button black">Learn More</button></a>
+          <Link to="/work/html-css-js"><button className="accordion-button black">Learn More</button></Link>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>
@@ -47,7 +48,7 @@ function AccordionSection(props) {
           <p>
             Whether you need a simple blog or an E-Commerce site, a customized WordPress site may be the perfect solution. As the most popular CMS in the world, WordPress has been battle-tested and has an un-paralleled ecosystem of plugins and themes. We have more than seven years of experience building WordPress sites, premium themes and custom plugins to help businesses achieve their goals.
           </p>
-          <a><button className="accordion-button black">Learn More</button></a>
+          <Link to="/work/wordpress"><button className="accordion-button black">Learn More</button></Link>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>
@@ -59,7 +60,7 @@ function AccordionSection(props) {
           <p>
             Users today expect fast, app-like experiences when using the web. Full page refreshes can be slow and choppy, so we build universal web applications that leverage client-side apps and server-side rendering to create the fast, modern experience that users expect without sacrificing SEO.
           </p>
-          <a><button className="accordion-button black">Learn More</button></a>
+          <Link to="/work/react-js"><button className="accordion-button black">Learn More</button></Link>
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>

@@ -4,6 +4,7 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
 import SingleProject from "./components/SingleProject/SingleProject";
+import WorkHTMLCSSJS from "./components/WorkHTMLCSSJS/WorkHTMLCSSJS";
 
 const routes = [
   {
@@ -44,6 +45,21 @@ const routes = [
     exact: true,
     props: {},
     component: SinglePage
+  },
+  {
+    path: "/work/html-css-js",
+    props: {},
+    component: WorkHTMLCSSJS
+  },
+  {
+    path: "/work/wordpress",
+    props: {},
+    component: SingleProject
+  },
+  {
+    path: "/work/react-js",
+    props: {},
+    component: SingleProject
   },
   {
     path: "/resume",
