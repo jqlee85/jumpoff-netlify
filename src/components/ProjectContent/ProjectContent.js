@@ -21,17 +21,7 @@ class ProjectContent extends Component {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
     }
 
-    return <article id={postID} data-post-id={id} className="jo-post">
-      { featuredImage && 
-        <div className="jo-project-header" style={headerStyles}>
-          <div className="jo-project-header-overlay"></div>
-          <h1>{title}</h1>
-        </div> 
-      }
-      { !this.props.single && 
-        <Link to={postLink}><h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
-      }
-      { this.props.single && <h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/> }
+    return <article id={postID} data-post-id={id} className="jo-project-content">
       <Helmet>
         <title>JumpOff - {title}</title>
         <meta name="title" content={title} />
@@ -39,7 +29,21 @@ class ProjectContent extends Component {
         <meta name="url" content={postLink} />
         { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
       </Helmet>
-      <SiteMockup device="" image={featuredImage.sourceUrl}/>
+      
+      <div className="jo-project-content-header">
+        <div className="jo-project-mockups">
+          <SiteMockup device="" image={featuredImage.sourceUrl}/>
+          <SiteMockup device="mobile" image={featuredImage.sourceUrl}/>
+        </div>
+        <div className="jo-project-info">
+          <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
+          <p>Lorem ipsum project description. This is a project description. This is the project description oh yeah yeah yeah. Whacka doodle.</p>
+          <button>Visit Project</button>
+        </div>
+        
+        
+      </div>
+      
       <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
       
     </article>
