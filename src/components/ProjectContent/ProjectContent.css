@@ -9,26 +9,30 @@
   position:relative;
   width: 100%;
   height: auto;
-  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
   padding: 60px 20px;
   display: flex;
 }
 .jo-project-mockups {
-  display: inline;
+  position: relative;
   width: 50%;
+  display: flex;
 }
 .jo-project-info {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+
 }
 .jo-project-content-header .jo-mockup-desktop {
-  /* position:absolute; */
   width: 500px;
-  height:auto;
   z-index: 5;
 }
 .jo-project-content-header .jo-mockup-mobile {
-  /* position: absolute; */
+  position: absolute;
   width: 300px;
   height: auto;
   z-index: 10;
@@ -73,12 +77,21 @@
     line-height: 160%;    
   }
 }
-@media screen and ( min-width: 800px ) {
-  
+@media screen and ( max-width: 800px ) {
+  .jo-project-content-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .jo-project-mockups, .jo-project-info {
+    display: block;
+    width: 100%;
+  }
 }
 @media screen and ( min-width: 601px ) and ( max-width: 800px ) {
   .jo-project-content {
-    height: 40vh;
+    
   }
   .jo-project-content-content {
     padding: 0px 10px 30px 30px;
@@ -109,8 +122,9 @@
 }
 @media screen and ( max-width: 600px ) {
   .jo-project-content {
-    height: 40vh;
+    
   }
+  
   .jo-project-content-content {
     padding: 0px 5px 25px 25px;
   }

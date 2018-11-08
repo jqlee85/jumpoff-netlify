@@ -21,30 +21,31 @@ class ProjectContent extends Component {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
     }
 
-    return <article id={postID} data-post-id={id} className="jo-project-content">
-      <Helmet>
-        <title>JumpOff - {title}</title>
-        <meta name="title" content={title} />
-        <meta name="description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
-        <meta name="url" content={postLink} />
-        { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
-      </Helmet>
+    return <article id={postID} data-post-id={id} className="jo-project-content jo-post-content-wrapper">
       
-      <div className="jo-project-content-header">
-        <div className="jo-project-mockups">
-          <SiteMockup device="" image={featuredImage.sourceUrl}/>
-          <SiteMockup device="mobile" image={featuredImage.sourceUrl}/>
-        </div>
-        <div className="jo-project-info">
-          <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
-          <p>Lorem ipsum project description. This is a project description. This is the project description oh yeah yeah yeah. Whacka doodle.</p>
-          <button>Visit Project</button>
+        <Helmet>
+          <title>JumpOff - {title}</title>
+          <meta name="title" content={title} />
+          <meta name="description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
+          <meta name="url" content={postLink} />
+          { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
+        </Helmet>
+        
+        <div className="jo-project-content-header">
+          <div className="jo-project-mockups">
+            <SiteMockup device="" image={featuredImage.sourceUrl}/>
+            <SiteMockup device="mobile" image={featuredImage.sourceUrl}/>
+          </div>
+          <div className="jo-project-info">
+            <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
+            <p>Lorem ipsum project description. This is a project description. This is the project description oh yeah yeah yeah. Whacka doodle.</p>
+            <button>Visit Project</button>
+          </div>
+          
+          
         </div>
         
-        
-      </div>
-      
-      <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
+        <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
       
     </article>
   }

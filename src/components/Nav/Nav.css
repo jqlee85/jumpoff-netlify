@@ -24,16 +24,50 @@
   z-index: 50;
 }
 #main-nav.toggled {
-  opacity: 1; 
+  /* opacity: 1;  */
+  animation-duration: 0.3s;
+  animation-name: fade-in-down-full;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-name: fade-in-down-full;
+  -webkit-animation-fill-mode: forwards;
 }
 #main-nav ul {
-  opacity: 1;
+  opacity: 0;
   list-style-type: none;
   text-align: center;
   margin:auto;
-  padding: 0;
-  -webkit-transition: opacity .1s ease-in; /* Safari */
-  transition: opacity .1s ease-in;
+  padding: 0; 
+}
+#main-nav.toggled ul {
+  animation-duration: 0.3s;
+  animation-name: fade-in-up;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-name: fade-in-up;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.4s;
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-down-full {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .main-nav ul li {
   font-size: 3em;
