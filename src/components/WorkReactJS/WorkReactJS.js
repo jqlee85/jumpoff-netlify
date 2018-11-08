@@ -6,18 +6,29 @@ import ScrollDown from '../ScrollDown/ScrollDown';
 import NotFound from '../NotFound/NotFound';
 
 
-const WorkReactJS = () => {
+class WorkReactJS extends Component {
+
+  componentDidMount(){
+    this.props.checkHeaderSolid(true);
+  }
+
+  componentWillUnmount(){
+    this.props.checkHeaderSolid(false);
+  }
+
+  render(){
 
     return <section className="jo-work-page">
-      <WorkHeader title="React.js Development" number=".01" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
+      <WorkHeader title="React.js Development" number=".03" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
       <div className="jo-work-content">
         <div className="jo-content">
           <ScrollDown/>
           <LoadingShape/>
         </div>
       </div>
-    </section>
-  
+    </section>;
+  }
+
 }
 
 export default WorkReactJS;

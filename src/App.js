@@ -19,7 +19,10 @@ class App extends Component {
       navFadeToggled: false,
       navFrontToggled: false,
       appScrolled: false,
-      appScrolledClass: 'app-scrolled'
+      appScrolledClass: 'app-scrolled',
+      solidHeaderClass: 'solid-header',
+      keepTogglerWhite: false,
+      headerSolid: false
     };  
   }
 
@@ -46,21 +49,40 @@ class App extends Component {
   }
 
   handleScroll = (e) => {
-    let appScrolled = this.state.appScrolled;
+    // let appScrolled = this.state.appScrolled;
     let target = typeof(e.srcElement) !== 'undefined' ? e.srcElement : e.target;
     let yPos = target.scrollingElement.scrollTop;
-    if ( yPos >= 60 && !appScrolled ) {
-      this.toggleHeaderSolid();
-    } else if ( yPos < 60 && appScrolled ) {
-      this.toggleHeaderSolid();
+    if ( yPos >= 60 && !this.state.headerSolid ) {
+      this.makeHeaderSolid();
+    } else if ( yPos < 60 && this.state.headerSolid ) {
+      this.makeHeaderTransparent();
     }
   }
 
-  toggleHeaderSolid = () => {
-    console.log('toggleHeaderSolid');
+  makeHeaderSolid = () => {
+    console.log('makesolid');
     this.setState(prevState => ({
-      appScrolled: !prevState.appScrolled
+      headerSolid: true
     }));
+  }
+
+  makeHeaderTransparent = () => {
+    console.log('maketransp');
+    this.setState(prevState => ({
+      headerSolid: false
+    }));
+  }
+
+  checkHeaderSolid = (keepTogglerWhite) => {
+    if (keepTogglerWhite) {
+      this.setState(prevState => ({
+        keepTogglerWhite: true
+      }));
+    } else {
+      this.setState(prevState => ({
+        keepTogglerWhite: false
+      }));
+    }
   }
 
   toggleNavFade = () => {
@@ -99,7 +121,9 @@ class App extends Component {
     let appClasses = 'App';
     if (this.state.navToggled) appClasses += ' app-menu-toggled';
     if (this.state.navFadeToggled) appClasses += ' nav-fade';
+    if (this.state.keepTogglerWhite) appClasses += ' ' + 'keep-toggler-white';
     if (this.state.appScrolled) appClasses += ' ' + this.state.appScrolledClass;
+    if (this.state.headerSolid) appClasses += ' ' + this.state.solidHeaderClass;
     return (
         <Route render={({ location }) => (
           
@@ -131,6 +155,7 @@ class App extends Component {
                       exact={route.exact} 
                       path={route.path} 
                       component={route.component} 
+                      checkHeaderSolid={this.checkHeaderSolid}
                     />)}
                   </Switch>
                 </CSSTransition>

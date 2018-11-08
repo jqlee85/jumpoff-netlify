@@ -6,7 +6,21 @@ import ScrollDown from '../ScrollDown/ScrollDown';
 import NotFound from '../NotFound/NotFound';
 
 
-const WorkHTMLCSSJS = () => {
+class WorkHTMLCSSJS extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.checkHeaderSolid(true);
+  }
+
+  componentWillUnmount(){
+    this.props.checkHeaderSolid(false);
+  }
+
+  render() {
 
     return <section className="jo-work-page">
       <WorkHeader title="HTML/CSS/JS Development" number=".01" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
@@ -16,7 +30,9 @@ const WorkHTMLCSSJS = () => {
           <LoadingShape/>
         </div>
       </div>
-    </section>
+    </section>;
+  }
+    
   
 }
 

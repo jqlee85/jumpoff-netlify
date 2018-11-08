@@ -6,10 +6,19 @@ import ScrollDown from '../ScrollDown/ScrollDown';
 import NotFound from '../NotFound/NotFound';
 
 
-const WorkWordPress = () => {
+class WorkWordPress extends Component {
 
+  componentDidMount(){
+    this.props.checkHeaderSolid(true);
+  }
+
+  componentWillUnmount(){
+    this.props.checkHeaderSolid(false);
+  }
+    
+  render() {
     return <section className="jo-work-page">
-      <WorkHeader title="WordPress Development" number=".01" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
+      <WorkHeader title="WordPress Development" number=".02" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
       <div className="jo-work-content">
         <div className="jo-content">
           <ScrollDown/>
@@ -17,6 +26,8 @@ const WorkWordPress = () => {
         </div>
       </div>
     </section>
+  }
+    
   
 }
 

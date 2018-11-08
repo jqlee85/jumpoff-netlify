@@ -51,7 +51,7 @@ button#nav-icon:hover span {
 .app-menu-dark #nav-icon p {
   color: #000;
 } */
-.app-menu-toggled #nav-icon span, .app-scrolled #nav-icon span {
+.app-menu-toggled #nav-icon span, .solid-header #nav-icon span, .keep-toggler-white #header #nav-icon span {
   background-color: #fff;
 }
 #nav-icon span {
