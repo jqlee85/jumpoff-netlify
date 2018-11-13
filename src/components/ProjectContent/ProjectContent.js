@@ -21,7 +21,7 @@ class ProjectContent extends Component {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
     }
 
-    return <article id={postID} data-post-id={id} className="jo-project-content jo-post-content-wrapper">
+    return <article id={postID} data-post-id={id} className="jo-project-content">
       
         <Helmet>
           <title>JumpOff - {title}</title>

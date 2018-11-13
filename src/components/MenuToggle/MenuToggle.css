@@ -2,6 +2,13 @@
 button#nav-icon {
   border: none !important;
   outline: none !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 button#nav-icon {color:#000;}      /* unvisited link */
 button#nav-icon:visited {color:#000;}  /* visited link */
