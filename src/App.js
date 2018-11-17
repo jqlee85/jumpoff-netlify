@@ -22,7 +22,8 @@ class App extends Component {
       appScrolledClass: 'app-scrolled',
       solidHeaderClass: 'solid-header',
       keepTogglerWhite: false,
-      headerSolid: false
+      headerSolid: false,
+      navInitialized: false
     };  
   }
 
@@ -34,19 +35,11 @@ class App extends Component {
     window.removeEventListener('scroll', this.handleScroll, true);
   }
 
-  initializeMenuBar(){
-    // let appScrolledClass = this.state.appScrolledClass;
-    // let appScrolled = this.state.appScrolled;
-    // setTimeout(function(){
-    //   let target = typeof(e.srcElement) !== 'undefined' ? e.srcElement : e.target;
-    //   let yPos = target.scrollTop;
-    //   if ( yPos >= 60 && !appScrolled ) {
-    //     this.props.toggleHeaderSolid();
-    //   } else if ( yPos < 60 && appScrolled ) {
-    //     this.props.toggleHeaderSolid();
-    //   } 
-    // },500);
-  }
+  // initializeMenuBar(){
+  //   this.setState(prevState => ({
+  //     navInitialized: true
+  //   }));
+  // }
 
   handleScroll = (e) => {
     // let appScrolled = this.state.appScrolled;
@@ -90,6 +83,13 @@ class App extends Component {
   }
 
   toggleAppNav = () => {
+    
+    if ( this.state.navToggled && !this.state.navInitialized) {
+      this.setState(prevState => ({
+        navInitialized: true
+      }));
+    }
+    
     // Fade/Unfade Nav Items
     this.setState(prevState => ({
       navFadeToggled: !prevState.navFadeToggled
@@ -135,6 +135,7 @@ class App extends Component {
               userLogout={this.props.userLogout}
               toggleNav={this.toggleAppNav}
               navFront={this.state.navFrontToggled}
+              navInitialized={this.state.navInitialized}
             />
             <Header 
               menuToggled={this.state.navToggled} 

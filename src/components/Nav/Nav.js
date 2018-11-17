@@ -19,6 +19,7 @@ class Nav extends Component {
     let theClasses = 'main-nav';
     if (this.props.menuToggled) theClasses += ' toggled';
     if (this.props.navFront) theClasses += ' front';
+    if (this.props.navInitialized) theClasses += ' initialized';
     return <nav id="main-nav" className={theClasses}>
       <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
       <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/>
