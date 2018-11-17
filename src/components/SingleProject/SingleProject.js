@@ -6,7 +6,6 @@ import ProjectContent from '../ProjectContent/ProjectContent';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-
 const SINGLE_PROJECT_QUERY = gql`
   query detailView($slug: String!){
     projectBy(slug: $slug) {
@@ -15,6 +14,12 @@ const SINGLE_PROJECT_QUERY = gql`
       slug
       date
       content
+      projectDescription
+      projectLink
+      client
+      technologies
+      desktopScreenshot
+      mobileScreenshot
       featuredImage {
         sourceUrl
       }
@@ -39,8 +44,6 @@ class SingleProject extends Component {
   render(){ 
 
     let slug = { slug: this.props.match.params.post_slug }
-    console.log('slug:');
-    console.log(slug);
 
     return <section className="projects">
     <div className="jo-row">      

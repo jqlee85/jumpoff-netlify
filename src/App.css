@@ -54,6 +54,9 @@ body {
 body p {
   font-weight: 300;
 }
+h1, h2 {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
 h1,h2,h3,h4,h5,h6,a {
   font-family: 'Cerebri', Helvetica, Arial, sans-serif;
   font-weight: 600;

@@ -1,9 +1,17 @@
 import React, {Component} from 'react';
 import styles from './ProjectContent.css';
-import {Link} from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import SiteMockup from '../SiteMockup/SiteMockup';
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 
+const SCREENSHOT_QUERY = gql`
+  query screenshotView($mediaItemId: ID!){
+    mediaItemBy(mediaItemId: $mediaItemId){
+      sourceUrl
+    }
+  }
+`;
 
 class ProjectContent extends Component {
 
@@ -14,9 +22,16 @@ class ProjectContent extends Component {
     let postID = 'jo-post-id_' + id;
     let title = this.props.post.title;
     let content = this.props.post.content;
+    let description = this.props.post.projectDescription;
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/portfolio/' + slug;
-    
+    let projectLink = this.props.post.projectLink;
+    let client = this.props.post.client;
+    let technologies = this.props.post.technologies;
+    let desktopScreenshot = this.props.post.desktopScreenshot;
+    let desktopScreenshotId = { mediaItemId: desktopScreenshot }
+    let mobileScreenshot = this.props.post.mobileScreenshot;
+    let mobileScreenshotId = { mediaItemId: mobileScreenshot }
     let headerStyles = {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
     }
@@ -33,16 +48,32 @@ class ProjectContent extends Component {
         
         <div className="jo-project-content-header">
           <div className="jo-project-mockups">
-            <SiteMockup device="" image={featuredImage.sourceUrl}/>
-            <SiteMockup device="mobile" image={featuredImage.sourceUrl}/>
+            <Query query={SCREENSHOT_QUERY} variables={desktopScreenshotId}>
+              {({ loading, error, data }) => {
+                if (loading) return (<SiteMockup device="" image=""/>);
+                if (error) return (<SiteMockup device="" image=""/>);
+                return (
+                  <SiteMockup device="" image={data.mediaItemBy.sourceUrl}/>
+                );
+              }}  
+            </Query>
+            <Query query={SCREENSHOT_QUERY} variables={mobileScreenshotId}>
+              {({ loading, error, data }) => {
+                if (loading) return (<SiteMockup device="" image=""/>);
+                if (error) return (<SiteMockup device="" image=""/>);
+                return (
+                  <SiteMockup device="mobile" image={data.mediaItemBy.sourceUrl}/>
+                );
+              }}  
+            </Query>
           </div>
           <div className="jo-project-info">
             <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
-            <p>Lorem ipsum project description. This is a project description. This is the project description oh yeah yeah yeah. Whacka doodle.</p>
-            <button>Visit Project</button>
+            <p dangerouslySetInnerHTML={{__html: description }}/>
+            <a href={projectLink}><button>Visit Project</button></a>
+            <p dangerouslySetInnerHTML={{__html: client }}/>
+            <p dangerouslySetInnerHTML={{__html: technologies }}/>
           </div>
-          
-          
         </div>
         
         <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
