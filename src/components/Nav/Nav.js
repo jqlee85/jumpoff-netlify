@@ -26,6 +26,7 @@ class Nav extends Component {
       <ul className="menu">
         <li><Link to='/about' onClick={this.routeLinkClicked}>About</Link></li>
         <li><Link to='/portfolio' onClick={this.routeLinkClicked}>Work</Link></li>
+        <li><Link to='/contact' onClick={this.routeLinkClicked}>Contact</Link></li>
         <li><Link to='/blog' onClick={this.routeLinkClicked}>Blog</Link></li>
       </ul>
     </nav>;

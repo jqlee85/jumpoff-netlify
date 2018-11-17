@@ -110,7 +110,7 @@ button#nav-icon:hover span {
   -o-transition: -o-transform .15s ease-in-out, top .15s ease-in-out, left .15s ease-in-out;
   transition: transform .15s ease-in-out, top .15s ease-in-out, left .15s ease-in-out;
 }
-#nav-icon.toggled span {
+#nav-icon.toggled span:nth-child(1), #nav-icon.toggled span:nth-child(3) {
   width: 27px;
   width: 27px;
 }
