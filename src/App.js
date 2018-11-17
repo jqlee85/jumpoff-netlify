@@ -60,14 +60,14 @@ class App extends Component {
   }
 
   makeHeaderSolid = () => {
-    console.log('makesolid');
+    // console.log('makesolid');
     this.setState(prevState => ({
       headerSolid: true
     }));
   }
 
   makeHeaderTransparent = () => {
-    console.log('maketransp');
+    // console.log('maketransp');
     this.setState(prevState => ({
       headerSolid: false
     }));

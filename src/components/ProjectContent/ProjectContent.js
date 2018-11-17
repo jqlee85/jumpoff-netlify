@@ -48,7 +48,7 @@ class ProjectContent extends Component {
         
         <div className="jo-project-content-header">
           <div className="jo-project-mockups">
-            <Query query={SCREENSHOT_QUERY} variables={desktopScreenshotId}>
+            {desktopScreenshot && <Query query={SCREENSHOT_QUERY} variables={desktopScreenshotId}>
               {({ loading, error, data }) => {
                 if (loading) return (<SiteMockup device="" image=""/>);
                 if (error) return (<SiteMockup device="" image=""/>);
@@ -56,8 +56,8 @@ class ProjectContent extends Component {
                   <SiteMockup device="" image={data.mediaItemBy.sourceUrl}/>
                 );
               }}  
-            </Query>
-            <Query query={SCREENSHOT_QUERY} variables={mobileScreenshotId}>
+            </Query>}
+            {mobileScreenshot && <Query query={SCREENSHOT_QUERY} variables={mobileScreenshotId}>
               {({ loading, error, data }) => {
                 if (loading) return (<SiteMockup device="" image=""/>);
                 if (error) return (<SiteMockup device="" image=""/>);
@@ -65,7 +65,7 @@ class ProjectContent extends Component {
                   <SiteMockup device="mobile" image={data.mediaItemBy.sourceUrl}/>
                 );
               }}  
-            </Query>
+            </Query>}
           </div>
           <div className="jo-project-info">
             <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
