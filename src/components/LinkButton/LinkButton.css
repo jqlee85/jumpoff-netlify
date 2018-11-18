@@ -33,6 +33,8 @@
 .jo-link-button:hover button .button-arrow {
   width: 29px;
   opacity: 1;
+  animation: blinker 2s linear infinite;
+  -webkit-animation: blinker 2s linear infinite;
 }
 .jo-link-button button .button-arrow svg {
   position: absolute;
@@ -43,4 +45,11 @@
   transform: translateY(-50%);
   max-height: 20px;
   height: auto;
+}
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

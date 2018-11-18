@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import styles from './WorkHTMLCSSJS.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import WorkHeader from '../WorkHeader/WorkHeader';
-import ScrollDown from '../ScrollDown/ScrollDown';
-import NotFound from '../NotFound/NotFound';
 
 
 class WorkHTMLCSSJS extends Component {
@@ -26,7 +24,6 @@ class WorkHTMLCSSJS extends Component {
       <WorkHeader title="HTML/CSS/JS Development" number=".01" bgImage={false} overlayColor={'rgba(20,20,20,.4)'} />
       <div className="jo-work-content">
         <div className="jo-content">
-          <ScrollDown/>
           <LoadingShape/>
         </div>
       </div>
