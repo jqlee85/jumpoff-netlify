@@ -1,0 +1,24 @@
+.jo-link-button:hover {
+  cursor: pointer;
+}
+.jo-link-button button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: padding-right .3s;
+  -webkit-transition: padding-right .3s;
+}
+.jo-link-button:hover button {
+  padding-right: 60px;
+}
+.jo-link-button button .button-arrow {
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width .3s, opacity .3s;
+  -webkit-transition: width .3s, opacity .3s;
+}
+.jo-link-button:hover button .button-arrow {
+  width: 20px;
+  opacity: 1;
+}

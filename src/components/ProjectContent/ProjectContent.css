@@ -32,7 +32,8 @@
   justify-content: center;
   align-items: center;
   width: 45%;
-
+  box-sizing: border-box;
+  padding: 20px 40px;
 }
 .jo-project-info h1 {
   /* font-family: "Cerebri", Helvetica, sans-serif; */
@@ -50,10 +51,14 @@
 }
 
 .jo-project-content .jo-post-content-wrapper {
+  margin-top: 20px;
   max-width: 900px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .jo-project-technologies {
-  font-size: .9rem;
+  font-size: .8rem;
 }
 .jo-project-client .jo-project-client-text {
   /* font-weight: bold; */
@@ -92,6 +97,8 @@
     transform: translateY(-70%);
     right: 2%;
   }
+  
+  
 }
 @media screen and ( max-width: 1000px ) {
   .jo-project-content-header {
@@ -105,6 +112,10 @@
     display: block;
     width: 100%;
     margin: 40px auto;
+  }
+  .jo-project-info {
+    padding: 20px 40px;
+    max-width: 700px;
   }
   .jo-project-mockups .jo-mockup-desktop {
     position: relative;
@@ -194,7 +205,9 @@
     margin: 25px auto;
   }
 
-
+  .jo-project-info {
+    padding: 20px 20px;
+  }
 
   .jo-project-content-content {
     padding: 0px 5px 25px 25px;

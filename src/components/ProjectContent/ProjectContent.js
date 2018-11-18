@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './ProjectContent.css';
 import { Helmet } from 'react-helmet';
 import SiteMockup from '../SiteMockup/SiteMockup';
+import LinkButton from '../LinkButton/LinkButton';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -18,19 +19,19 @@ class ProjectContent extends Component {
   render(){
 
     let id = this.props.post.id;
-    let slug = this.props.post.slug;
+    let slug = this.props.post.slug || '';
     let postID = 'jo-post-id_' + id;
-    let title = this.props.post.title;
-    let content = this.props.post.content;
-    let description = this.props.post.projectDescription;
-    let featuredImage = this.props.post.featuredImage;
+    let title = this.props.post.title || '';
+    let content = this.props.post.content || '';
+    let description = this.props.post.projectDescription || false;
+    let featuredImage = this.props.post.featuredImage || false;
     let postLink = '/portfolio/' + slug;
-    let projectLink = this.props.post.projectLink;
-    let client = this.props.post.client;
-    let technologies = this.props.post.technologies;
-    let desktopScreenshot = this.props.post.desktopScreenshot;
+    let projectLink = this.props.post.projectLink || false;
+    let client = this.props.post.client || false;
+    let technologies = this.props.post.technologies || false;
+    let desktopScreenshot = this.props.post.desktopScreenshot || false;
     let desktopScreenshotId = { mediaItemId: desktopScreenshot }
-    let mobileScreenshot = this.props.post.mobileScreenshot;
+    let mobileScreenshot = this.props.post.mobileScreenshot || false;
     let mobileScreenshotId = { mediaItemId: mobileScreenshot }
     let headerStyles = {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
@@ -69,10 +70,10 @@ class ProjectContent extends Component {
           </div>
           <div className="jo-project-info">
             {title && <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>}
-            {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
             {technologies && <p className="jo-project-technologies" dangerouslySetInnerHTML={{__html: technologies }}/>}
+            {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
             {/* {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>} */}
-            {projectLink && <a href={projectLink} className="jo-project-header-project-link"><button>Visit Project</button></a>}
+            {projectLink && <LinkButton to={projectLink} external={true} classNames='jo-project-visit-project' text="Visit Project"/>}
           </div>
         
         </div>

@@ -204,6 +204,37 @@ section {
   100% {color: #cd5fa1;stroke:#cd5fa1;}
 }
 
+/* Background rainbow */
+/* Rainbow Hover */
+@-webkit-keyframes black-rainbow-background {
+  0% {background-color: #cd5fa1;}
+  23% {background-color: #f89c44;}
+  56% {background-color: #ef6085;}
+  89% {background-color: #f0ba45;}
+  100% {background-color: #cd5fa1;}
+}
+@-ms-keyframes black-rainbow-background {
+  0% {background-color: #cd5fa1;}
+  23% {background-color: #f89c44;}
+  56% {background-color: #ef6085;}
+  89% {background-color: #f0ba45;}
+  100% {background-color: #cd5fa1;}
+}
+@-o-keyframes black-rainbow-background {
+  0% {background-color: #cd5fa1;}
+  23% {background-color: #f89c44;}
+  56% {background-color: #ef6085;}
+  89% {background-color: #f0ba45;}
+  100% {background-color: #cd5fa1;}
+}
+@keyframes black-rainbow-background {
+  0% {background-color: #cd5fa1;}
+  23% {background-color: #f89c44;}
+  56% {background-color: #ef6085;}
+  89% {background-color: #f0ba45;}
+  100% {background-color: #cd5fa1;}
+}
+
 /* Media Queries */
 @media screen and ( min-width: 1201px ) {
   .jo-content {

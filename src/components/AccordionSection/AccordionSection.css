@@ -30,7 +30,7 @@
   font-size: 1.4rem;
   line-height: 160%;
 }
-.accordion-button {
+.accordion-button button {
   margin-top: 1.8rem;
 }
 .panel-divider {

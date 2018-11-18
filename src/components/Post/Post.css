@@ -27,7 +27,12 @@ article.jo-post {
   color: black;
 }
 .jo-post-content-wrapper {
-  padding-top: 60px;
+  margin-top: 20px;
+  text-align: left;
+}
+.jo-post-content-wrapper video, .jo-post-content-wrapper iframe {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 .jo-post-content-wrapper img {
   box-sizing: border-box;
