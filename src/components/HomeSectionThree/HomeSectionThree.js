@@ -14,8 +14,19 @@ const HOME_PORTFOLIO_PROJECTS_QUERY = gql`
           title
           slug
           date
+          projectDescription
+          client
+          technologies
           featuredImage {
             sourceUrl
+          }
+          categoryProjects {
+            edges {
+              node {
+                id
+                name
+              }
+            }
           }
         }
       }
@@ -40,7 +51,6 @@ class HomeSectionThree extends Component {
             return (
               data.projects.edges.map(({ node }) => (
                 <PortfolioItem post={node} key={`${node.id}`}/>
-                // <ProjectContent  path={this.props.path}/>
               ))
             );
           }}  

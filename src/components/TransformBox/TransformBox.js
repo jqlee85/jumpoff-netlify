@@ -111,10 +111,11 @@ export class TransformBox extends Component {
     let title = this.props.project.title;
     let featuredImage = this.props.project.featuredImage.sourceUrl;
     let projectLink = '/portfolio/' + slug;
+    let description = this.props.project.projectDescription;
+    let technologies = this.props.project.technologies;
 
     let classNames = this.props.classNames ? this.props.classNames : '';
     classNames += ' jo-transform-box';
-    let description = 'This is the description';
 
     return <div className={classNames} onMouseEnter={this.mouseEnter.bind(this)} onMouseLeave={this.mouseLeave.bind(this)} onMouseMove={this.mouseMove.bind(this)} ref={this.container}>
       <div className="jo-transform-box-inner" ref={this.inner} >
@@ -124,8 +125,8 @@ export class TransformBox extends Component {
             <div className="jo-transform-box-content-wrapper">
               <div className="jo-transform-box-content">
                 <h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/>
+                <p className="jo-portfolio-item-technologies" dangerouslySetInnerHTML={{ __html: technologies }}/>
                 <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
-                <p className="jo-portfolio-item-see-more">See More</p>
               </div>
             </div>
           </Link>

@@ -42,7 +42,7 @@ export class LinkButton extends Component {
     return (  
       <div className="jo-link-button-wrapper">
       {linkType == 'external' && 
-        <a href={to} className={classNames}>
+        <a href={to} className={classNames} target="_blank">
           <button style={buttonStyles}>
             <span className="button-text">{text}</span>
             <span className="button-arrow">
