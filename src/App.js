@@ -16,14 +16,13 @@ class App extends Component {
     super(props);
     this.state = { 
       navToggled: false,
-      navFadeToggled: false,
       navFrontToggled: false,
+      navInitialized: false,
       appScrolled: false,
       appScrolledClass: 'app-scrolled',
       solidHeaderClass: 'solid-header',
       keepTogglerWhite: false,
-      headerSolid: false,
-      navInitialized: false
+      headerSolid: false
     };  
   }
 
@@ -78,10 +77,6 @@ class App extends Component {
     }
   }
 
-  toggleNavFade = () => {
-    this.props.toggleNavFade();
-  }
-
   toggleAppNav = () => {
     
     if ( this.state.navToggled && !this.state.navInitialized) {
@@ -90,10 +85,6 @@ class App extends Component {
       }));
     }
     
-    // Fade/Unfade Nav Items
-    this.setState(prevState => ({
-      navFadeToggled: !prevState.navFadeToggled
-    }));
     // Change Navigation Z-Index
     if (this.state.navFrontToggled) {
       setTimeout(() => {
@@ -106,11 +97,8 @@ class App extends Component {
         navFrontToggled: !prevState.navFrontToggled
       }));
     }
-    // Toggle the Menu Opacity
+    // Toggle the Navigation
     setTimeout(() => {
-      this.setState(prevState => ({
-        navFadeToggled: !prevState.navFadeToggled
-      }));
       this.setState(prevState => ({
         navToggled: !prevState.navToggled
       }));

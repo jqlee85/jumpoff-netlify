@@ -74,6 +74,7 @@ class ProjectContent extends Component {
             <p dangerouslySetInnerHTML={{__html: client }}/>
             <p dangerouslySetInnerHTML={{__html: technologies }}/>
           </div>
+        
         </div>
         
         <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />

@@ -8,34 +8,34 @@
 .jo-project-content-header {
   position:relative;
   width: 100%;
-  height: auto;
-  min-height: 100vh;
+  height: 100vh;
   box-sizing: border-box;
-  padding: 60px 20px;
   display: flex;
+  border-bottom: 2px solid red;
 }
 .jo-project-mockups {
   position: relative;
-  width: 50%;
+  width: 55%;
+}
+.jo-project-mockups .jo-mockup-desktop {
+  height: auto;
+  z-index: 5;
+}
+.jo-project-mockups .jo-mockup-desktop:hover {
+  z-index: 15;
+}
+.jo-project-mockups .jo-mockup-mobile {
+  z-index: 10;
 }
 .jo-project-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 45%;
 
 }
-.jo-project-content-header .jo-mockup-desktop {
-  width: 500px;
-  z-index: 5;
-}
-.jo-project-content-header .jo-mockup-mobile {
-  position: absolute;
-  width: 300px;
-  height: auto;
-  z-index: 10;
-}
+
 @media screen and ( min-width: 1201px ) { 
   .jo-project-content-content {
     padding: 0px 40px 60px 60px;
@@ -51,6 +51,51 @@
 }
 @media screen and ( max-width: 1200px ) {
   
+}
+@media screen and ( min-width: 1001px ) {
+  .jo-project-mockups .jo-mockup-desktop {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 75%;
+    height: auto;
+    z-index: 5;
+  }
+  .jo-project-mockups .jo-mockup-mobile {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    top: 70%;
+    transform: translateY(-70%);
+    right: 2%;
+  }
+}
+@media screen and ( max-width: 1000px ) {
+  .jo-project-content-header {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .jo-project-mockups, .jo-project-info {
+    display: block;
+    width: 100%;
+  }
+  .jo-project-mockups .jo-mockup-desktop {
+    position: relative;
+    width: 60%;
+    left: 15%;
+    height: auto;
+    margin: 80px 0 0 0;
+  }
+  .jo-project-mockups .jo-mockup-mobile {
+    position: absolute;
+    width: 25%;
+    bottom: -30px;
+    right: 10%;
+  }
 }
 @media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
   .jo-project-content-content {
@@ -77,16 +122,7 @@
   }
 }
 @media screen and ( max-width: 800px ) {
-  .jo-project-content-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .jo-project-mockups, .jo-project-info {
-    display: block;
-    width: 100%;
-  }
+  
 }
 @media screen and ( min-width: 601px ) and ( max-width: 800px ) {
   .jo-project-content {

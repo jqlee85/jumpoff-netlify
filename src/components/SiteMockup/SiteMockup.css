@@ -1,5 +1,5 @@
 .jo-site-mockup{
-  width: 800px;
+  width: auto;
   max-width: 100%;
   height: auto;
   box-shadow: 1.4rem 2.4rem 4.8rem 0.6rem rgba(0,0,0,.12);
@@ -7,11 +7,11 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.jo-mockup-mobile {
-  max-width: 400px;
-  background: #f1f1f1;
+.jo-site-mockup.jo-mockup-mobile {
+  background: #ddd;
   border-radius: 10px;
-  padding: 25px 15px;
+  padding: 20px 15px;
+  box-shadow: -1.4rem 2.4rem 4.8rem 0.6rem rgba(0,0,0,.12);
 }
 .jo-site-mockup-header {
   width: 100%;

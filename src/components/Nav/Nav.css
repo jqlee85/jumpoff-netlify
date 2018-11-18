@@ -19,7 +19,7 @@
   transition: opacity .3s ease-in-out;
   overflow: hidden;
   
-  /* z-index: 0; */
+  z-index: 0;
 
 }
 #main-nav.initialized {
