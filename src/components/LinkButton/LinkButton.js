@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styles from './LinkButton.css';
 import {Link} from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 
 export class LinkButton extends Component {
@@ -12,38 +13,61 @@ export class LinkButton extends Component {
   render() {
     
     let to = this.props.to || '#';
-    let external = this.props.external || false;
-    let color = this.props.color || '';
+    let linkType = this.props.linkType || 'route';
+    let color = this.props.color || 'black';
     let hoverColor = this.props.hoverColor || '#000';
-    let text = this.props.text || 'Learn More';
-    let buttonStyles = {}    
+    let text = this.props.text || 'Learn More'; 
+    let textColor = "white";
+    let buttonStyles = {}  
 
     if (color == 'transparent') {
+      textColor = 'black';
       buttonStyles = {
         backgroundColor: 'rgba(255,255,255,0)',
         border: '1px solid black',
-        color: 'black'
+        color: textColor
       }
     } else {
+      textColor = 'white';
       buttonStyles = {
         backgroundColor: color,
-        color: 'white'
+        color: textColor,
+        border: '1px solid ' + color
       }
     }
     
-    let classNames = 'jo-link-button ' + this.props.classNames;
+    let classNames = 'jo-link-button ' + this.props.classNames + ' ' + linkType;
     
 
     return (  
       <div className="jo-link-button-wrapper">
-      {external && 
+      {linkType == 'external' && 
         <a href={to} className={classNames}>
-          <button style={buttonStyles}>{text}<span className="button-arrow">></span></button>
+          <button style={buttonStyles}>
+            <span className="button-text">{text}</span>
+            <span className="button-arrow">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 476.213 476.213">
+                <polygon fill={textColor} points="345.606,107.5 324.394,128.713 418.787,223.107 0,223.107 0,253.107 418.787,253.107 324.394,347.5 
+                  345.606,368.713 476.213,238.106 "/>
+              </svg>
+            </span>
+          </button>
         </a>
       }
-      {!external && 
+      {linkType == 'anchor' && 
+        <AnchorLink href={to} className={classNames} offset='80'>
+          <button style={buttonStyles}>
+            <span className="button-text">{text}</span>
+            <span className="button-arrow">></span>
+          </button>
+        </AnchorLink>
+      }
+      {linkType == 'route' && 
         <Link to={to} className={classNames}>
-        <button style={buttonStyles}>{text}<span className="button-arrow">></span></button>
+        <button style={buttonStyles}>
+          <span className="button-text">{text}</span>
+          <span className="button-arrow">></span>
+        </button>
         </Link>
       }
       </div>

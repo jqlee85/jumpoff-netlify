@@ -21,6 +21,7 @@
     "js-cookie": "^2.2.0",
     "netlify-lambda": "^0.4.0",
     "react": "^16.4.1",
+    "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-apollo": "^2.1.9",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
