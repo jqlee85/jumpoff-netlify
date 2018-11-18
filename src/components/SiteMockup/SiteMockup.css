@@ -33,3 +33,18 @@
   height: auto;
   margin: 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .jo-site-mockup.jo-mockup-mobile {
+    border-radius: 8px;
+    padding: 15px 12px;
+    box-shadow: -.5rem .5rem 3.6rem 0.6rem rgba(0,0,0,.12);
+  }
+}
+@media screen and (max-width: 600px) {
+  .jo-site-mockup.jo-mockup-mobile {
+    border-radius: 7px;
+    padding: 13px 10px;
+    box-shadow: -.5rem .5rem 3.6rem 0.3rem rgba(0,0,0,.12);
+  }
+}

@@ -68,11 +68,11 @@ class ProjectContent extends Component {
             </Query>}
           </div>
           <div className="jo-project-info">
-            <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>
-            <p dangerouslySetInnerHTML={{__html: description }}/>
-            <a href={projectLink}><button>Visit Project</button></a>
-            <p dangerouslySetInnerHTML={{__html: client }}/>
-            <p dangerouslySetInnerHTML={{__html: technologies }}/>
+            {title && <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>}
+            {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
+            {technologies && <p className="jo-project-technologies" dangerouslySetInnerHTML={{__html: technologies }}/>}
+            {/* {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>} */}
+            {projectLink && <a href={projectLink} className="jo-project-header-project-link"><button>Visit Project</button></a>}
           </div>
         
         </div>

@@ -11,7 +11,6 @@
   height: 100vh;
   box-sizing: border-box;
   display: flex;
-  border-bottom: 2px solid red;
 }
 .jo-project-mockups {
   position: relative;
@@ -35,16 +34,39 @@
   width: 45%;
 
 }
+.jo-project-info h1 {
+  /* font-family: "Cerebri", Helvetica, sans-serif; */
+  font-size: 3.6rem;
+  margin: .5rem auto;
+}
+.jo-project-info h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 130%;
+  margin: .5rem auto;
+}
+.jo-project-info a.jo-project-header-project-link {
+  margin: 1rem auto;
+}
 
+.jo-project-content .jo-post-content-wrapper {
+  max-width: 900px;
+}
+.jo-project-technologies {
+  font-size: .9rem;
+}
+.jo-project-client .jo-project-client-text {
+  /* font-weight: bold; */
+}
 @media screen and ( min-width: 1201px ) { 
   .jo-project-content-content {
     padding: 0px 40px 60px 60px;
   }
-  .jo-project-content h1 {
+  .jo-project-content .jo-post-content-wrapper h1 {
     font-size: 4.5rem;
     line-height: 1.05;
   }
-  .jo-project-content h3 {
+  .jo-project-content .jo-post-content-wrapper h3 {
     font-size: 2.2rem;
     line-height: 1.25;
   }
@@ -82,13 +104,14 @@
   .jo-project-mockups, .jo-project-info {
     display: block;
     width: 100%;
+    margin: 40px auto;
   }
   .jo-project-mockups .jo-mockup-desktop {
     position: relative;
     width: 60%;
     left: 15%;
     height: auto;
-    margin: 80px 0 0 0;
+    margin: 60px 0 0 0;
   }
   .jo-project-mockups .jo-mockup-mobile {
     position: absolute;
@@ -101,22 +124,22 @@
   .jo-project-content-content {
     padding: 0px 20px 40px 40px;
   }
-  .jo-project-content h1 {
+  .jo-project-content.jo-post-content-wrapper h1 {
     font-size: 3.6rem;
     line-height: 1.05;
   }
-  .jo-project-content h2 {
+  .jo-project-content .jo-post-content-wrapper h2 {
     font-size: 2.5rem;
     line-height: 1.25;
   }
-  .jo-project-content h3 {
+  .jo-project-content .jo-post-content-wrapper h3 {
     font-size: 1.75rem;
     line-height: 1.25;
   }
-  .jo-project-content h4 {
+  .jo-project-content .jo-post-content-wrapper h4 {
     line-height: 1.22222222;    
   }
-  .jo-project-content p {
+  .jo-project-content .jo-post-content-wrapper p {
     font-size: 1.4rem;
     line-height: 160%;    
   }
@@ -131,58 +154,71 @@
   .jo-project-content-content {
     padding: 0px 10px 30px 30px;
   }
-  .jo-project-content h1 {
+  .jo-project-content .jo-post-content-wrapper h1 {
     font-size: 2.7rem;
     /* 2.5x body copy size = 40px */
     line-height: 1.125;
   }
-  .jo-project-content h2 {
+  .jo-project-content .jo-post-content-wrapper h2 {
     font-size: 2.4rem;
     /* 2x body copy size = 32px */
     line-height: 1.25;
   }
-  .jo-project-content h3 {
+  .jo-project-content .jo-post-content-wrapper h3 {
     font-size: 1.8rem;
     /* 1.5x body copy size = 24px */
     line-height: 1.25;
   }
-  .jo-project-content h4 {
+  .jo-project-content .jo-post-content-wrapper h4 {
     line-height: 1.22222222;
     /* (22px / 18px */
   }
-  .jo-project-content p {
+  .jo-project-content .jo-post-content-wrapper p {
     font-size: 1.2rem;
     line-height: 155%;
   }
 }
 @media screen and ( max-width: 600px ) {
-  .jo-project-content {
-    
-  }
   
+  .jo-project-mockups .jo-mockup-desktop {
+    width: 80%;
+    left: 7%;
+    margin: 45px 0 0 0;
+  }
+  .jo-project-mockups .jo-mockup-mobile {
+    width: 35%;
+    bottom: -30px;
+    right: 5%;
+  }
+  .jo-project-mockups, .jo-project-info {
+    margin: 25px auto;
+  }
+
+
+
   .jo-project-content-content {
     padding: 0px 5px 25px 25px;
   }
-  .jo-project-content h1 {
+  .jo-project-content .jo-post-content-wrapper h1 {
     font-size: 2.5rem;
     /* 2.5x body copy size = 40px */
     line-height: 1.125;
   }
-  .jo-project-content h2 {
+  .jo-project-content .jo-post-content-wrapper h2 {
     font-size: 2rem;
     /* 2x body copy size = 32px */
     line-height: 1.25;
   }
-  .jo-project-content h3 {
+  .jo-project-content .jo-post-content-wrapper h3 {
     font-size: 1.5rem;
     /* 1.5x body copy size = 24px */
     line-height: 1.25;
   }
-  .jo-project-content h4 {
+  .jo-project-content .jo-post-content-wrapper h4 {
     line-height: 1.22222222;
     /* (22px / 18px */
   }
-  .jo-project-content p {
+  .jo-project-content .jo-post-content-wrapper p {
     font-size: 1rem;
   }
 }
