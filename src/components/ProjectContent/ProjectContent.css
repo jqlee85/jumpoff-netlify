@@ -63,6 +63,18 @@
 .jo-project-client .jo-project-client-text {
   /* font-weight: bold; */
 }
+.jo-project-info .jo-project-info-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jo-project-info-links div.jo-link-button-wrapper {
+  padding: 10px 5px;
+}
+.jo-project-info .jo-link-button-wrapper {
+  display: inline-block;
+}
 @media screen and ( min-width: 1201px ) { 
   .jo-project-content-content {
     padding: 0px 40px 60px 60px;

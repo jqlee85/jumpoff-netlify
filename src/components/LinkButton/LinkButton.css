@@ -3,10 +3,13 @@
 }
 .jo-link-button button {
   background-color: #000;
-  color: #fff;
+  display: block;
   border: none;
   transition: padding-right .3s;
   -webkit-transition: padding-right .3s;
+}
+.jo-link-button-wrapper a {
+  text-decoration: none !important;
 }
 .jo-link-button:hover button {
   padding-right: 60px;

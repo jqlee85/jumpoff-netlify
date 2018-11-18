@@ -73,12 +73,15 @@ class ProjectContent extends Component {
             {technologies && <p className="jo-project-technologies" dangerouslySetInnerHTML={{__html: technologies }}/>}
             {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
             {/* {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>} */}
+            <div className="jo-project-info-links">
+            {<LinkButton to="#learn-more" external={true} color='transparent' classNames='jo-project-learn-more' />}
             {projectLink && <LinkButton to={projectLink} external={true} classNames='jo-project-visit-project' text="Visit Project"/>}
+            </div>
           </div>
         
         </div>
         
-        <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
+        <div id="learn-more" className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
       
     </article>
   }
