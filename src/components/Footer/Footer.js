@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import styles from './Footer.css';
 import LazyLoad from 'react-lazyload';
-import LogoTitle from '../LogoTitle/LogoTitle';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import MapContainer from '../MapContainer/MapContainer';
-import SocialIcons from '../SocialIcons/SocialIcons';
+import {ShapeOne} from '../Shapes/Shapes';
 
 class Footer extends Component {
 
@@ -16,8 +15,8 @@ class Footer extends Component {
         </LazyLoad>
       </div>
       <ContactInfo />
-      <div className="jo-logo-title-section">  
-        <LogoTitle />
+      <div className="jo-footer-shape-section">  
+        <ShapeOne color="white"/>
       </div>
     </footer>
   }
