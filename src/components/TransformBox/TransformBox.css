@@ -60,6 +60,8 @@
   position: relative;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,4 +73,14 @@
 }
 .jo-transform-box-inner:hover .jo-transform-box-content {
   opacity: 1;
+}
+.jo-transform-box-content h3.jo-portfolio-item-title, .jo-transform-box-content p.jo-portfolio-item-technologies, .jo-transform-box-content p.jo-portfolio-item-description {
+  text-align: center;
+}
+.jo-transform-box-content h3.jo-portfolio-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.jo-transform-box-content p.jo-portfolio-item-description {
+  font-size: .9rem;
 }

@@ -7,7 +7,7 @@ import gql from "graphql-tag";
 
 const HOME_PORTFOLIO_PROJECTS_QUERY = gql`
   query listView {
-    projects {
+    projects(first: 4, where: {orderby: {field: MENU_ORDER, order: DESC}}) {
       edges {
         node {
           id

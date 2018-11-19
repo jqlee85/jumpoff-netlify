@@ -7,6 +7,12 @@
   border-radius: 5px;
   overflow: hidden;
 }
+.jo-site-mockup.jo-mockup-desktop .jo-site-mockup-container {
+  padding-bottom: 106.67%;
+}
+.jo-site-mockup.jo-mockup-mobile .jo-site-mockup-container {
+  padding-bottom: 156.09%;
+}
 .jo-site-mockup.jo-mockup-mobile {
   background: #ddd;
   border-radius: 10px;
@@ -19,8 +25,9 @@
 }
 .jo-site-mockup-container {
   width: 100%;
-  height: auto;
-  background: #fff;
+  height: 0px;
+  position: relative;
+  background: #999;
   overflow:hidden;
 }
 .jo-mockup-mobile .jo-site-mockup-container {
@@ -31,9 +38,26 @@
 .jo-site-mockup-container img {
   width: 100%;
   height: auto;
-  margin: 0;
+  left:0;
+  top:0;
+  position: absolute;
 }
-
+.jo-site-mockup-container svg {
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.jo-mockup-desktop .jo-site-mockup-container svg {
+  width: 50%;
+}
+.jo-mockup-mobile .jo-site-mockup-container svg {
+  width: 70%;
+}
+.jo-site-mockup-container svg path {
+  fill: #aaa;
+}
 @media screen and (max-width: 1000px) {
   .jo-site-mockup.jo-mockup-mobile {
     border-radius: 8px;

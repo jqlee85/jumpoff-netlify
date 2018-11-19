@@ -42,6 +42,14 @@ article.jo-post {
 .jo-post-content-wrapper p {
   line-height: 160%;
 }
+.jo-post-content-wrapper a {
+  color: #191919;
+  font-weight: bold;
+  text-decoration: none;
+}
+.jo-post-content-wrapper a:hover {
+  
+}
 .jo-post-content-wrapper img.aligncenter {
   margin: .5rem 0px;
   box-sizing: border-box;
@@ -59,7 +67,7 @@ article.jo-post {
   line-height: 130%;
   color: rgba(255,255,255,.9);
 }
-.jo-post a:hover, .jo-post a:active, .jo-post a:focus {
+.jo-post a:hover, .jo-post a:active, .jo-post a:focus, .jo-post-content-wrapper a:hover, .jo-post-content-wrapper a:active, .jo-post-content-wrapper a:focus {
   -webkit-animation: white-rainbow 6s infinite;
   -ms-animation: white-rainbow 6s infinite;
   -o-animation: white-rainbow 6s infinite;

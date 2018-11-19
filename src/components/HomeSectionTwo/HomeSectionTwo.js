@@ -18,7 +18,6 @@ class HomeSectionTwo extends Component {
         <div className="what-we-do">
           <div className="what-we-do-heading">
             <h3>We turn your ideas into beautiful, functional websites.</h3>
-            <ShapeThree classNames={'jo-wwd-shape jo-wwd-shape-3'}/>      
           </div>
           <AccordionSection/>
         </div>

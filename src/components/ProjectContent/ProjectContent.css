@@ -37,7 +37,6 @@
   padding: 20px 40px;
 }
 .jo-project-info h1 {
-  /* font-family: "Cerebri", Helvetica, sans-serif; */
   font-size: 3.6rem;
   margin: .5rem auto;
 }
@@ -172,8 +171,15 @@
   
 }
 @media screen and ( min-width: 601px ) and ( max-width: 800px ) {
-  .jo-project-content {
-    
+  .jo-project-info h1 {
+    font-size: 2.8rem;
+    margin: .5rem auto;
+  }
+  .jo-project-info h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 130%;
+    margin: .7rem auto;
   }
   .jo-project-content-content {
     padding: 0px 10px 30px 30px;
@@ -221,6 +227,17 @@
   .jo-project-info {
     padding: 20px 20px;
   }
+  .jo-project-info h1 {
+    font-size: 2.4rem;
+    margin: .4rem auto;
+  }
+  .jo-project-info h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 130%;
+    margin: .5rem auto;
+  }
+
 
   .jo-project-content-content {
     padding: 0px 5px 25px 25px;

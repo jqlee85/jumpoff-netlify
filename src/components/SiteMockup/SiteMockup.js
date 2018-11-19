@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import styles from './SiteMockup.css';
+import {ShapeTwo,ShapeThree} from '../Shapes/Shapes';
 
 export class SiteMockup extends Component {
   
@@ -20,7 +21,10 @@ export class SiteMockup extends Component {
           </svg>
         }
         <div className="jo-site-mockup-container">
+          {device == 'desktop' && <ShapeThree/>}
+          {device == 'mobile' && <ShapeTwo/>}
           <img src={this.props.image}/>
+          {/* <img /> */}
         </div>
       </div>
     );
