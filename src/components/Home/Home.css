@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
     box-sizing: border-box;
     height: auto;
     width: 100%;
