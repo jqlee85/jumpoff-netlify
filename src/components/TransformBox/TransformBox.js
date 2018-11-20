@@ -109,7 +109,7 @@ export class TransformBox extends Component {
     let slug = this.props.project.slug;
     let postID = 'jo-project-id_' + id;
     let title = this.props.project.title;
-    let featuredImage = this.props.project.featuredImage.sourceUrl;
+    let featuredImage = (typeof(this.props.project.featuredImage) !== 'undefined') ? this.props.project.featuredImage.sourceUrl : '';
     let projectLink = '/portfolio/' + slug;
     let description = this.props.project.projectDescription;
     let technologies = this.props.project.technologies;
