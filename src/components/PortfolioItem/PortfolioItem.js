@@ -10,12 +10,16 @@ class PortfolioItem extends Component {
 
   render(){
     
-
+    let itemNumber = this.props.itemNumber || '';
     let classNames = this.props.classNames ? this.props.classNames : '';
-    classNames += ' jo-home-portfolio-item';
+    classNames += '  home-portfolio-block home-portfolio-block-' + itemNumber;
 
     return <div className={classNames}>
-      <TransformBox project={this.props.post}/>
+      {/* <div className="jo-home-portfolio-item-wrapper"> */}
+        <div className="jo-home-portfolio-item">
+          <TransformBox project={this.props.post}/>
+        </div>
+      {/* </div> */}
     </div>;
   }
 }

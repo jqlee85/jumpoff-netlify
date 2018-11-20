@@ -44,17 +44,28 @@ class HomeSectionThree extends Component {
     return <section className="home-section flex-section full-height-section" id="home-section-three">
       <div className="home-section-content">
           <h2>Portfolio</h2>
-          <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
-          {({ loading, error, data }) => {
-            if (loading) return (<LoadingShape/>);
-            if (error) return (<p>Error Loading Post</p>);
-            return (
-              data.projects.edges.map(({ node }) => (
-                <PortfolioItem post={node} key={`${node.id}`}/>
-              ))
-            );
-          }}  
-        </Query>
+          
+          <div className="home-portfolio-wrapper">
+            <div className="home-portfolio-base">
+              <div className="home-portfolio-block home-portfolio-block-1"></div>
+                <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
+                  {({ loading, error, data }) => {
+                    if (loading) return (<LoadingShape/>);
+                    if (error) return (<p>Error Loading Post</p>);
+                    return (
+                      data.projects.edges.map(({ node },index) => (
+                        <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2}/>
+                      ))
+                    );
+                  }}  
+                </Query>
+              <div className="home-portfolio-block home-portfolio-block-6"></div>
+            </div>
+          </div>
+          
+          
+          
+          
           
       </div>
     </section>

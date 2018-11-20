@@ -4,8 +4,6 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  width: 400px;
-  height: 400px;
   margin: 0px;
   padding: 0px;
   background-image: linear-gradient(0deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
@@ -81,6 +79,9 @@
   font-size: 1.2rem;
   font-weight: bold;
 }
+.jo-transform-box-content p.jo-portfolio-item-technologies {
+  font-size: .7rem;
+}
 .jo-transform-box-content p.jo-portfolio-item-description {
-  font-size: .9rem;
+  font-size: 1rem;
 }

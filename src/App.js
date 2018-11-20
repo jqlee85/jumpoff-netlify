@@ -42,12 +42,19 @@ class App extends Component {
 
   handleScroll = (e) => {
     // let appScrolled = this.state.appScrolled;
-    let target = typeof(e.srcElement) !== 'undefined' ? e.srcElement : e.target;
-    let yPos = target.scrollingElement.scrollTop;
-    if ( yPos >= 60 && !this.state.headerSolid ) {
-      this.makeHeaderSolid();
-    } else if ( yPos < 60 && this.state.headerSolid ) {
-      this.makeHeaderTransparent();
+    let yPos;
+    if ( typeof(e.target.scrollingElement.scrollTop) !== 'undefined' ) {
+      yPos = e.target.scrollingElement.scrollTop;
+    } else if ( typeof(e.srcElement.scrollingElement.scrollTop) !== 'undefined' ) {
+      yPos = e.srcElement.scrollingElement.scrollTop;
+    }
+    
+    if (yPos || yPos === 0) {
+      if ( yPos >= 60 && !this.state.headerSolid ) {
+        this.makeHeaderSolid();
+      } else if ( yPos < 60 && this.state.headerSolid ) {
+        this.makeHeaderTransparent();
+      }
     }
   }
 

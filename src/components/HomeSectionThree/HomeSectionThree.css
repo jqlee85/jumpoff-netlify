@@ -1,3 +1,72 @@
+.home-portfolio-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+  max-height: 1400px;
+  margin: auto;
+}
+.home-portfolio-base {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 140%;
+  /* background:red; */
+}
+.home-portfolio-block {
+  position: absolute;
+  height: 0%;
+  background: #ccc;
+}
+.home-portfolio-block-1 {
+  top: 0%;
+  left: 0%;
+  width: 31.5%;
+  padding-bottom: 13%;
+}
+.home-portfolio-block-2 {
+  right: 0%;
+  top: 0%;
+  width: 57%;
+  padding-bottom: 57%;
+}
+.home-portfolio-block-2 .jo-transform-box-inner, .home-portfolio-block-2 .jo-transform-box-inner-container {
+  width: 100%;
+  height: 0%;
+  padding-bottom: 100%;
+}
+.home-portfolio-block-3 {
+  left: 0%;
+  top: 15.93%;
+  width: 31.5%;
+  padding-bottom: 49.2%;  
+}
+.home-portfolio-block-3 .jo-home-portfolio-item {
+  height: 0%;
+  box-sizing: border-box;
+
+}
+.home-portfolio-block-4 {
+  right: 0%;
+  bottom: 15.93%;
+  width: 31.5%;
+  padding-bottom: 49.2%;  
+}
+.home-portfolio-block-5 {
+  left: 0%;
+  bottom: 0%;
+  width: 57%;
+  padding-bottom: 57%;  
+}
+.home-portfolio-block-6 {
+  bottom: 0%;
+  right: 0%;
+  width: 31.5%;
+  padding-bottom: 13%;
+}
+
 @media screen and ( min-width: 1201px ) { 
   
 }
@@ -20,5 +89,7 @@
  
 }
 @media screen and ( max-width: 600px ) {
-  
+  .jo-transform-box {
+
+  }
 }
