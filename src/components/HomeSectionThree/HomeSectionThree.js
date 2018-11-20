@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './HomeSectionThree.css';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import LoadingShape from '../LoadingShape/LoadingShape';
+import LinkButton from '../LinkButton/LinkButton';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -43,11 +44,12 @@ class HomeSectionThree extends Component {
   render(){
     return <section className="home-section flex-section full-height-section" id="home-section-three">
       <div className="home-section-content">
-          <h2>Portfolio</h2>
-          
           <div className="home-portfolio-wrapper">
             <div className="home-portfolio-base">
-              <div className="home-portfolio-block home-portfolio-block-1"></div>
+            <svg viewBox="0 0 10 14"></svg>
+              <div className="home-portfolio-block home-portfolio-block-1">
+                <h2>Portfolio</h2>
+              </div>
                 <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                   {({ loading, error, data }) => {
                     if (loading) return (<LoadingShape/>);
@@ -59,7 +61,9 @@ class HomeSectionThree extends Component {
                     );
                   }}  
                 </Query>
-              <div className="home-portfolio-block home-portfolio-block-6"></div>
+              <div className="home-portfolio-block home-portfolio-block-6">
+              <LinkButton to="/portfolio" text="All Projects"/>
+              </div>
             </div>
           </div>
           

@@ -1,7 +1,13 @@
+.jo-transform-box {
+  width: 100%;
+  height: 100%;
+}
 .jo-transform-box-inner {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   margin: 0px;
