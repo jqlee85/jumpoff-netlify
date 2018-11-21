@@ -54,7 +54,7 @@ const client = new ApolloClient({
     }),
     new HttpLink({
       uri: API_HOST,
-      credentials: 'same-origin'
+      // credentials: 'same-origin'
     })
   ]),
   ssrMode: false,

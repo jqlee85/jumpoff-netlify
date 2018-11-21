@@ -1,6 +1,5 @@
 [build]
-  Command = "yarn build && yarn build:lambda"
-  Functions = "lambda"
+  Command = "yarn build"
   Publish = "build"
 
 
@@ -8,4 +7,3 @@
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-

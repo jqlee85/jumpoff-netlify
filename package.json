@@ -19,7 +19,6 @@
     "graphql-tag": "^2.9.2",
     "gravatar": "^1.6.0",
     "js-cookie": "^2.2.0",
-    "netlify-lambda": "^0.4.0",
     "react": "^16.4.1",
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-apollo": "^2.1.9",
@@ -28,26 +27,23 @@
     "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "react-router-with-props": "^0.1.3",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.1",
     "react-touch-carousel": "^0.8.3",
     "react-transition-group": "^2.5.0",
     "serialize-javascript": "^1.4.0",
     "source-map-support": "^0.5.0"
   },
   "scripts": {
-    "start": "react-scripts start & yarn run start:lambda",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:lambda": "netlify-lambda build src/lambda",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": {
-    "/.netlify/functions": {
-      "target": "http://localhost:9000",
-      "pathRewrite": {
-        "^/\\.netlify/functions": ""
-      }
-    }
-  }
+  
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
