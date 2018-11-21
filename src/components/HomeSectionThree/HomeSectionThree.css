@@ -5,7 +5,7 @@
 
 .home-portfolio-base-mobile {
   min-height: 400px;
-  height: 400;
+  height: auto;
   width: 100%;
 }
 .home-portfolio-base-mobile h2 {

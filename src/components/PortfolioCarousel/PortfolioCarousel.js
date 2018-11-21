@@ -7,19 +7,19 @@ import cx from 'classnames'
 // import NonPassiveTouchTarget from 'react-touch-carousel/lib/NonPassiveTouchTarget'
 
 
-let listOfData = [
-  // your data array here
-];
+let listOfData;
+let Container;
 const query = window.location.search.slice(1)
 const enableAutoplay = /\bautoplay\b/.test(query)
 const enableLoop = /\bloop\b/.test(query)
 const cardSize = 350;
 const cardPadCount = enableLoop ? 3 : 0
 const carouselWidth = clamp(window.innerWidth, 0, 800)
-console.log('carouselWidth');
-console.log(carouselWidth);
-console.log('cardPadCount');
-console.log(cardPadCount);
+
+// console.log('carouselWidth');
+// console.log(carouselWidth);
+// console.log('cardPadCount');
+// console.log(cardPadCount);
 
 
 class PortfolioCarousel extends Component {
@@ -30,15 +30,15 @@ class PortfolioCarousel extends Component {
 
   componentWillMount(){
     listOfData = this.props.projects;
-    const Container = touchWithMouseHOC(this.CarouselContainer)
+    Container = touchWithMouseHOC(this.CarouselContainer)
   }
    
   renderCard(index, modIndex, cursor) {
     const item = listOfData[modIndex]
-    console.log('item');
-    console.log(item);
-    console.log(item.node.title);
-    console.log(item.node.projectDescription);
+    // console.log('item');
+    // console.log(item);
+    // console.log(item.node.title);
+    // console.log(item.node.projectDescription);
     let cardStyles = {
       backgroundImage: 'url('+item.node.featuredImage.sourceUrl+')'
     }
@@ -62,19 +62,18 @@ class PortfolioCarousel extends Component {
   
   CarouselContainer (props) {
     const {cursor, carouselState: {active, dragging}, ...rest} = props
-    console.log('props');
-    console.log(props);
-    console.log(listOfData);
+    // console.log('props');
+    // console.log(props);
+    // console.log(listOfData);
     let current = -Math.round(cursor) % listOfData.length
     while (current < 0) {
       current += listOfData.length
     }
     // Put current card at center
     const translateX = (cursor - cardPadCount) * cardSize + (carouselWidth - cardSize) / 2
-    return (
-      <NonPassiveTouchTarget className={cx('carousel-container',{'is-active': active, 'is-dragging': dragging})}>
-        <NonPassiveTouchTarget className='carousel-track' style={{transform: `translate3d(${translateX}px, 0, 0)`}}{...rest}/>
-          <div className='carousel-pagination-wrapper'>
+    return (<div className="jo-carousel"><NonPassiveTouchTarget className={cx('carousel-container',{'is-active': active, 'is-dragging': dragging})}>
+        <NonPassiveTouchTarget className='carousel-track' style={{transform: `translate3d(${translateX}px, 0, 0)`}}{...rest}/></NonPassiveTouchTarget>
+        <div className='carousel-pagination-wrapper'>
             <ol className='carousel-pagination'>
               {listOfData.map((_, index) => (
                 <li
@@ -84,7 +83,7 @@ class PortfolioCarousel extends Component {
               ))}
             </ol>
           </div>
-      </NonPassiveTouchTarget>
+      </div>
     )
   }
   // const Container = touchWithMouseHOC(CarouselContainer)
@@ -92,21 +91,21 @@ class PortfolioCarousel extends Component {
   render(){
     
     
-    console.log('listOfData');
-    console.log(listOfData);
+    // console.log('listOfData');
+    // console.log(listOfData);
     
     return <div>
       <TouchCarousel
-        component={this.CarouselContainer}
+        component={Container}
         cardSize={cardSize}
         cardCount={listOfData.length}
         autoplay={enableAutoplay ? 2e3 : false}
         renderCard={this.renderCard}
         loop={enableLoop}
-        onRest={index => console.log(`rest at index ${index}`)}
-        onDragStart={() => console.log('dragStart')}
-        onDragEnd={() => console.log('dragEnd')}
-        onDragCancel={() => console.log('dragCancel')}
+        // onRest={index => console.log(`rest at index ${index}`)}
+        // onDragStart={() => console.log('dragStart')}
+        // onDragEnd={() => console.log('dragEnd')}
+        // onDragCancel={() => console.log('dragCancel')}
       />
     </div>;
   }

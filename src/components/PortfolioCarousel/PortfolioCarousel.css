@@ -21,15 +21,15 @@
   text-align: center;
   font-weight: bold;
   color: white;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-card-inner {
   position: relative;
-  width: 340px;
-  height: 390px;
+  width: 330px;
+  height: 380px;
   background-size: cover;
   background-position: center;
 }
@@ -45,7 +45,7 @@
   height: 100%;
   box-sizing: border-box;
   padding: 20px;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(35,35,35,.8);
 }
 .carousel-card-inner h3, .carousel-card-inner p {
   color: white;
@@ -64,13 +64,12 @@
 }
 
 .carousel-pagination-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
+  position: relative;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   pointer-events: none;
+  
 }
 
 .carousel-pagination {
@@ -89,6 +88,9 @@
 }
 
 .carousel-pagination .current {
-  border-radius: 0;
-  background: white;
+  margin-top: -1px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #191919;
 }
