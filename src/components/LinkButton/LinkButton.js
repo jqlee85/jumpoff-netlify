@@ -32,13 +32,12 @@ export class LinkButton extends Component {
     if (!transparent) {
       backgroundColor = color;
     }
-    
+    //Set Button Styles
     let buttonStyles = {
       backgroundColor: backgroundColor,
       border: '1px solid '+ color,
       color: textColor
     }
-
     
     let classNames = 'jo-link-button ' + this.props.classNames + ' ' + linkType;
     

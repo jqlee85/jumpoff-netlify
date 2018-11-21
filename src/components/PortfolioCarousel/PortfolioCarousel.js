@@ -32,17 +32,32 @@ class PortfolioCarousel extends Component {
     listOfData = this.props.projects;
     Container = touchWithMouseHOC(this.CarouselContainer)
   }
+
+  getcardPosition(){
+
+  }
    
-  renderCard(index, modIndex, cursor) {
+  renderCard(index, modIndex, cursor, carouselState) {
+    
     const item = listOfData[modIndex]
+    let itemLink = '/portfolio/' + item.node.slug;
+    const onTop = Math.abs(index + cursor) < 0.5
+    
     console.log('item');
     console.log(item);
-    // console.log(item.node.title);
-    // console.log(item.node.projectDescription);
-    let cardStyles = {
-      backgroundImage: 'url('+item.node.featuredImage.sourceUrl+')'
-    }
-    let itemLink = '/portfolio/' + item.node.slug;
+    
+    // const degrees = Math.round( (cursor * 30) * 10) / -10;
+    
+    
+    
+    
+    const rotate = 40 * (index + cursor)
+    
+    const rawDeg = 15 * (index + cursor)
+    const degrees = Math.round(rawDeg * 10) / -10
+    console.log(degrees);
+    
+    
     // render the item
     return (
       <div
@@ -50,8 +65,12 @@ class PortfolioCarousel extends Component {
         className='carousel-card'
         onClick={() => console.log(`clicked card ${1 + modIndex}`)}
       >
-        
-          <div className='carousel-card-inner' style={cardStyles}>
+        <div className='carousel-card-inner' style={{
+          backgroundImage: 'url('+item.node.featuredImage.sourceUrl+')',
+          transform: `rotateY(${degrees}deg)`,
+          // transform: `rotate(${rotate}deg)`,
+          zIndex: onTop ? 1 : 0
+        }}>
           <div className="carousel-card-overlay">
             <h3 className='carousel-title'>{item.node.title}</h3>
             <p className='carousel-text'>{item.node.projectDescription}</p>
@@ -73,6 +92,7 @@ class PortfolioCarousel extends Component {
     }
     // Put current card at center
     const translateX = (cursor - cardPadCount) * cardSize + (carouselWidth - cardSize) / 2
+    const perspective = cardSize + 'px';
     return (<div className="jo-carousel"><NonPassiveTouchTarget className={cx('carousel-container',{'is-active': active, 'is-dragging': dragging})}>
         <NonPassiveTouchTarget className='carousel-track' style={{transform: `translate3d(${translateX}px, 0, 0)`}}{...rest}/></NonPassiveTouchTarget>
         <div className='carousel-pagination-wrapper'>
@@ -90,12 +110,12 @@ class PortfolioCarousel extends Component {
   }
   // const Container = touchWithMouseHOC(CarouselContainer)
 
+  onDragStart(args){
+    console.log('onDragStart');
+  }
+
   render(){
-    
-    
-    // console.log('listOfData');
-    // console.log(listOfData);
-    
+
     return <div>
       <TouchCarousel
         component={Container}
@@ -104,10 +124,10 @@ class PortfolioCarousel extends Component {
         autoplay={enableAutoplay ? 2e3 : false}
         renderCard={this.renderCard}
         loop={enableLoop}
-        // onRest={index => console.log(`rest at index ${index}`)}
-        // onDragStart={() => console.log('dragStart')}
-        // onDragEnd={() => console.log('dragEnd')}
-        // onDragCancel={() => console.log('dragCancel')}
+        onRest={index => console.log(`rest at index ${index}`)}
+        onDragStart={this.onDragStart}
+        onDragEnd={() => console.log('dragEnd')}
+        onDragCancel={() => console.log('dragCancel')}
       />
     </div>;
   }

@@ -12,8 +12,11 @@
   height: 100%;
 }
 
+.carousel-card-wrapper{
+  
+}
 .carousel-card {
-  flex: 0 0 350px;
+  flex: 0 0 340px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -21,15 +24,20 @@
   text-align: center;
   font-weight: bold;
   color: white;
-  padding: 10px;
+  padding: 5px;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  -webkit-perspective: 400px;
+  -moz-perspective: 400px;
+  -ms-perspective: 400px;
+  -o-perspective: 400px;
+  perspective: 400px;
 }
 
 .carousel-card-inner {
   position: relative;
-  width: 330px;
-  height: 380px;
+  width: 340px;
+  height: 390px;
   background-size: cover;
   background-position: center;
 }
