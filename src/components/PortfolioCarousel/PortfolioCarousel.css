@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
-  height: 450px;
-  max-width: 960px;
+  height: 400px;
+  max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
   touch-action: pan-y;
@@ -13,7 +13,7 @@
 }
 
 .carousel-card {
-  flex: 0 0 300px;
+  flex: 0 0 350px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -21,18 +21,35 @@
   text-align: center;
   font-weight: bold;
   color: white;
-  margin: 0px 10px;
-  background: #ccc;
+  padding: 5px;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-card-inner {
-  flex-direction: column;
-  width: 290px;
-  height: 290px;
-  border-radius: 5px;
+  position: relative;
+  width: 340px;
+  height: 390px;
+  background-size: cover;
+  background-position: center;
 }
-
+.carousel-card-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: rgba(0,0,0,.5);
+}
+.carousel-card-inner h3, .carousel-card-inner p {
+  color: white;
+}
 .carousel-title {
   margin-top: 20px;
   font-size: 1.5em;

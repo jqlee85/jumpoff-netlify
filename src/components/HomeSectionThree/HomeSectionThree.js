@@ -46,8 +46,8 @@ class HomeSectionThree extends Component {
   render(){
     
     return <section className="home-section flex-section full-height-section" id="home-section-three">
-      <div className="home-section-content">   
-        <div className="home-portfolio-wrapper">
+      <div className="home-portfolio-wrapper">
+        <div className="home-section-content">   
           <div className="home-portfolio-base-desktop">
             <svg viewBox="0 0 10 14"></svg>
             <div className="home-portfolio-block home-portfolio-block-1">
@@ -65,20 +65,22 @@ class HomeSectionThree extends Component {
                 }}  
               </Query>
             <div className="home-portfolio-block home-portfolio-block-6">
-            <LinkButton to="/portfolio" text="All Projects"/>
+              <LinkButton to="/portfolio" text="All Projects"/>
             </div>
           </div>
-          <div className="home-portfolio-base-mobile">
-            <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
-                  {({ loading, error, data }) => {
-                    if (loading) return (<LoadingShape/>);
-                    if (error) return (<p>Error Loading Post</p>);
-                    return (
-                      <PortfolioCarousel projects={data.projects.edges} />
-                    );
-                  }}  
-              </Query>
-          </div>
+        </div> 
+        <div className="home-portfolio-base-mobile">
+          <h2>Projects</h2>
+          <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
+                {({ loading, error, data }) => {
+                  if (loading) return (<LoadingShape/>);
+                  if (error) return (<p>Error Loading Post</p>);
+                  return (
+                    <PortfolioCarousel projects={data.projects.edges} />
+                  );
+                }}  
+            </Query>
+            <LinkButton to="/portfolio" text="All Projects"/>
         </div>
       </div>
     </section>
