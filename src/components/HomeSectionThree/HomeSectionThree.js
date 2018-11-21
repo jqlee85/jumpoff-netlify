@@ -3,6 +3,8 @@ import styles from './HomeSectionThree.css';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import LinkButton from '../LinkButton/LinkButton';
+import PortfolioCarousel from '../PortfolioCarousel/PortfolioCarousel';
+import TouchCarousel from 'react-touch-carousel'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -42,35 +44,42 @@ class HomeSectionThree extends Component {
   }
 
   render(){
+    
     return <section className="home-section flex-section full-height-section" id="home-section-three">
-      <div className="home-section-content">
-          <div className="home-portfolio-wrapper">
-            <div className="home-portfolio-base">
+      <div className="home-section-content">   
+        <div className="home-portfolio-wrapper">
+          <div className="home-portfolio-base-desktop">
             <svg viewBox="0 0 10 14"></svg>
-              <div className="home-portfolio-block home-portfolio-block-1">
-                <h2>Portfolio</h2>
-              </div>
-                <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
+            <div className="home-portfolio-block home-portfolio-block-1">
+              <h2>Portfolio</h2>
+            </div>
+              <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
+                {({ loading, error, data }) => {
+                  if (loading) return (<LoadingShape/>);
+                  if (error) return (<p>Error Loading Post</p>);
+                  return (
+                    data.projects.edges.map(({ node },index) => (
+                      <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2}/>
+                    ))
+                  );
+                }}  
+              </Query>
+            <div className="home-portfolio-block home-portfolio-block-6">
+            <LinkButton to="/portfolio" text="All Projects"/>
+            </div>
+          </div>
+          <div className="home-portfolio-base-mobile">
+            <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                   {({ loading, error, data }) => {
                     if (loading) return (<LoadingShape/>);
                     if (error) return (<p>Error Loading Post</p>);
                     return (
-                      data.projects.edges.map(({ node },index) => (
-                        <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2}/>
-                      ))
+                      <PortfolioCarousel projects={data.projects.edges} />
                     );
                   }}  
-                </Query>
-              <div className="home-portfolio-block home-portfolio-block-6">
-              <LinkButton to="/portfolio" text="All Projects"/>
-              </div>
-            </div>
+              </Query>
           </div>
-          
-          
-          
-          
-          
+        </div>
       </div>
     </section>
   }
