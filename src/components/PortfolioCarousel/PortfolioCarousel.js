@@ -88,15 +88,19 @@ class PortfolioCarousel extends Component {
         className='carousel-card'
       >
         <div className='carousel-card-inner' style={{
-          backgroundImage: 'url('+item.node.featuredImage.sourceUrl+')',
           transform: `rotateY(${degrees}deg)`,
           zIndex: onTop ? 1 : 0
         }}>
-          <div className="carousel-card-overlay">
-            <h3 className='carousel-title'>{item.node.title}</h3>
-            <p className='carousel-text'>{item.node.projectDescription}</p>
-            <LinkButton to={itemLink} color='white' transparent={true} linkType="route" text="See More"></LinkButton>
+          <div className="carousel-card-image" style={{
+             backgroundImage: 'url('+item.node.featuredImage.sourceUrl+')',
+          }}>
+            <div className="carousel-card-content">
+              <h3 className='carousel-title'>{item.node.title}</h3>
+              <p className='carousel-text'>{item.node.projectDescription}</p>
+              <LinkButton to={itemLink} color='white' transparent={true} linkType="route" text="See More"></LinkButton>
+            </div>
           </div>
+          
         </div>        
       </div>
     );
