@@ -51,7 +51,7 @@ class HomeSectionThree extends Component {
           <div className="home-portfolio-base-desktop">
             <svg viewBox="0 0 10 14"></svg>
             <div className="home-portfolio-block home-portfolio-block-1">
-              <h2>Recent Work</h2>
+              <h2>Recent Projects</h2>
             </div>
               <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                 {({ loading, error, data }) => {
@@ -65,7 +65,7 @@ class HomeSectionThree extends Component {
                 }}  
               </Query>
             <div className="home-portfolio-block home-portfolio-block-6">
-              <LinkButton to="/portfolio" text="All Projects"/>
+              <LinkButton to="/portfolio" text="More Projects"/>
             </div>
           </div>
         </div> 
@@ -80,7 +80,7 @@ class HomeSectionThree extends Component {
                   );
                 }}  
             </Query>
-            <LinkButton to="/portfolio" text="More Work"/>
+            <LinkButton to="/portfolio" text="More Projects"/>
         </div>
       </div>
     </section>
