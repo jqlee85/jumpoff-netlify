@@ -38,8 +38,8 @@
   box-sizing: border-box;
   background-size: cover;
   background-position: center;
+  background-color: #f89c44; 
   background-image: linear-gradient(0deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
-  
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.1);
 }
 .carousel-card-image {
