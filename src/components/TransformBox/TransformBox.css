@@ -12,12 +12,15 @@
   padding: 0px;
   margin: 0px;
   padding: 0px;
-  background-image: linear-gradient(0deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
+  background-image: linear-gradient(15deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
   transition: all .8s cubic-bezier(.42,0,0,1);
   will-change: transform;
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
   color: #fff;
   cursor: pointer;
+}
+.home-portfolio-block:nth-child(odd) .jo-transform-box-inner{
+  background-image: linear-gradient(15deg, #0480A0, #148888, #47B865, #97C263, rgb(210, 238, 133) );
 }
 .jo-transform-box-inner h1, .jo-transform-box-inner h2, .jo-transform-box-inner h3, .jo-transform-box-inner p, .jo-transform-box-inner a {
   color: #fff;

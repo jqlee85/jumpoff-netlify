@@ -38,9 +38,14 @@
   box-sizing: border-box;
   background-size: cover;
   background-position: center;
-  background-color: #f89c44; 
-  background-image: linear-gradient(0deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
+  background-color: #ef6085; 
+  background-image: linear-gradient(15deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
+  /* background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) ); */
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.1);
+}
+.carousel-card:nth-child(odd) .carousel-card-inner {
+  background-color: #0480A0; 
+  background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) );
 }
 .carousel-card-image {
   position: relative;
@@ -82,7 +87,7 @@
 
 .carousel-pagination-wrapper {
   position: relative;
-  margin: 20px auto;
+  margin: 60px auto;
   display: flex;
   justify-content: center;
   pointer-events: none;

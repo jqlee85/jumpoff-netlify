@@ -74,12 +74,12 @@ export class TransformBox extends Component {
     if (rotateY < -20) rotateY = -20;
     //TODO add maximum rotate values
 
-    // console.log('this.mouse.x: '+this.mouse.x);
-    // console.log('this.mouse.y: '+this.mouse.y);
-    // console.log('halfHeight: '+offsetHeight)
-    // console.log('halfWidth: '+offsetWidth)
-    // console.log('rotateX: '+rotateX);
-    // console.log('rotateY: '+rotateY);
+    console.log('this.mouse.x: '+this.mouse.x);
+    console.log('this.mouse.y: '+this.mouse.y);
+    console.log('halfHeight: '+offsetHeight)
+    console.log('halfWidth: '+offsetWidth)
+    console.log('rotateX: '+rotateX);
+    console.log('rotateY: '+rotateY);
 
     this.updateTransformStyle(
       rotateX,
