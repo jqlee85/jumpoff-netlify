@@ -54,7 +54,7 @@ class SingleProject extends Component {
             if (loading) return (<LoadingShape/>);
             if (error) return (<NotFound/>);
             return (
-              <ProjectContent post={data.projectBy}/>
+              <ProjectContent post={data.projectBy} listView={false}/>
             );
           }}  
         </Query>

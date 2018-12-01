@@ -8,7 +8,7 @@ import gql from "graphql-tag";
 
 const PORTFOLIO_PROJECTS_QUERY = gql`
   query listView {
-    projects {
+    projects(first: 10, where: {orderby: {field: MENU_ORDER, order: DESC}}) {
       edges {
         node {
           id
@@ -16,6 +16,13 @@ const PORTFOLIO_PROJECTS_QUERY = gql`
           slug
           date
           content
+          projectDescription
+          projectLink
+          client
+          technologies
+          githubLink
+          desktopScreenshot
+          mobileScreenshot
           featuredImage {
             sourceUrl
           }
@@ -45,7 +52,7 @@ class Portfolio extends Component {
             if (error) return (<NotFound/>);
             return (
               data.projects.edges.map(({ node }) => (
-                <ProjectContent post={node} key={`${node.id}`} path={this.props.path}/>
+                <ProjectContent post={node} key={`${node.id}`} path={this.props.path} listView={true}/>
               ))
             );
           }}  
