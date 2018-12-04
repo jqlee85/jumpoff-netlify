@@ -1,17 +1,9 @@
-section.blog .jo-featured-image {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
-  margin: 2rem 0px -4rem;
-  padding: 0;
+.latest-posts .jo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-
-section.blog .jo-post {
-  padding-bottom: 4em;
-  border-bottom: 1px solid #ccc;
-}
-
 .jo-blog-loading {
   font-size: 5em;
   -webkit-animation: white-rainbow 6s infinite;
