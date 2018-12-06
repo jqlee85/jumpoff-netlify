@@ -19,6 +19,8 @@ class ProjectContent extends Component {
 
   render(){
 
+    console.log(this.props.post.desktopScreenshot);
+
     let id = this.props.post.id;
     let slug = this.props.post.slug || '';
     let postID = 'jo-post-id_' + id;

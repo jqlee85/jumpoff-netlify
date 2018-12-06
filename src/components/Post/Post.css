@@ -4,6 +4,9 @@ article.jo-post {
   margin: 100px auto 200px;
   text-align: left;
 }
+article.jo-post img {
+  max-width: 100%;
+}
 .jo-post h1.jo-post-title {
   display: inline;
   font-size: 4.5rem;

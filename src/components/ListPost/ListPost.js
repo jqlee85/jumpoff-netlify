@@ -15,6 +15,7 @@ class ListPost extends Component {
     let title = this.props.post.title;
     let excerpt = this.props.post.excerpt || '';
     console.log(excerpt);
+    let date = this.props.post.date;
     let content = this.props.post.content;
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/blog/' + slug;
@@ -22,13 +23,23 @@ class ListPost extends Component {
       backgroundImage: 'url(' + featuredImage.sourceUrl + ')'
     }
     
-    return <article id={postID} data-post-id={id} className="jo-post jo-list-post">
-      <div className="jo-list-post-featured-image-wrapper" style={imgStyle}>
+    return <article id={postID} data-post-id={id} className="jo-list-post">
+      <div className="jo-list-post-featured-image-wrapper">
+        <div className="gradient-overlay gradient-overlay-cool"></div>
+        <img className="jo-list-post-featured-image" src={featuredImage.sourceUrl}/>
       </div>
-      <Link to={postLink}><h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/></Link>
+      
+      <div className="jo-list-post-title">
+          <Link to={postLink}>
+            <h1 className="" dangerouslySetInnerHTML={{ __html: title }}/>
+          </Link>
+        </div>
       <div className="jo-list-post-excerpt-wrapper">
+        <div className="jo-post-date">
+          <p dangerouslySetInnerHTML={{ __html: date }}/>
+        </div>
         <div className="jo-post-excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />
-        <LinkButton to={postLink}/>
+        <LinkButton to={postLink} transparent={true} text="Read More"/>
       </div>
       
       
