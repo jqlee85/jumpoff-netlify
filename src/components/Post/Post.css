@@ -16,8 +16,8 @@ article.jo-post img {
   text-transform: uppercase;
   text-indent: 200px;
   color: #fff;
-  background: black;
-  box-shadow: 20px 0 0 black, -20px 0 0 black;
+  background: #191919;
+  box-shadow: 20px 0 0 #191919, -20px 0 0 #191919;
   box-decoration-break: clone;
 
 }
@@ -27,7 +27,7 @@ article.jo-post img {
 .jo-post a {
   text-decoration: none;
   font-weight: 500;
-  color: black;
+  color: #191919;
 }
 .jo-post-content-wrapper {
   margin-top: 20px;

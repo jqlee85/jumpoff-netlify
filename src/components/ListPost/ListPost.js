@@ -39,7 +39,7 @@ class ListPost extends Component {
           <p dangerouslySetInnerHTML={{ __html: date }}/>
         </div>
         <div className="jo-post-excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />
-        <LinkButton to={postLink} transparent={true} text="Read More"/>
+        <LinkButton to={postLink} text="Read More"/>
       </div>
       
       
