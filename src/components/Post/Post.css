@@ -8,18 +8,9 @@ article.jo-post img {
   max-width: 100%;
 }
 .jo-post h1.jo-post-title {
-  display: inline;
   font-size: 4.5rem;
-  line-height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  text-transform: uppercase;
   text-indent: 200px;
-  color: #fff;
-  background: #191919;
-  box-shadow: 20px 0 0 #191919, -20px 0 0 #191919;
-  box-decoration-break: clone;
-
+  text-transform: uppercase;
 }
 .jo-post h1, .jo-post h2, .jo-post h3, .jo-post h4, .jo-post h5, .jo-post h6, .jo-post p {
   text-align: left;

@@ -177,6 +177,35 @@ section {
   fill: #ef6085;
 }
 
+/* Blog Styles */
+.black-box-text {
+  display: inline;
+  line-height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  color: #fff;
+  background: #191919;
+  box-shadow: 20px 0 0 #191919, -20px 0 0 #191919;
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.jo-list-post-date .black-box-text {
+  padding: 8px 0px;
+  box-shadow: 12px 0 0 #191919, -12px 0 0 #191919;
+}
+.black-box-text p {
+  display: block;
+  line-height: 100%;
+  padding: 16px 0px;
+  color: #fff;
+  background: #191919;
+  box-shadow: 20px 0 0 #191919, -20px 0 0 #191919;
+  -webkit-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 /* Rainbow Hover */
 @-webkit-keyframes white-rainbow {
   0% {color: #cd5fa1;stroke:#cd5fa1;}

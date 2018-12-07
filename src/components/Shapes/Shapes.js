@@ -18,8 +18,6 @@ export class ShapeOne extends Component {
   }
 }
 
-// export default ShapeOne;
-
 export class ShapeTwo extends Component {
 
   constructor(props) {

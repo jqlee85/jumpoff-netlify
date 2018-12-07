@@ -18,7 +18,7 @@ class Post extends Component {
     
     return <article id={postID} data-post-id={id} className="jo-post">
       { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
-      <h1 className="jo-post-title" dangerouslySetInnerHTML={{ __html: title }}/>
+      <h1 className="jo-post-title black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
       <Helmet>
         <title>JumpOff - {title}</title>
         <meta name="title" content={title} />

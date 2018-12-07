@@ -3,6 +3,7 @@ import styles from './ListPost.css';
 import {Link} from 'react-router-dom';
 import LinkButton from '../LinkButton/LinkButton';
 import { Helmet } from 'react-helmet';
+import {getPrettyDate} from '../../lib/utilities';
 
 
 class ListPost extends Component {
@@ -16,6 +17,7 @@ class ListPost extends Component {
     let excerpt = this.props.post.excerpt || '';
     console.log(excerpt);
     let date = this.props.post.date;
+    let prettyDate = getPrettyDate(date);
     let content = this.props.post.content;
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/blog/' + slug;
@@ -25,26 +27,28 @@ class ListPost extends Component {
     
     return <article id={postID} data-post-id={id} className="jo-list-post">
       <div className="jo-list-post-featured-image-wrapper">
-        <div className="gradient-overlay gradient-overlay-cool"></div>
         <img className="jo-list-post-featured-image" src={featuredImage.sourceUrl}/>
+        <div className="jo-list-post-read-more">
+          <LinkButton to={postLink} text="Read More"/>
+        </div>
       </div>
-      
-      <div className="jo-list-post-title">
+      <div className="jo-list-post-content">
+        <div className="jo-list-post-title">
           <Link to={postLink}>
-            <h1 className="" dangerouslySetInnerHTML={{ __html: title }}/>
+            <h1 className="black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
           </Link>
         </div>
-      <div className="jo-list-post-excerpt-wrapper">
-        <div className="jo-post-date">
-          <p dangerouslySetInnerHTML={{ __html: date }}/>
+        <div className="jo-list-post-excerpt-wrapper">
+          <div className="jo-list-post-excerpt black-box-text" dangerouslySetInnerHTML={{ __html: excerpt }} />
         </div>
-        <div className="jo-post-excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />
-        <LinkButton to={postLink} text="Read More"/>
+        <div className="jo-list-post-content-spacer"></div>
       </div>
-      
-      
-      
-      
+      <div className="jo-list-post-meta">
+        <div className="jo-list-post-date">
+          <p className="black-box-text" dangerouslySetInnerHTML={{ __html: prettyDate }}/>
+        </div>
+        
+      </div>
     </article>
   }
 }

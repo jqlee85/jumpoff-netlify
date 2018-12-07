@@ -2,66 +2,77 @@
   display: inline-block;
   position: relative;
   width: 100%;
-  height: 300px;
+  height: auto;
   box-sizing: border-box;
-  margin: 80px auto;
+  margin: 60px auto;
 }
 .jo-list-post .jo-list-post-featured-image-wrapper {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: auto;
 }
 .jo-list-post-featured-image {
-  
   width: 100%;
   height: auto;
-  
-  
 }
-.jo-list-post .jo-list-post-excerpt-wrapper {
-  position: absolute;
-  width: 60%;
-  height: 100%;
-  right: 0;
+.jo-list-post-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 24px;
+  text-align: left;
   top: 0;
-  z-index: 25;
+  left: 0;
+  width: 70%;
+  padding-right: 10px;
+  box-sizing: border-box;
+  min-height: 100%;
+  height: auto;
 }
-.jo-list-post .jo-link-button-wrapper{
-  float: right;
+.jo-list-post-meta {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  overflow: visible;
 }
 .jo-list-post-title {
+  align-self: flex-start;
+}
+.jo-list-post .jo-list-post-excerpt-wrapper {
+  align-self: center;
+  margin-top: 40px;
+}
+.jo-list-post-content-spacer {
+  margin-top: 64px;
+}
+.jo-list-post .jo-list-post-read-more {
   position: absolute;
-  left: 0;
-  top: 80%;
-  z-index:30;
+  bottom: -10px;
+  right: -16px;
+  width: auto;
+  z-index: 50;
+}
+
+
+.jo-list-post .jo-link-button-wrapper{
+  position: relative;
+  left:0;
+  /* width: auto; */
+  
 }
 .jo-list-post h1 {
-  display: inline;
   font-size: 2.5rem;
-  line-height: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  text-transform: uppercase;
-  text-indent: 200px;
-  color: #fff;
-  background: #191919;
-  box-shadow: 20px 0 0 black, -20px 0 0 black;
-  box-decoration-break: clone;
-
+  text-transform: uppercase; 
 }
-.jo-list-post h1, .jo-list-post h2, .jo-list-post h3, .jo-list-post h4, .jo-list-post h5, .jo-list-post h6, .jo-list-post p {
-  text-align: left;
+.jo-list-post-excerpt p {
+  line-height: 140%;
+  font-size: 1.3em;
 }
-.gradient-overlay {
+.jo-list-post-date {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: .6;
-  z-index:10;
-}
-.jo-list-post .gradient-overlay-cool{
-  /* background-image: linear-gradient(15deg, #0480A0, #148888, #47B865, #97C263, rgb(210, 238, 133) ); */
-}
-.jo-list-post .gradient-overlay-warm{
-  /* background-image: linear-gradient(15deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 ); */
+  right: 0px;
+  top: 28px;
 }
