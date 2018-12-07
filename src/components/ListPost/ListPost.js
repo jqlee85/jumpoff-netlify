@@ -25,13 +25,8 @@ class ListPost extends Component {
       backgroundImage: 'url(' + featuredImage.sourceUrl + ')'
     }
     
-    return <article id={postID} data-post-id={id} className="jo-list-post">
-      <div className="jo-list-post-featured-image-wrapper">
-        <img className="jo-list-post-featured-image" src={featuredImage.sourceUrl}/>
-        <div className="jo-list-post-read-more">
-          <LinkButton to={postLink} text="Read More"/>
-        </div>
-      </div>
+    return <article id={postID} data-post-id={id} className="jo-list-post" >
+      <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl}/>
       <div className="jo-list-post-content">
         <div className="jo-list-post-title">
           <Link to={postLink}>
@@ -47,8 +42,11 @@ class ListPost extends Component {
         <div className="jo-list-post-date">
           <p className="black-box-text" dangerouslySetInnerHTML={{ __html: prettyDate }}/>
         </div>
-        
+        <div className="jo-list-post-read-more">
+          <LinkButton to={postLink} text="Read More"/>
+        </div>
       </div>
+      <div class="jo-list-post-sizer"></div>
     </article>
   }
 }
