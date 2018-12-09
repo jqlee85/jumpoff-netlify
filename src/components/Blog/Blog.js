@@ -32,6 +32,7 @@ class Blog extends Component {
     <section className="blog latest-posts">
       <div className="jo-row">
         <div className="jo-content">
+        <h1 className="standard-title">Latest Posts</h1>
         <Query query={LATEST_POSTS_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return (<LoadingShape/>);

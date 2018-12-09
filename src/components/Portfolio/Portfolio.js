@@ -46,6 +46,7 @@ class Portfolio extends Component {
     
     return (
     <section className="jo-portfolio">
+        <h1 className="standard-title">Portfolio</h1>
         <Query query={PORTFOLIO_PROJECTS_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return (<LoadingShape/>);

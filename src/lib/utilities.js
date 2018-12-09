@@ -1,3 +1,5 @@
+import React, {Component} from 'react';
+
 //Takes in a date string and returns a formatted date
 function getPrettyDate(rawDate, options) {
 
@@ -11,5 +13,13 @@ function getPrettyDate(rawDate, options) {
   return formattedDate;
 
 }
-
 export {getPrettyDate};
+
+function addEllipsis(text){
+  var position = text.lastIndexOf("</p>");
+  var output = [text.slice(0, position), '<span class="jo-ellipsis">...</span>', text.slice(position)].join('');
+  
+  return output;
+}
+export {addEllipsis};
+

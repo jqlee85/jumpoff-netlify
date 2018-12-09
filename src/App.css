@@ -396,3 +396,83 @@ section {
   opacity: 0;
   transition: opacity 5000ms ease-in;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media screen and ( min-width: 800px ) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+  }
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+  h4 {
+    line-height: 1.22222222;
+  } 
+}
+@media screen and ( min-width: 601px ) and ( max-width: 800px ) {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 2.7rem;
+    line-height: 1.125;
+  }
+  h2 {
+    font-size: 2.4rem;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+  h4 {
+    line-height: 1.22222222;
+  }
+}
+@media screen and ( max-width: 600px ) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 1.25;
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  h4 {
+    line-height: 1.22222222;
+  }
+}
+h1.standard-title {
+  padding-top: 80px;
+  margin: .3em auto;
+  font-size: 4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  h1.standard-title {
+    font-size: 2.2em;
+  }
+}

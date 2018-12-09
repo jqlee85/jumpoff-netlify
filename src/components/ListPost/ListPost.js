@@ -3,7 +3,7 @@ import styles from './ListPost.css';
 import {Link} from 'react-router-dom';
 import LinkButton from '../LinkButton/LinkButton';
 import { Helmet } from 'react-helmet';
-import {getPrettyDate} from '../../lib/utilities';
+import {getPrettyDate, addEllipsis} from '../../lib/utilities';
 
 
 class ListPost extends Component {
@@ -14,7 +14,7 @@ class ListPost extends Component {
     let slug = this.props.post.slug;
     let postID = 'jo-post-id_' + id;
     let title = this.props.post.title;
-    let excerpt = this.props.post.excerpt || '';
+    let excerpt = addEllipsis(this.props.post.excerpt);
     console.log(excerpt);
     let date = this.props.post.date;
     let prettyDate = getPrettyDate(date);
