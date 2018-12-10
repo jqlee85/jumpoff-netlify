@@ -76,13 +76,13 @@ export class TransformBox extends Component {
     this.updatePosition(this.state.x,this.state.y);
     var itemHeight = this.inner.current.offsetHeight;
     var itemWidth = this.inner.current.offsetWidth;
-    var rotateX = ( this.mouse.y / itemHeight * 50 ).toFixed(2);
-    var rotateY = ( this.mouse.x / itemWidth * 50 ).toFixed(2);
+    var rotateX = ( this.mouse.y / itemHeight * 40 ).toFixed(2);
+    var rotateY = ( this.mouse.x / itemWidth * 40 ).toFixed(2);
     
-    if (rotateX > 25) rotateX = 25;
-    if (rotateX < -25) rotateX = -25;
-    if (rotateY > 25) rotateY = 25;
-    if (rotateY < -25) rotateY = -25;
+    if (rotateX > 20) rotateX = 20;
+    if (rotateX < -20) rotateX = -20;
+    if (rotateY > 20) rotateY = 20;
+    if (rotateY < -20) rotateY = -20;
     //TODO add maximum rotate values
 
     // console.log('-------------------');
