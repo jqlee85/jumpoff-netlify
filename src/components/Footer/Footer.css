@@ -8,6 +8,7 @@ footer {
   justify-content: center;
   background: #191919;
   color: #fff;
+  z-index: 75;
 }
 footer .jo-map-wrapper div {
   color: #191919;

@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 function getPrettyDate(rawDate, options) {
 
   if (typeof(options) == 'undefined' ) {
-    console.log('undefined');
     var options = { year: 'numeric', month: 'short', day: 'numeric' };
   }
   var date = new Date(rawDate); 
@@ -16,10 +15,15 @@ function getPrettyDate(rawDate, options) {
 export {getPrettyDate};
 
 function addEllipsis(text){
+  
+  var position = text.lastIndexOf("</p>");
+  var lastChar = text.slice(position -1, position);
+  if ( ['.',',',':','?','!',';','-'].includes(lastChar) ) text = text.slice(0, position - 1) + text.slice(position);
   var position = text.lastIndexOf("</p>");
   var output = [text.slice(0, position), '<span class="jo-ellipsis">...</span>', text.slice(position)].join('');
   
   return output;
+
 }
 export {addEllipsis};
 

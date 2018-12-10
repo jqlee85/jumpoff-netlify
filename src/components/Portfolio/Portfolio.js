@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Portfolio.css';
 import ProjectContent from '../ProjectContent/ProjectContent';
+import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import { Query } from "react-apollo";
@@ -46,8 +47,15 @@ class Portfolio extends Component {
     
     return (
     <section className="jo-portfolio">
-        <h1 className="standard-title">Portfolio</h1>
-        <Query query={PORTFOLIO_PROJECTS_QUERY}>
+      {/* <div className="jo-portfolio-static background">
+        <div className="jo-portfolio-static-text">
+          <h1 className="background-text">PORTFOLIO</h1>
+        </div>
+      </div>  */}
+      <div className="jo-portfolio-content">
+        <h1 className="jo-portfolio-static-text background-text">PORTFOLIO</h1>
+        <HomeSectionThree/>
+        {/* <Query query={PORTFOLIO_PROJECTS_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return (<LoadingShape/>);
             if (error) return (<NotFound/>);
@@ -57,7 +65,14 @@ class Portfolio extends Component {
               ))
             );
           }}  
-        </Query>
+        </Query> */}
+        <h1 className="jo-portfolio-static-text foreground-text">PORTFOLIO</h1>
+      </div>
+      {/* <div className="jo-portfolio-static foreground">
+        <div className="jo-portfolio-static-text">
+          <h1 className="foreground-text">PORTFOLIO</h1>
+        </div>
+      </div>  */}
     </section>);
   }
 }

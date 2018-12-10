@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './TransformBox.css';
 import {Link} from 'react-router-dom';
+import _ from 'lodash';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-color-vibrant.jpg';
 
 export class TransformBox extends Component {
@@ -13,23 +14,24 @@ export class TransformBox extends Component {
     _y: 0,
     x: 0,
     y: 0,
-    updatePosition: function(x,y) {
-      this.x = x - this._x;
-      this.y = (y - this._y) * -1;
-    },
-    setOrigin: function(inner) {
-      var elem = inner.current;
-      this._x = elem.offsetLeft + Math.floor(elem.offsetWidth/2);
-      this._y = elem.offsetTop + Math.floor(elem.offsetHeight/2);
-      // console.log('orgin set to');
-      // console.log('x: '+this._x);
-      // console.log('y: '+this._y);
-    }
   }
   //Time to Update Variables
   counter = 0;
-  updateRate = 10;
+  updateRate = 15;
   /* END Transform Setup */
+
+  updatePosition(x,y) {
+    this.mouse.x = x - this.mouse._x;
+    this.mouse.y = (y - this.mouse._y) * -1;
+  }
+
+  setOrigin() {
+    var inner = this.inner;
+    var elem = inner.current;
+    var domRect = elem.getBoundingClientRect();
+    this.mouse._x = domRect.left + Math.floor(elem.offsetWidth/2);
+    this.mouse._y = domRect.top + Math.floor(elem.offsetHeight/2);
+  }
 
   constructor(props) {
     super(props);
@@ -39,13 +41,20 @@ export class TransformBox extends Component {
 
   componentDidMount(){
     // Track the mouse position relative to the center of the container.
-    this.mouse.setOrigin(this.inner);
+    this.setOrigin(this.inner);
+    window.addEventListener("scroll", _.debounce(this.setOrigin.bind(this), 500));
+    window.addEventListener("resize", _.debounce(this.setOrigin.bind(this), 500));
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("scroll", _.debounce(this.setOrigin.bind(this), 500));
+    window.removeEventListener("resize", _.debounce(this.setOrigin.bind(this), 500));
   }
 
   mouseEnter(e) {
     // Transforming
     this.setState({ x: e.screenX, y: e.screenY });
-    this.transformUpdate(this.mouse.x,this.mouse.y);
+    this.transformUpdate();
   }
   
   mouseLeave() {
@@ -55,6 +64,8 @@ export class TransformBox extends Component {
   
   mouseMove(e) {
     // Update Transforming
+    // console.log('screenX: ' + e.screenX +  ' screenY: ' + e.screenY);
+    // console.log('this.mouse.x: ' + this.mouse.x +  ' this.mouse.y: ' + this.mouse.y);
     this.setState({ x: e.screenX, y: e.screenY });
     if (this.isTimeToUpdate()) {
       this.transformUpdate(e, this.mouse.x,this.mouse.y);
@@ -62,24 +73,28 @@ export class TransformBox extends Component {
   }
 
   transformUpdate() {
-    this.mouse.updatePosition(this.state.x,this.state.y);
-    var offsetHeight = this.inner.current.offsetHeight;
-    var offsetWidth = this.inner.current.offsetWidth;
-    var rotateX = ( this.mouse.y / offsetHeight * 40 ).toFixed(2);
-    var rotateY = ( this.mouse.x / offsetWidth * 40 ).toFixed(2);
+    this.updatePosition(this.state.x,this.state.y);
+    var itemHeight = this.inner.current.offsetHeight;
+    var itemWidth = this.inner.current.offsetWidth;
+    var rotateX = ( this.mouse.y / itemHeight * 50 ).toFixed(2);
+    var rotateY = ( this.mouse.x / itemWidth * 50 ).toFixed(2);
     
-    if (rotateX > 20) rotateX = 20;
-    if (rotateX < -20) rotateX = -20;
-    if (rotateY > 20) rotateY = 20;
-    if (rotateY < -20) rotateY = -20;
+    if (rotateX > 25) rotateX = 25;
+    if (rotateX < -25) rotateX = -25;
+    if (rotateY > 25) rotateY = 25;
+    if (rotateY < -25) rotateY = -25;
     //TODO add maximum rotate values
 
-    console.log('this.mouse.x: '+this.mouse.x);
-    console.log('this.mouse.y: '+this.mouse.y);
-    console.log('halfHeight: '+offsetHeight)
-    console.log('halfWidth: '+offsetWidth)
-    console.log('rotateX: '+rotateX);
-    console.log('rotateY: '+rotateY);
+    // console.log('-------------------');
+    // console.log(this);
+    // console.log('Mouse X: '+this.mouse.x);
+    // console.log('Mouse Y: '+this.mouse.y);
+    // console.log('Mouse _X: '+this.mouse._x);
+    // console.log('Mouse _Y: '+this.mouse._y);
+    // console.log('itemHeight: '+itemHeight)
+    // console.log('itemWidth: '+itemWidth)
+    // console.log('rotateX: '+rotateX);
+    // console.log('rotateY: '+rotateY);
 
     this.updateTransformStyle(
       rotateX,

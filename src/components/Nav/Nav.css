@@ -33,7 +33,7 @@
   -webkit-animation-timing-function: ease-in-out;
 }
 #main-nav.front {
-  z-index: 50;
+  z-index: 100;
 }
 #main-nav.toggled {
   animation-duration: 0.4s;

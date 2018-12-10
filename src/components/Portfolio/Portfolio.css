@@ -1,6 +1,38 @@
-/* .jo-portfolio .jo-project-content-header {
-  min-height: 400px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-} */
 
+
+.jo-portfolio-static-text {
+  position: fixed;
+  left: 40px;
+  bottom: 20%;
+  font-size: 8em;
+  font-weight: bold;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  text-stroke-width: 2px;
+  text-stroke-color: #fff;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+.jo-portfolio-static-text.background-text {
+  color: #191919;
+  z-index: 1;
+}
+.jo-portfolio-static-text.foreground-text {
+  color: rgba(25,25,25,.1);
+  z-index: 40;
+}
+.jo-portfolio #home-section-three {
+  z-index: 10;
+}
+@media screen and (max-width: 800px) {
+  .jo-portfolio-static-text {
+    font-size: 3em;
+    text-align: center;
+    text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1px;
+    margin: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+
+  }
+}

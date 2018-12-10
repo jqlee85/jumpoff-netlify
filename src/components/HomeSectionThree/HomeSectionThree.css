@@ -46,6 +46,8 @@
     grid-template-columns: 31.5% 11.5% 14% 11.5% 31.5%;
     grid-template-rows: 9.29% 8.21% 23.21% 8.21% 2.14% 8.21% 23.21% 8.21% 9.29%;
     width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     height: auto;
     max-width: 1200px;
     overflow: visible;

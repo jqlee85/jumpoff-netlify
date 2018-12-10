@@ -15,7 +15,6 @@ class ListPost extends Component {
     let postID = 'jo-post-id_' + id;
     let title = this.props.post.title;
     let excerpt = addEllipsis(this.props.post.excerpt);
-    console.log(excerpt);
     let date = this.props.post.date;
     let prettyDate = getPrettyDate(date);
     let content = this.props.post.content;
