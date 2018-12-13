@@ -2,7 +2,9 @@
   position:relative;
   width: 100%;
 }
-
+.home-portfolio-base-desktop > svg {
+ grid-area: 1 / 1 / 10 / 6;
+}
 .home-portfolio-base-mobile {
   min-height: 400px;
   height: auto;
@@ -46,14 +48,14 @@
     grid-template-columns: 31.5% 11.5% 14% 11.5% 31.5%;
     grid-template-rows: 9.29% 8.21% 23.21% 8.21% 2.14% 8.21% 23.21% 8.21% 9.29%;
     width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: auto;
     height: auto;
-    max-width: 1200px;
+    max-width: 1000px;
     overflow: visible;
   }
   .home-portfolio-block {
     position: relative;
+    height: 100%;
     /* background: #ccc; */
   }
   .home-portfolio-block-1 {

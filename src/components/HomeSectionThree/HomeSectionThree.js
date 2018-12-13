@@ -59,7 +59,7 @@ class HomeSectionThree extends Component {
                   if (error) return (<p>Error Loading Post</p>);
                   return (
                     data.projects.edges.map(({ node },index) => (
-                      <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2}/>
+                      <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2} mode="transform"/>
                     ))
                   );
                 }}  

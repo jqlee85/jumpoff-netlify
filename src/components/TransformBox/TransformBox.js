@@ -27,10 +27,12 @@ export class TransformBox extends Component {
 
   setOrigin() {
     var inner = this.inner;
-    var elem = inner.current;
-    var domRect = elem.getBoundingClientRect();
-    this.mouse._x = domRect.left + Math.floor(elem.offsetWidth/2);
-    this.mouse._y = domRect.top + Math.floor(elem.offsetHeight/2);
+    if (typeof(inner) !== 'undefined'){
+      var elem = inner.current;
+      var domRect = elem.getBoundingClientRect();
+      this.mouse._x = domRect.left + Math.floor(elem.offsetWidth/2);
+      this.mouse._y = domRect.top + Math.floor(elem.offsetHeight/2);
+    }
   }
 
   constructor(props) {

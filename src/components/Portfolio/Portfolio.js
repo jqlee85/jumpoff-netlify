@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './Portfolio.css';
 import ProjectContent from '../ProjectContent/ProjectContent';
+import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
@@ -9,7 +10,7 @@ import gql from "graphql-tag";
 
 const PORTFOLIO_PROJECTS_QUERY = gql`
   query listView {
-    projects(first: 10, where: {orderby: {field: MENU_ORDER, order: DESC}}) {
+    projects(first: 7, where: {orderby: {field: MENU_ORDER, order: DESC}}) {
       edges {
         node {
           id
@@ -53,20 +54,21 @@ class Portfolio extends Component {
         </div>
       </div>  */}
       <div className="jo-portfolio-content">
-        <h1 className="jo-portfolio-static-text background-text">PORTFOLIO</h1>
-        <HomeSectionThree/>
-        {/* <Query query={PORTFOLIO_PROJECTS_QUERY}>
-          {({ loading, error, data }) => {
-            if (loading) return (<LoadingShape/>);
-            if (error) return (<NotFound/>);
-            return (
-              data.projects.edges.map(({ node }) => (
-                <ProjectContent post={node} key={`${node.id}`} path={this.props.path} listView={true}/>
-              ))
-            );
-          }}  
-        </Query> */}
-        <h1 className="jo-portfolio-static-text foreground-text">PORTFOLIO</h1>
+        <h1 className="standard-title">Portfolio</h1>
+        <div className="jo-portfolio-list-grid">
+          <svg viewBox="0 0 100 253"></svg>
+          <Query query={PORTFOLIO_PROJECTS_QUERY}>
+            {({ loading, error, data }) => {
+              if (loading) return (<LoadingShape/>);
+              if (error) return (<NotFound/>);
+              return (
+                data.projects.edges.map(({ node },index) => (
+                  <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+1} path={this.props.path} mode="normal"/>
+                ))
+              );
+            }}  
+          </Query>
+        </div>
       </div>
       {/* <div className="jo-portfolio-static foreground">
         <div className="jo-portfolio-static-text">
