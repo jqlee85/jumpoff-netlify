@@ -406,7 +406,16 @@ section {
 
 
 
-
+@media screen and ( min-width: 1201px) {
+  h1.standard-title {
+    font-size: 6em;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  h1.standard-title {
+    font-size: 5em;
+  }
+}
 
 /* Media Queries */
 @media screen and ( min-width: 800px ) {
@@ -466,13 +475,12 @@ section {
 h1.standard-title {
   padding-top: 80px;
   margin: .3em auto;
-  font-size: 4em;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
   h1.standard-title {
-    font-size: 2.2em;
+    font-size: 2.8em;
   }
 }

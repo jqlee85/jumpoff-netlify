@@ -1,6 +1,6 @@
 
 .jo-portfolio .jo-portfolio-content {
-  margin: 100px auto;
+  margin: auto;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
@@ -9,11 +9,12 @@
   position: relative;
   display: grid;
   grid-template-columns: 49% 2% 49%;
-  grid-template-rows: 19.37% .79% 19.37% .79% 19.37% .79% 19.37% .79% 19.37%;
+  grid-template-rows: 19.2168% 1.229% 19.2168% 1.229% 19.2168% 1.229% 19.2168% 1.229% 19.2168%;
+
   width: 90%;
-  margin: auto;
+  margin: 20px auto 150px;
   height: auto;
-  max-width: 900px;
+  max-width: 1100px;
   z-index: 10;
 }
 .jo-portfolio-list-grid > svg {
@@ -43,6 +44,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  background-position: top center;
 }
 .normal-portfolio-block-1 {
   grid-column:1;

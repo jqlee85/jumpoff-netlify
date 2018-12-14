@@ -24,7 +24,7 @@ class PortfolioItem extends Component {
       <div className="jo-portfolio-item">
         {this.props.mode == 'transform' && <TransformBox project={this.props.post}/>}
         {this.props.mode !== 'transform' && 
-          <div className="normal-portfolio-background-image" style={normalImageStyle}>{this.props.post.title}</div>
+          <div className="normal-portfolio-background-image" style={normalImageStyle}></div>
         }
       </div>
     </div>;

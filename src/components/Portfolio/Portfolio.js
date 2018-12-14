@@ -52,17 +52,17 @@ class Portfolio extends Component {
     super(props);
     this.state = {
       gridHeight: 'auto',
-      gridAspectRatio: 2.53
+      gridAspectRatio: 1.628
     }
   }
 
   componentDidMount(){
     this.gridResizer();
-    window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+    window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 20));
   }
 
   componentWillUnmount(){
-    window.removeEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+    window.removeEventListener("resize", _.debounce(this.gridResizer.bind(this), 20));
   }
 
   gridResizer() {
@@ -71,17 +71,16 @@ class Portfolio extends Component {
       let currentHeight = this.grid.current.offsetHeight;
       let sizerHeight = this.gridSizer.current.clientHeight;
       let newHeight = Math.floor(width * this.state.gridAspectRatio);
-      if ( sizerHeight < 1 && (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
-        // console.log('change height of '+currentHeight+' to ' + newHeight);
+      if ( sizerHeight < 1 || (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
+        console.log('change height of '+currentHeight+' to ' + newHeight);
         this.setState({gridHeight: newHeight})
-      }
-      
-      // console.log(this.grid);
-      // console.log(this.gridSizer);
-      // console.log('w:'  + width);
-      // console.log('h:' +currentHeight);
-      // console.log('sh:' +sizerHeight);
-      // console.log('newh:' +newHeight);
+      } 
+      console.log(this.grid);
+      console.log(this.gridSizer);
+      console.log('w:'  + width);
+      console.log('h:' +currentHeight);
+      console.log('sh:' +sizerHeight);
+      console.log('newh:' +newHeight);
       
     }
     

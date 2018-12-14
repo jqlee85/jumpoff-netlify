@@ -66,20 +66,10 @@ class HomeSectionThree extends Component {
       let currentHeight = this.grid.current.offsetHeight;
       let sizerHeight = this.gridSizer.current.clientHeight;
       let newHeight = Math.floor(width * this.state.gridAspectRatio);
-      if ( sizerHeight < 1 && (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
-        // console.log('change height of '+currentHeight+' to ' + newHeight);
+      if ( sizerHeight < 1 || (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
         this.setState({gridHeight: newHeight})
       }
-      
-      // console.log(this.grid);
-      // console.log(this.gridSizer);
-      // console.log('w:'  + width);
-      // console.log('h:' +currentHeight);
-      // console.log('sh:' +sizerHeight);
-      // console.log('newh:' +newHeight);
-      
     }
-    
   }
 
   render(){
