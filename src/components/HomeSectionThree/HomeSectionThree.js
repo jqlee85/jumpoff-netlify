@@ -7,6 +7,7 @@ import PortfolioCarousel from '../PortfolioCarousel/PortfolioCarousel';
 import TouchCarousel from 'react-touch-carousel'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import _ from 'lodash';
 
 const HOME_PORTFOLIO_PROJECTS_QUERY = gql`
   query listView {
@@ -39,17 +40,60 @@ const HOME_PORTFOLIO_PROJECTS_QUERY = gql`
 
 class HomeSectionThree extends Component {
   
-  constructor(props){
+  grid = React.createRef();
+  gridSizer = React.createRef();
+
+  constructor(props) {
     super(props);
+    this.state = {
+      gridHeight: 'auto',
+      gridAspectRatio: 1.4
+    }
+  }
+
+  componentDidMount(){
+    this.gridResizer();
+    window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+  }
+
+  gridResizer() {
+    if (this.grid.current){
+      let width = this.grid.current.offsetWidth;
+      let currentHeight = this.grid.current.offsetHeight;
+      let sizerHeight = this.gridSizer.current.clientHeight;
+      let newHeight = Math.floor(width * this.state.gridAspectRatio);
+      if ( sizerHeight < 1 && (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
+        // console.log('change height of '+currentHeight+' to ' + newHeight);
+        this.setState({gridHeight: newHeight})
+      }
+      
+      // console.log(this.grid);
+      // console.log(this.gridSizer);
+      // console.log('w:'  + width);
+      // console.log('h:' +currentHeight);
+      // console.log('sh:' +sizerHeight);
+      // console.log('newh:' +newHeight);
+      
+    }
+    
   }
 
   render(){
     
+    let gridStyles = {
+      height: this.state.gridHeight
+    }
+    let viewBox = '0 0 100 ' + 100 * this.state.gridAspectRatio;
+
     return <section className="home-section flex-section full-height-section" id="home-section-three">
       <div className="home-portfolio-wrapper">
         <div className="home-section-content">   
-          <div className="home-portfolio-base-desktop">
-            <svg viewBox="0 0 10 14"></svg>
+          <div className="home-portfolio-base-desktop" ref={this.grid} style={gridStyles}>
+            <svg viewBox={viewBox} ref={this.gridSizer}></svg>
             <div className="home-portfolio-block home-portfolio-block-1">
               <h2>Recent Projects</h2>
             </div>

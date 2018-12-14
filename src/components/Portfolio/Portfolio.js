@@ -7,6 +7,7 @@ import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
+import _ from 'lodash';
 
 const PORTFOLIO_PROJECTS_QUERY = gql`
   query listView {
@@ -44,19 +45,62 @@ const PORTFOLIO_PROJECTS_QUERY = gql`
 
 class Portfolio extends Component {
 
+  grid = React.createRef();
+  gridSizer = React.createRef();
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      gridHeight: 'auto',
+      gridAspectRatio: 2.53
+    }
+  }
+
+  componentDidMount(){
+    this.gridResizer();
+    window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
+  }
+
+  gridResizer() {
+    if (this.grid.current){
+      let width = this.grid.current.offsetWidth;
+      let currentHeight = this.grid.current.offsetHeight;
+      let sizerHeight = this.gridSizer.current.clientHeight;
+      let newHeight = Math.floor(width * this.state.gridAspectRatio);
+      if ( sizerHeight < 1 && (sizerHeight !== width * this.state.gridAspectRatio || currentHeight !== width * this.state.gridAspectRatio )) {
+        // console.log('change height of '+currentHeight+' to ' + newHeight);
+        this.setState({gridHeight: newHeight})
+      }
+      
+      // console.log(this.grid);
+      // console.log(this.gridSizer);
+      // console.log('w:'  + width);
+      // console.log('h:' +currentHeight);
+      // console.log('sh:' +sizerHeight);
+      // console.log('newh:' +newHeight);
+      
+    }
+    
+  }
+
+
   render(){
     
+    let gridStyles = {
+      height: this.state.gridHeight
+    }
+    let viewBox = '0 0 100 ' + 100 * this.state.gridAspectRatio;
+
     return (
     <section className="jo-portfolio">
-      {/* <div className="jo-portfolio-static background">
-        <div className="jo-portfolio-static-text">
-          <h1 className="background-text">PORTFOLIO</h1>
-        </div>
-      </div>  */}
       <div className="jo-portfolio-content">
         <h1 className="standard-title">Portfolio</h1>
-        <div className="jo-portfolio-list-grid">
-          <svg viewBox="0 0 100 253"></svg>
+        <div className="jo-portfolio-list-grid" ref={this.grid} style={gridStyles}>
+          <svg viewBox={viewBox} ref={this.gridSizer}></svg>
           <Query query={PORTFOLIO_PROJECTS_QUERY}>
             {({ loading, error, data }) => {
               if (loading) return (<LoadingShape/>);
@@ -70,11 +114,6 @@ class Portfolio extends Component {
           </Query>
         </div>
       </div>
-      {/* <div className="jo-portfolio-static foreground">
-        <div className="jo-portfolio-static-text">
-          <h1 className="foreground-text">PORTFOLIO</h1>
-        </div>
-      </div>  */}
     </section>);
   }
 }

@@ -9,7 +9,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 49% 2% 49%;
-  grid-template-rows: 19.37% .791% 19.37% .791% 19.37% .791% 19.37% .791% 19.37%;
+  grid-template-rows: 19.37% .79% 19.37% .79% 19.37% .79% 19.37% .79% 19.37%;
   width: 90%;
   margin: auto;
   height: auto;
@@ -20,10 +20,22 @@
   grid-area: 1 / 1 / 10 / 4;
  }
 .normal-portfolio-block {
+  display: flex;
   position: relative;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background: #ccc;
+  align-items: center;
+}
+.normal-portfolio-block .jo-portfolio-item {
+  width: 100%;
+  height: 0px;
+}
+.normal-portfolio-block-1 .jo-portfolio-item, .normal-portfolio-block-4 .jo-portfolio-item, .normal-portfolio-block-5 .jo-portfolio-item, .normal-portfolio-block-7 .jo-portfolio-item {
+  padding-bottom: 100%;
+}
+.normal-portfolio-block-2 .jo-portfolio-item, .normal-portfolio-block-3 .jo-portfolio-item, .normal-portfolio-block-6 .jo-portfolio-item {
+  padding-bottom: 200%;
 }
 .normal-portfolio-block .normal-portfolio-background-image{
   width: 100%;

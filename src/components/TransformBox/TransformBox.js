@@ -27,7 +27,7 @@ export class TransformBox extends Component {
 
   setOrigin() {
     var inner = this.inner;
-    if (typeof(inner) !== 'undefined'){
+    if ( inner.current && typeof(inner.current) !== 'undefined'){
       var elem = inner.current;
       var domRect = elem.getBoundingClientRect();
       this.mouse._x = domRect.left + Math.floor(elem.offsetWidth/2);

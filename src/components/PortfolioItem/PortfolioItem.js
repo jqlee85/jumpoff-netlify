@@ -9,7 +9,7 @@ class PortfolioItem extends Component {
   }
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     let itemNumber = this.props.itemNumber || '';
     let classNames = this.props.classNames ? this.props.classNames : '';
     let normalImageStyle;
