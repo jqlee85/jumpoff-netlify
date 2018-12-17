@@ -17,7 +17,7 @@ export class TransformBox extends Component {
   }
   //Time to Update Variables
   counter = 0;
-  updateRate = 15;
+  updateRate = 10;
   /* END Transform Setup */
 
   updatePosition(x,y) {
@@ -44,13 +44,13 @@ export class TransformBox extends Component {
   componentDidMount(){
     // Track the mouse position relative to the center of the container.
     this.setOrigin(this.inner);
-    window.addEventListener("scroll", _.debounce(this.setOrigin.bind(this), 500));
-    window.addEventListener("resize", _.debounce(this.setOrigin.bind(this), 500));
+    window.addEventListener("scroll", _.debounce(this.setOrigin.bind(this), 50));
+    window.addEventListener("resize", _.debounce(this.setOrigin.bind(this), 50));
   }
 
   componentWillUnmount(){
-    window.removeEventListener("scroll", _.debounce(this.setOrigin.bind(this), 500));
-    window.removeEventListener("resize", _.debounce(this.setOrigin.bind(this), 500));
+    window.removeEventListener("scroll", _.debounce(this.setOrigin.bind(this), 50));
+    window.removeEventListener("resize", _.debounce(this.setOrigin.bind(this), 50));
   }
 
   mouseEnter(e) {

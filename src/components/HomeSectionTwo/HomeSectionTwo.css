@@ -44,7 +44,7 @@
     width: 60%;
     max-width: 1200px;
     padding:  102px 100px;
-    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.13); */
+    box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0,0,0,.08);
   }
   .what-we-do-heading {
     margin-bottom: 1.8em;

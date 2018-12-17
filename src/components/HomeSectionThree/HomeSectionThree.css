@@ -47,10 +47,10 @@
     display: grid;
     grid-template-columns: 31.5% 11.5% 14% 11.5% 31.5%;
     grid-template-rows: 9.29% 8.21% 23.21% 8.21% 2.14% 8.21% 23.21% 8.21% 9.29%;
-    width: 90%;
+    width: 80%;
     margin: auto;
     height: auto;
-    max-width: 1000px;
+    max-width: 1400px;
     overflow: visible;
   }
   .home-portfolio-block {
