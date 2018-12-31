@@ -66,7 +66,9 @@ class Portfolio extends Component {
   }
 
   gridResizer() {
-    if (this.grid.current){
+    if (window.innerWidth < 601) {
+      this.setState({gridHeight: 'auto'})
+    } else if (this.grid.current) {
       let width = this.grid.current.offsetWidth;
       let currentHeight = this.grid.current.offsetHeight;
       let sizerHeight = this.gridSizer.current.clientHeight;
@@ -81,9 +83,7 @@ class Portfolio extends Component {
       console.log('h:' +currentHeight);
       console.log('sh:' +sizerHeight);
       console.log('newh:' +newHeight);
-      
     }
-    
   }
 
 
