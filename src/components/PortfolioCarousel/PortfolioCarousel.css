@@ -5,12 +5,10 @@
   margin: 0 auto;
   touch-action: pan-y;
 }
-
 .carousel-track {
   display: flex;
   height: 100%;
 }
-
 .carousel-card {
   flex: 0 0 340px;
   height: 100%;
@@ -29,17 +27,12 @@
   -o-perspective: 400px;
   perspective: 400px;
 }
-
 .carousel-card-inner {
   position: relative;
   width: 346px;
   height: 396px;
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.1);
 }
-/* .carousel-card:nth-child(odd) .carousel-card-inner {
-  background-color: #0480A0; 
-  background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) );
-} */
 .carousel-card-image {
   position: relative;
   width: 100%;
@@ -72,7 +65,8 @@
 
 .carousel-text {
   padding: 1em;
-  font-size: 14px;
+  font-size: .9em;
+  line-height: 150%;
   white-space: pre-wrap;
   text-align: left;
   font-family: sans-serif;

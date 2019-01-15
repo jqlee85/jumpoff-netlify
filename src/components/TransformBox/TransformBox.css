@@ -34,8 +34,8 @@
   -webkit-clip-path: inset(0);
 }
 .jo-transform-box-inner:hover .jo-transform-box-inner-container {
-  clip-path: inset(15px);
-  -webkit-clip-path: inset(15px);
+  clip-path: inset(5px);
+  -webkit-clip-path: inset(5px);
 }
 .jo-transform-box-bg-image {
   position: absolute;
@@ -51,7 +51,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: transparent;
   transition: background-color .8s cubic-bezier(.42,0,0,1);
