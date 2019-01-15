@@ -10,7 +10,6 @@
   display: grid;
   grid-template-columns: 49% 2% 49%;
   grid-template-rows: 19.2168% 1.229% 19.2168% 1.229% 19.2168% 1.229% 19.2168% 1.229% 19.2168%;
-
   width: 90%;
   margin: 20px auto 150px;
   height: auto;
@@ -79,7 +78,8 @@
   .jo-portfolio-list-grid {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    margin: 40px auto;
   }
   .jo-portfolio-list-grid svg {
     display: none;

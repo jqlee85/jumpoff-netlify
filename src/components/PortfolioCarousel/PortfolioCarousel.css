@@ -34,19 +34,12 @@
   position: relative;
   width: 346px;
   height: 396px;
-  padding: 10px;
-  box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  background-color: #ef6085; 
-  background-image: linear-gradient(15deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
-  /* background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) ); */
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.1);
 }
-.carousel-card:nth-child(odd) .carousel-card-inner {
+/* .carousel-card:nth-child(odd) .carousel-card-inner {
   background-color: #0480A0; 
   background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) );
-}
+} */
 .carousel-card-image {
   position: relative;
   width: 100%;
@@ -67,7 +60,7 @@
   height: 100%;
   box-sizing: border-box;
   padding: 20px;
-  background-color: rgba(20,20,20,.7);
+  background-color: rgba(0,0,0,.5);
 }
 .carousel-card-inner h3, .carousel-card-inner p {
   color: white;
@@ -114,5 +107,6 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #191919;
+  background-color: #f89c44;
+  background-image: linear-gradient(15deg, #ef6085, #f0ba45 );
 }
