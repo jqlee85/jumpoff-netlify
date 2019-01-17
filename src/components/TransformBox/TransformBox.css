@@ -12,7 +12,6 @@
   padding: 0px;
   margin: 0px;
   padding: 0px;
-  background-image: linear-gradient(15deg, #cd5fa1, #ef6085, #f89c44, #f0ba45 );
   transition: all .8s cubic-bezier(.42,0,0,1);
   will-change: transform;
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
@@ -29,13 +28,8 @@
   height: 100%;
   background: #000;
   transition: all .8s cubic-bezier(.42,0,0,1);
-  transition: clip-path .8s cubic-bezier(.42,0,0,1), webkit-clip-path .8s cubic-bezier(.42,0,0,1);
-  clip-path: inset(0);
-  -webkit-clip-path: inset(0);
 }
 .jo-transform-box-inner:hover .jo-transform-box-inner-container {
-  clip-path: inset(5px);
-  -webkit-clip-path: inset(5px);
 }
 .jo-transform-box-bg-image {
   position: absolute;
@@ -65,7 +59,7 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,4 +84,75 @@
 }
 .jo-transform-box-content p.jo-portfolio-item-description {
   font-size: 1rem;
+  text-transform: none;
+}
+/* Media Queries */
+@media screen and ( min-width: 1201px ) {
+  .jo-transform-box-content h3.jo-portfolio-item-title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: .5rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-technologies {
+    font-size: .7rem;
+    margin-bottom: .7rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-description {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+}
+@media screen and ( min-width: 1001px ) and ( max-width: 1200px ) {
+  .jo-transform-box-content h3.jo-portfolio-item-title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: .5rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-technologies {
+    font-size: .6rem;
+    margin-bottom: .5rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-description {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and ( max-width: 1000px ) {
+  .jo-transform-box-content h3.jo-portfolio-item-title {
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-bottom: .3rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-technologies {
+    font-size: .6rem;
+    margin-bottom: .5rem;
+  }
+  .jo-transform-box-content p.jo-portfolio-item-description {
+    font-size: .9rem;
+    line-height: 1.2;
+    margin-bottom: .7rem;
+  }
+  .jo-transform-box-content .jo-link-button-wrapper {
+    margin-top: .5rem;
+  }
+}
+@media screen and ( min-width: 801px ) and ( max-width: 1200px ) {
+  
+}
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+ 
+}
+@media screen and ( min-width: 801px ) {
+
+}
+@media screen and ( max-width: 800px ) {
+  
+}
+@media screen and ( min-width: 601px ) and ( max-width: 800px ) {
+  
+}
+@media screen and ( max-width: 600px ) {
+  
 }

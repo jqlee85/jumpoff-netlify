@@ -18,7 +18,7 @@ export class LinkButton extends Component {
     let text = this.props.text || 'Learn More'; 
     let transparent = this.props.transparent || false;
     let textColor = 'white';
-    let backgroundColor = 'rgba(255,255,255,0)';
+    let backgroundColor;
     
     //Set Textcolor
     if (color == '#191919') {
@@ -28,16 +28,22 @@ export class LinkButton extends Component {
       if (transparent) textColor = 'white';
       else textColor = '#191919';
     }
+
     //Set Background Color
     if (!transparent) {
       backgroundColor = color;
+    } else {
+      backgroundColor = 'rgba(255,255,255,0)';
     }
     //Set Button Styles
     let buttonStyles = {
       backgroundColor: backgroundColor,
       border: '1px solid '+ color,
       color: textColor
+      
     }
+
+    
     
     let classNames = 'jo-link-button ' + this.props.classNames + ' ' + linkType;
     

@@ -20,6 +20,8 @@
 }
 .button-text {
   height: 16px;
+  display: flex;
+  
 }
 .jo-link-button button .button-arrow {
   height: 16px;
@@ -51,5 +53,20 @@
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  .jo-link-button.small-screen-responsive button {
+    padding: 8px 12px;
+    height: 38px;
+  }
+  .jo-link-button.small-screen-responsive button .button-arrow svg {
+    max-height: 16px;
+  }
+  .jo-link-button.small-screen-responsive button  .button-text {
+    padding-top: 3px;
+    font-size: 10px;
   }
 }

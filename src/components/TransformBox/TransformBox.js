@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './TransformBox.css';
 import {Link} from 'react-router-dom';
+import LinkButton from '../LinkButton/LinkButton';
 import _ from 'lodash';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-color-vibrant.jpg';
 
@@ -144,6 +145,7 @@ export class TransformBox extends Component {
                 <h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/>
                 <p className="jo-portfolio-item-technologies" dangerouslySetInnerHTML={{ __html: technologies }}/>
                 <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
+                <LinkButton to={projectLink} transparent={true} color="white" text="See More" classNames="small-screen-responsive"/>
               </div>
             </div>
           </Link>
