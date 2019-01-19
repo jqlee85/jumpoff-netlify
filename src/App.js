@@ -43,9 +43,9 @@ class App extends Component {
   handleScroll = (e) => {
     // let appScrolled = this.state.appScrolled;
     let yPos;
-    if ( typeof(e.target.scrollingElement.scrollTop) !== 'undefined' ) {
+    if ( typeof(e.target.scrollingElement ) !== 'undefined' && typeof(e.target.scrollingElement.scrollTop) !== 'undefined' ) {
       yPos = e.target.scrollingElement.scrollTop;
-    } else if ( typeof(e.srcElement.scrollingElement.scrollTop) !== 'undefined' ) {
+    } else if ( typeof(e.srcElement.scrollingElement) !== 'undefined' && typeof(e.srcElement.scrollingElement.scrollTop) !== 'undefined' ) {
       yPos = e.srcElement.scrollingElement.scrollTop;
     }
     
