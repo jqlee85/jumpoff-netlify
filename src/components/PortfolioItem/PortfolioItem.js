@@ -8,6 +8,15 @@ class PortfolioItem extends Component {
 
   constructor(props) {
     super(props);
+    this.state = { 
+      showContent: false,
+    };  
+  }
+
+  showContent = () => {
+    this.setState(prevState => ({
+      showContent: true
+    }));
   }
 
   render(){
@@ -21,6 +30,7 @@ class PortfolioItem extends Component {
     let itemNumber = this.props.itemNumber || '';
     let classNames = this.props.classNames ? this.props.classNames : '';
     if ( this.props.mode != 'transform' ) classNames += ' jo-portfolio-item-normal ';
+    if (this.state.showContent) classNames += ' hovered ';
     let normalImageStyle;
     let projectHoverStyle = {
       background: projectColor,
@@ -32,18 +42,16 @@ class PortfolioItem extends Component {
     if (this.props.mode == 'transform') { classNames += ' home-portfolio-block home-portfolio-block-' + itemNumber; }
     else { 
       classNames += 'normal-portfolio-block normal-portfolio-block-' + itemNumber;
-      normalImageStyle = {
-        backgroundImage: 'url('+backgroundImage+')'
-      }
+      normalImageStyle = { backgroundImage: 'url('+backgroundImage+')' }
     }
 
     return <div className={classNames}>
       <div className="jo-portfolio-item">
         {this.props.mode == 'transform' && <TransformBox project={this.props.post}/>}
         {this.props.mode !== 'transform' && 
-          <div className="normal-portfolio-background-image" style={normalImageStyle}>
+          <div className="normal-portfolio-content-wrapper" style={normalImageStyle} onClick={this.showContent}>
             <div className="normal-portfolio-hover-content" style={projectHoverStyle}>
-              <Link to={projectLink}><h1>{this.props.post.title}</h1></Link>
+              <Link className="normal-portfolio-title" to={projectLink}><h1>{this.props.post.title}</h1></Link>
               <Link to={projectLink}><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
             </div>
           </div>

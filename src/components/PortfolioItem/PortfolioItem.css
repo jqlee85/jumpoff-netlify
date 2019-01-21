@@ -8,10 +8,9 @@
   display: inline-block; 
   width: 100%;
   height: 100%;
-  padding: 0px;
-  
+  padding: 0px; 
 }
-.normal-portfolio-background-image {
+.normal-portfolio-content-wrapper {
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -46,6 +45,7 @@
 }
 .jo-portfolio-item-normal .normal-portfolio-hover-content a {
   display: none;
+  position: relative;
 }
 .normal-portfolio-hover-content h1, .normal-portfolio-hover-content p {
   color: #fff;
@@ -54,6 +54,25 @@
   font-size: 3rem;
   margin-bottom: .8rem;
   text-transform: uppercase;
+}
+.normal-portfolio-hover-content a:before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  height: 2px;
+  bottom: 5px;
+  background-color: #fff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.normal-portfolio-hover-content a.normal-portfolio-title:hover:before, .normal-portfolio-hover-content a.normal-portfolio-title:focus:before, .normal-portfolio-hover-content a.normal-portfolio-title:active:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 .normal-portfolio-hover-content p {
   font-size: 1.5rem;
