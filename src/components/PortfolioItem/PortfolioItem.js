@@ -54,6 +54,7 @@ class PortfolioItem extends Component {
               <Link className="normal-portfolio-title" to={projectLink}><h1>{this.props.post.title}</h1></Link>
               <Link to={projectLink}><p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/></Link>
             </div>
+            <div className="clickblocker"></div>
           </div>
         }
       </div>

@@ -11,6 +11,7 @@
   padding: 0px; 
 }
 .normal-portfolio-content-wrapper {
+  position:relative;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -18,14 +19,9 @@
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
   overflow: hidden;
 }
-.jo-portfolio-item-normal:hover .normal-portfolio-hover-content, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content {
-  opacity: 1;
-}
-.jo-portfolio-item-normal:hover .normal-portfolio-hover-content a, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content a{
-  display: block;
-  height: auto;
-}
 .jo-portfolio-item-normal .normal-portfolio-hover-content {
+  position: relative;
+  visibility: hidden;
   opacity: 0;
   height: 101%;
   width: 101%;
@@ -45,9 +41,10 @@
   cursor: pointer;
 }
 .jo-portfolio-item-normal .normal-portfolio-hover-content a {
-  display: none;
-  height: 0px;
+  visibility: hidden;
   position: relative;
+  transition: visibility .5s ease-in-out;
+  margin-left: -9999px;
 }
 .normal-portfolio-hover-content h1, .normal-portfolio-hover-content p {
   color: #fff;
@@ -56,6 +53,14 @@
   font-size: 3rem;
   margin-bottom: .8rem;
   text-transform: uppercase;
+}
+.jo-portfolio-item-normal:hover .normal-portfolio-hover-content, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content {
+  visibility: visible;
+  opacity: 1;
+}
+.jo-portfolio-item-normal:hover .normal-portfolio-hover-content a, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content a{
+  visibility: visible;
+  margin-left: auto;
 }
 .normal-portfolio-hover-content a:before {
   content: "";
