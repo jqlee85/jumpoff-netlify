@@ -33,9 +33,9 @@ class ProjectContent extends Component {
     let client = this.props.post.client || false;
     let technologies = this.props.post.technologies || false;
     let desktopScreenshot = this.props.post.desktopScreenshot || false;
-    let desktopScreenshotId = { mediaItemId: desktopScreenshot }
+    // let desktopScreenshotId = { mediaItemId: desktopScreenshot }
     let mobileScreenshot = this.props.post.mobileScreenshot || false;
-    let mobileScreenshotId = { mediaItemId: mobileScreenshot }
+    // let mobileScreenshotId = { mediaItemId: mobileScreenshot }
     let headerStyles = {
       backgroundImage: 'url('+featuredImage.sourceUrl+')'
     }
@@ -52,24 +52,8 @@ class ProjectContent extends Component {
         
         <div className="jo-project-content-header">
           <div className="jo-project-mockups">
-            {desktopScreenshot && <Query query={SCREENSHOT_QUERY} variables={desktopScreenshotId}>
-              {({ loading, error, data }) => {
-                if (loading) return (<SiteMockup device="" image=""/>);
-                if (error) return (<SiteMockup device="" image=""/>);
-                return (
-                  <SiteMockup device="" image={data.mediaItemBy.sourceUrl}/>
-                );
-              }}  
-            </Query>}
-            {mobileScreenshot && <Query query={SCREENSHOT_QUERY} variables={mobileScreenshotId}>
-              {({ loading, error, data }) => {
-                if (loading) return (<SiteMockup device="" image=""/>);
-                if (error) return (<SiteMockup device="" image=""/>);
-                return (
-                  <SiteMockup device="mobile" image={data.mediaItemBy.sourceUrl}/>
-                );
-              }}  
-            </Query>}
+            {desktopScreenshot && <SiteMockup device="" image={desktopScreenshot}/>}
+            {mobileScreenshot && <SiteMockup device="mobile" image={mobileScreenshot}/>}
           </div>
           <div className="jo-project-info">
             {title && <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>}

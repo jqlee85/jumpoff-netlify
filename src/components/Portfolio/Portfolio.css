@@ -4,6 +4,7 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  padding-top: 90px;
 }
 .jo-portfolio-list-grid {
   position: relative;
@@ -68,11 +69,19 @@
   grid-row: 9/10
   
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 751px) and (max-width: 1000px) {
+  .jo-portfolio .jo-portfolio-content {
+    padding-top: 70px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .jo-portfolio .jo-portfolio-content {
+    padding-top: 40px;
+  }
   .jo-portfolio-list-grid {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     margin: 40px auto;
   }
   .jo-portfolio-list-grid svg {
@@ -86,10 +95,11 @@
     margin-bottom: 20px;
   }
   .normal-portfolio-block-1 .jo-portfolio-item, .normal-portfolio-block-4 .jo-portfolio-item, .normal-portfolio-block-5 .jo-portfolio-item, .normal-portfolio-block-7 .jo-portfolio-item {
-    padding-bottom: 100%;
+    padding-bottom: 66.67%;
   }
   .normal-portfolio-block-2 .jo-portfolio-item, .normal-portfolio-block-3 .jo-portfolio-item, .normal-portfolio-block-6 .jo-portfolio-item {
-    padding-bottom: 200%;
+    padding-bottom: 133.33%;
   }
 
 }
+

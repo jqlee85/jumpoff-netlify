@@ -145,7 +145,6 @@ export class TransformBox extends Component {
                 <h3 className="jo-portfolio-item-title" dangerouslySetInnerHTML={{ __html: title }}/>
                 <p className="jo-portfolio-item-technologies" dangerouslySetInnerHTML={{ __html: technologies }}/>
                 <p className="jo-portfolio-item-description" dangerouslySetInnerHTML={{ __html: description }}/>
-                <LinkButton to={projectLink} transparent={true} color="white" text="See More" classNames="small-screen-responsive"/>
               </div>
             </div>
           </Link>

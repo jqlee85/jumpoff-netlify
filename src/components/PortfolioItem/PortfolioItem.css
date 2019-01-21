@@ -19,7 +19,7 @@
   box-shadow: .75rem 1.25rem 2.5rem 0.35rem rgba(0,0,0,.08);
   overflow: hidden;
 }
-.jo-portfolio-item-normal:hover .normal-portfolio-hover-content {
+.jo-portfolio-item-normal:hover .normal-portfolio-hover-content, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content {
   opacity: 1;
 }
 .jo-portfolio-item-normal .normal-portfolio-hover-content {
@@ -40,11 +40,35 @@
   background: -webkit-linear-gradient(45deg, #ef6085 1%,#f89c44 48%,#f0ba45 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg, #ef6085 1%,#f89c44 48%,#f0ba45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef6085', endColorstr='#f0ba45',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  cursor: pointer;
+}
+.normal-portfolio-hover-content h1, .normal-portfolio-hover-content p {
+  color: #fff;
 }
 .normal-portfolio-hover-content h1 {
-  color: #fff;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: .8rem;
+  text-transform: uppercase;
 }
-.normal-portfolio-hover-content p.jo-portfolio-item-technologies, .normal-portfolio-hover-content p.jo-portfolio-item-description {
-  color: #fff;
+.normal-portfolio-hover-content p {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .normal-portfolio-hover-content h1 {
+    font-size: 2rem;
+    margin-bottom: .4rem;
+  }
+  .normal-portfolio-hover-content p {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 751px) and (max-width: 1200px) {
+  .normal-portfolio-hover-content h1 {
+    font-size: 2rem;
+    margin-bottom: .4rem;
+  }
+  .normal-portfolio-hover-content p {
+    font-size: 1rem;
+  }
 }

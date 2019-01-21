@@ -24,8 +24,9 @@ const PORTFOLIO_PROJECTS_QUERY = gql`
           client
           technologies
           githubLink
-          desktopScreenshot
-          mobileScreenshot
+          portfolioImage
+          projectColor
+          projectColor2
           featuredImage {
             sourceUrl
           }
@@ -66,7 +67,7 @@ class Portfolio extends Component {
   }
 
   gridResizer() {
-    if (window.innerWidth < 601) {
+    if (window.innerWidth < 751) {
       this.setState({gridHeight: 'auto'})
     } else if (this.grid.current) {
       let width = this.grid.current.offsetWidth;
@@ -97,7 +98,6 @@ class Portfolio extends Component {
     return (
     <section className="jo-portfolio">
       <div className="jo-portfolio-content">
-        <h1 className="standard-title">Portfolio</h1>
         <div className="jo-portfolio-list-grid" ref={this.grid} style={gridStyles}>
           <svg viewBox={viewBox} ref={this.gridSizer}></svg>
           <Query query={PORTFOLIO_PROJECTS_QUERY}>
