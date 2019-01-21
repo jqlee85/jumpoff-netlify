@@ -23,6 +23,7 @@
 }
 .jo-portfolio-item-normal:hover .normal-portfolio-hover-content a, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content a{
   display: block;
+  height: auto;
 }
 .jo-portfolio-item-normal .normal-portfolio-hover-content {
   opacity: 0;
@@ -45,6 +46,7 @@
 }
 .jo-portfolio-item-normal .normal-portfolio-hover-content a {
   display: none;
+  height: 0px;
   position: relative;
 }
 .normal-portfolio-hover-content h1, .normal-portfolio-hover-content p {
