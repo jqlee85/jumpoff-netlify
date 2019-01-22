@@ -61,6 +61,7 @@
 .jo-portfolio-item-normal:hover .normal-portfolio-hover-content a, .jo-portfolio-item-normal.hovered .normal-portfolio-hover-content a{
   visibility: visible;
   margin-left: auto;
+  margin-right: auto;
 }
 .normal-portfolio-hover-content a:before {
   content: "";
