@@ -50,9 +50,13 @@ article.jo-post img {
 }
 .jo-post-content-wrapper .snippetcpt-wrap {
   display: block;
-  margin: 2rem auto;
-  padding: 25px;
-  overflow-x: scroll;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: -2000px;
+  padding: 25px 2000px;
+  box-sizing: content-box;
+  width: 100%;
+  overflow-x: visible;
   text-align: left;
   border: 1px solid rgb(8, 8, 8);
   border-radius: 4px;
@@ -60,6 +64,9 @@ article.jo-post img {
   font-family: "Courier New", Courier, monospace;
   line-height: 130%;
   color: rgba(255,255,255,.9);
+}
+.jo-post-content-wrapper .snippetcpt-wrap pre {
+  width: 100%;
 }
 .jo-post a:hover, .jo-post a:active, .jo-post a:focus, .jo-post-content-wrapper a:hover, .jo-post-content-wrapper a:active, .jo-post-content-wrapper a:focus {
   -webkit-animation: white-rainbow 6s infinite;
@@ -109,7 +116,8 @@ article.jo-post img {
     margin: .9rem auto .7rem;
   }
   .jo-post-content-wrapper .snippetcpt-wrap {
-    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   .jo-post-content-wrapper .snippetcpt-wrap pre {
     font-size: 1.1rem;
@@ -152,9 +160,6 @@ article.jo-post img {
     margin: .85rem auto .6rem;
     line-height: 155%;
   }
-  .jo-post-content-wrapper .snippetcpt-wrap {
-    padding: 15px;
-  }
   .jo-post-content-wrapper .snippetcpt-wrap pre {
     font-size: .95rem;
   }
@@ -193,9 +198,6 @@ article.jo-post img {
   .jo-post-content-wrapper p {
     font-size: 1rem;
     margin: .7rem auto .5rem;
-  }
-  .jo-post-content-wrapper .snippetcpt-wrap {
-    padding: 10px;
   }
   .jo-post-content-wrapper .snippetcpt-wrap pre {
     font-size: .8rem;
