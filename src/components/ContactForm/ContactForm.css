@@ -113,6 +113,11 @@
 
 .rs1-wrap-input100 {
   width: calc((100% - 30px) / 2);
+  display: inline-block;
+  
+}
+.rs1-wrap-input100:first-child {
+  margin-right:30px;
 }
 .jo-contact-form label {
   display: block;
