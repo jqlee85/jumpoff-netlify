@@ -16,7 +16,7 @@ class ContactForm extends Component {
     
     return <div className="jo-contact-form-wrapper">  
       
-      <form className="jo-contact-form contact100-form validate-form" name="contact" method="post" data-netlify="true">
+      <form className="jo-contact-form contact100-form validate-form" name="contact" method="post" netlify data-netlify="true">
 				
         <input type="hidden" name="form-name" value="contact" />
 
