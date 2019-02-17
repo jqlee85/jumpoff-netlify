@@ -59,3 +59,13 @@ border-bottom: 2px solid rgba(0,0,0,0);
         width: 100%;
     }    
 } */
+
+/* Contact Form Section */
+.jo-contact-form-wrapper {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+}
