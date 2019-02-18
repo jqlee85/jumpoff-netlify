@@ -50,7 +50,7 @@ class ContactForm extends Component {
 
     return <div className={theClasses}>  
       
-      <NetlifyForm name='contact' canSubmit={canSubmit}>
+      <NetlifyForm name='contact'>
         {({ loading, error, success }) => (
           <div>
             {/* {loading &&
@@ -101,12 +101,6 @@ class ContactForm extends Component {
           </div>
         )}
       </NetlifyForm>
-
-      {/* <form className="jo-contact-form contact100-form validate-form" onSubmit={this.handleSubmit} >
-				
-        
-
-			</form> */}
       
     </div>
   }
