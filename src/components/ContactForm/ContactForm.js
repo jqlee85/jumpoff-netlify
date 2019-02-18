@@ -30,7 +30,9 @@ class ContactForm extends Component {
     console.log('validate');
     console.log(e);
     console.log(e.values());
-    return true;
+    if ( !( this.state.name !== '' && this.state.email !== '' && this.state.message !== '') ) {
+      return true;
+    }
   }
 
   render(){
@@ -48,7 +50,7 @@ class ContactForm extends Component {
 
     return <div className={theClasses}>  
       
-      <NetlifyForm name='contact' canSubmit={canSubmit} validate={this.validate}>
+      <NetlifyForm name='contact' canSubmit={canSubmit}>
         {({ loading, error, success }) => (
           <div>
             {/* {loading &&
