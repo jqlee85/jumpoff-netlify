@@ -7,6 +7,12 @@
 	border: none;
 }
 
+.jo-contact-form h2 {
+  font-size: 3em;
+  text-align: left;
+  margin-bottom: 1.5em;
+}
+
 .jo-contact-form textarea {
   outline: none;
   border: none;
@@ -128,7 +134,6 @@
   padding-left: 5px;
   text-align: left;
 }
-
 
 .input100 {
   display: block;

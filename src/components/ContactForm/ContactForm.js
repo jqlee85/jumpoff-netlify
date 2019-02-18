@@ -42,9 +42,9 @@ class ContactForm extends Component {
               <div className="jo-contact-form">
                 <input type="hidden" name="form-name" value="contact" />
 
-                <span className="contact100-form-title">
+                <h2 className="jo-contact-form-title">
                   Contact
-                </span>
+                </h2>
                 <div>
                   <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
                     <label for="name">Your Name</label>

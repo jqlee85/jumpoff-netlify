@@ -11,7 +11,9 @@ class HomeSectionFour extends Component {
   render(){
 
     return <section className="" id="home-section-four">
-      <ContactForm/>
+      <div className="home-section-content">
+        <ContactForm/>
+      </div>
     </section>
   }
 
