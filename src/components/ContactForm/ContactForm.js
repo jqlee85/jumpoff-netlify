@@ -50,7 +50,7 @@ class ContactForm extends Component {
 
     return <div className={theClasses}>  
       
-      <NetlifyForm name='contact'>
+      <NetlifyForm name='contactform'>
         {({ loading, error, success }) => (
           <div>
             {/* {loading &&
