@@ -64,7 +64,7 @@ class ContactForm extends Component {
               //   <button>Submit</button>
               // </div>
               <div className="jo-contact-form">
-                <input type="hidden" name="form-name" value="contact" />
+                {/* <input type="hidden" name="form-name" value="contact" /> */}
 
                 <h2 className="jo-contact-form-title">
                   Contact
