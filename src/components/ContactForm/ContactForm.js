@@ -11,33 +11,49 @@ class ContactForm extends Component {
     this.state = { 
       name: '',
       email: '',
-      message: ''
+      message: '',
+      canSubmit: false
     };  
   }
 
-  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+    if ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
+      console.log('fields filled in');
+      this.setState(prevState => ({
+        canSubmit: true
+      }));
+    }
+  }
   
+  validate = (e) => {
+    console.log('validate');
+    console.log(e);
+    console.log(e.values());
+    return true;
+  }
 
   render(){
     
-    const { name, email, message } = this.state;
-    let theClasses;
+    const { name, email, message, canSubmit } = this.state;
+    let theClasses = 'jo-contact-form-wrapper';
+    if (!canSubmit) { theClasses += ' inactive'; }
     if (this.props.colorScheme == 'dark' ) theClasses += ' dark-bg';
-    
-    return <div className="jo-contact-form-wrapper">  
+    let nameClasses = 'input100';
+    if (name !== '') nameClasses += ' has-val';
+    let emailClasses = 'input100';
+    if (email !== '') emailClasses += ' has-val';
+    let messageClasses = 'input100';
+    if (message !== '') messageClasses += ' has-val';
+
+    return <div className={theClasses}>  
       
-      <NetlifyForm name='contact'>
+      <NetlifyForm name='contact' canSubmit={canSubmit} validate={this.validate}>
         {({ loading, error, success }) => (
           <div>
-            {loading &&
+            {/* {loading &&
               <div>Loading...</div>
-            }
-            {error &&
-              <div>Your information was not sent. Please try again later.</div>
-            }
-            {success &&
-              <div>Thank you for contacting us!</div>
-            }
+            } */}
             {!loading && !success &&
               <div className="jo-contact-form">
                 <input type="hidden" name="form-name" value="contact" />
@@ -47,25 +63,38 @@ class ContactForm extends Component {
                 </h2>
                 <div>
                   <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
-                    <label for="name">Your Name</label>
-                    <input className="input100" type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
+                    <label htmlFor="name">Your Name</label>
+                    <input className={nameClasses} type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
                     <span className="focus-input100"></span>
                   </div>
-          
                   <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <label for="email">Email</label>
-                    <input className="input100" type="text" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
+                    <label htmlFor="email">Email</label>
+                    <input className={emailClasses} type="text" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
                     <span className="focus-input100"></span>
                   </div>
                 </div>
                 <div className="wrap-input100 validate-input" data-validate = "Message is required">
-                  <label for="message">Message</label>
-                  <textarea className="input100" name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
+                  <label htmlFor="message">Message</label>
+                  <textarea className={messageClasses} name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
                   <span className="focus-input100"></span>
                 </div>
         
                 <LinkButton text="Send" linkType="form" />  
               </div>
+            }
+            {error &&
+              <div className="jo-contact-form-submission-message jo-contact-form-error">
+                <div>
+                  Your information was not sent. Please try again later.
+                </div>
+              </div>
+            }
+            {success &&
+              <div className="jo-contact-form-submission-message jo-contact-form-success">
+                <div>
+                  Thanks for the message! Expect a reply shortly. 
+                </div>
+            </div>
             }
           </div>
         )}
