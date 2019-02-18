@@ -57,38 +57,38 @@ class ContactForm extends Component {
               <div>Loading...</div>
             } */}
             {!loading && !success &&
-              <div>
-                <input type="text" name="name" />
-                <input type="email" name="email" />
-                <textarea name="message"></textarea>
-                <button>Submit</button>
-              </div>
-              // <div className="jo-contact-form">
-              //   <input type="hidden" name="form-name" value="contact" />
-
-              //   <h2 className="jo-contact-form-title">
-              //     Contact
-              //   </h2>
-              //   <div>
-              //     <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
-              //       <label htmlFor="name">Your Name</label>
-              //       <input className={nameClasses} type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
-              //       <span className="focus-input100"></span>
-              //     </div>
-              //     <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-              //       <label htmlFor="email">Email</label>
-              //       <input className={emailClasses} type="text" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
-              //       <span className="focus-input100"></span>
-              //     </div>
-              //   </div>
-              //   <div className="wrap-input100 validate-input" data-validate = "Message is required">
-              //     <label htmlFor="message">Message</label>
-              //     <textarea className={messageClasses} name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
-              //     <span className="focus-input100"></span>
-              //   </div>
-        
-              //   <LinkButton text="Send" linkType="form" />  
+              // <div>
+              //   <input type="text" name="name" />
+              //   <input type="email" name="email" />
+              //   <textarea name="message"></textarea>
+              //   <button>Submit</button>
               // </div>
+              <div className="jo-contact-form">
+                <input type="hidden" name="form-name" value="contact" />
+
+                <h2 className="jo-contact-form-title">
+                  Contact
+                </h2>
+                <div>
+                  <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                    <label htmlFor="name">Your Name</label>
+                    <input className={nameClasses} type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
+                    <span className="focus-input100"></span>
+                  </div>
+                  <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <label htmlFor="email">Email</label>
+                    <input className={emailClasses} type="text" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
+                    <span className="focus-input100"></span>
+                  </div>
+                </div>
+                <div className="wrap-input100 validate-input" data-validate = "Message is required">
+                  <label htmlFor="message">Message</label>
+                  <textarea className={messageClasses} name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
+                  <span className="focus-input100"></span>
+                </div>
+        
+                <LinkButton text="Send" linkType="form" />  
+              </div>
             }
             {error &&
               <div className="jo-contact-form-submission-message jo-contact-form-error">
