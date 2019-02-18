@@ -77,7 +77,7 @@ class ContactForm extends Component {
                   </div>
                   <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                     <label htmlFor="email">Email</label>
-                    <input className={emailClasses} type="text" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
+                    <input className={emailClasses} type="email" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
                     <span className="focus-input100"></span>
                   </div>
                 </div>
