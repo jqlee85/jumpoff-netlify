@@ -52,7 +52,7 @@ class ContactForm extends Component {
       
       <NetlifyForm name='contactform'>
         {({ loading, error, success }) => (
-          <div>
+          <div id="contact">
             {/* {loading &&
               <div>Loading...</div>
             } */}
