@@ -36,7 +36,7 @@ function AccordionSection(props) {
           <p>
             We love solving problems, and translating ideas into code. JumpOff has built everything from static sites, custom dashboards, JavaScript web apps, and premium responsive WordPress themes and plugins used by thousands of people. At the heart of all these web experiences is HTML, CSS and JavaScript. We love creating great experiences for users using these technologies.
           </p>
-          <LinkButton to="/work/html-css-js" classNames="accordion-button"/>
+          {/* <LinkButton to="/work/html-css-js" classNames="accordion-button"/> */}
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>
@@ -48,7 +48,7 @@ function AccordionSection(props) {
           <p>
             Whether you need a simple blog or an E-Commerce site, a customized WordPress site may be the perfect solution. As the most popular CMS in the world, WordPress has been battle-tested and has an un-paralleled ecosystem of plugins and themes. We have more than seven years of experience building WordPress sites, premium themes and custom plugins to help businesses achieve their goals.
           </p>
-          <LinkButton to="/work/wordpress" classNames="accordion-button"/>
+          {/* <LinkButton to="/work/wordpress" classNames="accordion-button"/> */}
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>
@@ -60,7 +60,7 @@ function AccordionSection(props) {
           <p>
             Users today expect fast, app-like experiences when using the web. Full page refreshes can be slow and choppy, so we build universal web applications that leverage client-side apps and server-side rendering to create the fast, modern experience that users expect without sacrificing SEO.
           </p>
-          <LinkButton to="/work/react-js" classNames="accordion-button"/>
+          {/* <LinkButton to="/work/react-js" classNames="accordion-button"/> */}
         </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className="panel-divider"></div>

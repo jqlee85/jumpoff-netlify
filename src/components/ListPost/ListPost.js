@@ -17,7 +17,6 @@ class ListPost extends Component {
     let excerpt = addEllipsis(this.props.post.excerpt);
     let date = this.props.post.date;
     let prettyDate = getPrettyDate(date);
-    let content = this.props.post.content;
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/blog/' + slug;
     let imgStyle = {
@@ -45,7 +44,7 @@ class ListPost extends Component {
           <LinkButton to={postLink} text="Read More"/>
         </div>
       </div>
-      <div class="jo-list-post-sizer"></div>
+      <div className="jo-list-post-sizer"></div>
     </article>
   }
 }
