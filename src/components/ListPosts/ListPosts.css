@@ -1,0 +1,6 @@
+.jo-more-posts-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 0 6em;
+}
