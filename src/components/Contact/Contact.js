@@ -72,10 +72,16 @@ class Contact extends Component {
     this.setState({ [e.target.name]: e.target.value });
     if (!this.state.canSubmit && ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '' ) ){
       console.log('fields filled in');
-      recaptchaRef.current.execute();
       this.setState(prevState => ({
         canSubmit: true
       }));
+      if (typeof(recaptchaRef) !== 'undefined'){
+        if (typeof(recaptchaRef.current) !== 'undefined'){
+          recaptchaRef.current.execute();
+        } else {
+          recaptchaRef.execute();
+        }
+      }
     } else if ( this.state.name == '' && this.state.email == '' && this.state.message == '' ) {
       this.setState(prevState => ({
         canSubmit: false
