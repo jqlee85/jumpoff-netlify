@@ -15,13 +15,12 @@ class Contact extends Component {
       email: '',
       message: '',
       canSubmit: false,
-      submitResponse: false
+      submitResponse: false,
+      recaptchaValue: false
     };
   }
 
   handleSubmit = e => {
-
-    recaptchaRef.current.execute();
 
     console.log('submit form');
     e.preventDefault();
@@ -35,7 +34,9 @@ class Contact extends Component {
       "name": this.state.name,
       "email": this.state.email,
       "message": this.state.message,
+      "g-recaptcha-response": this.state.recaptchaValue
     }
+    console.log(formData);
     
     fetch( window.location.href + "/", {
       method: "POST",
@@ -69,8 +70,9 @@ class Contact extends Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    if ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
+    if ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '' ) {
       console.log('fields filled in');
+      recaptchaRef.current.execute();
       this.setState(prevState => ({
         canSubmit: true
       }));
@@ -79,6 +81,12 @@ class Contact extends Component {
         canSubmit: false
       }));
     }
+  }
+
+  onRecaptchaChange = () => {
+    this.setState(prevState => ({
+      recaptchaValue: recaptchaRef.current.getValue()
+    }));
   }
 
   render() {
@@ -102,6 +110,7 @@ class Contact extends Component {
             ref={recaptchaRef}
             size="invisible"
             sitekey="6LcMq5IUAAAAAHhkhS2bJiOZSWHu1KknvntqaAWh"
+            onChange={this.onRecaptchaChange}
           />
           <div className={containerClasses}>
             <input type="hidden" name="form-name" value="contactpageform"/>
