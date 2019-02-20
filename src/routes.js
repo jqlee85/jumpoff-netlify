@@ -4,6 +4,7 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
 import ContactPage from "./components/ContactPage/ContactPage";
+import AboutPage from "./components/AboutPage/AboutPage";
 import SingleProject from "./components/SingleProject/SingleProject";
 import WorkHTMLCSSJS from "./components/WorkHTMLCSSJS/WorkHTMLCSSJS";
 import WorkReactJS from "./components/WorkReactJS/WorkReactJS";
@@ -19,7 +20,7 @@ const routes = [
     path: "/about",
     exact: true,
     props: {},
-    component: SinglePage
+    component: AboutPage
   },
   {
     path: "/contact",

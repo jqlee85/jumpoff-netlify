@@ -15,7 +15,7 @@ class ListPosts extends Component {
       ))}
       {hasNextPage && 
         <div className="jo-more-posts-wrapper">
-          <LinkButton linkType="custom" text="More Posts" onClick={this.props.morePosts} size="large"/>
+          <LinkButton transparent={true} linkType="custom" text="More Posts" onClick={this.props.morePosts}/>
         </div>
       }
     </div>

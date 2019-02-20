@@ -7,7 +7,6 @@ import qs from 'qs';
 class Contact extends Component {
   
   constructor(props){
-    console.log(window.location.href);
     super(props);
     this.state = { 
       name: '',
@@ -32,9 +31,7 @@ class Contact extends Component {
       "email": this.state.email,
       "message": this.state.message,
     }
-    console.log(formData);
-  
-
+    
     fetch( window.location.href + "/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -136,4 +133,3 @@ class Contact extends Component {
 }
 
 export default Contact;
-
