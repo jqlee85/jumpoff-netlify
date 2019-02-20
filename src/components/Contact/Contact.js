@@ -12,6 +12,7 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
+      __bf: false,
       canSubmit: false,
       submitResponse: false
     };  
@@ -23,7 +24,8 @@ class Contact extends Component {
       "form-name": "contactpageform",
       "name": this.state.name,
       "email": this.state.email,
-      "message": this.state.message
+      "message": this.state.message,
+      "__bf": this.state.__bf
     }
     console.log(formData);
   
@@ -68,6 +70,7 @@ class Contact extends Component {
           {!this.state.submitResponse &&
             <form name="contactpageform" method="post" onSubmit={this.handleSubmit}>
               <input type="hidden" name="form-name" value="contactpageform" />
+              <input type="text" name="__bf" style={{display:'none'}}/>
               <p>
                 <label>Your Name: <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/></label>
               </p>
