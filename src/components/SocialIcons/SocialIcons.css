@@ -25,6 +25,19 @@
   height: 100%;
   width: 100%;
 }
+a.facebook {
+  position: relative;
+  width: 32px;
+  height: 32px;  
+}
+.facebook svg {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
 .jo-social-icons em {
   font-size: 14px;
   line-height: 1.5;

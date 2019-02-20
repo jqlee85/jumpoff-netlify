@@ -7,7 +7,7 @@ class ContactInfo extends Component {
 
   render(){
     return <div className="jo-contact-wrapper">  
-      <h3>Contact</h3>
+      <h3>Jumpoff</h3>
       <div className="jo-contact-info">
         <address>Santiago, CL</address>
         <address>Chicago, IL</address>
