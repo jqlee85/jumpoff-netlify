@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Post.css';
+import  './Post.css';
 import {Link} from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 

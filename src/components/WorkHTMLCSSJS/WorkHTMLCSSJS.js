@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import styles from './WorkHTMLCSSJS.css';
+import  './WorkHTMLCSSJS.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import WorkHeader from '../WorkHeader/WorkHeader';
 
 
 class WorkHTMLCSSJS extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount(){
     this.props.checkHeaderSolid(true);

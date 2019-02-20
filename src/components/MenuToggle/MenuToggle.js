@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './MenuToggle.css';
+import  './MenuToggle.css';
 
 class MenuToggle extends Component {
 

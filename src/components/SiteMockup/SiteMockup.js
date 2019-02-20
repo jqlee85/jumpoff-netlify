@@ -1,12 +1,8 @@
 import React, {Component} from 'react'
-import styles from './SiteMockup.css';
+import  './SiteMockup.css';
 import {ShapeTwo,ShapeThree} from '../Shapes/Shapes';
 
 export class SiteMockup extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
   
   render() {
     

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import styles from './HomeSectionThree.css';
+import  './HomeSectionThree.css';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import LinkButton from '../LinkButton/LinkButton';
 import PortfolioCarousel from '../PortfolioCarousel/PortfolioCarousel';
-import TouchCarousel from 'react-touch-carousel'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import _ from 'lodash';

@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import styles from './Shapes.css';
+import  './Shapes.css';
 
 
 export class ShapeOne extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render(){
     
@@ -19,10 +15,6 @@ export class ShapeOne extends Component {
 }
 
 export class ShapeTwo extends Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   render(){
     
@@ -38,9 +30,7 @@ export class ShapeTwo extends Component {
 
 export class ShapeThree extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   render(){
     
@@ -56,9 +46,7 @@ export class ShapeThree extends Component {
 
 export class ShapeFour extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   render(){
     
@@ -74,9 +62,7 @@ export class ShapeFour extends Component {
 
 export class ShapeFive extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   render(){
     

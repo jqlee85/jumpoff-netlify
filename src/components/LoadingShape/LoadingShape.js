@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoadingShape.css';
+import  './LoadingShape.css';
 import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from '../Shapes/Shapes';
 
 class LoadingShape extends Component {

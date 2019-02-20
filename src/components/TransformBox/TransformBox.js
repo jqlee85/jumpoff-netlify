@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import styles from './TransformBox.css';
+import  './TransformBox.css';
 import {Link} from 'react-router-dom';
-import LinkButton from '../LinkButton/LinkButton';
 import _ from 'lodash';
-import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-color-vibrant.jpg';
 
 export class TransformBox extends Component {
 
@@ -123,9 +121,7 @@ export class TransformBox extends Component {
 
   render(){
 
-    let id = this.props.project.id;
     let slug = this.props.project.slug;
-    let postID = 'jo-project-id_' + id;
     let title = this.props.project.title;
     let featuredImage = (typeof(this.props.project.featuredImage) !== 'undefined') ? this.props.project.featuredImage.sourceUrl : '';
     let projectLink = '/portfolio/' + slug;

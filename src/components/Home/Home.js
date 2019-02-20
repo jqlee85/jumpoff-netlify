@@ -4,13 +4,9 @@ import HomeSectionTwo from '../HomeSectionTwo/HomeSectionTwo';
 import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
 import HomeSectionFour from '../HomeSectionFour/HomeSectionFour';
 
-import styles from './Home.css';
+import  './Home.css';
 
 class Home extends Component {
-
-  constructor(props){
-    super(props);
-  }
 
   componentDidMount(){
   }

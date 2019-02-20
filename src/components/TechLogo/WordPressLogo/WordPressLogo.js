@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './WordPressLogo.css';
+import  './WordPressLogo.css';
 
 class WordPressLogo extends Component {
 

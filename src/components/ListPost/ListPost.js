@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './ListPost.css';
+import  './ListPost.css';
 import {Link} from 'react-router-dom';
 import LinkButton from '../LinkButton/LinkButton';
 import { Helmet } from 'react-helmet';

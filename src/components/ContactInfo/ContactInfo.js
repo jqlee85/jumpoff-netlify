@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './ContactInfo.css';
+import  './ContactInfo.css';
 import { Link } from 'react-router-dom';
 import SocialIcons from '../SocialIcons/SocialIcons';
 

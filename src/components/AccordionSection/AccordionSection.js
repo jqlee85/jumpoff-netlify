@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './AccordionSection.css';
+import './AccordionSection.css';
 import PropTypes from 'prop-types';
 import LinkButton from '../LinkButton/LinkButton';
 // import { withStyles } from '@material-ui/core/styles';

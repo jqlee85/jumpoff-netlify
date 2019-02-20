@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './Header.css';
+import  './Header.css';
 import MenuToggle from '../MenuToggle/MenuToggle';
 import Logo from '../Logo/Logo';
 import { Link } from 'react-router-dom';

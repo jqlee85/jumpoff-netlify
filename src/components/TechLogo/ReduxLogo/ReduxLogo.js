@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './ReduxLogo.css';
+import  './ReduxLogo.css';
 
 class ReduxLogo extends Component {
 

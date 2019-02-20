@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './PortfolioCarousel.css';
+import  './PortfolioCarousel.css';
 import TouchCarousel, {clamp} from 'react-touch-carousel'
 import NonPassiveTouchTarget from '../NonPassiveTouchTarget/NonPassiveTouchTarget';
 import touchWithMouseHOC from 'react-touch-carousel/lib/touchWithMouseHOC'

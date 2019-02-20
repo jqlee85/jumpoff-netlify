@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import styles from './Contact.css';
+import  './Contact.css';
 import qs from 'qs';
 
 
 class Contact extends Component {
   
   constructor(props){
+    console.log(window.location.href);
     super(props);
     this.state = { 
       name: '',
@@ -27,7 +28,7 @@ class Contact extends Component {
     console.log(formData);
   
 
-    fetch("/", {
+    fetch( window.location.href + "/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: qs.stringify(formData)
@@ -74,7 +75,7 @@ class Contact extends Component {
                 <label>Your Email: <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/></label>
               </p>
               <p>
-                <label>Message: <textarea name="message" onChange={this.handleChange}>{this.state.message}</textarea></label>
+                <label>Message: <textarea name="message" onChange={this.handleChange} value={this.state.message}/></label>
               </p>
               <p>
                 <button type="submit">Send</button>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './MapContainer.css';
+import  './MapContainer.css';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import MapMarker from '../../public/images/map-marker-black.png';
 

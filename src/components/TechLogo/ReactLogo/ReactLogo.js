@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './ReactLogo.css';
+import  './ReactLogo.css';
 
 class ReactLogo extends Component {
 

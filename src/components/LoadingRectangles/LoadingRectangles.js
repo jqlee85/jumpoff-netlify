@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoadingRectangles.css';
+import  './LoadingRectangles.css';
 
 class LoadingRectangles extends Component {
 

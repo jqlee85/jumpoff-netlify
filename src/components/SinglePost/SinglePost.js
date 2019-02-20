@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './SinglePost.css';
+import  './SinglePost.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import Post from '../Post/Post';
@@ -24,9 +24,7 @@ const SINGLE_POST_QUERY = gql`
 
 class SinglePost extends Component {
   
-  constructor(props) {
-    super(props);
-  }
+  
     
   render(){ 
 

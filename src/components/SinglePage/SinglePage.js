@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './SinglePage.css';
+import  './SinglePage.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import Post from '../Post/Post';

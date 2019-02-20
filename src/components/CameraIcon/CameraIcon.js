@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import styles from './CameraIcon.css';
+import  './CameraIcon.css';
 
 class CameraIcon extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   componentWillMount = () => {
 

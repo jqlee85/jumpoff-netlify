@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './WorkWordPress.css';
+import  './WorkWordPress.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import WorkHeader from '../WorkHeader/WorkHeader';
 

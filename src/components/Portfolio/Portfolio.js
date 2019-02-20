@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Portfolio.css';
+import  './Portfolio.css';
 import ProjectContent from '../ProjectContent/ProjectContent';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';

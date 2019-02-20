@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './NotFound.css';
+import  './NotFound.css';
 import {Link} from 'react-router-dom';
 import {ShapeFive} from '../Shapes/Shapes';
 

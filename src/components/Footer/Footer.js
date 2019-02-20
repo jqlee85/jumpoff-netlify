@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './Footer.css';
+import  './Footer.css';
 import LazyLoad from 'react-lazyload';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import MapContainer from '../MapContainer/MapContainer';

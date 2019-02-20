@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Nav.css';
+import  './Nav.css';
 import {ShapeTwo,ShapeFive} from '../Shapes/Shapes';
 import {Link} from 'react-router-dom';
 

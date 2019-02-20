@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './WorkReactJS.css';
+import  './WorkReactJS.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import WorkHeader from '../WorkHeader/WorkHeader';
 

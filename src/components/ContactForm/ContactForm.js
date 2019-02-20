@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './ContactForm.css';
+import  './ContactForm.css';
 import LinkButton from '../LinkButton/LinkButton';
 import NetlifyForm from 'react-netlify-form';
 
@@ -48,45 +48,28 @@ class ContactForm extends Component {
     let messageClasses = 'input100';
     if (message !== '') messageClasses += ' has-val';
 
-    return <div className={theClasses}>  
-      
+    return <div className="jo-contact-form">
+      <h2 className="jo-contact-form-title">Contact</h2>
       <NetlifyForm name='contactform'>
         {({ loading, error, success }) => (
-          <div id="contact">
-            {/* {loading &&
-              <div>Loading...</div>
-            } */}
+         <div className={theClasses}>
             {!loading && !success &&
-              // <div>
-              //   <input type="text" name="name" />
-              //   <input type="email" name="email" />
-              //   <textarea name="message"></textarea>
-              //   <button>Submit</button>
-              // </div>
-              <div className="jo-contact-form">
-                {/* <input type="hidden" name="form-name" value="contact" /> */}
-
-                <h2 className="jo-contact-form-title">
-                  Contact
-                </h2>
-                <div>
-                  <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
-                    <label htmlFor="name">Your Name</label>
-                    <input className={nameClasses} type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
-                    <span className="focus-input100"></span>
-                  </div>
-                  <div className="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <label htmlFor="email">Email</label>
-                    <input className={emailClasses} type="email" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
-                    <span className="focus-input100"></span>
-                  </div>
+              <div>
+                <div className="wrap-input100 rs1-wrap-input100 validate-input">
+                  <label htmlFor="name">Your Name</label>
+                  <input className={nameClasses} type="text" name="name" placeholder="Enter your name" value={name} onChange={this.handleChange}/>
+                  <span className="focus-input100"></span>
                 </div>
-                <div className="wrap-input100 validate-input" data-validate = "Message is required">
+                <div className="wrap-input100 rs1-wrap-input100 validate-input">
+                  <label htmlFor="email">Email</label>
+                  <input className={emailClasses} type="email" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
+                  <span className="focus-input100"></span>
+                </div>
+                <div className="wrap-input100 validate-input">
                   <label htmlFor="message">Message</label>
                   <textarea className={messageClasses} name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
                   <span className="focus-input100"></span>
                 </div>
-        
                 <LinkButton text="Send" linkType="form" />  
               </div>
             }
@@ -107,7 +90,6 @@ class ContactForm extends Component {
           </div>
         )}
       </NetlifyForm>
-      
     </div>
   }
 

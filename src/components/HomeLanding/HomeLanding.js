@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-import styles from './HomeLanding.css';
+import  './HomeLanding.css';
 import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from '../Shapes/Shapes';
-import ScrollDown from '../ScrollDown/ScrollDown';
 
 class HomeLanding extends Component {
-  
-  constructor(props){
-    super(props);
-  }
 
   render(){
     

@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import styles from './DownArrow.css';
+import  './DownArrow.css';
 
 class DownArrow extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   componentWillMount = () => {
 

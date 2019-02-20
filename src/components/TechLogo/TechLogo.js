@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './TechLogo.css';
+import  './TechLogo.css';
 import GraphQLLogo from './GraphQLLogo/GraphQLLogo';
 import ReactLogo from './ReactLogo/ReactLogo';
 import ReduxLogo from './ReduxLogo/ReduxLogo';

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './Blog.css';
+import './Blog.css';
 import ListPost from '../ListPost/ListPost';
 import ListPosts from '../ListPosts/ListPosts';
 import LoadingShape from '../LoadingShape/LoadingShape';

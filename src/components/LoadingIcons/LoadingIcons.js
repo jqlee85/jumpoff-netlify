@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoadingIcons.css';
+import  './LoadingIcons.css';
 import CameraIcon from '../CameraIcon/CameraIcon';
 
 class LoadingIcons extends Component {

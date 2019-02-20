@@ -1,14 +1,10 @@
 import React, {Component} from 'react'
-import styles from './LinkButton.css';
+import  './LinkButton.css';
 import {Link} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 
 export class LinkButton extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
   
   render() {
     

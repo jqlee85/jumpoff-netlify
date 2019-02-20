@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './PortfolioItem.css';
+import  './PortfolioItem.css';
 import TransformBox from '../TransformBox/TransformBox';
 import LinkButton from '../LinkButton/LinkButton';
 import {Link} from 'react-router-dom';

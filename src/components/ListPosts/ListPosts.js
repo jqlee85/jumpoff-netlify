@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import styles from './ListPosts.css';
+import  './ListPosts.css';
 import ListPost from '../ListPost/ListPost';
 import LinkButton from '../LinkButton/LinkButton';
 
 
 class ListPosts extends Component {
-
-  constructor(props) {
-    super(props); 
-  }
 
   render(){
     let data = this.props.data;

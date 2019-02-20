@@ -1,25 +1,12 @@
 import React, {Component} from 'react';
-import styles from './ProjectContent.css';
+import  './ProjectContent.css';
 import { Helmet } from 'react-helmet';
 import SiteMockup from '../SiteMockup/SiteMockup';
 import LinkButton from '../LinkButton/LinkButton';
-import ScrollDown from '../ScrollDown/ScrollDown';
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
-
-const SCREENSHOT_QUERY = gql`
-  query screenshotView($mediaItemId: ID!){
-    mediaItemBy(mediaItemId: $mediaItemId){
-      sourceUrl
-    }
-  }
-`;
 
 class ProjectContent extends Component {
 
   render(){
-
-    console.log(this.props.post.desktopScreenshot);
 
     let id = this.props.post.id;
     let slug = this.props.post.slug || '';
@@ -30,15 +17,9 @@ class ProjectContent extends Component {
     let featuredImage = this.props.post.featuredImage || false;
     let postLink = '/portfolio/' + slug;
     let projectLink = this.props.post.projectLink || false;
-    let client = this.props.post.client || false;
     let technologies = this.props.post.technologies || false;
     let desktopScreenshot = this.props.post.desktopScreenshot || false;
-    // let desktopScreenshotId = { mediaItemId: desktopScreenshot }
     let mobileScreenshot = this.props.post.mobileScreenshot || false;
-    // let mobileScreenshotId = { mediaItemId: mobileScreenshot }
-    let headerStyles = {
-      backgroundImage: 'url('+featuredImage.sourceUrl+')'
-    }
 
     return <article id={postID} data-post-id={id} className="jo-project-content">
       

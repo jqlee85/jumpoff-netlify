@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import styles from './ScrollDown.css';
+import  './ScrollDown.css';
 
 class ScrollDown extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
 
   componentWillMount = () => {
 

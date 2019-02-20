@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './GraphQLLogo.css';
+import  './GraphQLLogo.css';
 
 class GraphQLLogo extends Component {
 

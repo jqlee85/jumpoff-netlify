@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './WorkHeader.css';
+import  './WorkHeader.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
@@ -7,9 +7,7 @@ import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colore
 
 class WorkHeader extends Component {
 
-  constructor(props) {
-    super(props);
-  }
+  
     
   render() {
     

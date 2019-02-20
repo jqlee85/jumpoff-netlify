@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './SingleProject.css';
+import  './SingleProject.css';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import ProjectContent from '../ProjectContent/ProjectContent';
@@ -38,9 +38,7 @@ const SINGLE_PROJECT_QUERY = gql`
 
 class SingleProject extends Component {
   
-  constructor(props) {
-    super(props);
-  }
+  
     
   render(){ 
 

@@ -1,16 +1,10 @@
 import React, {Component} from 'react'
-import styles from './Logo.css';
+import  './Logo.css';
 
 class Logo extends Component {
 
-  constructor(props){
-    super(props);
-  }
-
   render(){
     
-    let mainColor = this.props.mainColor == 'white' ? 'white' : 'black';
-    let secondaryColor = this.props.mainColor == 'white' ? 'black' : 'white';
     //Muted Colors
     let colors = {
       color1: '#f0ba45',

@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import styles from './HomeSectionTwo.css';
+import  './HomeSectionTwo.css';
 import AccordionSection from '../AccordionSection/AccordionSection';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
-import {ShapeThree} from '../Shapes/Shapes';
 
 class HomeSectionTwo extends Component {
-  
-  constructor(props){
-    super(props);
-  }
 
   render(){
 
