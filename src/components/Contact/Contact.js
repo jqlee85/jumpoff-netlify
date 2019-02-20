@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import  './Contact.css';
 import LinkButton from '../LinkButton/LinkButton';
 import qs from 'qs';
+import ReCAPTCHA from "react-google-recaptcha";
 
+const recaptchaRef = React.createRef();
 
 class Contact extends Component {
   
@@ -14,11 +16,14 @@ class Contact extends Component {
       message: '',
       canSubmit: false,
       submitResponse: false
-    };  
+    };
   }
 
   handleSubmit = e => {
-    
+
+    recaptchaRef.current.execute();
+
+    console.log('submit form');
     e.preventDefault();
 
     if (!this.state.canSubmit) {
@@ -89,11 +94,15 @@ class Contact extends Component {
     let messageClasses = 'input100';
     if (message !== '') messageClasses += ' has-val';
 
-
     return <div className="jo-contact-form">
       <h2 className="jo-contact-form-title">Contact</h2>
       {!this.state.submitResponse &&
         <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey="6LcMq5IUAAAAAHhkhS2bJiOZSWHu1KknvntqaAWh"
+          />
           <div className={containerClasses}>
             <input type="hidden" name="form-name" value="contactpageform"/>
             <div>
@@ -112,7 +121,7 @@ class Contact extends Component {
                 <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
                 <span className="focus-input100"></span>
               </div>
-              {canSubmit && <LinkButton size="large" text="Send" linkType="form" />}
+              {canSubmit && <LinkButton size="large" text="Send" linkType="form"/>}
               {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
             </div>
           </div>
