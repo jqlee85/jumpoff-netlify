@@ -38,34 +38,43 @@ class Contact extends Component {
     }
     console.log(formData);
     
-    fetch( window.location.href + "/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: qs.stringify(formData)
-    })
-    .then(
-      response => {
-        console.log(response)
-        console.log(response.status)
-        if (response.status > 199 && response.status < 300){
-          this.setState(prevState=>({
-            submitResponse: 'success'
-          }))
-        } else {
+    // If recaptcha value set
+    if (this.state.recaptchaValue){
+      fetch( window.location.href + "/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: qs.stringify(formData)
+      })
+      .then(
+        response => {
+          console.log(response)
+          console.log(response.status)
+          if (response.status > 199 && response.status < 300){
+            this.setState(prevState=>({
+              submitResponse: 'success'
+            }))
+          } else {
+            this.setState(prevState=>({
+              submitResponse: 'error'
+            }))
+          } 
+        }
+      )
+      .catch(
+        error => {
+          console.log(error)
           this.setState(prevState=>({
             submitResponse: 'error'
           }))
-        } 
-      }
-    )
-    .catch(
-      error => {
-        console.log(error)
-        this.setState(prevState=>({
-          submitResponse: 'error'
-        }))
-      }
-    );
+        }
+      );
+    } 
+    // Else if recaptcha value not set
+    else {
+      recaptchaRef.current.execute();
+      return false;
+    }
+    
   }
 
   handleChange = (e) => {
