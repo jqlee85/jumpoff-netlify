@@ -96,7 +96,7 @@ class Contact extends Component {
     return <div className="jo-contact-form">
       <h2 className="jo-contact-form-title">Contact</h2>
       {!this.state.submitResponse &&
-        <form name={this.props.name} method="post" onSubmit={this.handleSubmit}>
+        <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
           <div className={containerClasses}>
             <input type="hidden" name="form-name" value="contactpageform"/>
             <div>

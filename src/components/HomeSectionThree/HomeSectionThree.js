@@ -113,7 +113,7 @@ class HomeSectionThree extends Component {
                   );
                 }}  
             </Query>
-            <LinkButton to="/portfolio" text="More Projects"/>
+            <LinkButton to="/portfolio" text="More Projects" />
         </div>
       </div>
     </section>
