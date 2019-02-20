@@ -19,9 +19,15 @@ class Contact extends Component {
   }
 
   handleSubmit = e => {
+    
     e.preventDefault();
+
+    if (!this.state.canSubmit) {
+      return false;
+    }
+
     let formData = {
-      "form-name": "contactpageform",
+      "form-name": this.props.name,
       "name": this.state.name,
       "email": this.state.email,
       "message": this.state.message,
@@ -66,6 +72,10 @@ class Contact extends Component {
       this.setState(prevState => ({
         canSubmit: true
       }));
+    } else {
+      this.setState(prevState => ({
+        canSubmit: false
+      }));
     }
   }
 
@@ -83,49 +93,45 @@ class Contact extends Component {
     if (message !== '') messageClasses += ' has-val';
 
 
-    return <section className="contact-page">
-      <div className="jo-row">
-        <div className="jo-content">
-          <div className="jo-contact-form">
-            {!this.state.submitResponse &&
-              <form name="contactpageform" method="post" onSubmit={this.handleSubmit}>
-                <div className={containerClasses}>
-                  <input type="hidden" name="form-name" value="contactpageform"/>
-                  <div>
-                    <div className="wrap-input100 rs1-wrap-input100 validate-input">
-                      <label htmlFor="name">Your Name</label>
-                      <input className={nameClasses} type="text" name="name" value={name} onChange={this.handleChange}/>
-                      <span className="focus-input100"></span>
-                    </div>
-                    <div className="wrap-input100 rs1-wrap-input100 validate-input">
-                      <label htmlFor="email">Your Email</label>
-                      <input className={emailClasses} type="email" name="email" value={email} onChange={this.handleChange}/>
-                      <span className="focus-input100"></span>
-                    </div>
-                    <div className="wrap-input100 validate-input">
-                      <label htmlFor="message">Message</label>
-                      <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
-                      <span className="focus-input100"></span>
-                    </div>
-                    <LinkButton text="Send" linkType="form" />
-                  </div>
-                </div>
-              </form>
-            }
-            {this.state.submitResponse == 'success' &&
-              <div className="jo-contact-form-submission-message jo-contact-form-success">
-                <div>Thanks for the message! Expect a reply shortly.</div>
+    return <div className="jo-contact-form">
+      <h2 className="jo-contact-form-title">Contact</h2>
+      {!this.state.submitResponse &&
+        <form name={this.props.name} method="post" onSubmit={this.handleSubmit}>
+          <div className={containerClasses}>
+            <input type="hidden" name="form-name" value="contactpageform"/>
+            <div>
+              <div className="wrap-input100 rs1-wrap-input100 validate-input">
+                <label htmlFor="name">Your Name</label>
+                <input className={nameClasses} type="text" name="name" value={name} onChange={this.handleChange}/>
+                <span className="focus-input100"></span>
               </div>
-            }
-            {this.state.submitResponse == 'error' &&
-              <div className="jo-contact-form-submission-message jo-contact-form-error">
-                <div>Your information was not sent. Please try again later.</div>
+              <div className="wrap-input100 rs1-wrap-input100 validate-input">
+                <label htmlFor="email">Your Email</label>
+                <input className={emailClasses} type="email" name="email" value={email} onChange={this.handleChange}/>
+                <span className="focus-input100"></span>
               </div>
-            }
+              <div className="wrap-input100 validate-input">
+                <label htmlFor="message">Message</label>
+                <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
+                <span className="focus-input100"></span>
+              </div>
+              {canSubmit && <LinkButton size="large" text="Send" linkType="form" />}
+              {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
+            </div>
           </div>
+        </form>
+      }
+      {this.state.submitResponse == 'success' &&
+        <div className="jo-contact-form-submission-message jo-contact-form-success">
+          <div>Thanks for the message! Expect a reply shortly.</div>
         </div>
-      </div>
-    </section>
+      }
+      {this.state.submitResponse == 'error' &&
+        <div className="jo-contact-form-submission-message jo-contact-form-error">
+          <div>Your information was not sent. Please try again later.</div>
+        </div>
+      }
+    </div>
   }
 }
 

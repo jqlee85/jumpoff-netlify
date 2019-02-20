@@ -1,10 +1,3 @@
-.contact-page {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .jo-contact-form input {
 	outline: none;
 	border: none;
@@ -67,34 +60,6 @@
   width: auto;
   display: flex;
   justify-content: flex-start;
-}
-.jo-contact-form .jo-link-button {
-  width: auto;
-  display: flex;
-  justify-content: flex-start;
-}
-.jo-contact-form button {
-  display: inline-block;
-  height: 68px;
-  padding: 24px;
-  padding-top: 20px; 
-
-}
-.jo-contact-form button span.button-text {
-  height: 20px;
-  font-size: 20px;
-
-}
-.jo-contact-form button .button-arrow {
-  height: 20px;
-  margin-top: 3px;
-  margin-left: 8px;
-}
-.jo-contact-form-container.inactive .jo-link-button-wrapper {
-  opacity: .1;
-}
-.jo-contact-form button:hover {
-	cursor: pointer;
 }
 
 /*==================================================================

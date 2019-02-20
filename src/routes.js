@@ -3,7 +3,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import SinglePost from "./components/SinglePost/SinglePost";
 import Home from "./components/Home/Home";
 import SinglePage from "./components/SinglePage/SinglePage";
-import Contact from "./components/Contact/Contact";
+import ContactPage from "./components/ContactPage/ContactPage";
 import SingleProject from "./components/SingleProject/SingleProject";
 import WorkHTMLCSSJS from "./components/WorkHTMLCSSJS/WorkHTMLCSSJS";
 import WorkReactJS from "./components/WorkReactJS/WorkReactJS";
@@ -25,7 +25,7 @@ const routes = [
     path: "/contact",
     exact: true,
     props: {},
-    component: Contact
+    component: ContactPage
   },
   {
     path: "/blog/:post_slug",
