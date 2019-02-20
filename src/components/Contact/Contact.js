@@ -4,10 +4,11 @@ import LinkButton from '../LinkButton/LinkButton';
 import qs from 'qs';
 import ReCAPTCHA from "react-google-recaptcha";
 
-const recaptchaRef = React.createRef();
 
 class Contact extends Component {
   
+  recaptchaRef = React.createRef();
+
   constructor(props){
     super(props);
     this.state = { 
@@ -71,7 +72,7 @@ class Contact extends Component {
     } 
     // Else if recaptcha value not set
     else {
-      recaptchaRef.current.execute();
+      this.recaptchaRef.current.execute();
       return false;
     }
     
@@ -84,11 +85,11 @@ class Contact extends Component {
       this.setState(prevState => ({
         canSubmit: true
       }));
-      if (typeof(recaptchaRef) !== 'undefined'){
-        if (typeof(recaptchaRef.current) !== 'undefined'){
-          recaptchaRef.current.execute();
+      if (typeof(this.recaptchaRef) !== 'null'){
+        if (typeof(this.recaptchaRef.current) !== 'null'){
+          this.recaptchaRef.current.execute();
         } else {
-          recaptchaRef.execute();
+          this.recaptchaRef.execute();
         }
       }
     } else if ( this.state.name == '' && this.state.email == '' && this.state.message == '' ) {
@@ -100,7 +101,7 @@ class Contact extends Component {
 
   onRecaptchaChange = () => {
     this.setState(prevState => ({
-      recaptchaValue: recaptchaRef.current.getValue()
+      recaptchaValue: this.recaptchaRef.current.getValue()
     }));
   }
 
@@ -122,7 +123,7 @@ class Contact extends Component {
       {!this.state.submitResponse &&
         <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
           <ReCAPTCHA
-            ref={recaptchaRef}
+            ref={this.recaptchaRef}
             size="invisible"
             sitekey="6LcMq5IUAAAAAHhkhS2bJiOZSWHu1KknvntqaAWh"
             onChange={this.onRecaptchaChange}
