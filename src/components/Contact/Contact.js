@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styles from './Contact.css';
+import qs from 'qs';
 
 
 class Contact extends Component {
@@ -17,19 +18,25 @@ class Contact extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    console.log(data);
+    let formData = {
+      "form-name": "contactpageform",
+      "name": this.state.name,
+      "email": this.state.email,
+      "message": this.state.message
+    }
+    console.log(formData);
+  
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: data
+      body: qs.stringify(formData)
     })
     .then(
       response => {
         console.log(response)
         console.log(response.status)
-        if (this.response.status > 199 && this.response.status < 300){
+        if (response.status > 199 && response.status < 300){
           this.setState(prevState=>({
             submitResponse: 'success'
           }))
