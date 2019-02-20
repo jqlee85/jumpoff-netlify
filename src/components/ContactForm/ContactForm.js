@@ -38,7 +38,7 @@ class ContactForm extends Component {
   render(){
     
     const { name, email, message, canSubmit } = this.state;
-    let theClasses = 'jo-contact-form-wrapper';
+    let theClasses = 'jo-contact-form-container';
     if (!canSubmit) { theClasses += ' inactive'; }
     if (this.props.colorScheme == 'dark' ) theClasses += ' dark-bg';
     let nameClasses = 'input100';
@@ -61,14 +61,13 @@ class ContactForm extends Component {
                   <span className="focus-input100"></span>
                 </div>
                 <div className="wrap-input100 rs1-wrap-input100 validate-input">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">Your Email</label>
                   <input className={emailClasses} type="email" name="email" placeholder="Enter your email addess" value={email} onChange={this.handleChange}/>
                   <span className="focus-input100"></span>
                 </div>
                 <div className="wrap-input100 validate-input">
                   <label htmlFor="message">Message</label>
                   <textarea className={messageClasses} name="message" placeholder="Your message here..." value={message} onChange={this.handleChange}></textarea>
-                  <span className="focus-input100"></span>
                 </div>
                 <LinkButton text="Send" linkType="form" />  
               </div>
