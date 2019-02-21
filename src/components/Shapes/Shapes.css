@@ -14,7 +14,7 @@
 		transform: translateY(0px) translateX(0px) rotate(0deg);
 	}
 	50% {
-		transform: translateY(5px) translateX(2px) rotate(3deg);
+		transform: translateY(-10px) translateX(2px) rotate(1deg);
 	}
 	100% {
 		transform: translateY(0px) translateX(0px) rotate(0deg);
@@ -43,11 +43,11 @@
 	}
 }
 .jo-home-shape-4 {
-  animation: float4 14s ease-in-out infinite;
+  animation: float4 18s ease-in-out infinite;
 }
 .jo-home-shape-3 {
-  animation: float3 6s ease-in-out infinite;
+  animation: float3 8s ease-in-out infinite;
 }
 .jo-home-shape-2 {
-  animation: float2 8s ease-in-out infinite;
+  animation: float2 12s ease-in-out infinite;
 }
