@@ -8,7 +8,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 class Contact extends Component {
   
   recaptchaRef = React.createRef();
-  formRef = React.createRef();
 
   constructor(props){
     super(props);
@@ -18,8 +17,7 @@ class Contact extends Component {
       message: '',
       canSubmit: false,
       submitResponse: false,
-      recaptchaValue: false,
-      formHeight: 300
+      recaptchaValue: false
     };
   }
 
@@ -52,10 +50,6 @@ class Contact extends Component {
         response => {
           console.log(response)
           console.log(response.status)
-          this.setState(prevState=>({
-            formHeight: this.formRef.current.clientHeight
-          }))
-          console.log('form height is '+this.state.formHeight);
           if (response.status > 199 && response.status < 300){
             this.setState(prevState=>({
               submitResponse: 'success'
@@ -123,52 +117,50 @@ class Contact extends Component {
     if (email !== '') emailClasses += ' has-val';
     let messageClasses = 'input100';
     if (message !== '') messageClasses += ' has-val';
-    let notificationHeight = this.state.formHeight;
 
-    return <div className="jo-contact-form" ref={this.formRef}>
-      <h2 className="jo-contact-form-title">Contact</h2>
-      {!this.state.submitResponse &&
-        <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
-          <ReCAPTCHA
-            ref={this.recaptchaRef}
-            size="invisible"
-            sitekey="6LcMq5IUAAAAAHhkhS2bJiOZSWHu1KknvntqaAWh"
-            onChange={this.onRecaptchaChange}
-          />
-          <div className={containerClasses}>
-            <input type="hidden" name="form-name" value="contactpageform"/>
-            <div>
-              <div className="wrap-input100 rs1-wrap-input100 validate-input">
-                <label htmlFor="name">Your Name</label>
-                <input className={nameClasses} type="text" name="name" value={name} onChange={this.handleChange}/>
-                <span className="focus-input100"></span>
-              </div>
-              <div className="wrap-input100 rs1-wrap-input100 validate-input">
-                <label htmlFor="email">Your Email</label>
-                <input className={emailClasses} type="email" name="email" value={email} onChange={this.handleChange}/>
-                <span className="focus-input100"></span>
-              </div>
-              <div className="wrap-input100 validate-input">
-                <label htmlFor="message">Message</label>
-                <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
-                <span className="focus-input100"></span>
-              </div>
-              {canSubmit && <LinkButton size="large" text="Send" linkType="form"/>}
-              {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
-            </div>
-          </div>
-        </form>
+    return <div className="jo-contact-form">
+      {this.state.submitResponse == 'error' &&
+        <div className="jo-contact-form-submission-message jo-contact-form-error">
+          Your information was not sent. Please try again later.
+        </div>
       }
       {this.state.submitResponse == 'success' &&
-        <div className="jo-contact-form-submission-message jo-contact-form-success" style={{height:this.state.formHeight}}>
-          <div>Thanks for the message! Expect a reply shortly.</div>
+        <div className="jo-contact-form-submission-message jo-contact-form-success">
+          Thanks for the message! Expect a reply shortly.
         </div>
       }
-      {this.state.submitResponse == 'error' &&
-        <div className="jo-contact-form-submission-message jo-contact-form-error" style={{height:this.state.formHeight}}>
-          <div>Your information was not sent. Please try again later.</div>
+      <h2 className="jo-contact-form-title">Contact</h2>
+      <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
+        <ReCAPTCHA
+          ref={this.recaptchaRef}
+          size="invisible"
+          sitekey="6LcMq5IUAAAAAHhkhS2bJiOZSWHu1KknvntqaAWh"
+          onChange={this.onRecaptchaChange}
+        />
+        <div className={containerClasses}>
+          <input type="hidden" name="form-name" value="contactpageform"/>
+          <div>
+            <div className="wrap-input100 rs1-wrap-input100 validate-input">
+              <label htmlFor="name">Your Name</label>
+              <input className={nameClasses} type="text" name="name" value={name} onChange={this.handleChange}/>
+              <span className="focus-input100"></span>
+            </div>
+            <div className="wrap-input100 rs1-wrap-input100 validate-input">
+              <label htmlFor="email">Your Email</label>
+              <input className={emailClasses} type="email" name="email" value={email} onChange={this.handleChange}/>
+              <span className="focus-input100"></span>
+            </div>
+            <div className="wrap-input100 validate-input">
+              <label htmlFor="message">Message</label>
+              <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
+              <span className="focus-input100"></span>
+            </div>
+            {canSubmit && <LinkButton size="large" text="Send" linkType="form"/>}
+            {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
+          </div>
         </div>
-      }
+      </form>
+      
     </div>
   }
 }

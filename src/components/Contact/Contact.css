@@ -1,3 +1,6 @@
+.jo-contact-form {
+  position: relative;
+}
 .jo-contact-form input {
 	outline: none;
 	border: none;
@@ -227,41 +230,16 @@ textarea.input100 {
 
 /*---- Error and Success ----*/
 .jo-contact-form-submission-message {
-  position: relative;
-  padding: 2px;
-  margin-top: 4em;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
-}
-.jo-contact-form-submission-message > div {
+  z-index: 200;
+  background: rgba(255,255,255,.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
   padding: 2rem;
-  font-size: 1.4em;
+  font-size: 1.8em;
   font-weight: bold;
-  width: 100%;
-  box-sizing: border-box;
-  height: 100%;
-  
-}
-.jo-contact-form-error {
-  background: #ef6085; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #ef6085 1%, #f89c44 48%, #f0ba45 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #ef6085 1%,#574a3f 48%,#f0ba45 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #ef6085 1%,#f89c44 48%,#f0ba45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef6085', endColorstr='#f0ba45',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
-.jo-contact-form-error > div {
-  color: #f89c44;
-}
-.jo-contact-form-success {
-  background: #0480A0;
-  background: -moz-linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
-  background-image: linear-gradient(15deg, #0480A0, #148888, #97C263, rgb(210, 238, 133) );
-}
-.jo-contact-form-success > div {
-  color: #148888;
 }
