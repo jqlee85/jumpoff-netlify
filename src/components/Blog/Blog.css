@@ -11,7 +11,16 @@
   -o-animation: white-rainbow 6s infinite;
   animation: white-rainbow 6s infinite;
 }
-
+.jo-more-posts-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3em 0 6em;
+}
+.jo-more-posts-wrapper .jo-loading-shape {
+  
+}
 @media screen and (max-width: 600px) {
   .jo-blog-loading {
     font-size: 2.5em;

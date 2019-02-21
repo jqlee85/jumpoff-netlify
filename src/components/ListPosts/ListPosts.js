@@ -1,23 +1,17 @@
 import React, {Component} from 'react';
 import  './ListPosts.css';
 import ListPost from '../ListPost/ListPost';
-import LinkButton from '../LinkButton/LinkButton';
 
 
 class ListPosts extends Component {
 
   render(){
-    let data = this.props.data;
-    let hasNextPage = this.props.data.posts.pageInfo.hasNextPage;
+    console.log(this.props.data);
+    let posts = this.props.data;
     return <div>
-      {data.posts.edges.map(({ node }) => (
+      {posts.map(({ node }) => (
         <ListPost post={node} key={`${node.id}`} path={this.props.path}/>
       ))}
-      {hasNextPage && 
-        <div className="jo-more-posts-wrapper">
-          <LinkButton transparent={true} linkType="custom" text="More Posts" onClick={this.props.morePosts}/>
-        </div>
-      }
     </div>
   }
 }
