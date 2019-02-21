@@ -9,3 +9,6 @@
   align-items: center;
   flex-direction: column;
 }
+.about-page h1, .about-page p {
+  text-align: left;
+}

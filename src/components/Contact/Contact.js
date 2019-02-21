@@ -155,6 +155,7 @@ class Contact extends Component {
               <textarea className={messageClasses} name="message" onChange={this.handleChange} value={message}/>
               <span className="focus-input100"></span>
             </div>
+            {canSubmit && <div className="recaptcha-information">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>}
             {canSubmit && <LinkButton size="large" text="Send" linkType="form"/>}
             {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
           </div>

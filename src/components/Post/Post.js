@@ -16,8 +16,6 @@ class Post extends Component {
     let postLink = '/blog/' + slug;
     
     return <article id={postID} data-post-id={id} className="jo-post">
-      { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
-      <h1 className="jo-post-title black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
       <Helmet>
         <title>JumpOff - {title}</title>
         <meta name="title" content={title} />
@@ -25,7 +23,11 @@ class Post extends Component {
         <meta name="url" content={postLink} />
         { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
       </Helmet>
-      <div className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
+      { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
+      <div className="jo-post-content-wrapper">
+        <h1 className="jo-post-title black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
+        <div className="jo-post-content" dangerouslySetInnerHTML={{ __html: content }} /> 
+      </div>
     </article>
   }
 }

@@ -8,7 +8,7 @@ import gql from "graphql-tag";
 
 const LATEST_POSTS_QUERY = gql`
   query listView($first: Int!) {
-    posts(first:$first) {
+    posts(first:$first, where: {categoryId:188}) {
       pageInfo {
         hasNextPage
         endCursor
