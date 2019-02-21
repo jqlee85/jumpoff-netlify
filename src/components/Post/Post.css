@@ -26,6 +26,9 @@ article.jo-post img, .jo-post-content div.wp-caption {
   font-weight: 500;
   color: #191919;
 }
+.jo-post-content-wrapper {
+  text-align: left;
+}
 .jo-post .jo-post-content-wrapper {
   text-align: left;
   margin-top: -10rem;
@@ -122,10 +125,14 @@ article.jo-post img, .jo-post-content div.wp-caption {
     line-height: 1.22222222;
     margin: .75rem auto .63rem;
   }
-  .jo-post-content-wrapper p {
+  .jo-post-content-wrapper p, .jo-post-content-wrapper ul li {
     font-size: 1.4rem;
     line-height: 160%;
     margin: .9rem auto .7rem;
+  }
+  .jo-post-content-wrapper ul li {
+    line-height: 140%;
+    list-style: disc inside;
   }
   .jo-post-content-wrapper .snippetcpt-wrap {
     padding-top: 50px;
@@ -170,7 +177,7 @@ article.jo-post img, .jo-post-content div.wp-caption {
     /* (22px / 18px */
     margin: .75rem auto .55rem;
   }
-  .jo-post-content-wrapper p {
+  .jo-post-content-wrapper p, .jo-post-content-wrapper ul li  {
     font-size: 1.2rem;
     margin: .85rem auto .6rem;
     line-height: 155%;
@@ -209,7 +216,7 @@ article.jo-post img, .jo-post-content div.wp-caption {
     /* (22px / 18px */
     margin: .63rem auto .46rem;
   }
-  .jo-post-content-wrapper p {
+  .jo-post-content-wrapper p, .jo-post-content-wrapper ul li {
     font-size: 1rem;
     margin: .7rem auto .5rem;
   }

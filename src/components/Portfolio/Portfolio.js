@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import  './Portfolio.css';
-import ProjectContent from '../ProjectContent/ProjectContent';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
-import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
 import LoadingShape from '../LoadingShape/LoadingShape';
 import NotFound from '../NotFound/NotFound';
 import { Query } from "react-apollo";
