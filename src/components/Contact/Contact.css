@@ -233,13 +233,16 @@ textarea.input100 {
   box-sizing: border-box;
 }
 .jo-contact-form-submission-message > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
   padding: 2rem;
   font-size: 1.4em;
   font-weight: bold;
   width: 100%;
   box-sizing: border-box;
-  height: auto;
+  height: 100%;
   
 }
 .jo-contact-form-error {

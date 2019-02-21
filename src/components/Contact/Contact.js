@@ -8,6 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 class Contact extends Component {
   
   recaptchaRef = React.createRef();
+  formRef = React.createRef();
 
   constructor(props){
     super(props);
@@ -17,7 +18,8 @@ class Contact extends Component {
       message: '',
       canSubmit: false,
       submitResponse: false,
-      recaptchaValue: false
+      recaptchaValue: false,
+      formHeight: 300
     };
   }
 
@@ -50,6 +52,10 @@ class Contact extends Component {
         response => {
           console.log(response)
           console.log(response.status)
+          this.setState(prevState=>({
+            formHeight: this.formRef.current.clientHeight
+          }))
+          console.log('form height is '+this.state.formHeight);
           if (response.status > 199 && response.status < 300){
             this.setState(prevState=>({
               submitResponse: 'success'
@@ -117,8 +123,9 @@ class Contact extends Component {
     if (email !== '') emailClasses += ' has-val';
     let messageClasses = 'input100';
     if (message !== '') messageClasses += ' has-val';
+    let notificationHeight = this.state.formHeight;
 
-    return <div className="jo-contact-form">
+    return <div className="jo-contact-form" ref={this.formRef}>
       <h2 className="jo-contact-form-title">Contact</h2>
       {!this.state.submitResponse &&
         <form name={this.props.name} method="post" onSubmit={this.handleSubmit} data-netlify-recaptcha="true">
@@ -153,12 +160,12 @@ class Contact extends Component {
         </form>
       }
       {this.state.submitResponse == 'success' &&
-        <div className="jo-contact-form-submission-message jo-contact-form-success">
+        <div className="jo-contact-form-submission-message jo-contact-form-success" style={{height:this.state.formHeight}}>
           <div>Thanks for the message! Expect a reply shortly.</div>
         </div>
       }
       {this.state.submitResponse == 'error' &&
-        <div className="jo-contact-form-submission-message jo-contact-form-error">
+        <div className="jo-contact-form-submission-message jo-contact-form-error" style={{height:this.state.formHeight}}>
           <div>Your information was not sent. Please try again later.</div>
         </div>
       }
