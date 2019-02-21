@@ -247,10 +247,12 @@ textarea.input100 {
   display: none;
 }
 .recaptcha-information {
-  color: #aaa;
+  position: absolute;
+  color: #bbb;
+  margin-top: -42px;
   text-align: left;
 }
-.recaptcha-information a {
-  color: #777;
+.jo-contact-form .recaptcha-information a {
+  color: #999;
   text-transform: none !important;
 }
