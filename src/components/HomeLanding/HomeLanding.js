@@ -1,12 +1,47 @@
 import React, {Component} from 'react';
 import  './HomeLanding.css';
+import _ from 'lodash';
 import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from '../Shapes/Shapes';
 
 class HomeLanding extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { 
+      yPos: 0,
+    };  
+  }
+
+  shapeTwoRef = React.createRef();
+  shapeThreeRef = React.createRef();
+  shapeFourRef = React.createRef();
+  
+  componentDidMount(){
+    setTimeout(function(){window.scroll(0,1);window.scroll(0,0);},50);
+    setTimeout(this.handleScroll(),100);
+    window.addEventListener("scroll", _.throttle(this.handleScroll.bind(this), 10));
+
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener("scroll", _.throttle(this.handleScroll.bind(this), 10));
+  }
+
+  
+
+  handleScroll = (e) => {
+    let yPos = window.pageYOffset;
+    this.setState(prevState => ({
+      yPos: yPos
+    }));
+    console.log(this.state.yPos);
+  }
+
   render(){
     
-    let onClick = this.props.onClick;
+    var shapeTwoStyle = {transform: 'translateY(-' + Math.round(this.state.yPos * .05) + 'px) translateX(-'+Math.round(this.state.yPos * .04)+'px)'};
+    var shapeThreeStyle = {transform: 'translateY(-' + Math.round(this.state.yPos * 1) + 'px) translateX('+Math.round(this.state.yPos * .2)+'px)'};
+    var shapeFourStyle = {transform: 'rotate(-34deg) translateY(-' + Math.round(this.state.yPos * 1.8) + 'px) translateX('+Math.round(this.state.yPos * 1)+'px)'};
     
     //Muted Colors
     let colors = {
@@ -32,9 +67,9 @@ class HomeLanding extends Component {
         </svg>
         <div className="jo-home-shapes-wrapper aspectRatioSizer">
           <ShapeOne classNames={'jo-home-shape jo-home-shape-1'}/>
-          <ShapeTwo classNames={'jo-home-shape jo-home-shape-2'}/>
-          <ShapeThree classNames={'jo-home-shape jo-home-shape-3'}/>
-          <ShapeFour classNames={'jo-home-shape jo-home-shape-4'}/>
+          <ShapeTwo styles={shapeTwoStyle} classNames={'jo-home-shape jo-home-shape-2'}/>
+          <ShapeThree styles={shapeThreeStyle} classNames={'jo-home-shape jo-home-shape-3'}/>
+          <ShapeFour  styles={shapeFourStyle} classNames={'jo-home-shape jo-home-shape-4'}/>
         </div>
         <div className="jo-home-title-wrapper">
           <h1 className="jo-home-title">JumpOff</h1>
