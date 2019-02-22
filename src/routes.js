@@ -57,21 +57,6 @@ const routes = [
     component: SinglePage
   },
   {
-    path: "/work/html-css-js",
-    props: {},
-    component: WorkHTMLCSSJS
-  },
-  {
-    path: "/work/wordpress",
-    props: {},
-    component: WorkWordPress
-  },
-  {
-    path: "/work/react-js",
-    props: {},
-    component: WorkReactJS
-  },
-  {
     path: "/resume",
     exact: true,
     props: {},
