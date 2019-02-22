@@ -15,6 +15,8 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
+      formFilled: false,
+      captchaDone: false,
       canSubmit: false,
       submitResponse: false,
       recaptchaValue: false
@@ -23,19 +25,27 @@ class Contact extends Component {
 
   handleSubmit = e => {
 
-    console.log('submit form');
     e.preventDefault();
+    this.checkCanSubmit();
+    
+    // If form filled out but captcha not done, execute captcha function
+    if (this.state.formFilled && !this.state.captchaDone) {
+      this.recaptchaRef.current.execute();
+      return false;
+    }
 
+    // Abort submission if not ready for submit
     if (!this.state.canSubmit) {
       return false;
     }
 
+    // Collect form data
     let formData = {
       "form-name": this.props.name,
       "name": this.state.name,
       "email": this.state.email,
       "message": this.state.message,
-      "g-recaptcha-response": this.state.recaptchaValue
+      "g-recaptcha-response": this.recaptchaRef.current.getValue()
     }
     console.log(formData);
     
@@ -49,7 +59,6 @@ class Contact extends Component {
       .then(
         response => {
           console.log(response)
-          console.log(response.status)
           if (response.status > 199 && response.status < 300){
             this.setState(prevState=>({
               submitResponse: 'success'
@@ -70,20 +79,14 @@ class Contact extends Component {
         }
       );
     } 
-    // Else if recaptcha value not set
-    else {
-      this.recaptchaRef.current.execute();
-      return false;
-    }
     
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    if (!this.state.canSubmit && ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '' ) ){
-      console.log('fields filled in');
+    if (!this.state.formFilled && ( this.state.name !== '' && this.state.email !== '' && this.state.message !== '' ) ){
       this.setState(prevState => ({
-        canSubmit: true
+        formFilled: true
       }));
       if (typeof(this.recaptchaRef) !== 'null'){
         if (typeof(this.recaptchaRef.current) !== 'null'){
@@ -94,20 +97,35 @@ class Contact extends Component {
       }
     } else if ( this.state.name == '' && this.state.email == '' && this.state.message == '' ) {
       this.setState(prevState => ({
+        formFilled: false
+      }));
+    }
+    this.checkCanSubmit();
+  }
+
+  onRecaptchaChange = () => {
+    this.setState(prevState => ({
+      recaptchaValue: this.recaptchaRef.current.getValue(),
+      captchaDone: true
+    }));
+    this.checkCanSubmit();
+  }
+
+  checkCanSubmit = () => {
+    if (this.state.formFilled && this.state.captchaDone) {
+      this.setState(prevState => ({
+        canSubmit: true
+      }));
+    } else {
+      this.setState(prevState => ({
         canSubmit: false
       }));
     }
   }
 
-  onRecaptchaChange = () => {
-    this.setState(prevState => ({
-      recaptchaValue: this.recaptchaRef.current.getValue()
-    }));
-  }
-
   render() {
 
-    const { name, email, message, canSubmit } = this.state;
+    const { name, email, message, canSubmit, formFilled, captchaDone } = this.state;
     let containerClasses = 'jo-contact-form-container';
     if (!canSubmit) { containerClasses += ' inactive'; }
     if (this.props.colorScheme == 'dark' ) containerClasses += ' dark-bg';
@@ -117,6 +135,10 @@ class Contact extends Component {
     if (email !== '') emailClasses += ' has-val';
     let messageClasses = 'input100';
     if (message !== '') messageClasses += ' has-val';
+    let recaptchaError = false;
+    if (formFilled && !captchaDone) {
+      recaptchaError = true;
+    }
 
     return <div className="jo-contact-form">
       {this.state.submitResponse == 'error' &&
@@ -156,6 +178,7 @@ class Contact extends Component {
               <span className="focus-input100"></span>
             </div>
             {canSubmit && <div className="recaptcha-information">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</div>}
+            {recaptchaError && <div className="recaptcha-information">Google reCAPTCHA has not been able to verify you, please try later.</div>}
             {canSubmit && <LinkButton size="large" text="Send" linkType="form"/>}
             {!canSubmit && <LinkButton size="large" text="Send" linkType="form" inactive={true} />}
           </div>
