@@ -401,23 +401,17 @@ h1.standard-title {
   font-weight: 500;
   font-style: normal;
 }
-@font-face {
-  font-family: 'Cerebri';
-  src: url('public/fonts/Cerebri/CerebriSans-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
+/* @font-face {
   font-family: 'Geomanist';
   font-weight: 700;
   font-style: normal;
-  src: url('public/fonts/geomanist/geomanist-black-webfont.eot'); /* IE9 Compat Modes */
-  src: url('public/fonts/geomanist/geomanist-black-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('public/fonts/geomanist/geomanist-black-webfont.woff') format('woff2'), /* Super Modern Browsers */
-       url('public/fonts/geomanist/geomanist-black-webfont.woff2') format('woff'), /* Pretty Modern Browsers */
-       url('public/fonts/geomanist/geomanist-black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('public/fonts/geomanist/geomanist-black-webfont.svg') format('svg'); /* Legacy iOS */
-}
+  src: url('public/fonts/geomanist/geomanist-black-webfont.eot'); 
+  src: url('public/fonts/geomanist/geomanist-black-webfont.eot?#iefix') format('embedded-opentype'), 
+       url('public/fonts/geomanist/geomanist-black-webfont.woff') format('woff2'), 
+       url('public/fonts/geomanist/geomanist-black-webfont.woff2') format('woff'), 
+       url('public/fonts/geomanist/geomanist-black-webfont.ttf')  format('truetype'), 
+       url('public/fonts/geomanist/geomanist-black-webfont.svg') format('svg'); 
+} */
 @font-face {
   font-family: 'Geomanist';
   font-weight: 600;
