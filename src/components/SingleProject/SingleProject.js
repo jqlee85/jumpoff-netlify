@@ -13,7 +13,7 @@ const SINGLE_PROJECT_QUERY = gql`
       title
       slug
       date
-      content
+      content(format:RAW)
       projectDescription
       projectLink
       client

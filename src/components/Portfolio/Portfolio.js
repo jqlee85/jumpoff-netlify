@@ -15,26 +15,12 @@ const PORTFOLIO_PROJECTS_QUERY = gql`
           id
           title
           slug
-          date
-          content
           projectDescription
-          projectLink
-          client
-          technologies
-          githubLink
           portfolioImage
           projectColor
           projectColor2
           featuredImage {
             sourceUrl
-          }
-          categoryProjects {
-            edges {
-              node {
-                id
-                name
-              }
-            }
           }
         }
       }

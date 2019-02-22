@@ -12,7 +12,7 @@ const SINGLE_PAGE_QUERY = gql`
       id
       title
       uri
-      content
+      content(format: RAW)
       featuredImage {
         sourceUrl
       }
