@@ -1,4 +1,3 @@
-/* /index.html 200
 /sitemap.xml         https://api.jumpoff.io/jumpoff-sitemap.xml              301
 /story-of-jumpoffs-transmogrification         /blog/story-of-jumpoffs-transmogrification              301
 /implementing-boids-in-javascript-canvas         /blog/implementing-boids-in-javascript-canvas              301
@@ -7,3 +6,4 @@
 /multiple-shift-registers-test         /blog/multiple-shift-registers-test              301
 /fcc-rollbacks-bad-americans         /blog/fcc-rollbacks-bad-americans              301
 /putting-things-together         /blog/putting-things-together              301
+/* /index.html 200
