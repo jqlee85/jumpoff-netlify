@@ -6,4 +6,5 @@
 /multiple-shift-registers-test         /blog/multiple-shift-registers-test              301
 /fcc-rollbacks-bad-americans         /blog/fcc-rollbacks-bad-americans              301
 /putting-things-together         /blog/putting-things-together              301
+https://jumpoff.netlify.com/* https://jumpoff.io/:splat 301!
 /* /index.html 200
