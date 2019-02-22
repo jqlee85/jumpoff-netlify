@@ -37,8 +37,8 @@ persistCache({
 // Set API Host
 const API_HOST =
   process.env.NODE_ENV !== 'production'
-    ? 'https://jumpoff.io/graphql'
-    : 'https://jumpoff.io/graphql';
+    ? 'https://api.jumpoff.io/graphql'
+    : 'https://api.jumpoff.io/graphql';
 
 // Create Apollo client
 const client = new ApolloClient({

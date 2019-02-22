@@ -34,14 +34,7 @@ class App extends Component {
     window.removeEventListener('scroll', this.handleScroll, true);
   }
 
-  // initializeMenuBar(){
-  //   this.setState(prevState => ({
-  //     navInitialized: true
-  //   }));
-  // }
-
   handleScroll = (e) => {
-    // let appScrolled = this.state.appScrolled;
     let yPos;
     if ( typeof(e.target.scrollingElement ) !== 'undefined' && typeof(e.target.scrollingElement.scrollTop) !== 'undefined' ) {
       yPos = e.target.scrollingElement.scrollTop;
@@ -85,7 +78,6 @@ class App extends Component {
   }
 
   toggleAppNav = () => {
-    
     if ( this.state.navToggled && !this.state.navInitialized) {
       this.setState(prevState => ({
         navInitialized: true
@@ -120,48 +112,46 @@ class App extends Component {
     if (this.state.appScrolled) appClasses += ' ' + this.state.appScrolledClass;
     if (this.state.headerSolid) appClasses += ' ' + this.state.solidHeaderClass;
     return (
-        <Route render={({ location }) => (
-          
-          <div id="App" className={appClasses}>
-            <Nav 
-              menuToggled={this.state.navToggled} 
-              userLogin={this.props.requestUserLogin} 
-              userData={this.props.user} 
-              userLogout={this.props.userLogout}
-              toggleNav={this.toggleAppNav}
-              navFront={this.state.navFrontToggled}
-              navInitialized={this.state.navInitialized}
-            />
-            <Header 
-              menuToggled={this.state.navToggled} 
-              userLogin={this.props.requestUserLogin} 
-              userData={this.props.user}
-              toggleNav={this.toggleAppNav}
-            />
-            <div className="main">
-              <TransitionGroup>
-                <CSSTransition
-                  key={location.key}
-                  classNames="fade"
-                  timeout={600}
-                >
-                  <Switch location={location}>
-                    {routes.map((route, i) => <PropsRoute 
-                      key={i}
-                      exact={route.exact} 
-                      path={route.path} 
-                      component={route.component} 
-                      checkHeaderSolid={this.checkHeaderSolid}
-                    />)}
-                  </Switch>
-                </CSSTransition>
-              </TransitionGroup>
-            </div>
-            <Footer />
+      <Route render={({ location }) => (
+        
+        <div id="App" className={appClasses}>
+          <Nav 
+            menuToggled={this.state.navToggled} 
+            userLogin={this.props.requestUserLogin} 
+            userData={this.props.user} 
+            userLogout={this.props.userLogout}
+            toggleNav={this.toggleAppNav}
+            navFront={this.state.navFrontToggled}
+            navInitialized={this.state.navInitialized}
+          />
+          <Header 
+            menuToggled={this.state.navToggled} 
+            userLogin={this.props.requestUserLogin} 
+            userData={this.props.user}
+            toggleNav={this.toggleAppNav}
+          />
+          <div className="main">
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                classNames="fade"
+                timeout={600}
+              >
+                <Switch location={location}>
+                  {routes.map((route, i) => <PropsRoute 
+                    key={i}
+                    exact={route.exact} 
+                    path={route.path} 
+                    component={route.component} 
+                    checkHeaderSolid={this.checkHeaderSolid}
+                  />)}
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
           </div>
-          
-        )}/>
-      
+          <Footer />
+        </div>
+      )}/>
     );
   }
 }
