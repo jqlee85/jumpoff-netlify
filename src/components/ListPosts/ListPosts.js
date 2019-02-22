@@ -6,7 +6,6 @@ import ListPost from '../ListPost/ListPost';
 class ListPosts extends Component {
 
   render(){
-    console.log(this.props.data);
     let posts = this.props.data;
     return <div>
       {posts.map(({ node }) => (

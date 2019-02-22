@@ -8,3 +8,7 @@
   justify-content: center;
   align-items: center;
 }
+.contact-page .jo-post-content-wrapper {
+  text-align: center;
+  padding: 40px 0;
+}
