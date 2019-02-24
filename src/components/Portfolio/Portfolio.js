@@ -42,7 +42,9 @@ class Portfolio extends Component {
   }
 
   componentDidMount(){
-    this.gridResizer();
+    if (!this.gridResizer()) {
+      setTimeout(this.gridResizer,10);
+    }
     window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 20));
   }
 
@@ -53,6 +55,7 @@ class Portfolio extends Component {
   gridResizer() {
     if (window.innerWidth < 751) {
       this.setState({gridHeight: 'auto'})
+      return true;
     } else if (this.grid.current) {
       let width = this.grid.current.offsetWidth;
       let currentHeight = this.grid.current.offsetHeight;
@@ -68,7 +71,9 @@ class Portfolio extends Component {
       console.log('h:' +currentHeight);
       console.log('sh:' +sizerHeight);
       console.log('newh:' +newHeight);
+      return true;
     }
+    return false;
   }
 
 

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import  './ListPost.css';
 import {Link} from 'react-router-dom';
 import LinkButton from '../LinkButton/LinkButton';
-import { Helmet } from 'react-helmet';
 import {getPrettyDate, addEllipsis} from '../../lib/utilities';
 
 
@@ -19,12 +18,9 @@ class ListPost extends Component {
     let prettyDate = getPrettyDate(date);
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/blog/' + slug;
-    let imgStyle = {
-      backgroundImage: 'url(' + featuredImage.sourceUrl + ')'
-    }
     
     return <article id={postID} data-post-id={id} className="jo-list-post" >
-      <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl}/>
+      <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl} alt={title}/>
       <div className="jo-list-post-content">
         <div className="jo-list-post-title">
           <Link to={postLink}>

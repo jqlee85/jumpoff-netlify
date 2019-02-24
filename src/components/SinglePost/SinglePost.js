@@ -14,7 +14,7 @@ const SINGLE_POST_QUERY = gql`
       title
       slug
       date
-      content(format: RAW)
+      content(format: RENDERED)
       featuredImage {
         sourceUrl
       }

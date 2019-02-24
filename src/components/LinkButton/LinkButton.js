@@ -33,10 +33,10 @@ export class LinkButton extends Component {
     }
 
     // Set Textcolor
-    if (color == '#191919') {
+    if (color === '#191919') {
       if (transparent) textColor = '#191919';
       else textColor = 'white';
-    } else if (color == 'white') {
+    } else if (color === 'white') {
       if (transparent) textColor = 'white';
       else textColor = '#191919';
     }
@@ -63,8 +63,8 @@ export class LinkButton extends Component {
 
     return (  
       <div className="jo-link-button-wrapper">
-      {linkType == 'external' && 
-        <a href={to} className={classNames} target="_blank">
+      {linkType === 'external' && 
+        <a href={to} className={classNames} target="_blank" rel="noopener noreferrer">
           <button style={buttonStyles}>
             <span className="button-text">{text}</span>
             <span className="button-arrow">
@@ -76,7 +76,7 @@ export class LinkButton extends Component {
           </button>
         </a>
       }
-      {linkType == 'anchor' && 
+      {linkType === 'anchor' && 
         <AnchorLink href={to} className={classNames} offset='80'>
           <button style={buttonStyles}>
             <span className="button-text">{text}</span>
@@ -90,7 +90,7 @@ export class LinkButton extends Component {
           </button>
         </AnchorLink>
       }
-      {linkType == 'route' && 
+      {linkType === 'route' && 
         <Link to={to} className={classNames}>
           <button style={buttonStyles}>
             <span className="button-text">{text}</span>
@@ -103,7 +103,7 @@ export class LinkButton extends Component {
           </button>
         </Link>
       }
-      {linkType == 'form' && recaptcha &&
+      {linkType === 'form' && recaptcha &&
         <div className={classNames}>
           <button style={buttonStyles} type={formType} className={recaptcha.className} data-sitekey={recaptcha.sitekey} data-callback={recaptcha.callback}>
             <span className="button-text">{text}</span>
@@ -116,7 +116,7 @@ export class LinkButton extends Component {
           </button>
         </div>
       }
-      {linkType == 'form' && !recaptcha &&
+      {linkType === 'form' && !recaptcha &&
         <div className={classNames}>
           <button style={buttonStyles} type={formType}>
             <span className="button-text">{text}</span>
@@ -129,7 +129,7 @@ export class LinkButton extends Component {
           </button>
         </div>
       }
-      {linkType == 'custom' && 
+      {linkType === 'custom' && 
         <div className={classNames}>
           <button style={buttonStyles} onClick={onClick}>
             <span className="button-text">{text}</span>

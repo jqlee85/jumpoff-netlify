@@ -14,7 +14,7 @@ const enableAutoplay = /\bautoplay\b/.test(query)
 const enableLoop = /\bloop\b/.test(query)
 const cardSize = 350;
 const cardPadCount = enableLoop ? 3 : 0
-const carouselWidth = clamp(window.innerWidth, 0, 800)
+// const carouselWidth = clamp(window.innerWidth, 0, 800)
 
 class PortfolioCarousel extends Component {
   

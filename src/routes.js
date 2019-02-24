@@ -6,9 +6,6 @@ import SinglePage from "./components/SinglePage/SinglePage";
 import ContactPage from "./components/ContactPage/ContactPage";
 import AboutPage from "./components/AboutPage/AboutPage";
 import SingleProject from "./components/SingleProject/SingleProject";
-import WorkHTMLCSSJS from "./components/WorkHTMLCSSJS/WorkHTMLCSSJS";
-import WorkReactJS from "./components/WorkReactJS/WorkReactJS";
-import WorkWordPress from "./components/WorkWordPress/WorkWordPress";
 
 const routes = [
   {
