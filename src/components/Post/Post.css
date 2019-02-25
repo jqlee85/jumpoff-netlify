@@ -46,6 +46,7 @@ article.jo-post img, .jo-post-content div.wp-caption {
 .jo-post-content-wrapper img {
   box-sizing: border-box;
   max-width: 100%;
+  height: auto;
   padding: 4px;
 }
 .jo-post-content-wrapper p {
