@@ -21,9 +21,18 @@ class ProjectContent extends Component {
     let featuredImage = this.props.post.featuredImage || false;
     let postLink = '/portfolio/' + slug;
     let projectLink = this.props.post.projectLink || false;
+    let client = this.props.post.client || false;
+    let githubLink = this.props.post.githubLink || false;
     let technologies = this.props.post.technologies || false;
     let desktopScreenshot = this.props.post.desktopScreenshot || false;
     let mobileScreenshot = this.props.post.mobileScreenshot || false;
+
+    let doubleRow;
+    let projectInfoLinksClasses = 'jo-project-info-links';
+    if (projectLink && githubLink && hasContent) {
+      doubleRow = true;
+      projectInfoLinksClasses += ' jo-project-info-links-double-row';
+    }
 
     return <article id={postID} data-post-id={id} className="jo-project-content">
         <Helmet>
@@ -42,10 +51,22 @@ class ProjectContent extends Component {
             {title && <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>}
             {technologies && <p className="jo-project-technologies" dangerouslySetInnerHTML={{__html: technologies }}/>}
             {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
-            {/* {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>} */}
-            <div className="jo-project-info-links">
-            {hasContent && <LinkButton to="#learn-more" linkType="anchor" transparent={true} classNames='jo-project-learn-more'/>}         
-            {projectLink && <LinkButton to={projectLink} linkType="external" classNames='jo-project-visit-project' text="Visit Project"/>}
+            {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>}
+            <div className={projectInfoLinksClasses}>
+              {doubleRow &&
+                <div>
+                  {githubLink && <LinkButton to={githubLink} linkType="external" transparent={true} classNames='jo-project-visit-github' icon="github" text="GitHub"/>}
+                  {projectLink && <LinkButton to={projectLink} linkType="external" transparent={true} classNames='jo-project-visit-project' text="Visit Project"/>}      
+                </div>
+              }
+              {doubleRow && 
+                <div>
+                  {hasContent && <LinkButton to="#learn-more" linkType="anchor" classNames='jo-project-learn-more'/>}          
+                </div>
+              }
+              {!doubleRow && githubLink && <LinkButton to={githubLink} linkType="external" transparent={true} classNames='jo-project-visit-github' icon="github" text="GitHub"/>}
+              {!doubleRow && projectLink && <LinkButton to={projectLink} linkType="external" transparent={true} classNames='jo-project-visit-project' text="Visit Project"/>}
+              {!doubleRow && hasContent && <LinkButton to="#learn-more" linkType="anchor" classNames='jo-project-learn-more'/>}    
             </div>
           </div>
         </div>

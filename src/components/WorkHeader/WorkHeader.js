@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import  './WorkHeader.css';
-import LoadingShape from '../LoadingShape/LoadingShape';
-import NotFound from '../NotFound/NotFound';
 import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
 
 
@@ -13,7 +11,6 @@ class WorkHeader extends Component {
     
     
     let bgImage = this.props.bgImage ? this.props.bgImage : theBackgroundImage;
-    let title = this.props.title ? this.props.title : 'Work Title';
     let number = this.props.number ? this.props.number : false;
     let overlayColor = this.props.overlayColor ? this.props.overlayColor : 'rgba(20, 20, 20,.5)';
 

@@ -69,6 +69,40 @@
   justify-content: center;
   align-items: center;
 }
+.jo-project-info .jo-project-info-links.jo-project-info-links-double-row {
+  flex-direction: column;
+  width: 340px;
+  margin: .6em auto;
+  
+}
+.jo-project-info-links-double-row div:first-child, .jo-project-info-links-double-row div:nth-child(2){
+  flex-grow: 1;
+  width: 100%;
+}
+.jo-project-info .jo-project-info-links div:first-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jo-project-info .jo-project-info-links div:first-child div {
+  flex-grow: 1;
+}
+.jo-project-info-links-double-row div:nth-child(2) .jo-link-button button, .jo-project-info-links-double-row div:first-child .jo-link-button button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.jo-project-info-links-double-row div:nth-child(2) .jo-link-button-wrapper,
+.jo-project-info-links-double-row div:nth-child(2) .jo-link-button-wrapper a,
+.jo-project-info-links-double-row div:nth-child(2) .jo-link-button-wrapper button,
+.jo-project-info .jo-project-info-links div:first-child .jo-link-button-wrapper,
+.jo-project-info .jo-project-info-links div:first-child .jo-link-button-wrapper a,
+.jo-project-info .jo-project-info-links div:first-child .jo-link-button-wrapper button {
+  width: 100%;
+  box-sizing: border-box;
+}
 .jo-project-info-links div.jo-link-button-wrapper {
   padding: 10px 5px;
 }

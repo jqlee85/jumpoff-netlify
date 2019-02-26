@@ -21,6 +21,26 @@
   height: 16px;
   display: flex; 
 }
+.button-text svg {
+  width: 36px;
+  height: 36px;
+  margin-top: -10px;
+}
+/* .jo-link-button.jo-link-button-has-icon button:hover {
+  background-color: #191919 !important;
+  transition: background-color .3s;
+  -webkit-transition: background-color .3s;
+}
+.jo-link-button.jo-link-button-has-icon button:hover span.button-text {
+  color: white;
+  transition: color .3s;
+  -webkit-transition: color .3s;
+}
+.jo-link-button-has-icon button:hover .button-text svg {
+  fill: white;
+  transition: fill .3s;
+  -webkit-transition: fill .3s;
+} */
 .jo-link-button button .button-arrow {
   position: relative;
   overflow: hidden;

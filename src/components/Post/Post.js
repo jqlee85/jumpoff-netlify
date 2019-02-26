@@ -23,7 +23,7 @@ class Post extends Component {
         <meta name="url" content={postLink} />
         { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
       </Helmet>
-      { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} /> }
+      { featuredImage && <img className="jo-featured-image" src={featuredImage.sourceUrl} alt={title}/> }
       <div className="jo-post-content-wrapper">
         <h1 className="jo-post-title black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
         <div className="jo-post-content" dangerouslySetInnerHTML={{ __html: content }} /> 

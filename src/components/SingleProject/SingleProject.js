@@ -13,12 +13,12 @@ const SINGLE_PROJECT_QUERY = gql`
       title
       slug
       date
-      content(format:RAW)
+      content(format: RENDERED)
       projectDescription
       projectLink
+      githubLink
       client
       technologies
-      githubLink
       desktopScreenshot
       mobileScreenshot
       featuredImage {

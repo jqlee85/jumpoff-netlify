@@ -95,7 +95,7 @@ class Contact extends Component {
           this.recaptchaRef.execute();
         }
       }
-    } else if ( this.state.name == '' && this.state.email == '' && this.state.message == '' ) {
+    } else if ( this.state.name === '' && this.state.email === '' && this.state.message === '' ) {
       this.setState(prevState => ({
         formFilled: false
       }));
@@ -128,7 +128,7 @@ class Contact extends Component {
     const { name, email, message, canSubmit, formFilled, captchaDone } = this.state;
     let containerClasses = 'jo-contact-form-container';
     if (!canSubmit) { containerClasses += ' inactive'; }
-    if (this.props.colorScheme == 'dark' ) containerClasses += ' dark-bg';
+    if (this.props.colorScheme === 'dark' ) containerClasses += ' dark-bg';
     let nameClasses = 'input100';
     if (name !== '') nameClasses += ' has-val';
     let emailClasses = 'input100';
@@ -141,12 +141,12 @@ class Contact extends Component {
     }
 
     return <div className="jo-contact-form">
-      {this.state.submitResponse == 'error' &&
+      {this.state.submitResponse === 'error' &&
         <div className="jo-contact-form-submission-message jo-contact-form-error">
           Your information was not sent. Please try again later.
         </div>
       }
-      {this.state.submitResponse == 'success' &&
+      {this.state.submitResponse === 'success' &&
         <div className="jo-contact-form-submission-message jo-contact-form-success">
           Thanks for the message! Expect a reply shortly.
         </div>
