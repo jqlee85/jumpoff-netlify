@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import { ApolloProvider } from 'react-apollo';
 import client from './graphql/apolloClient';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
@@ -17,4 +17,4 @@ ReactDOM.render(
   </Router>
 </ApolloProvider>
 , document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
