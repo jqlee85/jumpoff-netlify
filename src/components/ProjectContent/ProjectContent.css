@@ -60,6 +60,9 @@
 .jo-project-technologies {
   font-size: .8rem;
 }
+.jo-project-client {
+  font-size: 1em;
+}
 .jo-project-client .jo-project-client-text {
   /* font-weight: bold; */
 }

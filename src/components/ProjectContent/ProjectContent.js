@@ -51,7 +51,7 @@ class ProjectContent extends Component {
             {title && <h1 className="jo-project-title" dangerouslySetInnerHTML={{ __html: title }}/>}
             {technologies && <p className="jo-project-technologies" dangerouslySetInnerHTML={{__html: technologies }}/>}
             {description && <h3 dangerouslySetInnerHTML={{__html: description }}/>}
-            {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>}
+            {/* {client && <p className="jo-project-client"><span className="jo-project-client-text">Client: </span><span className="jo-project-client-name" dangerouslySetInnerHTML={{__html: client }}/></p>} */}
             <div className={projectInfoLinksClasses}>
               {doubleRow &&
                 <div>
