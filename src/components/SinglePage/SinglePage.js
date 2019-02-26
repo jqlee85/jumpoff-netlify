@@ -33,7 +33,6 @@ const SinglePage = ({ match }) => {
             {/* Check to see if post exists in cache first, if so*/}
             <Query query={SINGLE_PAGE_QUERY} variables={uri}>
               {({ loading, error, data }) => {
-                if (loading) return (<LoadingShape/>);
                 if (error) return (<NotFound/>);
                 return (
                     <Post post={data.pageBy}/>

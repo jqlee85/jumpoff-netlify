@@ -91,7 +91,6 @@ class Portfolio extends Component {
           <svg viewBox={viewBox} ref={this.gridSizer}></svg>
           <Query query={PORTFOLIO_PROJECTS_QUERY}>
             {({ loading, error, data }) => {
-              if (loading) return (<LoadingShape/>);
               if (error) return (<NotFound/>);
               return (
                 data.projects.edges.map(({ node },index) => (

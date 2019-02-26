@@ -49,7 +49,6 @@ class SingleProject extends Component {
       <div className="single-project">
         <Query query={SINGLE_PROJECT_QUERY} variables={slug}>
           {({ loading, error, data }) => {
-            if (loading) return (<LoadingShape/>);
             if (error) return (<NotFound/>);
             return (
               <ProjectContent post={data.projectBy}/>

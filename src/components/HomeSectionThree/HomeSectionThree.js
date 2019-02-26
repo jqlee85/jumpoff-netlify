@@ -88,7 +88,6 @@ class HomeSectionThree extends Component {
             </div>
               <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                 {({ loading, error, data }) => {
-                  if (loading) return (<div className="large-loader-wrapper absolute-loader-wrapper"><LoadingShape/></div>);
                   if (error) return (<p>Error Loading Post</p>);
                   return (
                     data.projects.edges.map(({ node },index) => (
@@ -106,7 +105,6 @@ class HomeSectionThree extends Component {
           <h2>Recent Work</h2>
           <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                 {({ loading, error, data }) => {
-                  if (loading) return (<LoadingShape/>);
                   if (error) return (<p>Error Loading Post</p>);
                   return (
                     <PortfolioCarousel projects={data.projects.edges} />
