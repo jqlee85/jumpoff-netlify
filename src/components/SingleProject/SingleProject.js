@@ -16,9 +16,9 @@ const SINGLE_PROJECT_QUERY = gql`
       content(format: RENDERED)
       projectDescription
       projectLink
+      githubLink
       client
       technologies
-      githubLink
       desktopScreenshot
       mobileScreenshot
       featuredImage {
