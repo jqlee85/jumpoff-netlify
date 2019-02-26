@@ -38,8 +38,9 @@ class SinglePost extends Component {
         <div className="single-post">
           <Query query={SINGLE_POST_QUERY} variables={slug}>
             {({ loading, error, data }) => {          
+              if (loading) return null;
               if (error) return (<NotFound/>);
-              return (
+              if (data) return (
                 <Post post={data.postBy}/>
               );
             }}  

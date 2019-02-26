@@ -88,8 +88,9 @@ class HomeSectionThree extends Component {
             </div>
               <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                 {({ loading, error, data }) => {
+                  if (loading) return null;
                   if (error) return (<p>Error Loading Post</p>);
-                  return (
+                  if (data.projects) return (
                     data.projects.edges.map(({ node },index) => (
                       <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2} mode="transform"/>
                     ))
@@ -105,8 +106,9 @@ class HomeSectionThree extends Component {
           <h2>Recent Work</h2>
           <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
                 {({ loading, error, data }) => {
+                  if (loading) return null;
                   if (error) return (<p>Error Loading Post</p>);
-                  return (
+                  if (data.projects) return (
                     <PortfolioCarousel projects={data.projects.edges} />
                   );
                 }}  

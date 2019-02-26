@@ -30,11 +30,11 @@ const SinglePage = ({ match }) => {
       <div className="jo-row">
         <div className="jo-content">
           <div className="single-post">
-            {/* Check to see if post exists in cache first, if so*/}
             <Query query={SINGLE_PAGE_QUERY} variables={uri}>
               {({ loading, error, data }) => {
+                if (loading) return null;
                 if (error) return (<NotFound/>);
-                return (
+                if (data) return (
                     <Post post={data.pageBy}/>
                 );
               }}  
