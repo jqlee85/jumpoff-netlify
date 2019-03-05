@@ -1,0 +1,18 @@
+#home-section-five {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+#home-section-five .home-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 150px;
+}
+
+#home-section-five .jo-contact-form-wrapper {
+  box-sizing: border-box;
+  width: 80%; 
+  max-width: 1400px;
+}

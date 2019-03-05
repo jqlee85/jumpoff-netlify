@@ -4,15 +4,18 @@
   justify-content: center;
   min-height: 500px;
 }
-#home-section-four .home-section-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 150px;
-}
-
-#home-section-four .jo-contact-form-wrapper {
+#home-section-four .home-blog-section {
   box-sizing: border-box;
-  width: 80%; 
-  max-width: 1400px;
+  width: 95%; 
+  max-width: 1600px;
+  padding: 20px;
+}
+.home-blog-section h2 {
+  text-align: left;
+  font-size: 3.2em;
+}
+@media screen and (max-width: 600px) {
+  .home-blog-section h2 {
+    text-align: center;
+  }
 }

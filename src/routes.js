@@ -51,7 +51,7 @@ const routes = [
     path: "/work",
     exact: true,
     props: {},
-    component: SinglePage
+    component: Portfolio
   },
   {
     path: "/resume",

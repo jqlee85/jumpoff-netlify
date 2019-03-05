@@ -192,10 +192,6 @@ section {
   -o-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.jo-list-post-date .black-box-text {
-  padding: 8px 0px;
-  box-shadow: 12px 0 0 #191919, -12px 0 0 #191919;
-}
 .black-box-text p {
   display: block;
   line-height: 100%;
