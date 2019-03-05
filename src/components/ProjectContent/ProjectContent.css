@@ -4,6 +4,7 @@
   flex-direction:column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 120px;
 }
 .jo-project-content-header {
   position:relative;
@@ -49,7 +50,6 @@
 .jo-project-info a.jo-project-header-project-link {
   margin: 1rem auto;
 }
-
 .jo-project-content .jo-post-content-wrapper {
   margin-top: 20px;
   max-width: 900px;
@@ -112,6 +112,34 @@
 .jo-project-info .jo-link-button-wrapper {
   display: inline-block;
 }
+
+/* Screenshots in content */
+.wp-caption {
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-right: 20px;
+  margin: 2em auto;
+}
+.jo-project-content p.wp-caption-text {
+  font-size: 1em;
+  margin: .6em auto;
+  text-align: center;
+}
+img.jo-project-content-screenshot {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  /* box-shadow: 1.4rem 2.4rem 4.8rem 0.6rem rgba(0,0,0,.05); */
+  font-size: 0px;
+  background: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+/* End Screenshots in content */
+
+
 @media screen and ( min-width: 1201px ) { 
   .jo-project-content-content {
     padding: 0px 40px 60px 60px;
@@ -203,9 +231,20 @@
     font-size: 1.4rem;
     line-height: 160%;    
   }
+  .jo-project-content p.wp-caption-text {
+    font-size: 1em;
+  }
+}
+@media screen and ( min-width: 801px ) and ( max-width: 1000px ) {
+  .jo-project-content .jo-post-content-wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 @media screen and ( max-width: 800px ) {
-  
+  img.jo-project-content-screenshot {
+    padding: 15px;
+  }
 }
 @media screen and ( min-width: 601px ) and ( max-width: 800px ) {
   .jo-project-info h1 {
@@ -220,6 +259,9 @@
   }
   .jo-project-content-content {
     padding: 0px 10px 30px 30px;
+  }
+  .jo-project-content .jo-post-content-wrapper {
+    padding: 20px 60px;
   }
   .jo-project-content .jo-post-content-wrapper h1 {
     font-size: 2.7rem;
@@ -243,6 +285,9 @@
   .jo-project-content .jo-post-content-wrapper p {
     font-size: 1.2rem;
     line-height: 155%;
+  }
+  .jo-project-content p.wp-caption-text {
+    font-size: .9em;
   }
 }
 @media screen and ( max-width: 600px ) {
@@ -275,7 +320,9 @@
     margin: .5rem auto;
   }
 
-
+  .jo-project-content .jo-post-content-wrapper .wp-caption {
+    padding-right: 0px;
+  }
   .jo-project-content-content {
     padding: 0px 5px 25px 25px;
   }
@@ -300,5 +347,8 @@
   }
   .jo-project-content .jo-post-content-wrapper p {
     font-size: 1rem;
+  }
+  .jo-project-content p.wp-caption-text {
+    font-size: .8em;
   }
 }

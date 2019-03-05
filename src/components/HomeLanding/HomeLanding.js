@@ -15,7 +15,7 @@ class HomeLanding extends Component {
         </div>
         <div className="jo-home-title-wrapper">
           <h1 className="jo-home-title">JumpOff</h1>
-          <p className="jo-home-description">a web development company building<br/>unique, modern web experiences</p>
+          <p className="jo-home-description">web development by Jesse Lee<br/>unique, modern web experiences</p>
         </div>
     </section>
   }

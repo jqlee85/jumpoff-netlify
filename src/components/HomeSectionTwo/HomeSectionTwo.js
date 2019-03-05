@@ -12,7 +12,7 @@ class HomeSectionTwo extends Component {
       <div className="home-section-content">
         <div className="what-we-do">
           <div className="what-we-do-heading">
-            <h3>We turn your ideas into beautiful, functional websites.</h3>
+            <h3>I turn ideas into beautiful, functional websites.</h3>
           </div>
           <AccordionSection/>
         </div>

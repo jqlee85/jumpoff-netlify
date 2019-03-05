@@ -17,6 +17,7 @@ const SINGLE_PROJECT_QUERY = gql`
       projectDescription
       projectLink
       githubLink
+      demoLink
       client
       technologies
       desktopScreenshot

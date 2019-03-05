@@ -23,6 +23,7 @@ class ProjectContent extends Component {
     let projectLink = this.props.post.projectLink || false;
     let client = this.props.post.client || false;
     let githubLink = this.props.post.githubLink || false;
+    let demoLink = this.props.post.demoLink || false;
     let technologies = this.props.post.technologies || false;
     let desktopScreenshot = this.props.post.desktopScreenshot || false;
     let mobileScreenshot = this.props.post.mobileScreenshot || false;
@@ -71,7 +72,7 @@ class ProjectContent extends Component {
           </div>
         </div>
         <div id="learn-more" className="jo-post-content-wrapper" dangerouslySetInnerHTML={{ __html: content }} />
-      
+        {demoLink && <LinkButton to={demoLink} linkType="external" transparent={true} text="Project Demo"/>}
     </article>
   }
 }

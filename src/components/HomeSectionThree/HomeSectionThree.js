@@ -52,6 +52,7 @@ class HomeSectionThree extends Component {
 
   componentDidMount(){
     this.gridResizer();
+    setTimeout(this.gridResizer(),2000);
     window.addEventListener("resize", _.debounce(this.gridResizer.bind(this), 50));
   }
 
