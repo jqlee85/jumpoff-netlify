@@ -5,9 +5,11 @@ function getPrettyDate(rawDate, options) {
   if (typeof(options) == 'undefined' ) {
     var options = { year: 'numeric', month: 'short', day: 'numeric' };
   }
+  if (rawDate.split(" ").length > 1){
+    rawDate = rawDate.split(" ")[0];
+  }
   var date = new Date(rawDate); 
   var formattedDate = date.toLocaleDateString("en-US", options); // Saturday, September 17, 2016
-
   return formattedDate;
 
 }

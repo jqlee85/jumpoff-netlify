@@ -19,6 +19,9 @@ class ListPost extends Component {
     let featuredImage = this.props.post.featuredImage;
     let postLink = '/blog/' + slug;
     
+    console.log(date);
+    console.log(prettyDate)
+
     return <article id={postID} data-post-id={id} className="jo-list-post" >
       <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl} alt={title}/>
       <div className="jo-list-post-content">
