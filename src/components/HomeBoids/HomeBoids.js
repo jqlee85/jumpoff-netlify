@@ -13,6 +13,12 @@ class HomeBoids extends Component {
     '#f0ba45',
     '#cd5fa1'
   ];
+  // colors = [
+  //   '#dae282',
+  //   '#286680',
+  //   '#598a64',
+  //   '#92af65'
+  // ];
   canvas = false;
   context = false;
   stop = false;
@@ -91,12 +97,12 @@ class HomeBoids extends Component {
     // Instantiate all Boids
     var numBoids = 12;
     var radius;
-    if ( this.state.width / 288 > 5 ) {
-      radius = 5;
-    } else if ( this.state.width / 288 < 3) {
-      radius = 3;
+    if ( this.state.width / 200 > 8 ) {
+      radius = 8;
+    } else if ( this.state.width / 200 < 4) {
+      radius = 4;
     } else {
-      radius = this.state.width / 288;
+      radius = this.state.width / 200;
     }
     var radiusCoefficients = [.7,.85,1,1.15,1.3];
     var quicknessCoefficients = [.85,.9,.95,1,1.05,1.1,1.15];
