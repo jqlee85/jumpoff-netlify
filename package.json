@@ -34,7 +34,8 @@
     "react-touch-carousel": "^0.8.4",
     "react-transition-group": "^2.5.3",
     "serialize-javascript": "^1.6.1",
-    "source-map-support": "^0.5.10"
+    "source-map-support": "^0.5.10",
+    "victor": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

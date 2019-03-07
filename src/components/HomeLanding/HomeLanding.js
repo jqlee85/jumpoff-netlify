@@ -1,18 +1,14 @@
 import React, {Component} from 'react';
 import  './HomeLanding.css';
 import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from '../Shapes/Shapes';
+import HomeBoids from '../HomeBoids/HomeBoids';
 
 class HomeLanding extends Component {
-
-  boidsContainer = React.createRef();
-  boids = React.createRef();
 
   render(){
     
     return <section className="home-section-one home-landing">
-      <div className="jo-home-landing-boids-container" ref={this.boidsContainer}>
-        <canvas ref={this.boids} id="jo-home-boids"></canvas>
-      </div>
+      <HomeBoids/>
       <div className="jo-home-shapes-wrapper aspectRatioSizer">
         <ShapeOne classNames={'jo-home-shape jo-home-shape-1'}/>
         <ShapeTwo classNames={'jo-home-shape jo-home-shape-2'}/>

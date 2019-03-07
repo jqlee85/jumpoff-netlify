@@ -52,14 +52,12 @@ class App extends Component {
   }
 
   makeHeaderSolid = () => {
-    // console.log('makesolid');
     this.setState(prevState => ({
       headerSolid: true
     }));
   }
 
   makeHeaderTransparent = () => {
-    // console.log('maketransp');
     this.setState(prevState => ({
       headerSolid: false
     }));
@@ -78,7 +76,6 @@ class App extends Component {
   }
 
   toggleAppNav = () => {
-    console.log('toggleAppNav');
     if ( this.state.navToggled && !this.state.navInitialized) {
       this.setState(prevState => ({
         navInitialized: true
@@ -107,10 +104,6 @@ class App extends Component {
   
   render() {
     let appClasses = 'App';
-    if (this.state.navToggled) {
-      console.log('nav is toggled');
-      console.log(this.state);
-    }
     if (this.state.navToggled) appClasses += ' app-menu-toggled';
     if (this.state.navFadeToggled) appClasses += ' nav-fade';
     if (this.state.keepTogglerWhite) appClasses += ' ' + 'keep-toggler-white';
