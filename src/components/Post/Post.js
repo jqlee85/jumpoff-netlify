@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import  './Post.css';
+import  LinkButton from '../LinkButton/LinkButton';
 import { Helmet } from 'react-helmet';
 
 
@@ -27,6 +28,9 @@ class Post extends Component {
       <div className="jo-post-content-wrapper">
         <h1 className="jo-post-title black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
         <div className="jo-post-content" dangerouslySetInnerHTML={{ __html: content }} /> 
+        <div className="jo-post-contact-button">
+          <LinkButton  to="/contact/" text="Contact Me"/>
+        </div>
       </div>
     </article>
   }

@@ -1,7 +1,7 @@
 article.jo-post {
   display: block;
   position: relative;
-  margin: 100px auto 200px;
+  margin: 100px auto 100px;
   text-align: left;
 }
 article.jo-post img, .jo-post-content div.wp-caption {
@@ -90,7 +90,15 @@ article.jo-post img, .jo-post-content div.wp-caption {
   -o-animation: white-rainbow 6s infinite;
   animation: white-rainbow 6s infinite;
 }
+.jo-post-contact-button {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
 
+}
 
 /* Media Queries */
 @media screen and ( min-width: 1201px ) { 
