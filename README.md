@@ -1,10 +1,6 @@
-Test Develop Deploy
+#JumpOff.io Rebuild
 
-This project is based on [Create React App](https://github.com/facebookincubator/create-react-app). (For more information about Create react App, check their full [documentation](https://github.com/facebookincubator/create-react-app#create-react-app).)
-
-The main addition is a new folder: `src/lambda`. Each JavaScript file in there will automatically be prepared for Lambda function deployment.
-
-As an example, we've included a small `src/lambda/hello.js` function, which will be deployed to `/.netlify/functions/hello`.
+This is the Client-Side app of the JumpOff.io rebuild. It is based on Create React App and meant to be hosted on Netlify and served at https://jumpoff.io. It uses Apollo GraphQL to retrieve data from a WordPress installation at https://api.jumpoff.io via the plugin WPGraphQL.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/create-react-app-lambda-demo)
 
