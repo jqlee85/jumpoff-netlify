@@ -1,4 +1,4 @@
-#JumpOff.io Rebuild
+# JumpOff.io Rebuild
 
 This is the Client-Side app of the JumpOff.io rebuild. It is based on Create React App and meant to be hosted on Netlify and served at https://jumpoff.io. It uses Apollo GraphQL to retrieve data from a WordPress installation at https://api.jumpoff.io via the plugin WPGraphQL.
 
