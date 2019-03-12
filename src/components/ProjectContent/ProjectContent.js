@@ -39,9 +39,14 @@ class ProjectContent extends Component {
         <Helmet>
           <title>JumpOff - {title}</title>
           <meta name="title" content={title} />
+          <meta property="og:title" content={title} />
           <meta name="description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
+          <meta property="og:description" content="JumpOff is a web design and development company building unique, modern web experiences using WordPress and React." />
           <meta name="url" content={postLink} />
+          <meta property="og:url" content={postLink} />
           { featuredImage && <meta name="image" content={featuredImage.sourceUrl} /> }
+          { featuredImage && <meta property="og:image" content={featuredImage.sourceUrl} /> }
+
         </Helmet>
         <div className="jo-project-content-header">
           <div className="jo-project-mockups">

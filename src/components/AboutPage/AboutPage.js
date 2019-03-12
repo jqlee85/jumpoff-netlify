@@ -29,8 +29,11 @@ class AboutPage extends Component {
       <Helmet>
         <title>JumpOff - {title}</title>
         <meta name="title" content={title} />
+        <meta propety="og:title" content={title} />
         <meta name="description" content="Jumpoff is a company focused on designing and developing great experiences for the web." />
+        <meta property="og:description" content="Jumpoff is a company focused on designing and developing great experiences for the web." />
         <meta name="url" content={window.location.href} />
+        <meta property="og:url" content={window.location.href} />
       </Helmet>
       <div className="jo-row">
         <div className="jo-content jo-post-content-wrapper">
