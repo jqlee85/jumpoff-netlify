@@ -83,7 +83,6 @@ class App extends Component {
         navInitialized: true
       }));
     }
-    
     // Change Navigation Z-Index
     if (this.state.navFrontToggled) {
       setTimeout(() => {
@@ -117,17 +116,12 @@ class App extends Component {
         <div id="App" className={appClasses}>
           <Nav 
             menuToggled={this.state.navToggled} 
-            userLogin={this.props.requestUserLogin} 
-            userData={this.props.user} 
-            userLogout={this.props.userLogout}
             toggleNav={this.toggleAppNav}
             navFront={this.state.navFrontToggled}
             navInitialized={this.state.navInitialized}
           />
           <Header 
             menuToggled={this.state.navToggled} 
-            userLogin={this.props.requestUserLogin} 
-            userData={this.props.user}
             toggleNav={this.toggleAppNav}
           />
           <div className="main">

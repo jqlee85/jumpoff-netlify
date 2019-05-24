@@ -456,16 +456,4 @@ Victor.prototype.limitMagnitude = function (max) {
     this.multiply({x:max,y:max});
   }
 
-};/**
-* Add Limit Magnitude function to Victor objects
-*
-* @param  int | max | The limit magnitude for the vector
-*/
-Victor.prototype.limitMagnitude = function (max) {
-
- if (this.length() > max) {
-   this.normalize();
-   this.multiply({x:max,y:max});
- }
-
 };

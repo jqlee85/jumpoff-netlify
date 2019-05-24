@@ -23,7 +23,6 @@ class Nav extends Component {
     return <nav id="main-nav" className={theClasses}>
       <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
       <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/>
-
       <ul className="menu">
         <li><Link to='/about' onClick={this.routeLinkClicked}>About</Link></li>
         <li><Link to='/portfolio' onClick={this.routeLinkClicked}>Work</Link></li>
