@@ -35,7 +35,7 @@ class AccordionSection extends Component {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className="accordion-content">
             <p>
-              Utilizing Firestore, Firebase, Cloud Functions and more, you can ensure your next web project is incredibly fast, scalable and reliable. I build web apps on top of Google Cloud Platform that utilize real-time updating, cloud functions, and more.
+              Google Cloud Platform helps you build apps that are incredibly fast, scalable and reliable. Using Firebase and Google Cloud Platform, I build cloud-based apps that utilize real-time updating, cloud functions, and more.
             </p>
             {/* <LinkButton to="/work/wordpress" classNames="accordion-button"/> */}
           </ExpansionPanelDetails>
