@@ -5,7 +5,6 @@ import {Boid, randomColor, getDistance, gaussian} from '../../lib/utilities';
 
 class HomeBoids extends Component {
   
-  // boidsCanvas = React.createRef();
   boids = [];
   colors = [
     '#f89c44',
@@ -13,12 +12,6 @@ class HomeBoids extends Component {
     '#f0ba45',
     '#cd5fa1'
   ];
-  // colors = [
-  //   '#dae282',
-  //   '#286680',
-  //   '#598a64',
-  //   '#92af65'
-  // ];
   canvas = false;
   context = false;
   stop = false;
@@ -37,7 +30,8 @@ class HomeBoids extends Component {
       height: 0,
       stop: false,
       center: new Victor(),
-      gravityPoint: new Victor()
+      gravityPoint: new Victor(),
+      hidden: true
     };
     this.canvasRef = React.createRef();
     this.animate = this.animate.bind(this);
@@ -51,7 +45,8 @@ class HomeBoids extends Component {
       width: windowWidth,
       height: windowHeight,
       center: new Victor( windowWidth/2, windowHeight/2),
-      gravityPoint: new Victor(windowWidth * 2/3, windowHeight * 2/3)
+      gravityPoint: new Victor(windowWidth * 2/3, windowHeight * 2/3),
+      hidden: this.state.hidden
     }, this.initializeBoids);
 
   }
@@ -63,7 +58,8 @@ class HomeBoids extends Component {
       width: windowWidth,
       height: windowHeight,
       center: new Victor( windowWidth/2, windowHeight/2),
-      gravityPoint: new Victor(windowWidth * 2/3, windowHeight * 2/3)
+      gravityPoint: new Victor(windowWidth * 2/3, windowHeight * 2/3),
+      hidden: this.state.hidden
     }, this.updateBoidPoints);
     
   }
@@ -87,6 +83,11 @@ class HomeBoids extends Component {
 
 
   initializeBoids(){
+    // Delay boids and check for decent framerate before showing to user
+    setTimeout(function(){
+      if (Math.floor(1000/this.elapsed) > 25) this.setState({...this.state,hidden:false})
+      else this.setState({...this.state,stop:true})
+    }.bind(this),4000)
     this.canvas = this.canvasRef.current;
     this.context = this.canvas.getContext('2d');
     // console.log(this.state);
@@ -189,13 +190,17 @@ class HomeBoids extends Component {
         }
     }
     if (!this.state.stop) requestAnimationFrame(this.animate.bind(this));
-    
   }
 
   render() {
+    
+    let opacity = this.state.hidden ? 0 : 1
+    
     let styles = {
       width: this.state.width,
-      height: this.state.height
+      height: this.state.height,
+      opacity,
+      transition: 'opacity 1s ease-in'
     }
 
     return <canvas ref={this.canvasRef} id="jo-home-boids" style={styles} width={this.state.width} height={this.state.height}></canvas>
