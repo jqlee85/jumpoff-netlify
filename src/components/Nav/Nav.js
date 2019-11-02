@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import  './Nav.css';
-import {ShapeTwo,ShapeFive} from '../Shapes/Shapes';
-import {Link} from 'react-router-dom';
+import React, {Component} from "react"
+import  "./Nav.scss"
+// import {ShapeTwo,ShapeFive} from '../Shapes/Shapes';
+import {Link} from "gatsby"
 
 
 class Nav extends Component {
@@ -26,8 +26,8 @@ class Nav extends Component {
     if (this.props.navInitialized) theClasses += ' initialized';
     
     return <nav id="main-nav" style={navStyles} className={theClasses}>
-      <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
-      <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/>
+      {/* <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
+      <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/> */}
       <ul className="menu">
         <li><Link to='/about' onClick={this.routeLinkClicked}>About</Link></li>
         <li><Link to='/portfolio' onClick={this.routeLinkClicked}>Work</Link></li>

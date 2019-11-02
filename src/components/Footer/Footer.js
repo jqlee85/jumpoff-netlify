@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
-import  './Footer.css';
-import LazyLoad from 'react-lazyload';
-import ContactInfo from '../ContactInfo/ContactInfo';
-import MapContainer from '../MapContainer/MapContainer';
-import {ShapeOne} from '../Shapes/Shapes';
+import  "./Footer.scss"
+// import LazyLoad from "react-lazyload"
+// import ContactInfo from "../ContactInfo/ContactInfo"
+// import MapContainer from "../MapContainer/MapContainer"
+// import {ShapeOne} from "../Shapes/Shapes"
 
 class Footer extends Component {
 
   render(){
     return <footer id="footer">
-      <div className="jo-map-wrapper">
+      {/* <div className="jo-map-wrapper">
         <LazyLoad offset={900}>
           <MapContainer mapStyle={'light'}/>    
         </LazyLoad>
@@ -17,7 +17,7 @@ class Footer extends Component {
       <ContactInfo />
       <div className="jo-footer-shape-section">  
         <ShapeOne color="white"/>
-      </div>
+      </div> */}
     </footer>
   }
 
