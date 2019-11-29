@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import  './HomeSectionTwo.scss';
+import React, {Component} from 'react'
+import  './HomeSectionTwo.scss'
 // import AccordionSection from '../AccordionSection/AccordionSection';
 // import theBackgroundImage from '../../public/images/jumpoff-what-we-do-bg-colored-shapes-multi.jpg';
 
@@ -24,4 +24,4 @@ class HomeSectionTwo extends Component {
 
 }
 
-export default HomeSectionTwo;
+export default HomeSectionTwo

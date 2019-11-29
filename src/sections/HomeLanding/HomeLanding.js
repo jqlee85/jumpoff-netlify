@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import  './HomeLanding.scss';
+import React, {Component} from 'react'
+import  './HomeLanding.scss'
 // import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from '../Shapes/Shapes';
 // import HomeBoids from '../HomeBoids/HomeBoids';
 
@@ -24,4 +24,4 @@ class HomeLanding extends Component {
 
 }
 
-export default HomeLanding;
+export default HomeLanding

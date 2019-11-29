@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -9,60 +9,63 @@ import LoadingShape from '../components/LoadingShape/LoadingShape'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-const blog = (data) => {
+const Blog = (data) => {
     
-    let variables = {
-        first: 5,
-        after: ''
-    }
+  // TODO Get page query variable
+
+  const [queryVariables, setQueryVariables] = useState({
+    first: 5,
+    after: ''
+  })
     
-    return <Layout>
-        <SEO title="Page two" />
-        <section className="blog latest-posts">
-        <div className="jo-row">
-            <div className="jo-content">
-            <h1 className="standard-title">Latest Posts</h1>
-            {/* <Query query={LATEST_POSTS_QUERY} variables={variables} fetchPolicy="cache-and-network">
-                {({ loading, error, data, fetchMore }) => {
-                if (loading && !data.posts) return (<div className="large-loader-wrapper"><LoadingShape/></div>);
-                if (error) return (<p>Error Loading Posts</p>);
-                if (data.posts) return(
-                    <div>
-                    <ListPosts data={data.posts.edges || []}/>
-                    {data.posts.pageInfo.hasNextPage && 
-                        <div className="jo-more-posts-wrapper">
-                        {loading && <div className="large-loader-wrapper"><LoadingShape/></div>}
-                        {!loading && <LinkButton 
-                            transparent={true} 
-                            linkType="custom" 
-                            text="More Posts" 
-                            onClick={() =>
-                            fetchMore({
-                                query: LATEST_POSTS_QUERY,
-                                variables: {
-                                first: 5,
-                                after: data.posts.pageInfo.endCursor
-                                },
-                                updateQuery: (prev, { fetchMoreResult }) => {
-                                fetchMoreResult.posts.edges.unshift(...prev.posts.edges);
-                                if (!fetchMoreResult) return prev;
-                                return fetchMoreResult
-                                }
-                            })
-                            }
-                        />}
-                        </div>
-                    }
-                    </div>
-                )
-                }}
-            </Query> */}
-            </div>
-        </div>
-        </section>
-    </Layout>
+  return <Layout>
+      <SEO title="Page two" />
+      <section className="blog latest-posts">
+      <div className="jo-row">
+          <div className="jo-content">
+          <h1 className="standard-title">Latest Posts</h1>
+          {/* <Query query={LATEST_POSTS_QUERY} variables={queryVariables} fetchPolicy="cache-and-network">
+              {({ loading, error, data, fetchMore }) => {
+              if (loading && !data.posts) return (<div className="large-loader-wrapper"><LoadingShape/></div>);
+              if (error) return (<p>Error Loading Posts</p>);
+              if (data.posts) return(
+                  <div>
+                  <ListPosts data={data.posts.edges || []}/>
+                  {data.posts.pageInfo.hasNextPage && 
+                      <div className="jo-more-posts-wrapper">
+                      {loading && <div className="large-loader-wrapper"><LoadingShape/></div>}
+                      {!loading && <LinkButton 
+                          transparent={true} 
+                          linkType="custom" 
+                          text="More Posts" 
+                          onClick={() =>
+                          fetchMore({
+                              query: LATEST_POSTS_QUERY,
+                              variables: {
+                              first: 5,
+                              after: data.posts.pageInfo.endCursor
+                              },
+                              updateQuery: (prev, { fetchMoreResult }) => {
+                              fetchMoreResult.posts.edges.unshift(...prev.posts.edges);
+                              if (!fetchMoreResult) return prev;
+                              return fetchMoreResult
+                              }
+                          })
+                          }
+                      />}
+                      </div>
+                  }
+                  </div>
+              )
+              }}
+          </Query> */}
+          </div>
+      </div>
+      </section>
+  </Layout>
 }
 
+//TODO: pass page query variable into query
 export const blogQuery = graphql`
     query blogQuery {
       wpgraphql {
@@ -92,9 +95,10 @@ export const blogQuery = graphql`
 
 // const LATEST_POSTS_QUERY = gql`
 //   query listView($first: Int!, $after: String!) {
-//     posts(first: $first, after: $after where: {categoryId:188}) {
+//     wpgraphql {
+//      posts(first: $first, after: $after where: {categoryId:188}) {
 //       pageInfo {
-//         hasNextPage
+//         hasNextPageg
 //         endCursor
 //       }
 //       edges {
@@ -109,6 +113,7 @@ export const blogQuery = graphql`
 //           }
 //         }
 //       }
+//      }
 //     }
 //   }
 // `;
@@ -168,5 +173,5 @@ export const blogQuery = graphql`
 //   }
 // }
 
-export default blog;
+export default Blog
 

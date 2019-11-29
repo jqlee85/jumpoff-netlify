@@ -1,5 +1,5 @@
-import React, {Component} from "react"
-import  "./HomeSectionFour.scss"
+import React, {Component} from 'react'
+import  './HomeSectionFour.scss'
 // import LinkButton from '../LinkButton/LinkButton';
 // import SmallListPosts from '../SmallListPosts/SmallListPosts';
 // import LoadingShape from '../LoadingShape/LoadingShape';

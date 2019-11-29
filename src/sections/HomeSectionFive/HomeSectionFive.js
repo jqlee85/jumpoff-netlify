@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import  './HomeSectionFive.scss';
-import ContactForm from '../../components/ContactForm/ContactForm';
+import React, {Component} from 'react'
+import  './HomeSectionFive.scss'
+import ContactForm from '../../components/ContactForm/ContactForm'
 
 class HomeSectionFive extends Component {
   
@@ -15,4 +15,4 @@ class HomeSectionFive extends Component {
 
 }
 
-export default HomeSectionFive;
+export default HomeSectionFive
