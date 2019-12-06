@@ -33,7 +33,7 @@
     "react-scripts": "^2.1.5",
     "react-touch-carousel": "^0.8.4",
     "react-transition-group": "^2.5.3",
-    "serialize-javascript": "^1.6.1",
+    "serialize-javascript": "^2.1.1",
     "source-map-support": "^0.5.10",
     "victor": "^1.1.0"
   },
