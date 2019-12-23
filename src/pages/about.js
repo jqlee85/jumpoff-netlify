@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import ContactForm from "../components/ContactForm/ContactForm"
+import ContactForm from "../components/ContactForm"
 
 const About = () => {
   

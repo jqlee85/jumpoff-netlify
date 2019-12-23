@@ -624,6 +624,76 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  /* Keyframes, color transition animations, etc */
+
+    @-webkit-keyframes bg-rainbow {
+        0% {background-color: #ffffff;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #ffffff;}
+    }
+    @-ms-keyframes bg-rainbow {
+        0% {background-color: #ffffff;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #ffffff;}
+    }
+    @-o-keyframes bg-rainbow {
+        0% {background-color: #ffffff;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #ffffff;}
+    }
+    @keyframes bg-rainbow {
+        0% {background-color: #ffffff;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #ffffff;}
+    }
+
+    @-webkit-keyframes p-rainbow {
+        0% {color: #ffffff;stroke:#ffffff;}
+        15% {color: #f0ba45;stroke:#f0ba45;}
+        40% {color: #f89c44;stroke:#f89c44;}
+        65% {color: #ef6085;stroke:#ef6085;}
+        90% {color: #cd5fa1;stroke:#cd5fa1;}
+        100% {color: #ffffff;stroke:#ffffff;}
+    }
+    @-ms-keyframes p-rainbow {
+        0% {color: #ffffff;stroke:#ffffff;}
+        15% {color: #f0ba45;stroke:#f0ba45;}
+        40% {color: #f89c44;stroke:#f89c44;}
+        65% {color: #ef6085;stroke:#ef6085;}
+        90% {color: #cd5fa1;stroke:#cd5fa1;}
+        100% {color: #ffffff;stroke:#ffffff;}
+    }
+    @-o-keyframes p-rainbow {
+        0% {color: #ffffff;stroke:#ffffff;}
+        15% {color: #f0ba45;stroke:#f0ba45;}
+        40% {color: #f89c44;stroke:#f89c44;}
+        65% {color: #ef6085;stroke:#ef6085;}
+        90% {color: #cd5fa1;stroke:#cd5fa1;}
+        100% {color: #ffffff;stroke:#ffffff;}
+    }
+    @keyframes p-rainbow {
+        0% {color: #ffffff;stroke:#ffffff;}
+        15% {color: #f0ba45;stroke:#f0ba45;}
+        40% {color: #f89c44;stroke:#f89c44;}
+        65% {color: #ef6085;stroke:#ef6085;}
+        90% {color: #cd5fa1;stroke:#cd5fa1;}
+        100% {color: #ffffff;stroke:#ffffff;}
+    }
+
+
+
 `
 
 export default GlobalStyles

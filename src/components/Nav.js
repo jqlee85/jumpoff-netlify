@@ -1,38 +1,22 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {AppContext} from '../context/AppState'
-// import {ShapeTwo,ShapeFive} from '../Shapes/Shapes';
+import {ShapeTwo,ShapeFive} from './Shapes/Shapes';
 import {Link} from 'gatsby'
 import styled from 'styled-components'
 import {screen} from '../styles/mediaQueries'
 
-const Nav = (props) => {
-  
-  const [navInitialized,setNavInitialized] = useState(false)
-  useEffect(()=>{
-    setNavInitialized(true)
-  },[])
+const Nav = () => {
 
-  return <AppContext.Consumer
-      navInitialized={navInitialized}
-    >
+  return <AppContext.Consumer>
     {({ navOpen, toggleNav }) =>  {
-
-      // let theClasses = 'main-nav';
-      // // let navStyles = {opacity:'0'}
-      // if (navOpen) theClasses += ' open';
-      // if (navOpen) {
-      //   theClasses += ' front';
-      //   navStyles = {opacity:'1'}
-      // }
-      
+      console.log('navOpen',navOpen)
       return <StyledNav 
         id='main-nav'
         className='main-nav'
         navOpen={navOpen}
-        navInitialized={navInitialized}
       >
-        {/* <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
-        <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/> */}
+        <ShapeTwo classNames={'jo-nav-shape jo-nav-shape-2'}/>
+        <ShapeFive classNames={'jo-nav-shape jo-nav-shape-5'}/>
         <ul className='menu'>
           <li><Link to='/about' onClick={toggleNav}>About</Link></li>
           <li><Link to='/work' onClick={toggleNav}>Work</Link></li>

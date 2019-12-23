@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import  './HomeSectionFive.scss'
-import ContactForm from '../../components/ContactForm/ContactForm'
+import ContactForm from '../../components/ContactForm'
 
 class HomeSectionFive extends Component {
   

@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {graphql} from 'gatsby'
-import SEO from '../components/seo'
+import SEO from '../components/Seo'
 import './Blog.scss';
 import LinkButton from '../components/LinkButton/LinkButton'
-import ListPosts from '../components/ListPosts/ListPosts'
+import ListPosts from '../components/ListPosts'
 import LoadingShape from '../components/LoadingShape/LoadingShape'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'

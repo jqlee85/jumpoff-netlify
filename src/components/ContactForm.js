@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useRef, Component} from 'react'
-import  './ContactForm.scss'
-import LinkButton from '../LinkButton/LinkButton'
+import React, {useState, useEffect, useRef} from 'react'
+import LinkButton from './LinkButton/LinkButton'
 import qs from 'qs'
 import ReCAPTCHA from "react-google-recaptcha"
+import styled from 'styled-components'
 
 const ContactForm = (props) => {
   
@@ -154,7 +154,7 @@ const ContactForm = (props) => {
   }
 
   return (
-    <div className="jo-contact-form">
+    <StyledContactForm className="jo-contact-form">
       {state.submitResponse === 'error' &&
         <div className="jo-contact-form-submission-message jo-contact-form-error">
           Your information was not sent. Please try again later.
@@ -199,8 +199,267 @@ const ContactForm = (props) => {
         </div>
       </form>
       
-    </div>
+    </StyledContactForm>
   )
 }
 
 export default ContactForm
+
+const StyledContactForm = styled.div`
+  
+  position: relative;
+  
+  input {
+      outline: none;
+      border: none;
+      
+      &:focus {
+        border-color: transparent !important;
+      }
+      
+      &.input100 {
+        height: 40px;
+      }
+      
+      &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+        font-weight: normal;
+        color: #555555;
+        &:focus {
+          color:transparent;
+        }
+      }
+  }
+  
+  h2 {
+    font-size: 3em;
+    text-align: left;
+    margin-bottom: 1.5em;
+  }
+  
+  textarea {
+    outline: none;
+    border: none;
+    
+    &:focus {
+      border-color: transparent !important;
+    }
+    
+    &.input100 {
+      min-height: 110px;
+      padding-top: 9px;
+      padding-bottom: 13px;
+    }
+    
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+      font-weight: normal;
+      color: #555555;
+      &:focus {
+        color:transparent;
+      }
+    }
+    
+  }
+ 
+  /*---------------------------------------------*/
+  .jo-link-button-wrapper {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  /*==================================================================
+  [ Form ]*/
+  
+  .contact100-form {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 68px;
+  }
+  
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 13px;
+    margin-bottom: 65px;
+  }
+  
+  .rs1-wrap-input100 {
+    width: calc((100% - 30px) / 2);
+    display: inline-block;
+  }
+  
+  .rs1-wrap-input100:first-child {
+    margin-right:30px;
+  }
+ 
+  label {
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    color: #999999;
+    line-height: 1.5;
+    padding-left: 5px;
+    text-align: left;
+  }
+  
+  .input100 {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-weight: 600;
+    font-size: 2em;
+    color: #555555;
+    line-height: 1.2;
+    padding: 0 5px;
+   
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder  {
+      font-size: .7em;
+    }
+  
+  }
+
+  .focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      -moz-transition: all 0.4s;
+      transition: all 0.4s;
+      background: #ef6085; /* Old browsers */
+      background: -moz-linear-gradient(45deg, #ef6085 1%, #f89c44 48%, #f0ba45 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(45deg, #ef6085 1%,#f89c44 48%,#f0ba45 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(45deg, #ef6085 1%,#f89c44 48%,#f0ba45 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef6085', endColorstr='#f0ba45',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+  }
+  
+  /*---------------------------------------------*/
+   
+  .input100:focus + .focus-input100::before, .has-val + .focus-input100::before {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .rs1-wrap-input100 {
+      width: 100%;
+    }
+  }
+  
+  /*------------------------------------------------------------------ [ Alert validate ]*/
+  .validate-input {
+    position: relative;
+  }
+
+  .alert-validate {
+  
+    &::before {
+      content: attr(data-validate);
+      position: absolute;
+      max-width: 70%;
+      background-color: #fff;
+      border: 1px solid #ef6085;
+      border-radius: 2px;
+      padding: 4px 25px 4px 10px;
+      top: 58%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 2px;
+      pointer-events: none;
+      font-weight: normal;
+      color: #ef6085;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: left;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: opacity 0.4s;
+      -o-transition: opacity 0.4s;
+      -moz-transition: opacity 0.4s;
+      transition: opacity 0.4s;
+      
+      &:hover {
+        visibility: visible;
+        opacity: 1;
+      }
+   
+    }
+  
+    &::after {
+      content: "\f06a";
+      font-family: FontAwesome;
+      display: block;
+      position: absolute;
+      color: #ef6085;
+      font-size: 16px;
+      top: 58%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 8px;
+    }
+  
+  }
+  
+  @media (max-width: 992px) {
+    .alert-validate::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  /*---- Error and Success ----*/
+  .jo-contact-form-submission-message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+    background: rgba(255,255,255,.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  .grecaptcha-badge {
+    display: none !important;
+  }
+  .recaptcha-information {
+    position: absolute;
+    color: #bbb;
+    margin-top: -42px;
+    text-align: left;
+   
+    a {
+      color: #999;
+      text-transform: none !important;
+    }
+  
+  }
+`

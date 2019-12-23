@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import SEO from '../components/seo'
+import SEO from '../components/Seo'
 
 const NotFoundPage = () => (
   <>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import SEO from '../components/seo'
+import SEO from '../components/Seo'
 import  './contact.scss'
-import ContactForm from '../components/ContactForm/ContactForm'
+import ContactForm from '../components/ContactForm'
 
 const Contact = () => (
   <>
