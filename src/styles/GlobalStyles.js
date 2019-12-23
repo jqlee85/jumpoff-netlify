@@ -658,6 +658,38 @@ const GlobalStyles = createGlobalStyle`
         90% {background-color: #cd5fa1;}
         100% {background-color: #ffffff;}
     }
+    @-webkit-keyframes bg-rainbow-black {
+        0% {background-color: #191919;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #191919;}
+    }
+    @-ms-keyframes bg-rainbow-black {
+        0% {background-color: #191919;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #191919;}
+    }
+    @-o-keyframes bg-rainbow-black {
+        0% {background-color: #191919;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #191919;}
+    }
+    @keyframes bg-rainbow-black {
+        0% {background-color: #191919;}
+        15% {background-color: #f0ba45;}
+        40% {background-color: #f89c44;}
+        65% {background-color: #ef6085;}
+        90% {background-color: #cd5fa1;}
+        100% {background-color: #191919;}
+    }
 
     @-webkit-keyframes p-rainbow {
         0% {color: #ffffff;stroke:#ffffff;}

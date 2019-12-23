@@ -1,10 +1,10 @@
 import React from 'react'
-import { AppContext } from '../../context/AppState'
-import  './MenuToggle.scss'
+import { AppContext } from '../context/AppState'
+import styled from 'styled-components'
 
 const MenuToggle = (props) => (
   <AppContext.Consumer>
-    {({ navOpen, toggleNav }) =>  {
+    {({ appScrolled, navOpen, toggleNav }) =>  {
       let theClasses = 'menu-toggle';
       if (navOpen) theClasses += ' toggled';
       return <StyledMenuToggle  
@@ -32,6 +32,8 @@ const StyledMenuToggle = styled.button`
   margin: 12px 10px;
   float:right;
   padding: 0;
+  background: none;
+  color:#000;      /* unvisited link */
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -50,36 +52,19 @@ const StyledMenuToggle = styled.button`
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  color:#000;      /* unvisited link */
   
-  &:visited {color:#000;}  /* visited link */
+  &:visited {
+    color:#000; /* visited link */
+  }  
   &:focus {
     border: none;
     color: none;
   }
   &:hover span {
-    -webkit-animation: bg-rainbow 7s infinite;
-    -ms-animation: bg-rainbow 7s infinite;
-    -o-animation: bg-rainbow 7s infinite;
-    animation: bg-rainbow 7s infinite;
-  }
-  
-  p {
-    position: absolute;
-    margin: 0;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 15px;
-    right: 28px;
-    top: 0px;
-    -webkit-transition: color .5s ease-in-out;
-    -moz-transition: color .5s ease-in-out;
-    -o-transition: color .5s ease-in-out;
-    transition: color .5s ease-in-out;
-  }
-  
-  .app-menu-toggled #nav-icon span, .solid-header #nav-icon span, .keep-toggler-white #header #nav-icon span {
-    background-color: #fff;
+    -webkit-animation: ${props => (props.appScrolled || props.navOpen) ? 'bg-rainbow 7s infinite' : 'bg-rainbow-black 7s infinite'};
+    -ms-animation: ${props => (props.appScrolled || props.navOpen) ? 'bg-rainbow 7s infinite' : 'bg-rainbow-black 7s infinite'};
+    -o-animation: ${props => (props.appScrolled || props.navOpen) ? 'bg-rainbow 7s infinite' : 'bg-rainbow-black 7s infinite'};
+    animation: ${props => (props.appScrolled || props.navOpen) ? 'bg-rainbow 7s infinite' : 'bg-rainbow-black 7s infinite'};
   }
   
   span {
@@ -88,7 +73,7 @@ const StyledMenuToggle = styled.button`
     height: 2px;
     width: 24px;
     border-radius: 2px;
-    background-color: #191919;
+    background-color: ${props => (!props.appScrolled && !props.navOpen) ? '#191919' : '#fff'};
     opacity: 1;
     left: 0;
     -webkit-transform: rotate(0deg);
@@ -132,11 +117,11 @@ const StyledMenuToggle = styled.button`
     transition: transform .15s ease-in-out, top .15s ease-in-out, left .15s ease-in-out;
   }
   
-  
   &.toggled span:nth-child(1), &.toggled span:nth-child(3) {
     width: 27px;
     width: 27px;
   }
+  
   &.toggled span:nth-child(1) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -157,21 +142,6 @@ const StyledMenuToggle = styled.button`
     transform: rotate(-45deg);
     top: 18px;
     left: 2px;
-  }
-  
-  &:hover p {
-    -webkit-animation: p-rainbow 7s infinite;
-    -ms-animation: p-rainbow 7s infinite;
-    -o-animation: p-rainbow 7s infinite;
-    animation: p-rainbow 7s infinite;
-  }
-
-  /* TODO if nav is open */
-  .app-menu-toggled & p {
-    -webkit-animation: p-rainbow 7s infinite;
-    -ms-animation: p-rainbow 7s infinite;
-    -o-animation: p-rainbow 7s infinite;
-    animation: p-rainbow 7s infinite;
   }
 
 `

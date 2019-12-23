@@ -90,10 +90,10 @@ const StyledNav = styled.nav`
         font-weight: 600;
     
         &:hover, &:active, &:focus {
-          -webkit-animation: white-rainbow 5s infinite;
-          -ms-animation: white-rainbow 5s infinite;
-          -o-animation: white-rainbow 5s infinite;
-          animation: white-rainbow 5s infinite;
+          -webkit-animation: p-rainbow 3s infinite;
+          -ms-animation: p-rainbow 3s infinite;
+          -o-animation: p-rainbow 3s infinite;
+          animation: p-rainbow 3s infinite;
         }
      
       }

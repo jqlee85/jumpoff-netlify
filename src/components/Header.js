@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import MenuToggle from './MenuToggle/MenuToggle'
+import MenuToggle from './MenuToggle'
 import Logo from './Logo/Logo'
 import {AppContext} from '../context/AppState'
 import styled from 'styled-components'
@@ -9,17 +9,14 @@ const Header = () => {
 
   return <AppContext.Consumer>
     {({ appScrolled, navOpen, toggleNav }) =>  {
-      
       const clickTitleLink = () => { if (navOpen) toggleNav() }
-
-      return <>
-        <StyledHeader id="header" navOpen={navOpen} appScrolled={appScrolled}>
-          <Link className="site-title" to="/" onClick={clickTitleLink}><Logo/></Link>
-          <MenuToggle/>
-        </StyledHeader>
-      </>
+      return <StyledHeader id="header" navOpen={navOpen} appScrolled={appScrolled}>
+        <Link className="site-title" to="/" onClick={clickTitleLink}><Logo/></Link>
+        <MenuToggle/>
+      </StyledHeader>
     }}
   </AppContext.Consumer>
+
 }
 
 export default Header
@@ -40,9 +37,6 @@ const StyledHeader = styled.header`
   background-color: ${props => (props.appScrolled && !props.navOpen) ? 'rgba(25,25,25,1)' : 'rgba(25,25,25,0)'};
   box-shadow: ${props => (props.appScrolled && !props.navOpen) ? '1px 1px 5px rgba(0,0,0,.1)' : 'none'};
   
-  a.site-title {
-    
-  }
   a.site-title {
     display: inline;
     position: relative;
