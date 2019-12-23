@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import  './contact.scss'
 import ContactForm from '../components/ContactForm/ContactForm'
 
 const Contact = () => (
-  <Layout>
+  <>
     <SEO title="Contact" />
     <section className="contact-page">
         <div className="jo-row">
@@ -18,7 +17,7 @@ const Contact = () => (
             </article>
         </div>
     </section>
-  </Layout>
+  </>
 )
 
 export default Contact

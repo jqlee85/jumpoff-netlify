@@ -1,27 +1,19 @@
-import React, {Component} from 'react'
-import  './MenuToggle.scss';
+import React from 'react'
+import { AppContext } from '../../context/AppState'
+import  './MenuToggle.scss'
 
-class MenuToggle extends Component {
+const MenuToggle = (props) => (
+  <AppContext.Consumer>
+    {({ navOpen, toggleNav }) =>  {
+      let theClasses = 'menu-toggle';
+      if (navOpen) theClasses += ' toggled';
+      return <button  className={theClasses} id="nav-icon" onClick={toggleNav}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    }}
+  </AppContext.Consumer>
+)
 
-  constructor(props){
-    super(props);
-    this.toggleNav = this.toggleNav.bind(this)
-  }
-
-  toggleNav(){
-    this.props.toggleNav();
-  }
-
-  render() {
-    let theClasses = 'menu-toggle';
-    if (this.props.menuToggled) theClasses += ' toggled';
-    return <button  className={theClasses} id="nav-icon" onClick={this.toggleNav}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  }
-}
-
-
-export default MenuToggle;
+export default MenuToggle

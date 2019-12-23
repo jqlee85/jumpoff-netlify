@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import './Blog.scss';
 import LinkButton from '../components/LinkButton/LinkButton'
@@ -18,7 +17,7 @@ const Blog = (data) => {
     after: ''
   })
     
-  return <Layout>
+  return <>
       <SEO title="Page two" />
       <section className="blog latest-posts">
       <div className="jo-row">
@@ -62,7 +61,7 @@ const Blog = (data) => {
           </div>
       </div>
       </section>
-  </Layout>
+  </>
 }
 
 //TODO: pass page query variable into query

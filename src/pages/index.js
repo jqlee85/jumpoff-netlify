@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HomeLanding from "../sections/HomeLanding/HomeLanding"
 import HomeSectionTwo from "../sections/HomeSectionTwo/HomeSectionTwo"
@@ -11,7 +10,7 @@ import HomeSectionFive from "../sections/HomeSectionFive/HomeSectionFive"
 import "./index.scss"
 
 const Home = () => (
-  <Layout>
+  <>
     <SEO title="Home" />
     <div id="home" className="home">      
       <HomeLanding/>
@@ -20,7 +19,7 @@ const Home = () => (
       <HomeSectionFour/>*/}
       <HomeSectionFive/> 
     </div>
-  </Layout>
+  </>
 )
 
 export default Home
