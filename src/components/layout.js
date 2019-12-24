@@ -11,9 +11,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 import Footer from './Footer'
 import Nav from './Nav'
-import {AppContext} from '../context/AppState'
-import useScrollPosition from '../hooks/useScrollPosition'
+import styled from 'styled-components'
 import GlobalStyles from '../styles/GlobalStyles'
+import '../fonts/fonts.scss'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,9 +29,11 @@ const Layout = ({ children }) => {
   return <>
         <GlobalStyles/>
         <Nav/>
-        <Header siteTitle={data.site.siteMetadata.title}/>
-        <main>{children}</main>
-        <Footer/>
+        <StyledWrapper>
+          <Header siteTitle={data.site.siteMetadata.title}/>
+          <main>{children}</main>
+          <Footer/>
+        </StyledWrapper> 
       </>
     
   
@@ -40,6 +42,25 @@ const Layout = ({ children }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+const StyledWrapper = styled.div`
+  height: auto;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  main {
+    height: auto;
+  }
+
+  main, footer {
+    width: 100%;
+  }
+`
 
 export default Layout
 
