@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import LinkButton from './LinkButton/LinkButton'
+import LinkButton from './LinkButton'
 import {getPrettyDate, addEllipsis} from '../lib/utilities'
 import styled from 'styled-components'
 

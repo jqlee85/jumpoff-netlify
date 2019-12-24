@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import  './LinkButton.scss'
-import {Link} from "gatsby"
+import {Link} from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import styled from 'styled-components'
+import {screen} from '../styles/mediaQueries'
 
 
 export class LinkButton extends Component {
@@ -72,7 +73,7 @@ export class LinkButton extends Component {
       
 
     return (  
-      <div className="jo-link-button-wrapper">
+      <StyledButton className="jo-link-button-wrapper">
       {linkType === 'external' && 
         <a href={to} className={classNames} target="_blank" rel="noopener noreferrer">
           <button style={buttonStyles}>
@@ -155,9 +156,149 @@ export class LinkButton extends Component {
           </button>
         </div>
       }
-      </div>
+      </StyledButton>
     )
   }
 }
 
 export default LinkButton
+
+const StyledButton = styled.div`
+  &:hover {
+    cursor: pointer;
+  }
+  .jo-link-button {
+    
+    &.inactive {
+      opacity: .1;
+      &:hover button .button-arrow {
+        width: 0px;
+      }
+    }
+
+    &.large {
+      width: auto;
+      display: flex;
+      justify-content: flex-start;
+
+      button, &.inactive button {  
+        height: 68px;
+        padding: 24px;
+        padding-top: 20px; 
+        
+        span.button-text {
+          height: 20px;
+          font-size: 20px;
+        }
+        
+      }
+
+      &:hover button .button-arrow {
+        height: 20px;
+        margin-top: 3px;
+        margin-left: 8px;
+        width: 29px !important;
+        opacity: 1;
+        animation: blinker 2s linear infinite;
+        -webkit-animation: blinker 2s linear infinite;
+      }
+    
+    }
+
+    &.small-screen-responsive {
+      button {
+        @media ${screen.uptolg} {
+          padding: 8px 12px;
+          height: 38px;
+
+          .button-arrow svg {
+            max-height: 16px;
+          }
+
+          .button-text {
+            padding-top: 3px;
+            font-size: 10px;
+          }
+
+        }
+        
+      }
+    }
+    
+    button {
+      display: block;
+      padding: 16px 20px;
+      height: 54px;
+      transition: padding-right .3s;
+      -webkit-transition: padding-right .3s;
+      .button-arrow {
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transition: width .3s, opacity .3s;
+        -webkit-transition: width .3s, opacity .3s;
+        height: 16px;
+        width: 0px;
+
+        svg {
+          position: absolute;
+          width: 100%;
+          height: auto;
+          left: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+          max-height: 20px;
+          height: auto;
+        }
+
+      }
+    }
+    &:hover {
+      button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .button-arrow {
+          width: 29px;
+          opacity: 1;
+          animation: blinker 2s linear infinite;
+          -webkit-animation: blinker 2s linear infinite;
+        }
+      }
+    }
+
+  }
+  
+  a {
+    text-decoration: none !important;
+  }
+  .button-text {
+    height: 16px;
+    display: flex; 
+    
+    svg {
+      width: 36px;
+      height: 36px;
+      margin-top: -10px;
+    }
+ 
+  }
+  
+  /* .jo-link-button.jo-link-button-has-icon button:hover {
+    background-color: #191919 !important;
+    transition: background-color .3s;
+    -webkit-transition: background-color .3s;
+  }
+  .jo-link-button.jo-link-button-has-icon button:hover span.button-text {
+    color: white;
+    transition: color .3s;
+    -webkit-transition: color .3s;
+  }
+  .jo-link-button-has-icon button:hover .button-text svg {
+    fill: white;
+    transition: fill .3s;
+    -webkit-transition: fill .3s;
+  } */
+
+`

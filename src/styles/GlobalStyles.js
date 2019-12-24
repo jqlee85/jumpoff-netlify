@@ -724,7 +724,65 @@ const GlobalStyles = createGlobalStyle`
         100% {color: #ffffff;stroke:#ffffff;}
     }
 
+    /* Loading Rainbow Hover */
+    @-webkit-keyframes loading-shape-rainbow {
+        0% {fill:#fff;}
+        10% {fill:#191919;}
+        20% {fill: #fff}
+        30% {fill:rgb(239, 96, 133);}
+        40% {fill: #fff;}
+        50% {fill:rgb(26, 167, 167);}
+        60% {fill: #fff;}
+        70% {fill:rgb(255, 168, 68);}
+        80% {fill: #fff;}
+        90% {fill:rgb(255, 98, 132);}
+        100% {fill:#fff;}
+    }
+    @-ms-keyframes loading-shape-rainbow {
+        0% {fill:#fff;}
+        10% {fill:#191919;}
+        20% {fill: #fff}
+        30% {fill:rgb(239, 96, 133);}
+        40% {fill: #fff;}
+        50% {fill:rgb(26, 167, 167);}
+        60% {fill: #fff;}
+        70% {fill:rgb(255, 168, 68);}
+        80% {fill: #fff;}
+        90% {fill:rgb(255, 98, 132);}
+        100% {fill:#fff;}
+    }
+    @-o-keyframes loading-shape-rainbow {
+        0% {fill:#fff;}
+        10% {fill:#191919;}
+        20% {fill: #fff}
+        30% {fill:rgb(239, 96, 133);}
+        40% {fill: #fff;}
+        50% {fill:rgb(26, 167, 167);}
+        60% {fill: #fff;}
+        70% {fill:rgb(255, 168, 68);}
+        80% {fill: #fff;}
+        90% {fill:rgb(255, 98, 132);}
+        100% {fill:#fff;}
+    }
+    @keyframes loading-shape-rainbow {
+        0% {fill:#fff;}
+        10% {fill:#191919;}
+        20% {fill: #fff}
+        30% {fill:rgb(239, 96, 133);}
+        40% {fill: #fff;}
+        50% {fill:rgb(26, 167, 167);}
+        60% {fill: #fff;}
+        70% {fill:rgb(255, 168, 68);}
+        80% {fill: #fff;}
+        90% {fill:rgb(255, 98, 132);}
+        100% {fill:#fff;}
+    }
 
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
 
 `
 

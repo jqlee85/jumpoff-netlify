@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import MenuToggle from './MenuToggle'
-import Logo from './Logo/Logo'
+import Logo from './Logo'
 import {AppContext} from '../context/AppState'
 import styled from 'styled-components'
 

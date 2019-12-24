@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import HomeLanding from "../sections/HomeLanding/HomeLanding"
 import HomeSectionTwo from "../sections/HomeSectionTwo/HomeSectionTwo"
 // import HomeSectionThree from "../sections/HomeSectionThree/HomeSectionThree"

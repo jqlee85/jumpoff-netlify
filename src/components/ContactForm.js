@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
-import LinkButton from './LinkButton/LinkButton'
+import LinkButton from './LinkButton'
 import qs from 'qs'
 import ReCAPTCHA from "react-google-recaptcha"
 import styled from 'styled-components'

@@ -5,7 +5,8 @@ const sizes = {
     md: '800px',
     lg: '1000px',
     xl: '1200px',
-    xxl: '1600px'
+    xxl: '1600px',
+    uptolg: '999px'
 }
 
 export const screen = {
@@ -16,4 +17,5 @@ export const screen = {
     lg: `screen and (min-width: ${sizes.lg})`,
     xl: `screen and (min-width: ${sizes.xl})`,
     xxl: `screen and (min-width: ${sizes.xxl})`,
+    uptolg: `screen and (max-width: ${sizes.uptolg})`,
 }
