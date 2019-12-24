@@ -323,55 +323,6 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
-    /* Custom Fonts */
-    /* Cerebri */
-    @font-face {
-        font-family: 'Cerebri';
-        src: url('../fonts/Cerebri/CerebriSans-Bold.woff2') format('woff2');
-        font-weight: bold;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Cerebri';
-        src: url('../fonts/Cerebri/CerebriSans-Regular.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Cerebri';
-        src: url('../fonts/Cerebri/CerebriSans-Light.woff2') format('woff2');
-        font-weight: lighter;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Cerebri';
-        src: url('../fonts/Cerebri/CerebriSans-SemiBold.woff2') format('woff2');
-        font-weight: 500;
-        font-style: normal;
-    }
-    /* @font-face {
-    font-family: 'Geomanist';
-    font-weight: 700;
-    font-style: normal;
-    src: url('../fonts/geomanist/geomanist-black-webfont.eot'); 
-    src: url('../fonts/geomanist/geomanist-black-webfont.eot?#iefix') format('embedded-opentype'), 
-        url('../fonts/geomanist/geomanist-black-webfont.woff') format('woff2'), 
-        url('../fonts/geomanist/geomanist-black-webfont.woff2') format('woff'), 
-        url('../fonts/geomanist/geomanist-black-webfont.ttf')  format('truetype'), 
-        url('../fonts/geomanist/geomanist-black-webfont.svg') format('svg'); 
-    } */
-    @font-face {
-        font-family: 'Geomanist';
-        font-weight: 600;
-        font-style: normal;
-        src: url('../fonts/geomanist/geomanist-bold-webfont.eot'); /* IE9 Compat Modes */
-        src: url('../fonts/geomanist/geomanist-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-            url('../fonts/geomanist/geomanist-bold-webfont.woff') format('woff2'), /* Super Modern Browsers */
-            url('../fonts/geomanist/geomanist-bold-webfont.woff2') format('woff'), /* Pretty Modern Browsers */
-            url('../fonts/geomanist/geomanist-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-            url('../fonts/geomanist/geomanist-bold-webfont.svg') format('svg'); /* Legacy iOS */
-    }
-
     /* React Transitions */
     .fade-enter {
         opacity: 0;
