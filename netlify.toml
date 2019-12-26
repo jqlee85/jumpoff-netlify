@@ -1,9 +1,9 @@
 [build]
-  Command = "yarn build"
+  Command = "npm run build"
   Publish = "build"
 
 [context.staging] # 'staging' is a branch name
-  command = "yarn build"
+  command = "npm run build"
   publish = "public"
 
 
