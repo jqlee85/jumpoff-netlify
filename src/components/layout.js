@@ -16,6 +16,7 @@ import GlobalStyles from '../styles/GlobalStyles'
 import '../fonts/fonts.scss'
 
 const Layout = ({ children }) => {
+  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,16 +28,15 @@ const Layout = ({ children }) => {
   `)
 
   return <>
-        <GlobalStyles/>
-        <Nav/>
-        <StyledWrapper>
-          <Header siteTitle={data.site.siteMetadata.title}/>
-          <main>{children}</main>
-          <Footer/>
-        </StyledWrapper> 
-      </>
+    <GlobalStyles/>
+    <Nav/>
+    <StyledWrapper>
+      <Header siteTitle={data.site.siteMetadata.title}/>
+      <main>{children}</main>
+      <Footer/>
+    </StyledWrapper> 
+  </>
     
-  
 }
 
 Layout.propTypes = {

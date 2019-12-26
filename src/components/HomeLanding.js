@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 import {ShapeOne,ShapeTwo,ShapeThree,ShapeFour} from './Shapes/Shapes';
-// import HomeBoids from '../HomeBoids/HomeBoids';
+import HomeBoids from './HomeBoids';
 import styled from 'styled-components'
-import {screen} from '../styles/mediaQueries'
+import {screen,sizes} from '../styles/mediaQueries'
 
 class HomeLanding extends Component {
 
   render(){
     
     return <StyledHomeLanding className="home-section-one home-landing">
-      {/* <HomeBoids/> */}
+      <HomeBoids/>
       <div className="jo-home-shapes-wrapper aspectRatioSizer">
         <ShapeOne classNames={'jo-home-shape jo-home-shape-1'}/>
         <ShapeTwo classNames={'jo-home-shape jo-home-shape-2'}/>
@@ -42,43 +42,36 @@ const StyledHomeLanding = styled.section`
   .jo-home-shapes-wrapper {
     position: absolute;
     box-sizing: border-box;
-    height: 100%;
-    height: 100vw;
-    width: 100%;
-    width: 100vw;
     overflow:hidden;
     right: 0;
     width: 165vw;
     height: 165vw;
-    bottom: 150px;
+    bottom: 190px;
     right: 10px;
 
     @media ${screen.xs} {
+      bottom: 190px;
     }
 
     @media ${screen.sm} {
       width: 130vw;
       height: 130vw;
-      bottom: 190px;
+      bottom: 210px;
     }
   
     @media ${screen.md} {
       bottom: 82px;
+      height: 100%;
+      height: 100vw;
+      width: 100%;
+      width: 100vw;
     }
 
     @media ${screen.lg} {
       bottom: 0;
     }
 
-    @media ${screen.xl} {
-      
-    }
-
-    @media ${screen.xxl} {
-      
-    }
-
-    @media ${screen.sm} and ${screen.uptomd} and (max-height: 780px) {
+    @media ${screen.sm} and (max-width: ${sizes.uptomd}) and (max-height: 780px) {
       bottom: 0px;
     }
 
@@ -94,10 +87,6 @@ const StyledHomeLanding = styled.section`
     bottom: 20px;
     width: 28%;
 
-    @media ${screen.sm} {
-      
-    }
-
     @media ${screen.md} {
       right: 40px;
       bottom: 40px;
@@ -109,8 +98,9 @@ const StyledHomeLanding = styled.section`
     }
 
     path, polygon, rect {
-    fill: #191919;
+      fill: #191919;
     }
+  
   }
   .jo-home-shape-2 {
     width: 27.5%;
@@ -129,17 +119,11 @@ const StyledHomeLanding = styled.section`
       bottom: calc(10% + 80px);
     }
 
-    path {
-      /* fill: url('#jo-home-landing-shape-gradient') #191919;  */
-    }
   }
   .jo-home-shape-3 {
     width: 27%;
     right: calc(3% + 20px);
     bottom: calc(23% + 20px);
-
-    @media ${screen.sm} {
-    }
 
     @media ${screen.md} {
       right: calc(3% + 40px);
@@ -188,7 +172,7 @@ const StyledHomeLanding = styled.section`
     box-sizing: border-box;
     z-index: 20; 
 
-    @media ${screen.md} {
+    @media ${screen.sm} {
       padding-left: 40px;
       padding-bottom: 40px;
     }
@@ -246,10 +230,6 @@ const StyledHomeLanding = styled.section`
       font-size: 34px;
     }
 
-    @media ${screen.lg} {
-      
-    }
-
     @media ${screen.xl} {
       font-size: 44px;
     }
@@ -264,12 +244,5 @@ const StyledHomeLanding = styled.section`
     height: 60px;
     width: 100%;
   }
-
-  /* Media Queries */
-  
-  
-
-
-
 
 `

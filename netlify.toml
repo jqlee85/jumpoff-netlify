@@ -3,7 +3,7 @@
   Publish = "build"
 
 [context.staging] # 'staging' is a branch name
-  command = "gatsby build"
+  command = "yarn build"
   publish = "public"
 
 

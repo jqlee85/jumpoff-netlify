@@ -1,4 +1,4 @@
-const sizes = {
+export const sizes = {
     xs: '400px',
     sm: '600px',
     smd: '500px',
