@@ -1,16 +1,18 @@
-import React from "react"
-import { Link } from "gatsby"
-import Seo from "../components/Seo"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-import ContactForm from "../components/ContactForm"
+import React from 'react'
+import { Link } from 'gatsby'
+import Seo from '../components/Seo'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ContactForm from '../components/ContactForm'
+import styled from 'styled-components'
+import {screen} from '../styles/mediaQueries'
 
 const About = () => {
   
     let year = new Date().getFullYear()
     let yearsExperience = year - 2011
-    let title = "About Jumpoff"
+    let title = 'About Jumpoff'
 
-    return <>
+    return <StyledAbout>
       <Seo title={title} />
       <article className="jo-content jo-post-content-wrapper">
           <h2>Short Story</h2>
@@ -29,7 +31,45 @@ const About = () => {
           <ContactForm name="aboutpageform"/>
         </div>  
       </div>
-    </>
+    </StyledAbout>
 }
 
 export default About
+
+const StyledAbout = styled.section`
+  
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+  @media ${screen.md} {
+    padding: 40px 0px;
+  }
+
+  h1, p {
+    text-align: left;
+  }
+
+  .jo-work-header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+
+    h1.jo-work-header-title {
+      text-align: center;
+    }
+
+  }
+
+  
+`
