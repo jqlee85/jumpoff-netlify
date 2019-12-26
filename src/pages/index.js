@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import SEO from '../components/Seo'
+import Seo from '../components/Seo'
 import HomeLanding from '../components/HomeLanding'
 import HomeSectionTwo from '../sections/HomeSectionTwo/HomeSectionTwo'
 // import HomeSectionThree from '../sections/HomeSectionThree/HomeSectionThree'
@@ -11,7 +11,7 @@ import './index.scss'
 
 const Home = () => (
   <>
-    <SEO title="Home" />
+    <Seo title="Home" />
     <div id='home' className='home'>      
       <HomeLanding/>
       <HomeSectionTwo/>

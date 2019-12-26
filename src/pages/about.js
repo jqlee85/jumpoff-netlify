@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import SEO from "../components/Seo"
+import Seo from "../components/Seo"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import ContactForm from "../components/ContactForm"
 
@@ -11,7 +11,7 @@ const About = () => {
     let title = "About Jumpoff"
 
     return <>
-      <SEO title={title} />
+      <Seo title={title} />
       <article className="jo-content jo-post-content-wrapper">
           <h2>Short Story</h2>
           <p>Jumpoff is a company focused on designing and developing <Link to="/portfolio">great experiences for the web</Link>. It was started on the island of Maui in 2015 by <a href="https://jessequinnlee.com/about/" target="_blank" rel="noopener noreferrer">Jesse Lee</a>. If you'd like to discuss your web project <AnchorLink href='#contact'>drop us a line</AnchorLink>.</p>

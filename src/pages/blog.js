@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {graphql} from 'gatsby'
-import SEO from '../components/Seo'
+import Seo from '../components/Seo'
 import './Blog.scss';
 import LinkButton from '../components/LinkButton'
 import ListPosts from '../components/ListPosts'
@@ -18,7 +18,7 @@ const Blog = (data) => {
   })
     
   return <>
-      <SEO title="Page two" />
+      <Seo title="Page two" />
       <section className="blog latest-posts">
       <div className="jo-row">
           <div className="jo-content">
