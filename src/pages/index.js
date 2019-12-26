@@ -1,18 +1,18 @@
-import React from "react"
-import { Link } from "gatsby"
-import SEO from "../components/Seo"
-import HomeLanding from "../sections/HomeLanding/HomeLanding"
-import HomeSectionTwo from "../sections/HomeSectionTwo/HomeSectionTwo"
-// import HomeSectionThree from "../sections/HomeSectionThree/HomeSectionThree"
-// import HomeSectionFour from "../sections/HomeSectionFour/HomeSectionFour"
-import HomeSectionFive from "../sections/HomeSectionFive/HomeSectionFive"
+import React from 'react'
+import { Link } from 'gatsby'
+import SEO from '../components/Seo'
+import HomeLanding from '../components/HomeLanding'
+import HomeSectionTwo from '../sections/HomeSectionTwo/HomeSectionTwo'
+// import HomeSectionThree from '../sections/HomeSectionThree/HomeSectionThree'
+// import HomeSectionFour from '../sections/HomeSectionFour/HomeSectionFour'
+import HomeSectionFive from '../sections/HomeSectionFive/HomeSectionFive'
 
-import "./index.scss"
+import './index.scss'
 
 const Home = () => (
   <>
     <SEO title="Home" />
-    <div id="home" className="home">      
+    <div id='home' className='home'>      
       <HomeLanding/>
       <HomeSectionTwo/>
       {/*<HomeSectionThree/>
