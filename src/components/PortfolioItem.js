@@ -67,19 +67,15 @@ class PortfolioItem extends Component {
 export default PortfolioItem;
 
 const StyledPortfolioItem = styled.div`
-
-  .jo-home-portfolio-item-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .home-portfolio-block .jo-portfolio-item {
+  
+  .jo-portfolio-item {
     position: relative;
     display: inline-block; 
     width: 100%;
     height: 100%;
     padding: 0px; 
   }
+    
   .normal-portfolio-content-wrapper {
     position:relative;
     background-size: cover;

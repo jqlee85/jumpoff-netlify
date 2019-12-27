@@ -10,9 +10,8 @@ import {screen} from '../styles/mediaQueries'
 
 let listOfData;
 let Container;
-const query = window.location.search.slice(1)
-const enableAutoplay = /\bautoplay\b/.test(query)
-const enableLoop = /\bloop\b/.test(query)
+const enableAutoplay = false
+const enableLoop = false
 const cardSize = 350;
 const cardPadCount = enableLoop ? 3 : 0
 // const carouselWidth = clamp(window.innerWidth, 0, 800)
@@ -77,7 +76,7 @@ class PortfolioCarousel extends Component {
   renderCard(index, modIndex, cursor, carouselState) {
 
     const item = listOfData[modIndex]
-    let itemLink = '/portfolio/' + item.node.slug;
+    let itemLink = '/work/' + item.node.slug;
     const onTop = Math.abs(index + cursor) < 0.5
     const rawDeg = 15 * (index + cursor)
     const degrees = Math.round(rawDeg * 10) / -10
@@ -115,7 +114,7 @@ class PortfolioCarousel extends Component {
         component={Container}
         cardSize={cardSize}
         cardCount={listOfData.length}
-        autoplay={enableAutoplay ? 2e3 : false}
+        autoplay={enableAutoplay}
         renderCard={this.renderCard}
         loop={enableLoop}
       />

@@ -19,7 +19,7 @@ const SmallListPost = ({post}) => {
   const prettyDate = getPrettyDate(date);
   const postLink = '/blog/' + slug;
   
-  return <article id={postID} data-post-id={id} className="jo-list-post-small" >
+  return <StyledSmallListPost id={postID} data-post-id={id} className="jo-list-post-small" >
     <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl} alt={title}/>
     <div className="jo-list-post-small-flex-container">
       <div className="jo-list-post-meta">
@@ -32,18 +32,15 @@ const SmallListPost = ({post}) => {
             <h1 className="black-box-text" dangerouslySetInnerHTML={{ __html: title }}/>
           </Link>
       </div>
-      <div className="jo-list-post-read-more">
-          <LinkButton to={postLink} text="Read More"/>
-      </div>
     </div>
-  </article>
+  </StyledSmallListPost>
   
 }
 
 export default SmallListPost;
 
 const StyledSmallListPost = styled.article`
-
+  display: block;
   position: relative;
   width: 100%;
   height: auto;

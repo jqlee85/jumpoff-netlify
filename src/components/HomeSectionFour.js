@@ -41,4 +41,9 @@ const StyledHomeSectionFour = styled.section`
       text-align: left;
     }
   }
+  .jo-more-posts-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+  }
 `

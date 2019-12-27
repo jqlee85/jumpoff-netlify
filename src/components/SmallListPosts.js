@@ -14,13 +14,13 @@ const SmallListPosts = ({posts}) => {
 export default SmallListPosts;
 
 const StyledSmallListPosts = styled.div`
-
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   @media ${screen.lg} {
-    flex-direction: column;
+    flex-direction: row;
   }
 `

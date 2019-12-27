@@ -71,7 +71,7 @@ class HomeSectionThree extends Component {
               />
             ))}
             <div className="home-portfolio-block home-portfolio-block-6">
-              <LinkButton to="/portfolio" text="More Projects"/>
+              <LinkButton to="/work" text="More Projects"/>
             </div>
           </div>
         </div> 

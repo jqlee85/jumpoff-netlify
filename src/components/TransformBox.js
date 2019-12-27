@@ -161,10 +161,10 @@ export default TransformBox
 
 const StyledTransformBox = styled.div`
 
-  .jo-transform-box {
+  
     width: 100%;
     height: 100%;
-  }
+  
   .jo-transform-box-inner {
     position: relative;
     display: inline-block;
