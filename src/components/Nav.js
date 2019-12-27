@@ -6,10 +6,8 @@ import styled from 'styled-components'
 import {screen} from '../styles/mediaQueries'
 
 const Nav = () => {
-
   return <AppContext.Consumer>
     {({ navOpen, toggleNav }) =>  {
-      console.log('navOpen',navOpen)
       return <StyledNav 
         id='main-nav'
         className='main-nav'
@@ -25,9 +23,8 @@ const Nav = () => {
         </ul>
       </StyledNav>
     }}
-  </AppContext.Consumer>
-  
-} 
+  </AppContext.Consumer> 
+}
 
 export default Nav
 

@@ -1,43 +1,12 @@
 import React, {Component} from "react"
 import LoadingShape from './LoadingShape'
 import LinkButton from './LinkButton'
-import PortfolioCarousel from '../PortfolioCarousel/PortfolioCarousel';
-import PortfolioItem from '../PortfolioItem/PortfolioItem';
-import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import PortfolioCarousel from './PortfolioCarousel';
+import PortfolioItem from './PortfolioItem';
 import _ from 'lodash';
-
 import styled from 'styled-components'
 import {screen} from '../styles/mediaQueries'
 
-const HOME_PORTFOLIO_PROJECTS_QUERY = gql`
-  query listView {
-    projects(first: 4, where: {orderby: {field: MENU_ORDER, order: DESC}}) {
-      edges {
-        node {
-          id
-          title
-          slug
-          date
-          projectDescription
-          client
-          technologies
-          featuredImage {
-            sourceUrl
-          }
-          categoryProjects {
-            edges {
-              node {
-                id
-                name
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 class HomeSectionThree extends Component {
   
@@ -76,30 +45,31 @@ class HomeSectionThree extends Component {
 
   render(){
     
-    let gridStyles = {
-      height: this.state.gridHeight
-    }
-    let viewBox = '0 0 100 ' + 100 * this.state.gridAspectRatio;
+    let gridStyles = { height: this.state.gridHeight }
+    let viewBox = '0 0 100 ' + 100 * this.state.gridAspectRatio
+    const {data} = this.props
+ 
+    console.log('data',data)
 
-    return <section className="home-section flex-section full-height-section" id="home-section-three">
+    return <StyledHomeSectionThree 
+      className="home-section flex-section full-height-section" 
+      id="home-section-three"
+    >
       <div className="home-portfolio-wrapper">
         <div className="home-section-content">   
           <div className="home-portfolio-base-desktop" ref={this.grid} style={gridStyles}>
             <svg viewBox={viewBox} ref={this.gridSizer}></svg>
             <div className="home-portfolio-block home-portfolio-block-1">
               <h2>Recent Projects</h2>
-            </div>
-              <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
-                {({ loading, error, data }) => {
-                  if (loading) return null;
-                  if (error) return (<p>Error Loading Post</p>);
-                  if (data.projects) return (
-                    data.projects.edges.map(({ node },index) => (
-                      <PortfolioItem post={node} key={`${node.id}`} itemNumber={index+2} mode="transform"/>
-                    ))
-                  );
-                }}  
-              </Query>
+            </div> 
+            {data.projects.edges.map(({ node },index) => (
+              <PortfolioItem 
+                post={node} 
+                key={`${node.id}`} 
+                itemNumber={index+2}
+                mode="transform"
+              />
+            ))}
             <div className="home-portfolio-block home-portfolio-block-6">
               <LinkButton to="/portfolio" text="More Projects"/>
             </div>
@@ -107,19 +77,15 @@ class HomeSectionThree extends Component {
         </div> 
         <div className="home-portfolio-base-mobile">
           <h2>Recent Work</h2>
-          <Query query={HOME_PORTFOLIO_PROJECTS_QUERY}>
-                {({ loading, error, data }) => {
-                  if (loading) return null;
-                  if (error) return (<p>Error Loading Post</p>);
-                  if (data.projects) return (
-                    <PortfolioCarousel projects={data.projects.edges} />
-                  );
-                }}  
-            </Query>
-            <LinkButton to="/portfolio" text="More Projects" />
+          {data?.projects && 
+            <PortfolioCarousel 
+              projects={data.projects.edges} 
+            />
+          }
+          <LinkButton to="/work" text="More Projects"/>
         </div>
       </div>
-    </section>
+    </StyledHomeSectionThree>
   }
 
 }
