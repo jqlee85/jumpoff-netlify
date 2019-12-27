@@ -16,6 +16,8 @@ const ListPost = (props) => {
   const featuredImage = props.post.featuredImage;
   const postLink = '/blog/' + slug;
 
+  console.log('title',title)
+
   return <StyledListPost id={postID} data-post-id={id} className="jo-list-post" >
     <img className="jo-list-post-featured-img" src={featuredImage.sourceUrl} alt={title}/>
     <div className="jo-list-post-content">
@@ -45,18 +47,18 @@ const ListPost = (props) => {
 export default ListPost;
 
 const StyledListPost = styled.article`
-  .jo-list-post {
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    margin: 60px auto;
-    background-size: cover;
-    background-position: center;
-    box-shadow: -.5rem .5rem 3.6rem 0.6rem rgba(0,0,0,.12);
-  }
-  .jo-list-post .jo-list-post-sizer {
+  
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  margin: 60px auto;
+  background-size: cover;
+  background-position: center;
+  box-shadow: -.5rem .5rem 3.6rem 0.6rem rgba(0,0,0,.12);
+  
+  .jo-list-post-sizer {
     width: 100%;
     height: 0px;
     padding-bottom: 66.66%;
@@ -64,12 +66,12 @@ const StyledListPost = styled.article`
     z-index: -1;
     align-self: flex-end;
   }
-  .jo-list-post .jo-list-post-featured-img {
+  .jo-list-post-featured-img {
     width: 100%;
     height: auto;
     position: absolute;
   }
-  .jo-list-post .jo-list-post-content {
+  .jo-list-post-content {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -83,7 +85,7 @@ const StyledListPost = styled.article`
     min-height: 100%;
     height: auto;
   }
-  .jo-list-post .jo-list-post-meta {
+  .jo-list-post-meta {
     position: absolute;
     top: 0;
     right: 0;
@@ -91,113 +93,113 @@ const StyledListPost = styled.article`
     height: 100%;
     overflow: visible;
   }
-  .jo-list-post .jo-list-post-title {
+  .jo-list-post-title {
     align-self: flex-start;
   }
-  .jo-list-post .jo-list-post-excerpt-wrapper {
+  .jo-list-post-excerpt-wrapper {
     align-self: center;
     margin-top: 40px;
   }
-  .jo-list-post .jo-list-post-content-spacer {
+  .jo-list-post-content-spacer {
     margin-top: 64px;
   }
-  .jo-list-post .jo-list-post-read-more {
+  .jo-list-post-read-more {
     position: absolute;
     bottom: -10px;
     right: -16px;
     width: auto;
     z-index: 30;
   }
-  .jo-list-post .jo-link-button-wrapper{
+  .jo-link-button-wrapper{
     position: relative;
     left:0;
   }
-  .jo-list-post h1 {
+  h1 {
     font-size: 2.5rem;
     text-transform: uppercase; 
   }
-  .jo-list-post .jo-list-post-excerpt p {
+  .jo-list-post-excerpt p {
     line-height: 140%;
     font-size: 1.3em;
   }
-  .jo-list-post .jo-list-post-date {
+  .jo-list-post-date {
     position: absolute;
     right: 0px;
     top: 28px;
   }
-  .jo-list-post .jo-list-post-date .black-box-text {
+  .jo-list-post-date .black-box-text {
     padding: 8px 0px;
     box-shadow: 12px 0 0 #191919, -12px 0 0 #191919;
   }
 
   @media screen and (min-width: 601px) and ( max-width: 800px ) { 
-    .jo-list-post h1 {
+    h1 {
       font-size: 2.1rem;
     }
-    .jo-list-post .jo-list-post-excerpt p {
+    .jo-list-post-excerpt p {
       font-size: 1.1em;
     }
     
   }
   @media screen and ( max-width: 800px ) { 
   
-    .jo-list-post {
+    {
       flex-direction: column;
     }
-    .jo-list-post .jo-list-post-featured-img, .jo-list-post-content, .jo-list-post .jo-list-post-meta {
+    .jo-list-post-featured-img, .jo-list-post-content, .jo-list-post-meta {
       position: relative;
     }
-    .jo-list-post .jo-list-post-title {
+    .jo-list-post-title {
     z-index: 40; 
     }
-    .jo-list-post .jo-list-post-content {
+    .jo-list-post-content {
       padding: 0;
       margin-top: -100px;
       width: 100%; 
     }
-    .jo-list-post .jo-list-post-excerpt-wrapper {
+    .jo-list-post-excerpt-wrapper {
       margin-top: 0px;
       background: #fff;
       padding: 10px 20px;
       box-sizing: border-box;
       width: 100%;
     }
-    .jo-list-post .jo-list-post-excerpt-wrapper .black-box-text p {
+    .jo-list-post-excerpt-wrapper .black-box-text p {
       padding: 20px 10px 20px;
       box-sizing: border-box;
       background: none;
       color: #191919;
       box-shadow: none;
     }
-    .jo-list-post .jo-list-post-date {
+    .jo-list-post-date {
       display: none;
     }
-    .jo-list-post .jo-list-post-meta {
+    .jo-list-post-meta {
       width: 100%;
       height: 0px;
       right: -20px;
       top: -30px;
     }
-    .jo-list-post .jo-list-post-read-more {
+    .jo-list-post-read-more {
       position: relative;
       right: 0;
       bottom: 0;
       text-align: right;
     }
-    .jo-list-post .jo-link-button-wrapper {
+    .jo-link-button-wrapper {
       right: 0;
       display: inline-block;
     }
-    .jo-list-post .jo-list-post-sizer, .jo-list-post .jo-list-post-content-spacer {
+    .jo-list-post-sizer, .jo-list-post-content-spacer {
       display: none;
     }
     
   }
   @media screen and (max-width: 600px) {
-    .jo-list-post h1 {
+    h1 {
       font-size: 2rem;
     }
-    .jo-list-post .jo-list-post-excerpt p {
+    .jo-list-post-excerpt p {
       font-size: 1em;
     }
   }

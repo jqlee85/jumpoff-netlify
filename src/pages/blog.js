@@ -1,28 +1,71 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {graphql} from 'gatsby'
 import Seo from '../components/Seo'
 import LinkButton from '../components/LinkButton'
 import ListPosts from '../components/ListPosts'
 import LoadingShape from '../components/LoadingShape'
-import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+// import { useQuery } from '@apollo/react-hooks'
+// import gql from 'graphql-tag'
 import styled from 'styled-components'
 import {screen} from '../styles/mediaQueries'
 
-const Blog = (data) => {
+const Blog = ({data}) => {
     
   // TODO Get page query variable
 
-    const [queryVariables, setQueryVariables] = useState({
-        first: 5,
-        after: ''
-    })
+    // const [queryVariables, setQueryVariables] = useState({
+    //     first: 5,
+    //     after: ''
+    // })
+
+    console.log('data',data)
+
+
+    const [posts,setPosts] = useState(data.latestPosts.posts)
+    const [postsStatus,setPostsStatus] = useState('loaded')
+
+    useEffect(()=>{
+        setPosts(data.latestPosts.posts)
+    },[data.latestPosts])
+
+    console.log('posts',posts)
         
-    return <section className="blog latest-posts">
-        <Seo title="Page two" />
+    return <StyledBlog className="blog latest-posts">
+        <Seo title="Blog" />
         <div className="jo-row">
             <div className="jo-content">
             <h1 className="standard-title">Latest Posts</h1>
+            
+                <>
+                <ListPosts posts={posts.edges || []}/>
+                { posts?.pageInfo?.hasNextPage && 
+                    <div className="jo-more-posts-wrapper">
+                    { postsStatus === 'loading' && <div className="large-loader-wrapper"><LoadingShape/></div>}
+                    { postsStatus !== 'loading' && <LinkButton 
+                        transparent={true} 
+                        linkType="custom" 
+                        text="More Posts" 
+                        onClick={() =>
+                            console.log('clicked more posts')
+                            // fetchMore({
+                            //     query: LATEST_POSTS_QUERY,
+                            //     variables: {
+                            //     first: 5,
+                            //     after: data.posts.pageInfo.endCursor
+                            //     },
+                            //     updateQuery: (prev, { fetchMoreResult }) => {
+                            //     fetchMoreResult.posts.edges.unshift(...prev.posts.edges);
+                            //     if (!fetchMoreResult) return prev;
+                            //     return fetchMoreResult
+                            //     }
+                            // })
+                        }
+                    />}
+                    </div>
+                }
+                </>
+            
+            
             {/* <Query query={LATEST_POSTS_QUERY} variables={queryVariables} fetchPolicy="cache-and-network">
                 {({ loading, error, data, fetchMore }) => {
                 if (loading && !data.posts) return (<div className="large-loader-wrapper"><LoadingShape/></div>);
@@ -60,34 +103,39 @@ const Blog = (data) => {
             </Query> */}
             </div>
         </div>
-    </section>
+    </StyledBlog>
 }
 
 //TODO: pass page query variable into query
-export const blogQuery = graphql`
-    query blogQuery {
-      wpgraphql {
-        posts(
-            where: {categoryId: 188}
-        ) {
-            pageInfo {
-                hasNextPage
-                endCursor
+export const query = graphql`
+    query blogPageQuery {
+        latestPosts: wpgraphql {
+            posts(
+                first: 3, 
+                where: {
+                    orderby: {field: DATE, order: DESC},
+                    categoryId: 188
+                }
+            ) {
+                edges {
+                    node {
+                        id
+                        title
+                        slug
+                        date
+                        excerpt
+                        featuredImage {
+                            sourceUrl
+                        }
+                    }
+                }
+                pageInfo {
+                    hasNextPage
+                    endCursor
+                }
+                
             }
-            edges {
-              node {
-                  id
-                  title
-                  slug
-                  date
-                  excerpt
-                  featuredImage {
-                      sourceUrl
-                  }
-              }
-            }
-          }
-      }
+        }
     }
 `
 
@@ -175,7 +223,10 @@ export default Blog
 
 const StyledBlog = styled.section`
 
-   
+    h1 {
+        text-align: center;
+    }
+
     .jo-content {
         display: block;
         flex-direction: column;
@@ -189,6 +240,7 @@ const StyledBlog = styled.section`
         -ms-animation: white-rainbow 6s infinite;
         -o-animation: white-rainbow 6s infinite;
         animation: white-rainbow 6s infinite;
+        
         @media ${screen.sm} {
             font-size: 5em;
         }
@@ -202,5 +254,4 @@ const StyledBlog = styled.section`
         padding: 3em 0 6em;
     }
     
-
 `

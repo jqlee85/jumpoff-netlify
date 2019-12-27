@@ -55,6 +55,7 @@ const StyledNav = styled.nav`
     padding: 0; 
     z-index: 100;
     margin: auto 0 auto 1.2em;
+    width: 100%;
     
     @media ${screen.sm} {
       margin: auto 0 auto 2em;
