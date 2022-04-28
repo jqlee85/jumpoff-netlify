@@ -12,7 +12,7 @@
     "apollo-link-error": "^1.1.7",
     "apollo-link-http": "^1.5.11",
     "cors": "^2.8.4",
-    "cross-fetch": "^2.1.0",
+    "cross-fetch": "^3.1.5",
     "file-loader": "^2.0.0",
     "google-maps-react": "^1.1.2",
     "graphql": "^0.13.2",
